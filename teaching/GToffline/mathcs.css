@@ -1,0 +1,261 @@
+a:link
+ 	{color: #990000;
+ 	text-decoration: underline}
+
+a:visited
+ 	{color: #990000;
+ 	text-decoration: underline;}
+ 	
+a:hover
+ 	{color: #CC0000;
+ 	text-decoration: underline}
+ 	
+body 	
+	{background: white;
+    color: #000000;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 100%}
+    
+.content 
+	{border: none;
+	margin-right: 4%;
+	margin-left: 4%;
+	width: 90%;
+	color: #000000;
+	padding: 10px 10px 10px 10px;
+	font-size: 100%;
+	font-weight: 120%}
+	
+body.tier3 .content, body.tier2 .content
+	{border: 1px solid #000000;
+	margin-top: 50px;
+	margin-bottom: 40px}
+
+body.tier2 .content
+	{margin-top: 60px;}
+	
+.centered
+	{text-align: center}
+	
+.header
+	{height: 5em;
+	width: 100%;
+	padding: 7px 0px 0px 0px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	border: none}
+
+.tier2 .header
+	{min-height: 110px}
+
+.tier3 .header
+	{min-height: 110px}
+        
+.tier3g .header 
+	{min-height: 110px;
+    height: 120px}
+
+.titlebox
+    {height: 2.5em;
+    padding: .5em .5em .5em .5em;
+   	text-align: left; 
+   	position: absolute;
+	left: 1em;
+	top: 2.3em}
+
+.tier3g .titlebox, .tier3 .titlebox, .tier2 .titlebox 
+        {width: 19em;
+		border: 1px solid black;
+        left: 1em;
+		top: 2.7em}
+	
+.tier2 .titlebox 
+        {left: 1em;
+		top: 3em}
+		
+.backbox 
+	{width: 19em;
+    height: 2.5em;
+	padding: .5em .5em .5em .5em;
+	position: absolute;
+	left: 1.4em;
+	top: 2.8em;}
+	
+.tier3g .backbox, .tier3 .backbox 
+	{left: 1.4em;
+	top: 3.1em;}
+
+.tier2 .backbox 
+	{left: 1.4em;
+	top: 3.4em;}
+
+.feedback 
+	{background-color: #000000;
+	color: white;
+	width: 90%;
+	margin: auto;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	font-size: 80%;
+	text-align: center;
+	height: 25px;
+	font-weight: bold;
+	padding: 0px 1px 0px 1px;}
+	
+.feedback a:link
+    {color: #FFFFFF;
+    text-decoration: none;}
+
+.feedback a:visited
+    {color: #FFFFFF;
+    text-decoration: none;}
+    
+.feedback a:link:hover
+	{color: #CC0000;}
+	 
+.feedback a:visited:hover
+	{color: #990000;
+	 text-decoration: underline;}
+	
+.footer 
+	{text-align: center;
+	margin: auto;
+	padding-top: 5px;
+	padding-bottom: 20px;
+	font-size: 80%;
+	width: 90%;}
+	
+.footer p 
+	{padding: 3px 3px 3px 3px;
+	margin: 3px 3px 3px 3px;}
+	
+h1
+    {font-size: 120%;
+    color: #000000;
+    margin: 5px 5px 5px 5px}
+    
+h2
+    {font-size: 115%;
+	color: #CC0000;}
+
+h3
+    {font-size: 110%;
+	color: #CC0000;}
+
+h4
+    {font-size: 105%;
+	color: #CC0000;}
+	
+.navtable 
+	{width: 98%;
+	background-image: none;
+	background-color: white;
+	height: 1em;
+	margin: 10px 1% 10px 1%;
+	border: 1px solid black;}
+
+
+p, dl, dd, dt, ol, td, th, .normal
+   {font-family: Verdana, Arial, Helvetica, sans-serif;
+   color: #000000;}
+
+.redtext 
+	{color: #FF0000;
+    font-weight: bold;
+    font-size: small;}
+    
+.red {color: #CC0000;}    
+    
+.sidemargins
+    {margin-right: 10%;
+    margin-left: 10%;}
+    
+.smalltext 
+	{font-size: 85%}
+
+.smitalic 
+	{font-style: italic;
+	font-size: 85%}
+    
+td.background a:link
+    {color: #000000;
+    text-decoration: none;
+    background-image: none;}
+
+td.background a:visited
+    {color: #000000;
+    text-decoration: none;
+    background-image: none;}
+    
+td.background a:hover
+    {color: #990000;
+    text-decoration: none;
+    background-image: none;}
+    
+td.background 
+    {color: #000000;
+	font-size: 70%;
+	font-weight: bold;
+	background-image: none;}
+
+ul 
+	{color: #000000;
+	margin-left: 10px}	
+
+.sidenav 
+	{float: left;
+ 	width: 25ex;
+ 	border-left: 1px solid black;
+ 	border-top: 1px solid black;
+ 	border-right: 1px solid black;
+ 	border-bottom: 1px solid black;
+ 	margin-right: 30px;
+ 	margin-left: 1em;
+ 	margin-top: 1em;
+ 	margin-bottom: 1em;
+	padding-left: 8px;
+	padding-right: 8px;}
+  
+.sidenav ul
+	{padding-left: 1em;}
+
+.subnav 
+	{background-color: #000000;
+	color: white;
+	width: 100%;
+	margin: auto;
+	font-size: 75%;
+	text-align: center;
+	font-weight: bold;
+	padding: 5px 0px 5px 0px;}
+	
+.subnav td, tr
+	{padding-left: 10px}
+	
+.subnav a:link
+    {color: #FFFFFF;
+    text-decoration: none;}
+
+.subnav a:visited
+    {color: #FFFFFF;
+    text-decoration: none;}
+    
+.subnav a:link:hover
+	{color: #CC0000;
+	 text-decoration: none;}
+	 
+.subnav a:visited:hover
+	{color: #CC0000;
+	 text-decoration: none;}
+	 
+.currentNavPosition {font-weight: bold; color: red;}
+
+.navtable
+	{margin-top: 0px}
+
+.header {background: #D9C299}
+
+.footer {text-align: center; font-size: 8pt;}

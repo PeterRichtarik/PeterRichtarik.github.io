@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+        <head>
+        <meta charset="utf-8" />
+        <!--[if lt IE 9]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <link rel="stylesheet" href="style.css" />
+        <title>Advances in Large-Scale Optimization</title>
+    </head>
+    <body>
+
+    <div id="page">
+
+        <header>
+    <h1>Advances in Large-Scale Optimization</h1>
+    <h2>A Centre for Numerical Algorithms and Intelligent Software Workshop </h2>
+     <h2>May 24-25, 2012, University of Edinburgh</h2>
+
+     </header>
+
+    <div id="menu">
+  <ul>
+
+  <li><a href="index.html">Home</a></li>
+  <li><a href="location.html">Location</a></li>
+  <li><a href="registration.html">Registration</a></li>
+  <li><a href="contact.html">Contact</a></li>
+
+
+  </ul>
+</div>
+
+    <div id="wrapper">
+
+    <div id="content">
+
+
+With the ever increasing amounts of data, which are readily available, comes the need to solve huge-scale optimization problems. Machine learning, compressed sensing, natural language processing, computational genetics, and truss topology design, are only some of the more prominent application domains. Modern optimization algorithms, which exhibit extreme efficiency in modest dimensions, are not designed to scale to instances of this size and are  hence often, unfortunately, not applicable. On the other hand, simple methods, some of which were proposed decades ago and have been long abandoned since, or have never become popular at all, are experiencing a comeback &mdash; albeit in modern forms. At the same time, the rise and accessibility of general-purpose GPUs, hybrid clusters and related novel computing architectures, redefines the meaning of computation and complexity. Overall, the field of optimization is currently undergoing a paradigm shift, which this workshop aims to present.
+
+
+<h2>Workshop (May 24, 2012)</h2>
+
+Venue: Informatics Forum 4.31 (<a href="location.html">directions</a>)
+
+<table>
+<tr><td>09:30 </td> <td><h3>Welcome     </h3>  </td><td>  </td></tr>
+<tr><td>09:45 </td> <td><h3><a href="http://www.core.ucl.ac.be/~nesterov/"> Yurii Nesterov </a>      </h3>  </td><td> title </td></tr>
+<tr><td>11:00 </td><td><h3><a href="http://www.cmap.polytechnique.fr/~aspremon/">Alexandre D'Aspremont</a></h3>  </td><td> A stochastic smoothing algorithm for semidefinite programming</td></tr>
+<tr><td>11:45 </td><td><h3><a href="http://www.di.ens.fr/~mschmidt/">Mark Schmidt </a>   </h3>   </td>
+
+<td> Inexact Proximal-Gradient Methods and Linearly-Convergent Stochastic Gradient Methods </td></tr>
+<tr><td></td><td><h3><a href="http://www.maths.ed.ac.uk/~prichtar/">Peter Richtarik</a>      </h3>  </td><td>  Parallel Block Coordinate Descent Methods for Huge-Scale Partially Separable Problems </td></tr>
+<tr><td></td><td><h3><a href="http://www.maths.ed.ac.uk/~gondzio/">Jacek Gondzio</a>      </h3>  </td><td>   </td></tr>
+<tr><td></td><td><h3><a href="http://www.maths.ed.ac.uk/people/show?person=93">Coralia Cartis</a>      </h3>  </td><td>   </td></tr>
+</table>
+
+<br><br>
+
+<h2>Colloquium (May 25, 2012)</h2>
+
+On May 25, 2012, the programme continues with a colloquium in King's Buildings JCMB. Please see <a href="location.html">here</a> for directions.
+After a coffee and tea in 5th floor common room at 15:30, the lecture start in Lecture Theatre C at 16:10.
+Please be prompt or enter through the third floor entrance.
+
+<table>
+<tr><td>16:10</td> <td><h3><a href="http://www.core.ucl.ac.be/~nesterov/"> Yurii Nesterov </a>       </h3>  </td><td> title </td></tr>
+</table>
+
+Following the lecture, there will be a wine and cheese reception in the Costa Coffee area at 17:00.
+
+<h2>Yurii Nesterov</h2>
+
+<p>Yurii Nesterov is a professor at the Catholic University of Louvain in Belgium.
+His collaboration with Arkadi Nemirovski, resulting in the book <i>Interior-Point Polynomial Algorithms for Convex Programming</i>, has developed the theory of self-concordant functions to unify global complexity results obtained for convex optimization problems including linear, second-order cone and semi-definite programming.  Many scholars consider this book to be the single most important contribution to optimization theory in the past twenty years. More recently, Nesterov is also the author of the monograph <i>Introductory Lectures on Convex Optimization</i>, which develops state-of-the-art theory at a level appropriate for introductory graduate courses. In recent work he has obtained improved results on the global convergence of a regularized Newton's method for unconstrained optimization and established a theory of smoothing that allows for the applicability of optimal first-order methods to large-scale problems with nondifferentiable objectives.
+According to Google Scholar, the works of Prof. Nesterov have been cited more than 7,000 times.</p>
+
+<br>
+
+<p>Yurii Nesterov is the recipient of several awards and honors, including <i>George B. Dantzig Prize</i> (2000), the <i>John Von Neuman Theory Prize</i> (2009), and an invitation to
+address the <i>International Congress of Mathematicians</i> (2010). Dantzig Prize, awarded jointly by the Mathematical Programming Society and the Society for Industrial and Applied Mathematics, is awarded for original research, which by its originality, breadth and scope, is having a major impact on the field of mathematical programming, once every three years.  The John von Neuman Prize is awarded annually to a scholar who has made fundamental, sustained contributions to theory in operations research and the management sciences.</p>
+
+
+<h2>Registration</h2>
+
+There is no registration fee and both refreshments during the workshop and the reception following the colloquium will be provided free.
+We ask those wishing to attend to kindly fill in the <a href="registration.html">registration form</a>, though.
+
+<br><br>
+
+    </div>
+
+    <div id="sidebar">
+
+    <h2>Yurii Nesterov</h2>
+    <p><img src="imgs/YuriiNesterov.jpg" alt="A portrait of Yurii Nesterov by Peter Richtarik" /></p>
+
+<h2>Sponsors</h2>
+
+
+    <p><img src="imgs/NAIS.png" alt="NAIS" /></p>
+
+<br><br>
+
+    <p><img src="imgs/UoE.png" alt="UoE" /></p>
+
+<br><br>
+
+    <p><img src="imgs/epsrc.png" alt="EPSRC" /></p>
+
+<br><br>
+
+<ul>
+<li>     <a href="http://gow.epsrc.ac.uk/NGBOViewGrant.aspx?GrantRef=EP/I017127/1"> Mathematics for Vast Digital Resources </a>
+<li>	  <a href="http://www.nais.org.uk/">The Centre for Numerical Analysis and Intelligent Software (NAIS)</a>
+<li>	  <a href="http://www.maths.ed.ac.uk/">The University of Edinburgh School of Mathematics</span></a>
+<li>	  <a href="http://www.maths.ed.ac.uk/ERGO/">Edinburgh Research Group in Optimization (ERGO)</a>
+<!-- <li>	  <a href="http://ecos.maths.ed.ac.uk/">Edinburgh Compressed Sensing Group (ECOS)</a> -->
+<!-- <li>	  <a href="http://www.lfcs.inf.ed.ac.uk/research/complexity/">Edinburgh Algorithms and Complexity Group</a> -->
+</ul>
+
+
+
+
+
+    </div>
+
+    <div style="clear: both;"> </div>
+
+    </div>
+
+
+    <div id="footer">
+  <p>
+  The event is organised by <a href="http://www.maths.ed.ac.uk/~prichtar/">Peter Richtarik</a>.
+  The web site is maintained by <a href="http://www.maths.ed.ac.uk/~jmarecek/">Jakub Marecek</a>.
+
+  </p>
+</div>
+
+    </div>
+
+    </body>
+</html>
+

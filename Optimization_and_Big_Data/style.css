@@ -1,0 +1,263 @@
+*{margin:0; padding:0;}
+
+body {
+font-family: Verdana, Arial, "Trebuchet MS", Sans-Serif, Georgia, Courier, "Times New Roman", Serif;
+font-size: 14px; 
+background: #ffffff;
+color: #333; 
+margin:0; 
+padding:0;
+line-height: 135%;
+}
+
+a { color: #336699; text-decoration: none; }
+a:hover { text-decoration: none; color : #880000; }
+
+img { border:none; padding: 0; vertical-align:middle;} 
+img a {border:none; } 
+
+ul { list-style-type: none; }
+
+#page {
+	background: #fff;
+}
+
+.main{
+	width: 938px;
+	margin: 0 auto;
+
+}
+
+
+#header { 
+height: 90px;
+position: relative;
+}
+
+#header h1 {	
+padding-top: 20px;
+font-size: 24px;
+font-weight: 600;
+}
+#header h2{
+	font-weight: 100;	
+	margin-top: 10px;
+	font-size: 18px;
+}
+
+#header h3{
+	position: absolute;
+	right: 0;
+	top: 0;
+	background: #ccc;
+	font-weight: 100;
+	color: #fff;
+	padding: 15px;
+	border-radius:5px;
+	margin-top: 12px;
+	font-size: 14px;
+}
+#header h1 a {
+color: #336699; 
+}
+#header h1 a:hover {
+color: #111;
+}
+
+#menu h2 {
+text-align:right;
+color: #aaa;
+font-size: 13px;
+font-weight: 600;
+padding-right: 30px;
+}
+
+#publicLecture {
+text-align:center;
+margin-top: 12px;
+}
+
+#menu {
+background: #000;
+height: 30px;
+}
+
+#menu ul {
+list-style-type: none;
+margin: 0;
+padding-left: 30px;
+}
+#menu ul li {
+display: block;
+float: left;
+}
+#menu ul li a {
+display: block;
+padding: 0 5px 0 5px;
+text-decoration: none;
+color: #aaa;
+font-size: 13px;
+font-weight: 200;
+}
+#menu ul li a:hover {
+color: #fff;
+}
+
+#wrapper {
+background: url(imgs/shad.jpg) no-repeat top;
+}
+
+#content {
+float: left;
+width: 680px;
+margin: 20px 0;
+}
+
+#sidebar {
+float: right;
+width: 240px;
+margin: 20px 0;
+border-left: 1px solid #e2e2e2;
+}
+
+#footer {
+margin: 0 0;
+font-weight: 100;
+font-size: 12px;
+text-align: center;
+color: #666;	
+height: 200px;
+line-height: 50px;
+}
+#footer p { color: #aaa; }
+#footer a { color: #aaa; text-decoration: none; }
+#footer a:hover { text-decoration: underline; }
+
+
+#content h1 {
+color: #666;
+padding-top: 25px;
+padding-bottom: 10px;
+font-size: 20px;
+font-weight: 600;
+}
+
+#content h2 {
+font-weight: 100;
+font-size: 19px;
+margin: 16px 0px 16px 0px; padding: 0 0 0px; 
+color:rgb(247, 148, 29)	;
+}
+
+#content h3 {
+font-weight: 100;
+font-size: 14px;
+margin: 0px 0; padding: 3px 10px 3px 0px; 
+color: #666;
+}
+
+#content h4 {
+font-weight: 100;
+font-size: 12px;
+color: #666;
+padding-left: 0px;
+}
+
+#content img {
+margin: 0px;
+padding: 0 10px 10px 0;
+}
+
+#content ul {
+color: #555555;
+padding: 10px 10px;
+}
+#content ul li {
+list-style-type: none;
+}
+
+#sidebar ul {
+    list-style-type: none; 
+}
+
+#sidebar p {
+  padding: 0 20px 20px 20px;
+  text-align:justify;
+}
+
+#sidebar h2 {
+    height: 40px;
+    line-height: 40px;
+    margin: 0; padding: 0; 
+    text-align:center;
+
+font-weight: 100;
+font-size: 14px;
+margin: 0px 0; 
+color: #666;
+}
+
+#sidebar ul li {
+
+}
+
+#sidebar ul {
+padding: 10px 0 5px 20px;
+}
+
+#sidebar ul li {
+    padding: 2px 0 2px 22px;
+}
+#sidebar ul li a { font-size: 13px; }
+
+:required
+{
+    background-color: red;
+}
+
+
+
+
+
+.menu li{
+	display: inline-block;
+}
+
+.menu a.active{
+	border: 2px solid #e2e2e2;
+	border-bottom: 2px solid #fff;
+	margin-bottom: -2px;
+	color:rgb(247, 148, 29) ;	
+}
+
+.menu a:hover{
+	color: rgb(247,148,29);
+}
+.menu a{
+	color: rgb(51,51,51);
+	display: block;
+	padding: 6px 15px ;
+	height: 30px;
+	line-height: 30px;
+}
+.menu{
+	text-align: center;
+	border-bottom: 2px solid #e2e2e2;
+}
+
+.menu li,
+.menu {
+	padding: 0;		
+	margin: 0;
+	list-style: none;
+}
+
+.important{
+	color:rgb(247, 148, 29)	;
+}
+
+g_right{float: right;}
+g_left{	float: left;
+}
+g_clear{clear: both;
+}

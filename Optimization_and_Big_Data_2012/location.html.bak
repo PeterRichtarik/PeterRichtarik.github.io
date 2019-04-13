@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+        <head>
+        <meta charset="utf-8" />
+        <!--[if lt IE 9]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <link rel="stylesheet" href="style.css" />
+        <title>Advances in Large-Scale Optimisation</title>
+    </head>
+    <body>
+
+    <div id="page">
+
+        <header>
+    <h1>Advances in Large-Scale Optimisation</h1><br />
+    <h2>A Centre for Numerical Algorithms and Intelligent Software Workshop</h2><br />
+    </header>
+
+    <div id="menu">
+  <ul>
+
+  <li><a href="index.html">Home</a></li>
+  <li><a href="location.html">Location</a></li>
+  <li><a href="registration.html">Registration</a></li>
+  <li><a href="contact.html">Contact</a></li>
+  </ul>
+</div>
+
+    <div id="wrapper">
+
+    <div id="content">
+
+<h2>Edinburgh</h2>
+
+<!-- <img src="imgs/640px-Edinburgh_Overview_Salisbury_Crag.jpg"> -->
+
+<p>To quote <a href="http://en.wikipedia.org/wiki/Edinburgh">Wikipedia</a>: Edinburgh is the capital city of Scotland, [...] the Athens of the North. The Old Town and New Town districts of Edinburgh were listed as a UNESCO World Heritage Site in 1995. [...] Edinburgh attracts over 1 million overseas visitors a year, making it the second most visited tourist destination in the United Kingdom.</p>
+<br>
+<p><a href="http://en.wikipedia.org/wiki/Edinburgh_Airport" title="Edinburgh Airport">Edinburgh Airport</a> is Scotland's busiest airport and principal international gateway to the capital. [...] <a href="/wiki/Edinburgh_Waverley_railway_station" title="Edinburgh Waverley railway station">Edinburgh Waverley</a> is the primary railway station serving the city. Waverley serves as the terminus for trains arriving from <a href="/wiki/London_King%27s_Cross_railway_station" title="London King's Cross railway station">London King's Cross</a>.</p>
+
+<h2>Workshop Venue</h2>
+
+<p>The workshop will be held on May 24, 2012, in the Informatics Forum (IF) in the George Square campus of the University of Edinburgh, in Edinburgh's very center.
+After a welcome address in room 4.31 at 9:30, the first talk starts there at 9:45. </p>
+
+<br><br>
+
+<iframe width="450" height="250" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Informatics+Forum,+EH8&amp;aq=&amp;sll=55.944695,-3.187339&amp;sspn=0.006933,0.022724&amp;ie=UTF8&amp;hq=Informatics+Forum,&amp;hnear=EH8,+United+Kingdom&amp;t=m&amp;ll=55.944748,-3.187172&amp;spn=0.007964,0.062307&amp;output=embed"></iframe>
+
+<p>See also: <a href="http://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Informatics+Forum,+EH8&amp;aq=&amp;sll=55.944695,-3.187339&amp;sspn=0.006933,0.022724&amp;g=Informatics+Forum,+United+Kingdom&amp;ie=UTF8&amp;hq=Informatics+Forum,&amp;hnear=EH8,+United+Kingdom&amp;t=m&amp;ll=55.944748,-3.187172&amp;spn=0.007964,0.062307">Google Maps</a> or the <a href="http://www.ed.ac.uk/maps">Campus Map</a>.</p>
+
+
+<h2>Colloquium Venue</h2>
+
+<p>The Colloquium will be held in James Clerk Maxwell Building (JCMB) in the King's Buildings campus, in the southern part of Edinburgh.
+After a coffee and tea in 5th floor common room at 15:30, the lecture start in Lecture Theatre C at 16:10.
+Following the lecture, there will be a wine and cheese reception in the Costa Coffee area at 17:00.</p>
+
+<br><br>
+
+<iframe width="450" height="250" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=JCMB,+EH9+3JZ&amp;aq=&amp;sll=55.92187,-3.174&amp;sspn=0.000867,0.00284&amp;ie=UTF8&amp;hq=JCMB,&amp;hnear=Edinburgh+EH9+3JZ,+United+Kingdom&amp;t=m&amp;ll=55.921854,-3.174207&amp;spn=0.006295,0.006295&amp;output=embed"></iframe>
+
+<p>See also: <a href="http://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=JCMB,+EH9+3JZ&amp;aq=&amp;sll=55.92187,-3.174&amp;sspn=0.000867,0.00284&amp;ie=UTF8&amp;hq=JCMB,&amp;hnear=Edinburgh+EH9+3JZ,+United+Kingdom&amp;t=m&amp;ll=55.921854,-3.174207&amp;spn=0.006295,0.006295">Google Maps</a> or the
+<a href="http://www.ed.ac.uk/maps">Campus Map</a>.</p>
+
+<br><br>
+
+    </div>
+
+
+    <div id="sidebar">
+
+    <p><img src="imgs/Edi240.jpg" alt="A view from Salisbury Crags. Free to use image by W. Lloyd MacKenzie." /></p>
+
+    </div>
+
+
+    <div style="clear: both;"> </div>
+
+    </div>
+
+
+    <div id="footer">
+  <p>
+  The event is organised by <a href="http://www.maths.ed.ac.uk/~prichtar/">Peter Richtarik</a>.
+  The web site is maintained by <a href="http://www.maths.ed.ac.uk/~jmarecek/">Jakub Marecek</a>.
+
+  </p>
+</div>
+
+    </div>
+
+    </body>
+</html>
+

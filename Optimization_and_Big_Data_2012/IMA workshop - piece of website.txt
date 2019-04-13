@@ -1,0 +1,45 @@
+<p>
+  <em>Gradient methods have in the past 6 years dominated research activity
+on large scale optimization in application domains where it is modest
+dependence on problem dimension (scalability) and not accuracy of
+solution that is of primary concern. Old algorithms are being
+refurbished and new ones developed and analyzed for novel applications
+in data intensive domains such as machine learning, compressed
+sensing, truss topology design, eigenvalue optimization and stochastic
+programming. </em>
+<p><em>
+
+This minisymposium will bring together several leading and
+early-career researchers working on various aspects of gradient
+methods, including algorithm design and analysis, modelling and
+applications.</em></p>
+
+<p><strong>Speakers: </strong></p>
+
+<p>Raphael Hauser (Oxford University)<br>
+  <em>Sequential compressed sensing</em></p>
+  
+  <p>
+  Guillaume Obozinski (INRIA/ENS)<br>
+  <em>Algorithms for structured sparsity </em></p>
+  
+  <p>
+  Peter Richtarik (University of Edinburgh)<br>
+  <em>Parallel block coordinate descent methods for huge-scale partially
+  separable problems </em></p>
+
+ <p> 
+  Michel Baes (ETH Zurich)
+  <br>
+  <em>First-order methods for eigenvalue minimization </em></p>
+  
+ <p> Martin Takac (University of Edinburgh)
+ <br>
+  <em>Distributed block coordinate descent method with iteration complexity
+  guarantees </em></p>
+  
+  <p>Vinh Xuan Doan (Warwick)<br>
+    <em>A proximal point algorithm for sequential feature extraction applications </em></p>
+  
+<p>  Rachael Tappenden (University of Edinburgh)<br>
+  <em>Decomposition in stochastic programming via block coordinate descent </em></p>

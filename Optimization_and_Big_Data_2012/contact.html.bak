@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+        <head>
+        <meta charset="utf-8" />
+        <!--[if lt IE 9]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <link rel="stylesheet" href="style.css" />
+        <title>Advances in Large-Scale Optimisation</title>
+    </head>
+    <body>
+
+    <div id="page">
+
+        <header>
+    <h1>Advances in Large-Scale Optimisation</h1><br />
+    <h2>A Centre for Numerical Algorithms and Intelligent Software Workshop</h2><br />
+    </header>
+
+    <div id="menu">
+  <ul>
+
+  <li><a href="index.html">Home</a></li> 
+  <li><a href="location.html">Location</a></li>
+  <li><a href="registration.html">Registration</a></li> 
+  <li><a href="contact.html">Contact</a></li> 
+  </ul>
+</div>
+
+    <div id="wrapper">
+
+    <div id="content">
+
+<h2>Organisers:</h2>
+
+<p> The event is organised by:<br><br>
+Dr. Peter Richtarik<br>
+School of Mathematics & Maxwell Institute<br>
+6317 James Clerk Maxwell Building<br>
+The King's Buildings<br>
+University of Edinburgh<br>
+Edinburgh, EH9 3JZ<br>
+e-mail: first dot last at ed dot ac dot uk<br>
+phone: +44 (131) 650-5049</p>
+
+<br>
+
+<p> Please do not hesitate to contact Peter with any queries you may have, except for complaints about the website, which are best addressed to:</p>
+
+<br>
+
+<p> Dr. Jakub Marecek<br>
+e-mail: first dot last at ed dot ac dot uk<br>
+phone: +44 (131) 650-5044</p>
+
+<br><br>
+
+    </div>
+
+     <div id="sidebar"> 
+
+<h2>Sponsors</h2>
+<ul>
+<li>	  <a href="http://www.maths.ed.ac.uk/">The University of Edinburgh School of Mathematics</span></a>
+<li>	  <a href="http://www.nais.org.uk/">The Centre for Numerical Analysis and Intelligent Software (NAIS)</a>
+<li>	  <a href="http://www.maths.ed.ac.uk/ERGO/">Edinburgh Research Group in Optimization (ERGO)</a>
+<li>	  <a href="http://ecos.maths.ed.ac.uk/">Edinburgh Compressed Sensing Group (ECOS)</a>
+<li>	  <a href="http://www.lfcs.inf.ed.ac.uk/research/complexity/">Edinburgh Algorithms and Complexity Group</a>
+</ul>
+
+    </div>
+
+    <div style="clear: both;"> </div>
+
+    </div>
+
+
+    <div id="footer">
+  <p>
+  The event is organised by <a href="http://www.maths.ed.ac.uk/~prichtar/">Peter Richtarik</a>.
+  The web site is maintained by <a href="http://www.maths.ed.ac.uk/~jmarecek/">Jakub Marecek</a>.
+
+  </p>
+</div>
+
+    </div>
+
+    </body>
+</html>
+

@@ -1,0 +1,68 @@
+<h1>Confirmed Workshop Talks (May 1-2)</h1>
+<table width="670" border="1" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="148"><a href="http://www.maths.ed.ac.uk/~ofercoq/">Olivier Fercoq</a></td>
+    <td width="201">Edinburgh, UK</td>
+    <td width="313">Smooth minimization of nonsmooth functions by coordinate descent</td>
+  </tr>
+  <tr>
+    <td><a href="http://web.mit.edu/rfreund/www/">Robert Freund</a></td>
+    <td>MIT, USA</td>
+    <td>The Frank-Wolfe algorithm:  new results, connections to statistical boosting, and computation</td>
+  </tr>
+  <tr>
+    <td><a href="http://www.maths.ed.ac.uk/~gondzio/">Jacek Gondzio</a></td>
+    <td>Edinburgh, UK</td>
+    <td>Second order methods for L1-regularization</td>
+  </tr>
+  <tr>
+    <td><a href="http://www.harchaoui.eu/zaid/en/">Zaid Harchaoui</a></td>
+    <td>INRIA, France</td>
+    <td>Large-scale learning with conditional gradient algorithms</td>
+  </tr>
+  <tr>
+    <td><a href="http://personal.strath.ac.uk/d.j.higham/">Desmond Higham</a></td>
+    <td>Strathclyde, UK</td>
+    <td>Trick or Tweet?</td>
+  </tr>
+  <tr>
+    <td><a href="http://www.cmap.polytechnique.fr/~jaggi/">Martin Jaggi</a></td>
+    <td>Ecole Polytechnique, France</td>
+    <td>Frank-Wolfe optimization with applications to structured prediction</td>
+  </tr>
+  <tr>
+    <td><a href="http://ljk.imag.fr/membres/Anatoli.Iouditski/">Anatoli Juditsky</a></td>
+    <td>Joseph Fourier, France</td>
+    <td>Low iteration cost algorithms for large-scale nonsmooth learning problems</td>
+  </tr>
+  <tr>
+    <td><a href="http://imre.polik.net/">Imre Polik</a></td>
+    <td>SAS, USA</td>
+    <td>Big data LP/IPM for statistical applications</td>
+  </tr>
+  <tr>
+    <td><a href="http://www.maths.ed.ac.uk/~prichtar/">Peter Richtarik</a></td>
+    <td>Edinburgh, UK</td>
+    <td>Mini-batch primal and dual methods for support vector machines</td>
+  </tr>
+  <tr>
+    <td><a href="http://www.statslab.cam.ac.uk/~rjs57/">Richard Samworth</a></td>
+    <td>Cambridge, UK</td>
+    <td>Optimisation challenges in modern statistics</td>
+  </tr>
+  <tr>
+    <td><a href="http://www.cs.huji.ac.il/~shais/">Shai Shalev-Shwartz</a></td>
+    <td>Jerusalem, Israel</td>
+    <td>Stochastic dual coordinate ascent methods for regularized loss minimization</td>
+  </tr>
+  <tr>
+    <td><a href="http://mtakac.com">Martin Takac</a></td>
+    <td>Edinburgh, UK</td>
+    <td>Big images: important feature selection via sparse PCA</td>
+  </tr>
+  <tr>
+    <td><a href="http://pages.cs.wisc.edu/~swright/">Steve Wright</a></td>
+    <td>Wisconsin-Madison, USA</td>
+    <td>Randomized optimization algorithms for learning</td>
+  </tr>
+</table>

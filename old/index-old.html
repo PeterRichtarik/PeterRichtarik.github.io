@@ -1,0 +1,688 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>Peter
+Richtarik, Lecturer, optimization, mathematics, University of
+Edinburgh, big data optimization, large-scale convex optimization, gradient and
+first-order methods, sparse PCA, structural programming, optimization in relative
+scale, sparse optimization, c-optimality</title>
+
+<link href="mathcs.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-37355274-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</head>
+
+<body>
+
+<div style="width:860px; margin:0px auto;">
+
+<table style="width: 850px;" border="0" cellpadding="5">
+<tbody>
+
+<tr>
+  <td  colspan="3" valign="top" class="style1" style="width: 250px;"><br></td>
+  </tr>
+<tr>
+  <td style="width: 220px;" class="style1" height="202" valign="top">
+    <h1  align="left">Peter
+      Richtárik </h1>Assistant Professor<br />
+    <br />
+    <a href="http://www.maths.ed.ac.uk/">School of
+      Mathematics</a><br />
+    6317 JCMB<br />
+    The King's Buildings <br />
+    <a href="http://www.ed.ac.uk/home">University of
+      Edinburgh</a><br />
+    Edinburgh, EH9 3JZ <br />
+    <br />
+    <em>e-mail:</em> first.last at ed.ac.uk <br />
+    <em>phone:</em> +44 (131) 650-5049 </td>
+  <td class="style1" valign="top" width="420">
+    <br>
+    <br>
+    <br>
+    I am a member of&nbsp;the<br />
+    <br>
+    Edinburgh Research Group in Optimization <a href="http://www.maths.ed.ac.uk/ERGO/">(ERGO)</a><br />
+    Edinburgh Compressed Sensing Group <a href="http://ecos.maths.ed.ac.uk/">(E-CoS)</a><br />
+    Centre for Numerical Algorithms and Intelligent Software (<a href="http://www.nais.org.uk/">NAIS</a>)<br />
+    Algorithms and Complexity Group (<a href="http://www.lfcs.inf.ed.ac.uk/research/complexity/">A&amp;C</a>)
+    <br /></td>
+  <td class="style1" align="left" valign="top" ><img src="pr_edi2.jpg" alt="If anyone is wondering, I am just taking of watch from my wrist in the photo..." width="160" height="240" align="middle" /></td>
+</tr>
+
+<tr>
+<td height="4" colspan="3" valign="top" class="style1" style="width: 300px;" halign="center">
+
+<br>
+<a href="#a_news">News</a> |
+<a href="#a_education">Education</a> |
+<a href="#a_publications">Publications</a>|
+<a href="#a_software">Software</a> |
+<a href="#a_talks">Talks</a> |
+<a href="#a_team">Team</a> |
+<a href="#a_grants">Grants</a> |
+<a href="#a_teaching">Teaching</a> |
+<a href="#a_consulting">Consulting</a><br>
+
+
+
+<tr>
+<td height="4" colspan="3" valign="top" class="style1" style="width: 300px;" halign="center"><h2><a name="a_news" id="a_news"></a>News</h2>
+
+ 
+  <p>October 11, 2013. <span class="CERVENA">New short paper is out:</span> <a href="http://arxiv.org/abs/1310.3438">On optimal probabilities in stochastic coordinate descent methods.</a> Joint work with <a href="http://mtakac.com/index.php/">Martin Takáč</a>. We propose and analyze a new parallel coordinate descent method---<span class="CERVENA">`NSync</span>---in which at each iteration a random subset of coordinates is updated, in parallel, allowing for the subsets to be chosen <em>non-uniformly</em>. Surprisingly, the strategy of updating a single randomly selected coordinate per iteration---with <em>optimal probabilities</em>---may require less iterations, both in theory and practice, than the strategy of updating all coordinates at every iteration.
+<p>October 8, 2013. <a href="http://www.ph.ed.ac.uk/higgs/">Peter Higgs</a> won the Nobel Prize in Physics.
+<p>October 8, 2013. <span class="CERVENA">New paper announcement:</span> <a href="http://arxiv.org/abs/1310.2059">Distributed coordinate descent method for learning with big data</a>. Joint work with <a href="http://mtakac.com/index.php/">Martin Takáč</a><em>. </em>We propose and analyze <span class="CERVENA">Hydra</span>: the first memory-distributed coordinate descent method. This extends methods such as PCDM, Shotgun and mini-batch SDCA to big data computing. It is capable of solving terabyte optimization/learning problems on a cluster in minutes.
+ <p>October 7, 2013. My university nominated me for the <a href="http://research.microsoft.com/en-us/collaboration/awards/msrff.aspx">2014 Microsoft Research Faculty Fellowship</a>. Each university is only allowed to nominate a single person, and every year about 7 awards are made, worldwide.
+ Wish me luck...<p>September 22, 2013. <span class="CERVENA">New paper announcement:</span> <a href="http://arxiv.org/abs/1309.5885">Smooth minimization of nonsmooth functions with parallel coordinate descent methods</a>. This is joint work with <a href="http://www.maths.ed.ac.uk/~ofercoq/">Olivier Fercoq</a>. In this paper we show that parallel coordinate descent methods can be applied to a fairly general class of nonsmooth convex optimization problems and prove that the number of iterations decreases as  more processors are used. The class of functions includes, as special cases, L1 regularized L1 regression, L-infinity regression and the &quot;AdaBoost&quot; problem (minimization of the exponential loss).
+   The first 5 pages give a brief tutorial on coordinate descent and on the issues related to making the method parallel. 
+ <p>September  16, 2013. This week I am attending the first workshop of the Big Data program at the <a href="http://simons.berkeley.edu/">Simons Institute</a>: <a href="http://simons.berkeley.edu/workshops/schedule/75">Succinct Data Representations and Applications.</a> All talks are streamed online and also recorded. All talks today were great; I particularly enjoyed those by <a href="http://simons.berkeley.edu/talks/michael-mahoney-2013-09-16">Michael Mahoney</a>, <a href="http://simons.berkeley.edu/talks/michael-mahoney-2013-09-16">Petros Drineas</a> and <a href="http://simons.berkeley.edu/talks/ronitt-rubinfeld-2013-09-16">Ronitt Rubinfeld</a>.
+ <p>September 10, 2013. I am now at Google (Mountain View) to give a talk on various flavors of parallel coordinate descent. I have just met with Yoram Singer; the talk will start at 1pm after lunch (in case any local googlers are reading this). <em>Update:</em> My visit went well, there will be follow-up visits.<p>September 10, 2013. University of Edinburgh has ranked <a href="http://www.topuniversities.com/university-rankings/world-university-rankings/2013#sorting=rank+region=+country=+faculty=+stars=false+search=">17th in the 2013 QS World University Rankings</a>. I doubt we could have ranked higher even if the sole ranking factor was the number of UK-born faculty...<br />  
+ <p>September 7, 2013: This week (Sept 3-6) I participated in the <a href="http://simons.berkeley.edu/workshops/bigdata2013-boot-camp">Big Data Boot Camp</a>, the launching event of the <a href="http://simons.berkeley.edu/programs/bigdata2013">Theoretical Foundations of Big Data Analysis</a> program at the <a href="http://simons.berkeley.edu/">Simons Institute for the Theory of Computing</a>, Berkeley. Several colleagues blogged about it, including <a href="https://blogs.princeton.edu/imabandit/2013/09/02/first-week-of-activity-at-the-simons-institute/">Sebastian Bubeck</a>, <a href="http://mrtz.org/blog/what-should-a-theory-of-big-data-do/">Moritz Hardt</a>, <a href="http://mysliceofpizza.blogspot.com/2013/09/simons-big-data-boot-camp.html">Muthu Muthukrishnan</a> and Suresh Venkat (<a href="http://geomblog.blogspot.com/2013/08/on-theory-of-big-data.html">1</a>, <a href="http://geomblog.blogspot.com/2013/09/statistics-geometry-and-computer-science.html">2</a>, <a href="http://geomblog.blogspot.com/2013/09/more-camping-with-high-dimensional-boots.html">3</a>), so I can stop here. Next week is more relaxed for the big data folks (that is, time for research), although the <a href="http://simons.berkeley.edu/programs/realanalysis2013">Real Analysis in Computer Science</a> people here at Simons have their own boot camp then, with some very nice program. I plan to attend some of the lectures, for instance, <a href="http://simons.berkeley.edu/workshops/schedule/317">Analytical Methods for Supervised Learning</a>.
+ <p>August 30, 2013: <span class="CERVENA">New paper is out:</span> <a href="http://arxiv.org/abs/1308.6774">Separable approximations and decomposition methods for the augmented Lagrangian</a>, coathored with Rachael Tappenden and Burak Buke.
+   
+ <p>
+ August 20, 2013: As of today (and until the end of the year) I am on a sabbatical at UC Berkeley, affiliated with the Simons Institute for the Theory of Computing and participating in the <a href="http://simons.berkeley.edu/programs/bigdata2013">Theoretical Foundations of Big Data Analysis</a> program. 
+ <p>August 14, 2013: On September 10 I will give a talk at <a href="http://research.google.com/">Google</a> on an invitation by <a href="http://research.google.com/pubs/author28.html">Yoram Singer</a>.
+ <p>August 13, 2013: I have accepted an invitation to become a member of the <a href="http://www.epsrc.ac.uk/funding/peerrev/college/Pages/intro.aspx">EPSRC Peer Review College</a>. While I've been reviewing grant proposals for EPSRC for some time now, this apparently makes me eligible to be asked to sit on a prioritization panel. Earlier today I declined to review a <a href="http://www.epsrc.ac.uk/newsevents/news/2013/Pages/cdtoutlinecallresults.aspx">CDT full proposal</a> due to a conflict of interests (I am involved in two bids) - perhaps EPSRC wanted to test my honesty first and I passed the test...
+ <p>August 9, 2013: I have accepted an invitation to give a plenary talk at the 6th <a href="http://nips.cc/Conferences/2013/">NIPS</a> workshop on <em>Optimization for Machine Learning</em>. A link to the 2012 edition (which contains links to previous editions) is <a href="http://opt.kyb.tuebingen.mpg.de/index.html">here</a>. The workshop will be held during December 9-10, 2013, at Lake Tahoe, Nevada.
+ <p>August 7, 2013: <a href="http://www.maths.ed.ac.uk/people/show?person=317">Rachael Tappenden</a> will stay in Edinburgh longer after her current EPSRC funded appointment expires at the end of January 2014. She will continue as a member of the<a href="#a_team"> big data optimization lab</a> as a postdoc, her work will now be funded by <a href="http://www.nais.org.uk/Index.php">NAIS</a>.
+ <p>August 6, 2013: <a href="http://www.maths.ed.ac.uk/~jfowkes/publications.html">Jaroslav (Jari) Fowkes</a> will be joining the <a href="#a_team">big data optimization lab</a> as a <a href="http://www.nais.org.uk/Index.php">NAIS</a> postdoc, starting in October 2013. Jari has recently worked on Global Optimization of <a href="http://www.maths.ed.ac.uk/ERGO/pubs/ERGO-13-010.html">Lipschitz</a> and <a href="http://link.springer.com/article/10.1007%2Fs10898-012-9937-9">Hessian Lipschitz</a> functions. He has obtained his PhD in 2012 from Oxford, working under the supervision of <a href="http://www.maths.ox.ac.uk/people/profiles/nick.gould">Nick Gould</a>; and is now working with <a href="http://www.maths.ed.ac.uk/~ccartis/">Coralia Cartis</a>, who will soon leave Edinburgh for Oxford. [There seems to be a lot of movement between Edinburgh and Oxford...]
+ <p>August 6, 2013: Zheng Qu will be joining the <a href="#a_team">big data optimization lab</a> as a postdoc, starting in January 2014 (her appointment is for 2 years, funded by <a href="http://www.epsrc.ac.uk/Pages/default.aspx">EPSRC</a> and <a href="http://www.nais.org.uk/">NAIS</a>). Zheng is studying at École Polytechnique, France, under the supervision of Stéphane Gaubert. Zheng has written several papers, including <a href="http://arxiv.org/abs/1109.5241">Curse of dimensionality reduction in max-plus based   approximation  methods: theoretical estimates and improved pruning   algorithms</a>, <a href="http://arxiv.org/pdf/1307.4649.pdf">Markov operators on cones and non-commutative  consensus</a>, <a href="http://arxiv.org/abs/1206.0448">The contraction rate in Thompson metric of order-preserving flows on a  cone</a> and <a href="http://arxiv.org/abs/1302.5226">Dobrushin ergodicity coefficient for Markov operators on cones, and  beyond</a>. 
+ <p>August 5, 2013: I am told that <a href="http://www.cs.wisc.edu/users/swright">Steve Wright</a> has covered a few of my papers on coordinate descent and stochastic gradient descent in his <a href="http://eventos.fct.unl.pt/iccopt2013/pages/sparse-optimization-and-applications-information-processing">Summer Course</a> on 
+  <em>Sparse Optimization and Applications to Information Processing</em>, delivered
+  at <a href="http://eventos.fct.unl.pt/iccopt2013/">ICCOPT 2013 in Lisbon</a>.
+  One of the papers is not online yet (and has been 'on my desk' for quite some while now) - it will be put online in August or early September - apologies if you are looking for it and can't find it!
+<p>August 2, 2013: I am now back from the <a href="http://eventos.fct.unl.pt/iccopt2013/">ICCOPT conference</a>;  some very inspiring talks and some very blue skies. Nearly 500 participants, 412 session talks and 14 people from Edinburgh:  <a href="http://www.maths.ed.ac.uk/~ccartis/">Cartis</a>, <a href="http://www.maths.ed.ac.uk/~ofercoq/">Fercoq</a>,
+   <a href="http://www.maths.ed.ac.uk/~kfount/">Fountoulakis</a>, <a href="http://www.maths.ed.ac.uk/~jfowkes/publications.html">Fowkes</a>,
+   <a href="http://www.maths.ed.ac.uk/~gondzio/">Gondzio</a>,
+   <a href="http://www.maths.ed.ac.uk/people/show?person=195">Gonzalez-Brevis</a>,
+   <a href="http://www.maths.ed.ac.uk/people/show?person=330">Gower</a>,
+   <a href="http://www.maths.ed.ac.uk/~agr/">Grothey</a>,
+   <a href="http://www.maths.ed.ac.uk/hall/">Hall</a>,
+   <a href="http://www.maths.ed.ac.uk/people/show?person=223">Qiang</a>,
+  Richtárik,
+   <a href="http://mtakac.com/index.php/">Takáč</a>,
+   <a href="http://www.maths.ed.ac.uk/people/show?person=317">Tappenden</a>,
+   <a href="http://www.maths.ed.ac.uk/~yan/">Yan</a> (that's 3.4%)! ICCOPT 2016 will be held in Tokyo.
+<p>July 28, 2013:  Traveling to Caparica, Portugal, for the <a href="http://eventos.fct.unl.pt/iccopt2013">ICCOPT conference (July 27-August 1, 2013).</a> 
+<p>July 18, 2013:  <a href="http://www.nap.edu/catalog.php?record_id=18374">Frontiers in Massive Data Analysis</a> : a 119p report written by a National Academy of Sciences committee chaired by <a href="http://www.cs.berkeley.edu/~jordan/">Michael Jordan</a>. Mike asked me (and others attending <a href="http://simons.berkeley.edu/programs/bigdata2013">this</a>) to distribute this document around - it is a good read for a general reader - recommended. Free to download!
+ <p>July 3, 2013: My baggage arrived &amp; my talk is tomorrow - I am no longer forced to sport my new (lovely) Chinggis Khaan T-shirt during the talk. We had a nice conference dinner today, perhaps with one (read: 5+) too many toast speeches.
+ <p>June 29, 2013: Arrived. My baggage did not. I am told I may be lucky tomorrow.
+ <p>June 28, 2013: Off to Ulaanbaatar, Mongolia, to attend and give a talk at <a href="http://iom.num.edu.mn/iccso2013/index.html">this conference.</a> 
+ <p>June 26, 2013: Here is a bit of news from 2012 relevant for 2013; apparently I forgot to post this here. I will spend the Fall 2013 semester as a <span class="CERVENA">visiting</span> Professor at <span class="CERVENA">Berkeley</span>, participating in the <a href="http://simons.berkeley.edu/program_bigdata2013.html">Theoretical Foundations of Big Data Analysis</a> program run at the newly established <a href="http://simons.berkeley.edu/index.html">Simons Institute for the Theory of Computing.</a>
+ <p>June 25, 2013: Giving a talk at the <a href="http://numericalanalysisconference.org.uk/">25th Biennial Numerical Analysis Conference</a> in Strathclyde, Glasgow. Our group has organized a minisymposium on <em>Recent Advanced in Big Data Problems</em>; it will be held on the first day of the conference, June 25th. <em>Speakers:</em> Rachael Tappenden (Edinburgh), myself (Edinburgh), Olivier Fercoq (Edinburgh),  James Turner (Birmingham),   Ke Wei (Oxford), Martin Takáč   (Edinburgh).
+ <p>June 24, 2013: My PhD student <span class="CERVENA"><a href="http://www.mtakac.com/CV">Martin Takáč</a></span> was honoured with a <span class="CERVENA">Second Prize in the 16th Leslie Fox Prize Competition in Numerical Analysis</span>.  Here is his <a href="http://arxiv.org/abs/1212.0873">winning paper</a> and his <a href="http://prezi.com/lnpd5w-mdj43/big-data-optimization/">talk</a> (as one can expect, the slides make exponentially more sense with Martin's voice-over!). <em>The Leslie Fox Prize for Numerical Analysis of the Institute of   Mathematics and its Applications (IMA) is a biennial prize established   in 1985 by the IMA in honour of mathematician Leslie Fox (1918-1992).   The prize honours &quot;young numerical analysts worldwide&quot; (any person who   is less than 31 years old), and applicants submit papers for review. A   committee reviews the papers, invites shortlisted candidates to give   lectures at the Leslie Fox Prize meeting, and then awards First Prize   and Second Prizes based on &quot;mathematical and algorithmic brilliance in   tandem with presentational skills&quot;.</em>
+   
+ <p>June 24, 2013: Attending the <a href="http://icms.org.uk/workshops/fox2013#programme">Fox Prize meeting</a>. 
+<p>June 20, 2013: Interviewing postdoc candidates. 
+<p>June 14, 2013: A <a href="posters/Poster-Minibatch-ICML2013.pdf">new poster</a> to go with the <a href="http://jmlr.org/proceedings/papers/v28/takac13-supp.pdf">Mini-batch primal and dual methods for SVMs</a> (ICML 2013) paper.
+ <p>June 6, 2013: I am visiting (on invitation) the <a href="https://www.dstl.gov.uk/">Defence Science and Technology Lab</a> of the Ministry of Defence of the United Kingdom.
+ <p>June 4, 2013: <a href="http://www.maths.ed.ac.uk/~ofercoq/">Olivier Fercoq</a> won the<span class="CERVENA"> Best PhD Thesis Prize </span>[<a href="http://www.fondation-hadamard.fr/fr/prixthese">1</a>, <a href="http://www.fondation-hadamard.fr/pgmo/students/prixthese/reglement">2</a>] awarded by the <a href="http://www.fondation-hadamard.fr/en/PGMO">Gaspard Monge Program for Optimization and Operations Research</a><a href="http://www.fondation-hadamard.fr/fr">,</a> sponsored by <a href="http://www.roadef.org/content/index.htm">ROADEF</a> (French Operations Research Society) and <a href="http://www.fondation-hadamard.fr/fr">SMAI</a> (French Society for Industrial and Applied Mathematics). The prize recognizes two doctoral theses defended in France in 2012, in mathematics or computer science, with significant contributions to optimization and operations research, both from a theoretical and applied point of view. The Prize attracts a 1,000 EUR check. Olivier Fercoq wrote his thesis <em><a href="http://pastel.archives-ouvertes.fr/pastel-00743187">Optimization of Perron eigenvectors and applications: from web ranking to chronotherapeutics</a></em> under the supervision of Stéphane Gaubert and Marianne Akian (CMAP + INRIA). Prize citation (I do not dare to translate this from French): <em>Cette thèse constitue une &quot;contribution majeure dans le domaine de l'optimisation de fonctions d'utilité sur l'ensemble des matrices positives&quot; (selon l'un des rapporteurs). Elle présente à la fois un ensemble de résultats théoriques (propriétés, analyse de complexité,...) et des applications intéressantes.</em>
+ <p>June 2, 2013: Travelling to Brussels for a 3-day visit to the European Commission (June 3-5).
+ <p>May 27, 2013: Shortlisting of candidates for the <a href="https://www.vacancies.ed.ac.uk/pls/corehrrecruit/erq_jobspec_version_4.jobspec?p_id=013502">2y postdoc position</a> is under way; interviews will take place in the third week of June. I received more than 50 applications.
+ <p>May 14, 2013: <a href="http://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;cad=rja&amp;ved=0CDAQFjAA&amp;url=http%3A%2F%2Fwww.core.ucl.ac.be%2F~nesterov%2F&amp;ei=gY6SUfGGMMmN7Qbr7IHQDQ&amp;usg=AFQjCNHyLNCHVnC2cb8e0vXjkvfHox_g1w&amp;sig2=cwej73iuQ4pdu0dXARlaZA&amp;bvm=bv.46471029,d.ZGU">Yurii Nesterov</a> (CORE, Louvain) is visiting me and my <a href="#a_team">group</a> for a week. Tomorrow at 3:30pm in 6206 JCMB he will deliver a NAIS/ERGO talk titled <a href="http://www.maths.ed.ac.uk/ERGO/abstracts/2013-05-nesterov.html">Dual methods for minimizing functions with bounded variation</a>.
+<p>May 13, 2013: I am in London, giving a <a href="talks/Big_Data_Mining_London_2013.ppsx">talk</a> at <a href="http://www2.imperial.ac.uk/~gmontana/bigdatamining/schedule.html">Big Data Mining</a> (Imperial College) tomorrow. This promises to be a very nice event, with a few academia speakers (British Columbia, Edinburgh, Bristol, Cambridge, UCL, Columbia) and plenty of industry speakers (IBM, Financial Times, Barclays, Bloomberg News, SAP, Cloudera, Last.fm, Johnson Research Lab, QuBit and SAS).
+ <p>May 8, 2013: 'Fresh' news from last week. Two new posters (presented at the Optimization &amp; Big Data workshop): <a href="http://www.maths.ed.ac.uk/~prichtar/Optimization_and_Big_Data/posters/Tappenden.pdf">Inexact coordinate descent</a> (joint with Rachael Tappenden and Jacek Gondzio) + <a href="http://www.maths.ed.ac.uk/~prichtar/Optimization_and_Big_Data/posters/Takac.pdf">Distributed coordinate descent for big data optimization</a> (joint with Martin Takáč and Jakub Mareček).
+ <p>May 3, 2013: The Best Poster Prize (<a href="http://www.maths.ed.ac.uk/~prichtar/Optimization_and_Big_Data/">Optimization & Big Data workshop</a>)  goes to <a href="http://tuomov.iki.fi/">Tuomo Valkonen (Cambridge)</a>, for the poster <a href="http://www.maths.ed.ac.uk/~prichtar/Optimization_and_Big_Data/posters/Valkonen.pdf">Computational problems in magnetic resonance imaging</a>. Jury: Prof Stephen Wright (Wisconsin-Madison) and Dr Imre Pólik (SAS Institute).
+   
+ Steve's plenary/colloquium talk was amazing.<p>May 1, 2013: The <a href="http://www.maths.ed.ac.uk/~prichtar/Optimization_and_Big_Data/">Optimization &amp; Big Data</a> workshop has started! Today there were 3 talks about coordinate descent methods, a conditional gradient talk, an industry talk, an optimization in statistics talk and a mirror descent talk.
+ I gave a talk today, too.<p>April 25, 2013: Dr Michael Grant, the co-creator of the CVX matlab package for Disciplined Convex Programming, has accepted my invitation to give a talk about CVX and the fun behind it. He will speak on Monday April 29 at 4:45pm in 6206 JCMB: <em><a href="http://www.maths.ed.ac.uk/ERGO/abstracts/2013-04-grant.html">Disciplined convex programming and CVX (and thoughts on academically valuable software)</a></em>. 
+ <p>April 22, 2013: Our School (The School of Mathematics) has today opened the Michael and Lily Atiyah Portrait Gallery (3rd floor of the James Clerk Maxwell Building). Here is a <a href="http://www.maths.ed.ac.uk/~aar/atiyahpg.pdf">pdf file</a> with the portraits and some very interesting comments! 
+<p> April 19, 2013: Fresh from the bakery,  <a href="http://arxiv.org/abs/1304.5530">Inexact coordinate descent: complexity and preconditioning</a> is a new paper, coauthored with Jacek Gondzio and Rachael Tappenden. <em>Brief blurb:</em> We prove complexity bounds for a randomized block coordinate descet method in which the proximal step defining an iteration is performed inexactly. This is often useful in the case when blocks contain more than a single variable - we illustrate this on the example of minimizing a quadratic function with explicit block structure.
+<p>April 19, 2013: I am attending the <a href="http://bigdata.holyrood.com/">Big Data in the Public Sector</a> workshop held at Dynamic Earth, Edinburgh.
+ <p> April 16, 2013: The paper <a href="http://arxiv.org/abs/1303.2314">Mini-batch primal and dual methods for SVMs</a> was accepted to the Proceedings of the <a href="http://icml.cc/2013/">30th International Conference on Machine Learning (ICML 2013)</a>.
+ <p> April 14, 2013: New paper out: <a href="topspin2013.pdf">TOP-SPIN: TOPic discovery via Sparse Principal component INterference</a>, coauthored by Martin Takáč, Selin Damla Ahipasaoglu and Ngai-Man Cheung. <em>Blurb:</em> We propose an unsupervised computer vision method, based on sparse PCA, for discovering topics in a database of images. Our approach is scalable and three or more orders of magnitude faster than a competing method for object recognition. It gives nearly 90% prediction accuracy on a benchmark Berkeley image database.
+ <p> April 5, 2013: I've accepted an offer to become a Field Chief Editor of a new <em>open-access</em> journal: <a href="http://www.iapress.org/index.php/soic/index">Statistics, Optimization and Information Computing</a>. The journal aims to publish interdisciplinary work at the interface of statistics, optimization and information sciences and will appear in four issues annualy.
+ <p>April 3, 2013: Several <span class="CERVENA">Chancellor's Fellowships (5-year tenure-track positions)</span> are available in the School of Mathematics. <a href="https://www.vacancies.ed.ac.uk/pls/corehrrecruit/erq_jobspec_version_4.display_form">Application</a> deadline: April 18th, 2013. <em>We welcome candidates in any area of Operational Research but in particular those
+specializing for example in nonlinear programming, mixed integer programming,
+stochastic optimization and candidates interested in applying optimization
+to modelling and solving real-life problems. </em>
+ <p>March 20, 2013: During March 19-21 I am in Paris, giving <a href="TALK-2013-03-20-Paris.pdf">a talk</a> today at <a href="http://www.ihes.fr/jsp/site/Portal.jsp?document_id=3270&amp;portlet_id=14">Fête Parisienne in Computation, Inference and Optimization</a>.  
+ <p> March 18, 2013: My EPSRC &quot;First Grant&quot; proposal <em>Accelerated Coordinate Descent Methods for Big Data Problems</em> was approved. I will be advertising a 2 year postdoc position soon (most probably starting sometime between June 1st 2013 and September 1st 2013).
+ 
+ It is likely the postdoc will be able to spend a few weeks at UC Berkeley in the period September-December 2013, participating in the <a href="http://simons.berkeley.edu/program_bigdata2013.html">Foundations of Big Data Analysis</a> programme at the <a href="http://simons.berkeley.edu/">Simons Institute for the Theory of Computing.</a>
+ <p> March 18, 2013: Jakub Konečný has been awarded the <a href="http://www.ed.ac.uk/schools-departments/student-funding/postgraduate/uk-eu/university-scholarships/development">Principal's Career Development Scholarship</a>
+ and will be joining the group as a PhD student starting in August 2013. He will spend his first semester at University of California Berkeley as a visiting student affiliated with the newly established <a href="http://simons.berkeley.edu/">Simons Institute for the Theory of Computing</a> and will participate in the <a href="http://simons.berkeley.edu/program_bigdata2013.html">Theoretical Foundations of Big Data Analysis</a> programme.
+ <em>Short bio:</em> Jakub studied mathematics at Comenius University, Slovakia. In the past he represented his country in the International Mathematical Olympiad. Most recently, together with another student teammate, Jakub won 2nd place at the <a href="http://gesture.chalearn.org/dissemination/icpr2012">ChaLearn Gesture Challenge Competition</a> - an international contest in designing a one-shot video gesture recognition system. Here is a brief <a href="http://techcrunch.com/2011/12/07/chalearn-challenges-you-to-teach-a-kinect-instant-gesture-recognition/">news story</a>.
+ Jakub was invited to present the results at the <a href="http://www.icpr2012.org/">21st International Conference on Pattern Recognition</a> in Tsukuba, Japan, and was invited to submit a paper describing the system to a special issue of the Journal of Machine Learning Research.<p> March 14, 2013: Poster announcement. <a href="http://on-demand.gputechconf.com/gtc/2013/poster/pdf/P0183_ChristosDelivorias.pdf">GPU acceleration of financial models</a>. <a href="http://www.gputechconf.com/page/home.html">GPU Technology Conference</a>, San Jose, California. Joint with Christos Delivorias, 
+ 
+ Erick Vynckier and Martin Takáč. Based on 2012 MSc thesis <a href="http://www.hpcfinance.eu/sites/www.hpcfinance.eu/files/Christos_Delivorias_0.pdf">Case studies in acceleration of
+Heston's stochastic volatility
+financial engineering model:
+GPU, cloud and FPGA implementations</a> of Christos Delivorias at the School of Mathematics, University of Edinburgh.
+ <p> March 12, 2013: New paper announcement: <a href="http://arxiv.org/abs/1303.2314">Mini-batch primal and dual methods for SVMs</a>, coauthored with <span class="style1" style="width: 300px;">Martin Takáč, Avleen Bijral and Nathan Srebro</span>. <em>Brief blurb:</em> We parallelize Pegasos (stochastic subgradient descent) and SDCA (stochastic dual coordinate ascent) for support vector machines and prove that the theoretical parallelization speedup factor of both methods is the same, and depends on the spectral norm of the data. The SDCA approach is primal-dual in nature, our guarantees are given in terms of the original hinge loss formulation of SVMs.<p> March 6, 2013: Today I gave a  <a href="TALK-2013-02-SIAM-Conference.ppsx">talk</a> at the Annual meeting of the <a href="http://www.edsiamchapter.co.uk/esscc2013_program">Edinburgh SIAM Student Chapter</a>.
+ 
+ <p> March 5, 2013: Martin Takáč has become a finalist in the <a href="http://www.numerical.rl.ac.uk/fox/">16th IMA Leslie Fox Prize competition</a>. <em>The Leslie Fox Prize for Numerical Analysis of the Institute of   Mathematics and its Applications (IMA) is a biennial prize established   in 1985 by the IMA in honour of mathematician Leslie Fox (1918-1992).   The prize honours &quot;young numerical analysts worldwide&quot; (any person who   is less than 31 years old), and applicants submit papers for review. A   committee reviews the papers, invites shortlisted candidates to give   lectures at the Leslie Fox Prize meeting, and then awards First Prize   and Second Prizes based on &quot;mathematical and algorithmic brilliance in   tandem with presentational skills&quot;.</em> The prize meeting will be held on June 24, 2013 at <a href="http://www.icms.org.uk/">ICMS</a>.
+ 
+<p> March 5, 2013: I am attending <a href="http://icms.org.uk/workshops/ergoenergy">Optimization in Energy Day</a>, International Centre for Mathematical Sciences, Edinburgh.
+  
+<p> February 26, 2013: Today I am attending (and giving a <a href="TALK-2013-02-Big-Data-and-Social-Media.ppsx">talk</a> at) <a href="http://www.icms.org.uk/workshops/bigdata#programme">Big Data and Social Media</a>, a workshop organized by Des Higham at Strathclyde university.
+<p>February 21, 2013: I am giving a "Research Recap" <a href="ILW.ppsx">talk</a> during the Innovative Learning Week at the University of Edinburgh.<p> February 4-6, 2013: Visiting <a href="http://www.uclouvain.be/">Université Catholique de Louvain</a>, Belgium, and giving a talk at the <a href="http://www.uclouvain.be/en-44416.html">CORE mathematical programming seminar</a>.<p> January 30, 2013: Giving a <a href="TALK-2013-01-ERGO.pdf">talk</a> at the <a href="http://www.maths.ed.ac.uk/ERGO/abstracts/2013-01-richtarik.html">ERGO research seminar.</a>
+<p> January 6-11, 2013: I am speaking at <a href="http://lear.inrialpes.fr/workshop/osl2013/index.html">Optimization
+ 
+ and Statistical Learning</a>; a workshop in Les Houches, France, on the slopes of Mont Blanc.
+  <p> December 17, 2012: New paper is out: <a href="24AM.pdf">Alternating maximization: unifying framework for 8 sparse PCA formulations and efficient parallel codes</a>, joint
+ work with Martin Takáč and Selin Damla Ahipasaoglu. 
+ 
+<p>December 16, 2012:  I am organizing <span class="CERVENA"><a href="http://www.maths.ed.ac.uk/~prichtar/Optimization_and_Big_Data/">Optimization and Big Data</a></span> (workshop, trek and colloquium; <a href="http://www.maths.ed.ac.uk/~prichtar/Advances_in_Large_Scale_Optimization/index.html">a sequel to this 2012 event</a>). 
+    This event will be held in Edinburgh during May 1-3, 2013. Headline speaker: Steve Wright (Wisconsin-Madison). More info and website later.
+  
+  <p>December 11, 2012: I am giving a talk at the <a href="http://www.strath.ac.uk/mathstat/seminars/">Numerical Analysis seminar</a>, University of Strathclyde. 
+ <p> December 10, 2012: New paper is out: 
+ 
+   <a href="http://arxiv.org/abs/1212.2617">Optimal diagnostic tests for sporadic Creutzfeldt-Jakob disease based on SVM classification of RT-QuIC data</a>, joint work with William Hulme, Lynne McGuire and Alison Green. In brief, we come up with optimal tests for detecting the sporadic Creutzfeldt-Jakob disease.
+ <p> December 7, 2012: <a href="https://www.vacancies.ed.ac.uk/pls/corehrrecruit/erq_jobspec_version_4.jobspec?p_id=007223">Five 3-year Whittaker Postdoctoral Fellowships in the School of Mathematics.</a> If you are an exceptional candidate and are interested in working with me, send me an email.
+ 
+ Closing date for applications: January 22, 2013. Starting date: no later than Sept 1, 2013.
+ <p> December 4, 2012: Our group has an opening: <a href="http://www.maths.ed.ac.uk/news/2012/lectureship-id-007224">Visiting Assistant Professor position (=2.5 year Lectureship).</a> Closing date of applications: January 22, 2013.
+ 
+ <p>November 23, 2012: New paper is out: <a href="pcdm.pdf">Parallel coordinate descent methods for big data optimization</a>, joint work with Martin Takáč.
+   Brief info: We propose and analyze a rich family of randomized parallel block coordinate descent methods and show that parallelization leads to acceleration on partially separable problems, which naturally occur in many big data application. We give simple expressions for the speedup factors. We have tested one of our methods on a huge-scale LASSO instance with 1 billion variables; while a serial coordinate descent method needs 41 hours to converge, when 24 processors are used, the parallel method needs just 2 hours.
+ Download the code <a href="http://code.google.com/p/ac-dc/downloads/list">here.</a>
+ <p> November 15-December 23, 2012: Martin Takáč is on a research visit to <a href="http://www.sutd.edu.sg/">SUTD (Singapore University of Technology and Design)</a>.
+ 
+ <p> October 26, 2012: I am giving a short talk, representing the School of Mathematics, at a miniworkshop organized around the visit of <a href="http://research.microsoft.com/en-us/people/semmott/">Stephen Emmott</a> (Head of Computational Science @ Microsoft Research) to Edinburgh. The slides do not make much sense without the voice-over, but <a href="Extreme_Mountain_Climbing.pps">here they are</a> anyway.
+ 
+ 
+ <p> October 21-November 11, 2012: Martin Takáč is on a research visit to TTI Chicago.
+ 
+ <p> October 11-17, 2012: I am at the <a href="http://meetings2.informs.org/phoenix2012/">INFORMS Annual Meeting</a> in Phoenix, Arizona.
+ 
+ <p> October 3, 2012: <a href="http://www.mtakac.com/CV">Martin Takáč</a>
+ was successful in the <a href="http://www.informs.org/Community/ICS/Prizes/Student-Paper-Award">INFORMS Computing Society Student Paper Award Competition</a>. As the sole runner-up,  he won the 2nd prize with the paper <a href="http://www.optimization-online.org/DB_HTML/2011/07/3089.html"><em>Iteration Complexity of Randomized Block-Coordinate Descent Methods for Minimizing a Composite Function</em></a>, coauthored with myself. <a href="http://www.informs.org/About-INFORMS">INFORMS</a> (Institute for Operations Research and the Management Sciences) is the largest professional society in the world for professionals in   the field of operations research, management science, and   business analytics.
+ 
+<p> October 1, 2012: <a href="http://www.cmapx.polytechnique.fr/~fercoq/index.en.html">Olivier Fercoq</a>  joined the group as a Postdoctoral Researcher. He will be working on the <em>Mathematics for Vast Digital Resources</em> project funded by EPSRC. Dr Fercoq obtained his PhD in September 2012 from CMAP, École Polytechnique, France, under the supervision of Stéphane Gaubert. His PhD dissertation: <em>Optimization of Perron eigenvectors and applications: from web ranking to chronotherapeutics.</em>
+
+<p> September 2012: I am now a <a href="http://www.nais.org.uk/People-Lecturers.php">NAIS Lecturer</a>; i.e., I am more closely affiliated with the Centre for Numerical Algorithms and Intelligent Software (I was a NAIS member before).
+
+<p>September 2012: Minnan Luo (Tsinghua University) joined the group as a visiting PhD  student - she will stay for 6 months. Minnan is the recipient of the 2012 Google China Anita Borg Scholarship.
+ 
+  <p>September 9-12, 2012: I am in Birmingham at the <a href="http://www.ima.org.uk/conferences/conferences_calendar/numerical_linear_algebra_and_optimisation.cfm">3rd IMA Conference on Numerical Linear Algebra and Optimization</a>. Edinburgh has 10 people in attendance + a few alumni.</p>
+ 
+ <p>August 2012: 16 members of <a href="http://www.maths.ed.ac.uk/ERGO/">ERGO</a> are attending <a href="http://ismp2012.org/">ISMP Berlin</a>!</p>
+ 
+ <p>July 2012: I am 
+organizing (with F. Glineur) the <a href="http://eventos.fct.unl.pt/iccopt2013">ICCOPT (July 29 - Aug 1, 2013, Lisbon, Portugal)</a> cluster <em>&quot;Convex and Nonsmooth Optimization&quot;</em>. If you want to give a talk in a session in the cluster and/or organize a session yourself, please let me know.
+ <p> 
+July 2012: Some of my work was covered by Steve Wright in a <a href="http://www.ipam.ucla.edu/programs/gss2012/">Graduate Summer School on 'Deep Learning' at IPAM/UCLA</a>; see <a href="https://www.ipam.ucla.edu/publications/gss2012/gss2012_10763.pdf">slides 65-67 here (analysis of Hogwild!)</a> and <a href="https://www.ipam.ucla.edu/publications/gss2012/gss2012_10766.pdf">slides 95-102 here (coordinate descent)</a>.</p>
+
+<p> June 16-23, 2012: I am visiting the Wisconsin Institutes for Discovery, University of Wisconsin-Madison.
+
+<p>May 2012: <a href="http://www.mtakac.com/CV">Martin Takáč</a> won the <a href="http://www.siam.org/pdf/news/1998.pdf">Best Talk Prize</a> at the <a href="http://www.maths.manchester.ac.uk/~siam/snscc12">SIAM National Student Chapter conference</a> in Manchester.</p>
+
+</td>
+</tr>
+
+
+<tr>
+  <td height="4" colspan="3" valign="top" class="style1" style="width: 300px;" halign="center"><h2><a name="a_education" id="a_education"></a>Education &amp; Past Appointments </h2>
+Postdoctoral&nbsp;Fellow,
+CORE, Louvain-la-Neuve,
+Belgium, 2007–2009, host: <a  href="http://www.core.ucl.ac.be/%7Enesterov/">Yurii Nesterov</a><br />
+PhD, Operations Research, Cornell University, 2002–2007, advisor: <a href="http://www.orie.cornell.edu/orie/people/faculty/profile.cfm?netid=mjt7">Mike
+Todd</a> <br />
+MS, Operations Research, Cornell University, 2006<br />
+Mgr, Mathematics, Comenius University, Faculty of Mathematics, Physics
+and Informatics, 2001 (Summa Cum Laude)<br />
+Bc, Management, Comenius University, Faculty of Management, 2000 (Summa Cum Laude)<br />
+Bc, Mathematics, Comenius University, Faculty of Mathematics, Physics
+and Informatics, 2000 (Summa Cum Laude)</td>
+</tr>
+
+
+
+
+
+
+<tr>
+  <td height="4" colspan="3" valign="top" class="style1" style="width: 300px;" halign="center"><h2><a name="a_publications" id="a_publications"></a>Publications &amp; Preprints </h2>
+  
+  
+
+
+<p><span class="style1" style="width: 300px;"><strong>On optimal probabilities in stochastic coordinate descent methods</strong> (code: `NSync)<br />
+Peter Richtárik and Martin Takáč<br />
+<span class="style1" style="width: 300px;">[<a href="http://arxiv.org/abs/1310.3438">arXiv</a>] [Optimization Online] [<a href="papers/NSync.pdf">local copy</a>]</span><br />
+<em>submitted for publication, October 2013</em></span></p>
+<p><span class="style1" style="width: 300px;"><strong>Distributed  coordinate descent method for learning with big data</strong> (code: Hydra)<br />
+  Peter Richtárik and Martin Takáč<br />
+  <span class="style1" style="width: 300px;">[<a href="http://arxiv.org/abs/1310.2059">arXiv</a>] [Optimization Online] [<a href="papers/Hydra.pdf">local copy</a>]</span><br />
+  <em>submitted for publication, October 2013</em></span></p>
+
+<p><span class="style1" style="width: 300px;"><strong>Smooth minimization of nonsmooth functions with parallel coordinate descent methods</strong> (code: SPCDM)<br />
+  Olivier Fercoq and Peter Richtárik<br />
+  <span class="style1" style="width: 300px;">[<a href="http://arxiv.org/abs/1309.5885">arXiv</a>] [<a href="http://www.optimization-online.org/DB_HTML/2013/09/4052.html">Optimization Online</a>] [<a href="papers/spcdm.pdf">local copy</a>]</span><br />
+  <em>submitted for publication, September 2013</em></span></p>
+
+
+<strong>Separable approximations and decomposition methods for the augmented Lagrangian</strong><br />
+Rachael Tappenden, Peter Richtárik and Burak Buke<br />
+<span class="style1" style="width: 300px;">[<a href="http://arxiv.org/abs/1308.6774">arXiv</a>] [<a href="http://www.optimization-online.org/DB_HTML/2013/08/4018.html">Optimization Online</a>] [<a href="papers/dqa.pdf">local copy</a>]</span><br />
+<em>submitted for publication, August 2013</em></span></p>
+
+
+ <p><strong>Inexact coordinate descent: complexity and preconditioning</strong><br />
+Rachael Tappenden, Peter Richtárik and Jacek Gondzio<br />
+<span class="style1" style="width: 300px;">[<a href="http://arxiv.org/abs/1304.5530">arXiv</a>] [<a href="http://www.optimization-online.org/DB_HTML/2013/08/4019.html">Optimization Online</a>] [<a href="papers/icd.pdf">local copy</a>]</span> [<a href="http://www.maths.ed.ac.uk/~prichtar/Optimization_and_Big_Data/posters/Tappenden.pdf">poster</a>]<br />
+<em>submitted for publication, April 2013</em></span></p>
+  
+    <p><span class="style1" style="width: 300px;"><b> TOP-SPIN: TOPic discovery via Sparse Principal component INterference</b><br />
+Martin Takáč, Selin Damla Ahipasaoglu, Ngai-Man Cheung and Peter Richtárik<br />
+<em>submitted for publication, April 2013</em></span></p>
+  
+  <p><span class="style1" style="width: 300px;"><b> Mini-batch primal and dual methods for SVMs </b><br />
+Martin Takáč, Avleen Bijral, Peter Richtárik and Nathan Srebro<br />
+<span class="style1" style="width: 300px;">[<a href="http://arxiv.org/abs/1303.2314">arXiv - March 2013 version</a>]</span>  [<a href="Optimization_and_Big_Data/slides/Richtarik.pdf">slides</a>] [<a href="posters/Poster-Minibatch-ICML2013.pdf">poster</a>]<br />
+ <a href="http://jmlr.org/proceedings/papers/v28/takac13-supp.pdf"><em>ICML 2013 (30th International Conference on Machine Learning)</em></a></span> </p>
+  
+   <p><span class="style1" style="width: 300px;"><b> Alternating maximization: unifying framework for 8 sparse PCA formulations and efficient parallel codes </b>(code: 24am)<br />
+Peter Richtárik, Martin Takáč and Selin Damla Ahipasaoglu<br />
+<span class="style1" style="width: 300px;">[<a href="http://arxiv.org/abs/1212.4137">arXiv</a>]</span>  [<a href="https://code.google.com/p/24am/"><strong>24am</strong>: code download</a>]<br />
+<em>submitted for publication, December 2012</em></span></p>
+  
+ <p><span class="style1" style="width: 300px;"><b>Optimal diagnostic tests for sporadic Creutzfeldt-Jakob disease based on SVM classification of RT-QuIC data</b><br />
+William Hulme, Peter Richtárik, Lynne McGuire and Alison Green<br />
+<span class="style1" style="width: 300px;">[<a href="http://arxiv.org/abs/1212.2617">arXiv</a>]</span> <br />
+<em>submitted for publication, December 2012</em></span></p>
+  
+    <p><span class="style1" style="width: 300px;"><b>Parallel coordinate descent methods for big data optimization</b> (code: PCDM)<br />
+Peter Richtárik and Martin Takáč<br />
+<span class="style1" style="width: 300px;">[<a href="http://arxiv.org/abs/1212.0873">arXiv</a>]</span> [<a href="http://www.optimization-online.org/DB_HTML/2012/11/3688.html">Optimization
+Online</a>] [<a href="2012-TALK-Phoenix.pdf">slides</a>] [<a href="http://code.google.com/p/ac-dc/downloads/list"><strong>AC-DC</strong>: code download</a>]<br />
+<em>submitted for publication, November 2012</em></span>
+<br>
+<span class="CERVENA">>16th IMA Leslie Fox Prize (2nd Prize), 2013</span></p>
+    
+    <p><b>Efficient serial and parallel coordinate descent methods
+      for huge-scale truss topology design</b><br />
+      Peter Richtárik and Martin Takáč<br />
+       [<a href="http://www.optimization-online.org/DB_HTML/2011/08/3118.html">Optimization
+        Online</a>] [<a href="ttd2011.pdf">local copy</a>] [<a href="ttd2011_poster.pdf">poster</a>]<br />
+      <a href="http://www.springerlink.com/content/w6577218q5007373/"><span style="font-style: italic;">Operations Research
+        Proceedings <strong>2011</strong>, pp. 27-32, Springer-Verlag 2012</span></a><br />
+      <class ="style1"></class>
+      
+      
+      
+      <p><b>Iteration complexity of
+          randomized block-coordinate descent methods for minimizing a composite
+          function</b> <br />
+      Peter Richtárik and Martin Takáč<br />
+      [<a href="http://arxiv.org/abs/1107.2848">arXiv</a>] <class ="style1">[<a href="http://www.optimization-online.org/DB_HTML/2011/07/3089.html">Optimization
+        Online</a>] [<a href="Talk-FOCM2011">FoCM Budapest slides</a>]<br/><a href="http://link.springer.com/article/10.1007/s10107-012-0614-z#"><em>Mathematical Programming, Series A, 38 pages, 2012</em></a>
+        <br>
+        <span class="CERVENA">&gt;Best Student Paper (runner-up), INFORMS Computing Society, 2012</span></p>
+        
+        
+     <p><b>Efficiency
+          of randomized coordinate descent methods on minimization problems with
+          a composite objective function<br />
+          </b>Peter Richtárik and Martin Takáč<br />
+      [<a href="SPARS11-rcdc.pdf">extended abstract</a>]<br />
+      <span style="font-style: italic;"><a href="http://ecos.maths.ed.ac.uk/SPARS11/spars11.pdf">Proceedings
+        of SPARS11</a> (4th Workshop on Signal Processing with Adaptive
+        Sparse Structured Representations, June 27-30, 2011)</span><br />
+        
+      <b><br />
+        Finding sparse approximations to extreme eigenvectors: generalized
+        power method for sparse PCA and extensions</b><br />
+      Peter Richtárik<br />
+      <class ="style1">[<a href="SPARS11-sparse.eigen.pdf">extended abstract</a>]<br />
+        </class><span style="font-style: italic;"><a href="http://ecos.maths.ed.ac.uk/SPARS11/spars11.pdf">Proceedings
+          of SPARS11</a> (4th Workshop on Signal Processing with Adaptive
+          Sparse Structured Representations, June 27-30, 2011)</span><br />
+      <class ="style1"><br />
+        <b>Approximate level method for nonsmooth convex
+          minimization</b><br />
+        Peter Richtárik <br />
+        [<a href="coredp2008_83x.pdf">CORE DP</a>] [<a href="http://www.optimization-online.org/DB_HTML/2009/01/2183.html">Optimization
+          Online</a>] [<span style="text-decoration: underline;"></span><a href="Approx_Level_JOTA4.pdf">local copy (revised July 2011)</a>]<br />
+        <a style="font-style: italic;" href="https://springerlink3.metapress.com/content/k133309554u1qu84/resource-secured/?target=fulltext.pdf&amp;sid=aizpkkdpj0533oeywgaafldk&amp;sh=www.springerlink.com">Journal
+          of Optimization Theory
+          and Applications <span style="font-weight: bold;">152</span>(2),
+          pp. 334–350, 2012</a></class><font style="font-style: italic;" face="Gautami"><span xml:lang="en-GB" lang="en-GB"></span></font></p>    
+          
+          
+          <class ="style1">
+             <b>Generalized power method for sparse principal component
+analysis </b> <br />
+Michel Journée, Yurii Nesterov, Peter Richtárik and Rodolphe Sepulchre <br />
+[<a href="coredp2008_70.pdf">CORE DP</a>] [<a href="http://arxiv.org/PS_cache/arxiv/pdf/0811/0811.4724v1.pdf">arXiv</a>]
+[<a href="http://www.optimization-online.org/DB_HTML/2008/11/2156.html">Optimization
+Online</a>] [<a href="Talk-VOCAL2008.pdf">slides</a>]
+[<a href="Poster-GPower.pdf">poster</a>] <br />
+<a style="font-style: italic;" href="http://jmlr.csail.mit.edu/papers/volume11/journee10a/journee10a.pdf">Journal
+of Machine Learning Research <span style="font-weight: bold;">11</span>,
+pp. 517–553, 2010</a><span style="font-style: italic;"></span><br />
+<br />
+
+<b>Improved algorithms for convex minimization in relative
+scale</b> <br />
+Peter Richtárik <br />
+ [<a href="http://www.optimization-online.org/DB_HTML/2009/02/2226.html">Optimization
+Online (old version)</a>] <span class="style1" style="width: 300px;">[<a href="convex_rel_scale_revised.pdf">local copy (revised)</a>]</span> [<a href="Talk-ISMP2006.pdf">slides</a>] <br />
+<a style="font-style: italic;" href="http://epubs.siam.org/siopt/resource/1/sjope8/v21/i3/p1141_s1?isAuthorized=no">SIAM
+Journal on Optimization <span style="font-weight: bold;">21</span>(3),
+pp. 1141–1167, 2011</a><br />
+<br />
+
+<b>Simultaneously solving seven optimization problems in
+relative scale</b> <br />
+Peter Richtárik <br />
+ [<a href="http://www.optimization-online.org/DB_HTML/2009/01/2185.html">Optimization
+Online</a>] <span class="style1" style="width: 300px;">[<a href="7problems-OO.pdf">local copy</a>]</span><br />
+<span style="font-style: italic;">submitted </span><br />
+<br />
+<b>Some algorithms for large-scale convex and linear
+minimization in relative scale</b> <br />
+Peter Richtárik <br />
+<em> <a href="thesis.pdf">PhD Dissertation,
+School of Operations Research and Information Engineering, Cornell
+University</a></em></td>
+</tr>
+
+
+
+<tr>
+
+  <td height="4" colspan="3" valign="top" class="style1" style="width: 300px;" halign="center"><h2><a name="a_software" id="a_software"></a>Software</h2>
+  
+  
+  <table width="831" border="0">
+  <tr>
+    <td width="146"><a href="https://code.google.com/p/24am/"><img src="img/24am.png" width="127" height="55" /></a></td>
+    <td width="675"><p>Parallel Sparse PCA [<a href="http://arxiv.org/abs/1212.4137">7</a> <a href="http://jmlr.csail.mit.edu/papers/volume11/journee10a/journee10a.pdf">8</a>] <a href="https://code.google.com/p/24am/">code</a>. Supports multicore workstations, GPUs and clusters. The cluster version was tested on terabyte matrices and is scalable.</p></td>
+  </tr>
+  <tr>
+    <td><a href="http://code.google.com/p/ac-dc/"><img src="img/ACDC.png" width="52" height="55" /></a></td>
+    <td>Serial [<a href="http://link.springer.com/article/10.1007/s10107-012-0614-z#">1</a> <a href="http://arxiv.org/abs/1304.5530">5</a>], parallel [<a href="http://link.springer.com/chapter/10.1007%2F978-3-642-29210-1_5">2</a> <a href="http://arxiv.org/abs/1212.0873">3</a> <a href="http://arxiv.org/abs/1303.2314">4</a>] and distributed [<a href="http://www.maths.ed.ac.uk/~prichtar/Optimization_and_Big_Data/posters/Takac.pdf">6</a>] coordinate descent <a href="http://code.google.com/p/ac-dc/">code</a> for big data optimization. The parallel and distributed codes can solve LASSO instances with terabyte matrices and billions of features, and are scalable. <a href="http://www.maths.ed.ac.uk/~prichtar/Optimization_and_Big_Data/posters/Takac.pdf"></a></td>
+  </tr>
+</table>
+
+<br>
+
+
+  <tr>
+
+
+
+
+  <td height="4" colspan="3" valign="top" class="style1" style="width: 300px;" halign="center"><h2><a name="a_talks" id="a_talks"></a>Recent and Upcoming Talks</h2>
+  
+  <p><a href="http://www.siam.org/meetings/op14/">SIAM Conference on Optimization</a>, San Diego, California, May  19-22, 2014 (minisymposium organizer).
+   Lin Xiao (Microsoft), Zhaosong Lu (SFU) and myself are organizing a <span class="CERVENA">minisymposium on coordinate descent methods</span>. <strong>The minisymposium is now full</strong> and features 24 speakers  (6 sessions): <a href="http://iew3.technion.ac.il/Home/Users/becka.html">Amir Beck</a> (Technion), <a href="http://www.cs.cmu.edu/~jkbradle/">Joseph Bradley</a> (Berkeley), Alexandra Chouldechova / <a href="http://www.stanford.edu/~hastie/">Trevor Hastie</a> (Stanford), Cong D. Dang / <a href="http://www.ise.ufl.edu/glan/">Guanghui Lan</a> (Florida), <a href="http://www.cs.utexas.edu/~inderjit/">Inderjit Dhillon</a> (Texas), <a href="http://research.microsoft.com/en-us/people/mdudik/">Miro Dudík</a> (Microsoft), <a href="http://www.maths.ed.ac.uk/~ofercoq/">Olivier Fercoq</a> (Edinburgh), <a href="http://www.csie.ntu.edu.tw/~cjlin/">Chih-Jen Lin</a> (NTU), <a href="http://people.math.sfu.ca/~zhaosong/">Zhaosong Lu</a> (SFU), <a href="http://www.ece.umn.edu/~luozq/">Tom Luo</a> (Minnesota), <a href="http://acse.pub.ro/person/ion-necoara/">Ion Necoara </a>(Bucharest), <a href="http://scholar.google.com/citations?user=DJ8Ep8YAAAAJ&amp;hl=en">Yurii Nesterov</a> (Louvain), Andrei Patrascu (Bucharest), Peter Richtárik (Edinburgh), <a href="http://www.cs.huji.ac.il/~shais/">Shai Shalev-Shwartz</a> (Jerusalem), <a href="http://research.google.com/pubs/author28.html">Yoram Singer</a> (Google), <a href="http://mtakac.com/">Martin Takáč</a> (Edinburgh), <a href="http://www.maths.ed.ac.uk/people/show?person=317">Rachael Tappenden</a> (Edinburgh), <a href="http://coral.ie.lehigh.edu/~xiaocheng/">Xiaocheng Tang</a> / <a href="http://coral.ie.lehigh.edu/~katyas/">Katya Scheinberg</a> (Lehigh), <a href="http://dept.stat.lsa.umich.edu/~tewaria/">Ambuj Tewari</a> (Michigan), <a href="http://pages.cs.wisc.edu/~swright/"> Steve Wright</a> / <a href="http://wid.wisc.edu/profile/ji-liu/">Ji Liu</a> (Wisconsin-Madison), <a href="http://research.microsoft.com/en-us/people/lixiao/">Lin Xiao</a> (Microsoft), <a href="http://stat.rutgers.edu/home/tzhang/">Tong Zhang</a> (Rutgers), <a href="http://mat.uc.pt/~zhang/">Zaikun Zhang</a> / <a href="http://www.mat.uc.pt/~lnv/">Luis Vicente</a> (Coimbra). 
+  <p><a href="http://www.ipam.ucla.edu/programs/sgm2014/">Stochastic Gradient Methods</a>, IPAM, UCLA, February 24-28, 2014
+    (invited)
+  <p>Main Seminar, <a href="http://premolab.ru/">Laboratory for Structural Methods of Data Analysis in Predictive Modeling (PreMoLab)</a>, Moscow Institute of Physics and Technology, Moscow, Russia, February 13, 2014 (invited)
+  <p><a href="http://www.nao2014.com/conference_welcomeletter.asp">Numerical Analysis and Optimization</a>, Muscat - Sultanate of Oman, January 5-9, 2014 (invited)
+  <p><a href="http://research.microsoft.com/en-us/events/mysorepark/mysorepark.aspx#venue">Mysore Park Workshop on Distributed Computing For Machine Learning and Optimization</a>, Bangalore, India, December 18-20, 2013 (invited)
+
+  <p><a href="http://opt.kyb.tuebingen.mpg.de/">6th NIPS workshop on Optimization for Machine Learning</a>, Lake Tahoe, California, December 9-10, 2013 (plenary)
+  <p>Research talk at <a href="http://en.wikipedia.org/wiki/SAS_Institute">SAS Institute</a>, Cary, North Carolina, November 26 , 2013 (invited)
+  <p><a href="http://itis2013.fis.unm.si/">5th International Conference on Information Technologies and Information Society</a>, Slovenia, November 7-9, 2013 (plenary)  
+  <p>AmpLab SYS-ML seminar, UC Berkeley, October 31, 2013 (I know, Halloween!)
+  <p>AmpLab all hands seminar, UC Berkeley, October 29, 2013  
+  <p><a href="http://simons.berkeley.edu/workshop_bigdata2.html">Parallel and Distributed Algorithms for Inference and Optimization</a> (a workshop within the <a href="http://simons.berkeley.edu/program_bigdata2013.html">Theoretical Foundations of Big Data Analysis</a> program), Simons Institute for the Theory of Computing, Berkeley, October 21-25, 2013
+    
+    (invited)  
+  <p>Machine Learning Seminar @ Google, California, September 10, 2013 (invited)
+  <p> <a href="http://eventos.fct.unl.pt/iccopt2013">4th ICCOPT</a>, Lisbon, Portugal, July 27-August 1, 2013 (cluster chair)<br>
+I am organizing the <em>&quot;Convex and nonsmooth optimization''</em> cluster.   
+  
+  If you want to give a talk in a session in the cluster and/or organize a session yourself, please let me know.
+  
+  Update: the cluster is now full.<p> <a href="http://iom.num.edu.mn/iccso2013/index.html">4th International Conference on Optimization, Simulation and Control</a>, Ulaanbaatar, Mongolia, July 1-4, 2013
+  <p><a href="http://numericalanalysisconference.org.uk/">25th Biennial Numerical Analysis Conference</a>, 
+  Glasgow, University of Strathclyde, June 25-28, 2013<br>
+  I am giving a talk in the <em>&quot;Recent Advances in Big Data Problems&quot;</em>  minisymposium.  
+  <p><a href="http://www2.imperial.ac.uk/~gmontana/bigdatamining/schedule.html">Big Data Mining 2013</a>, Imperial College London, May 14-15, 2013 (invited by Giovanni Montana) [<a href="talks/Big_Data_Mining_London_2013.ppsx">slides</a>]<br >
+  <p> <a href="http://www.maths.ed.ac.uk/~prichtar/Optimization_and_Big_Data/">Optimization and Big Data</a>, Edinburgh, May 1-3, 2013 (organizer)<p>  <a href="http://www.ihes.fr/jsp/site/Portal.jsp?document_id=3270&amp;portlet_id=1151">Fête Parisienne in Computation, Inference and Optimization</a>, Paris, France, March 20, 2013
+  
+  (invited by Francis Bach and Michael Jordan)
+  
+  [<a href="TALK-2013-03-20-Paris.pdf">slides</a>]
+  <p> <a href="http://www.edsiamchapter.co.uk/">Edinburgh SIAM Student Chapter</a> conference, March 6, 2013 (invited)
+  
+  [<a href="TALK-2013-02-SIAM-Conference.ppsx">slides</a>]
+  <p> <a href="http://www.icms.org.uk/workshops/bigdata#programme">Big Data and Social Media</a>, Glasgow, UK, February 26, 2013 (invited by Des Higham)
+  
+  [<a href="TALK-2013-02-Big-Data-and-Social-Media.ppsx">slides</a>]
+  <p> Research Recap, Innovative Learning Week, February 21, 2013 <a href="ILW.ppsx"> [slides - 15 mins]</a><p> <a href="http://www.uclouvain.be/en-44416.html">Mathematical Optimization Seminar</a>, CORE, Louvain-la-Neuve, Belgium, February 5, 2013 (invited by Yurii Nesterov)
+  
+  <p> <a href="http://www.maths.ed.ac.uk/ERGO/seminars.html">Edinburgh Research Group in Optimization seminar talk</a>, University of Edinburgh, January 30, 2013
+  
+  <p><a href="http://lear.inrialpes.fr/workshop/osl2013/index.html">Optimization and Statistical Learning</a>, Les Houches, France, January 6-11, 2013
+  
+  (invited) <a href="LesHouches2013.pdf">[slides]</a>
+  
+  <p> University of Strathclyde, <a href="http://www.strath.ac.uk/mathstat/seminars/">Numerical Analysis Seminar</a>, December 11, 2012
+  (invited)<p> <a href="http://meetings2.informs.org/phoenix2012/">INFORMS Annual Meeting</a>, Phoenix, Arizona, October 14-17, 2012 (session organizer)<br>
+  I organized the session <em>&quot;Gradient methods for large-scale optimization&quot;</em> (<a href="https://informs.emeetingsonline.com/emeetings/formbuilder/clustersessiondtl.asp?csnno=16211&amp;mmnno=220&amp;ppnno=63794">programme</a>)
+    
+    <br>
+    <em>Speakers:</em>
+  P.R. (Edinburgh), Oliver Devolder (Louvain), Martin Takáč (Edinburgh), Guanghui Lan (Florida)
+  <p> <a href="http://www.bus.miami.edu/ios/"></a><a href="http://www.ima.org.uk/conferences/conferences_calendar/numerical_linear_algebra_and_optimisation.cfm">3rd IMA Conf. on Numerical Linear Algebra and Optimisation</a>, Birmingham, UK, September 10–12, 2012
+    (symposium organizer)<br>
+    I organized the minisymposium<em> ''Gradient methods for large-scale optimization''</em> (<a href="minisymposium-Birmingham2012.pdf">programme</a>)<br>
+       <em>Speakers:</em> Raphael Hauser (Oxford), Guillaume Obozinski (INRIA/ENS), P. R. (Edinburgh), Michel Baes (ETH Zurich), Martin Takáč (Edinburgh), Vinh Xuan Doan (Warwick), Rachael Tappenden (Edinburgh), Carola-Bibiane Schonlieb (Cambridge)
+ 
+    
+    <p> <a href="http://ismp2012.org/">21st ISMP</a>, Berlin, Germany, August 19–24, 2012 (session organizer)<br>
+      I organized a session on<em> Coordinate descent methods</em><br>
+      <em>Speakers:</em> P.R. (Edinburgh), Martin Takáč (Edinburgh), Rachael Tappenden (Edinburgh)</p>
+      
+      
+      
+    <p> <a href="https://sites.google.com/site/icml2012optworkshop/">ICML Workshop on Optimization in Machine Learning</a>, Edinburgh, UK, July 1, 2012 (invited)<br>
+      <em>Speakers:</em> Constantine Caramanis (Texas Austin), Ali Jadbabaie (Pennsylvania), Anatoli Juditsky (Joseph Fourier), Jorge Nocedal (Northwestern), P. R. (Edinburgh), Karthik Sridharan (Pennsylvania), Michael Mahoney (Stanford)</p>
+    
+    <p> University of Wisconsin-Madison, Research Seminar, <a href="http://discovery.wisc.edu/home/wisconsin/research/optimization/">Wisconsin Institutes for Discovery</a>, June 19, 2012
+    (invited)<p> <a href="http://www.maths.ed.ac.uk/~prichtar/Advances_in_Large_Scale_Optimization/index.html">Advances in Large-Scale Optimization</a>, Edinburgh, UK, May 24–25, 2012 (organizer)<br >
+    
+    
+      <em>Speakers: </em>Yurii Nesterov (Louvain), Mark Schmidt (INRIA), P. R. (Edinburgh), Alexandre D'Aspremont (École Polytechnique), Jacek Gondzio (Edinburgh), Michal Kočvara (Birmingham), Coralia Cartis (Edinburgh), Nati Srebro (TTI Chicago)</p>
+    
+    
+    <p> <a href="http://www.bus.miami.edu/ios/"></a><a href="http://www.ise.ufl.edu/cao/oms12/oms_2012/welcome/">3rd Conference on Optimization Methods and Software</a>, Chania, Crete, Greece, May 13–17, 2012 (invited)</p>
+    <p> University of Cambridge, <a href="http://www.talks.cam.ac.uk/talk/index/36496">Applied and Computational Analysis Seminar</a>, May 3, 2012 (invited)</p>
+    <p> <a href="http://www.bus.miami.edu/ios/"></a><a href="http://www.bus.miami.edu/ios/">INFORMS Optimization Society Conference</a>, Coral Gables, Florida, February 24–26, 2012 </p>
+    
+    <p>Cardiff University, Operational Research and Statistics Research Seminar, February 15, 2012
+    (invited)</p>
+    
+    
+    <p>
+    Comenius University, Seminar of the Center for Economics and Finance, January 9, 2012
+    </p>
+    
+    <p> <a href="http://lsec.cc.ac.cn/~icnonla/">ICNONLA</a>,
+      The 8th Int. Conference on Num. Optimization and
+      Numerical Linear Algebra, Xiamen, China, November 7–11, 2011 </p>
+      
+      
+      <p>
+      University of Edinburgh, Algorithms & Complexity Research Seminar @ School of Informatics, October 26, 2011
+      (invited)</p>
+      
+      <p>
+      Oxford University, Computational Mathematics and Applications Research Seminar, October 13, 2011
+      (invited)</p>
+      
+      
+      <p>
+London School of Economics, The OR Society Mathematical Programming Seminar, October 12, 2011 (invited)</p>
+      
+      
+     <p>
+      Heriot-Watt University, <span id="calendarTitle">Computational Mathematics and Maths Biology Seminar</span>, October 6, 2011 (invited)</p>
+      
+      
+    <p> <a href="http://coral.ie.lehigh.edu/%7EFOCM2011/">FoCM</a>,
+      Budapest, Hungary, July 4–14, 2011 (invited)</p>
+    <p> <a href="http://www.mathstat.strath.ac.uk/naconf">24th
+      Biennial Conference on Numerical Analysis</a>, June 28th–July
+      1st, 2011 (minisymposium organizer)</p>
+    <ul>
+      <li><a href="http://www.mathstat.strath.ac.uk/naconf/minisymposia">minisymposium
+        1</a>:<em> &quot;Optimization and Applications&quot;</em>: Olivier Devolder
+        (Louvain-la-Neuve), Martin Takáč (Edinburgh), Michal Kočvara
+        (Birmingham)</li>
+      <li><a href="http://www.mathstat.strath.ac.uk/naconf/minisymposia">minisymposium
+        2</a>: <em>&quot;Compressed Sensing: algorithms and
+        theory&quot;</em>;&nbsp;Jeffrey Blanchard (Grinnell), P. R. (Edinburgh), Martin Lotz (Edinburgh), Andrew Thompson (Edinburgh)</li>
+    </ul>
+    <p> <a href="http://ecos.maths.ed.ac.uk/SPARS11/">SPARS
+      11</a>, Signal Processing with Adaptive Sparse Structured
+      Representations, Edinburgh, June 27–30, 2011</p>
+      
+      <p>
+      Catholic University of Louvain, CORE, Mathematical Programming Seminar, Belgium, June 7,
+2011
+      (invited)</p>
+      
+    <p> <a href="http://www.siam.org/meetings/op11/">SIAM
+      Conference on Optimization</a>, Darmstadt, Germany, May 16–19,
+      2011 (session chair)</p>
+    <p> <a href="http://ecos.maths.ed.ac.uk/maxwell2011/">Computational
+      Complexity Challenges in Optimization</a>, Edinburgh, May 12, 2011 (invited)</p>
+    <p> <a href="http://www.lancs-initiative.ac.uk/images/OptimisationProceedings3.pdf">LANCS
+      Workshop on Modelling and Solving Complex Optimization Problems</a>,
+      Lancaster, April 11–13, 2011</p></td>
+</tr>
+
+
+
+<tr>
+  <td height="274" colspan="3" valign="top" class="style1" style="width: 300px;" halign="center"><h2><a name="a_team" id="a_team"></a>The Team </h2>
+  
+  
+<h3>Visiting Professors </h3>
+    
+    
+    <a href="http://scholar.google.com/citations?user=DJ8Ep8YAAAAJ&amp;hl=en">Yurii Nesterov</a>  <br/>    
+<a href="http://ttic.uchicago.edu/~nati/">Nati Srebro</a>  <br/>      
+    
+    
+   <h3> Postdocs</h3>
+    
+    
+    <p>
+    <a href="http://www.cmap.polytechnique.fr/~qu/">Zheng Qu</a> (01/2014<span class="style1" style="width: 300px;">–</span>)<br/>
+    <a href="http://www.maths.ed.ac.uk/~ofercoq/">Olivier Fercoq</a> (10/2012<span class="style1" style="width: 300px;">–</span>) <br/>
+      <a href="http://www.maths.ed.ac.uk/people/show?person=317">Rachael Tappenden</a> (02/2012<span class="style1" style="width: 300px;">–</span>) <br/>
+      <a href="http://researcher.watson.ibm.com/researcher/view.php?person=ie-jakub.marecek"> Jakub Mareček</a>
+      (01/2012<span class="style1" style="width: 300px;">–</span>06/2012), first position: IBM Research, Dublin     
+      
+      
+    </p>
+    <h3>PhD Students</h3>  
+    <p> <a href="http://gesture.chalearn.org/dissemination/icpr2012">Jakub Konečný</a> (08/2013<span class="style1" style="width: 300px;"><span class="style1" style="width: 300px;">–</span></span>), Optimization in machine learning <br/>
+      Minnan Luo (09/2012<span class="style1" style="width: 300px;"><span class="style1" style="width: 300px;">–</span></span>02/2013; visiting from Tsinghua University) <br/>
+      <a href="http://www.mtakac.com/CV">Martin Takáč</a> (09/2010<span class="style1" style="width: 300px;"><span class="style1" style="width: 300px;">–</span></span>),
+      Block coordinate descent methods for big data convex optimization</p>
+      
+ 
+ <h3>MSc/Undergraduate Students</h3>  
+ 
+    <p> Bartosz Filipecki (2010-2013), first position: PhD studies at <a href="http://www.uclouvain.be/en-core.html">CORE, Catholic University of Louvain</a><br>
+    
+      Alexander Banks-Watson (2011-2013), first position: <a href="http://www.quintiq.com/">Quintiq</a><br>    
+      <a href="http://scholar.google.com/citations?user=vMMDhTUAAAAJ&amp;hl=en">Christos Delivorias</a> (2011-2012), first position: quant at <a href="http://www.swip.com/global/">SWIP</a><br>
+      
+      Mihyun Jang (2011-2012)<br>
+      
+      Chao Yu (2010-2011), first position: <a href="http://www.rbs.co.uk">Royal Bank of Scotland</a> <br>
+      
+      William Hulme (2010-2011), first position: <a href="http://www.nhsbt.nhs.uk/">NHS Blood and Transplant</a><br>
+      
+	  James Boffin (2010-2011), first position: <a href="http://www.orhltd.com/">ORH Ltd</a><br>
+      
+      Marilena Karanika (2009-2010), first position: <a href="http://www.rbs.co.uk">Royal Bank of Scotland</a><br>
+      
+      Robie King (2009-2010) <br>
+      
+      Jinwen Lin (2009-2010) </p>
+
+    
+    
+    </td>
+</tr>
+<tr>
+  <td height="4" colspan="3" valign="top" class="style1" style="width: 300px;" halign="center"><h2><a name="a_grants" id="a_grants"></a>Grants (Selected)</h2>
+    
+    <p><span class="style1" style="width: 300px;">
+    
+09/2014<span class="style1" style="width: 300px;">–09/2015</span>, <span class="style1" style="width: 300px;">School of Mathematics, UoE, <em>Accelerated Coordinate Descent Methods for Big Data Problems</em>, <span class="style1" style="width: 300px;">£</span>40,000</span><br /> 
+      09/2013–09/2015, EPSRC First Grant EP/K02325X/1, <em>Accelerated Coordinate Descent Methods for Big Data Problems</em>, <span class="style1" style="width: 300px;">£</span>125,849<br/>
+      05/2013, <a href="http://www.nais.org.uk/">NAIS</a>, <a href="http://www.maths.ed.ac.uk/~prichtar/Optimization_and_Big_Data/"><em>Optimization and Big Data</em></a><em> (workshop, trek and colloquium)</em>, covering 50% of the costs, £5,862</span><br/>
+      06/2012–03/2013, EPSRC Developing Leaders, <em>On Optimal Solutions to Planetesimal Growth Models</em> (with D. Forgan), £4,000<br>
+      Summer 2012, Vacation Scholarship (with Iliana Peneva) 
+      <br>
+      05/2012–05/2013, EPSRC  &amp; UK Ministry of Defence (Dstl)  <span class="style1" style="width: 300px;">EP/J020567/1</span>, <em>Algorithms for Data Simplicity</em> (with J. Tanner),  £49,518<br>
+      05/2012, <a href="http://www.nais.org.uk/">NAIS</a>, <a href="http://www.maths.ed.ac.uk/~prichtar/Advances_in_Large_Scale_Optimization/index.html"><em>Advances in Large-Scale Optimization</em></a> (workshop, trek and colloquium), £4,662 <br> 
+      02/2012–06/2012, EPSRC Developing Leaders, <em>Optimization at Arup</em>, (with M. Simpson and M. Takáč), £3,500<br>
+      04/2011–04/2014, EPSRC EP/I017127/1, <em>Math. for Vast Digital Resources</em> (with B. Buke and J. Gondzio), £646,264 (=$1.1m)<br>
+      Summer 2011, Nuffield Foundation Undergraduate Research Bursary (with Edward Cumberlege), £1,440<br>
+      Summer 2011, EPSRC Undergraduate Research Scholarship (with Bartosz Filipecki), £2,200<br>
+      Summer 2010, Vacation Scholarship (with Bartosz Filipecki)<br>
+      09/2010-09/2012, Startup Grant, £8,000
+      </p></td>
+</tr>
+<tr>
+  <td height="4" colspan="3" valign="top" class="style1" style="width: 300px;" halign="center"><h2><a name="a_teaching" id="a_teaching"></a>Teaching</h2>
+    I teach 2nd and 3rd year undergraduates and in the following MSc Programmes: <a href="http://msc.maths.ed.ac.uk/or/index">Operational
+      Research</a>, <a href="http://msc.maths.ed.ac.uk/fimmsc/index">Financial Mathematics</a>, <a href="http://msc.maths.ed.ac.uk/fmomsc/index">Financial Modelling and Optimization</a><br />
+    <br />
+    Game Theory (Fall 2010, 2011, 2012)<br />
+    Discrete Programming and Game Theory (Fall 2010, 2011, 2012)<br />
+    Optimization Methods in Finance (Spring 2013, 2014)<br />
+    Deterministic Optimization Methods in Finance (Spring 2012, 2013, 2014)</td>
+</tr>
+<tr>
+  <td height="4" colspan="3" valign="top" class="style1" style="width: 300px;" halign="center"><span class="style1" style="width: 300px;">
+    <h2><a name="a_consulting" id="a_consulting"></a>Consulting</h2>
+    If you have a consulting request, please contact me by email. <a href="http://msc.maths.ed.ac.uk/fmomsc/index"></a></span></td>
+</tr>
+
+<tr>
+  <td height="4" colspan="3" valign="top" class="style1" style="width: 300px;" halign="center"><h2><a name="a_more" id="a_more"></a>More Stuff</h2>
+    <p><a href="http://www.tmatika.com">TÉMATIKA</a> (a lecture series for high school students)
+  <br>    
+  <a href="puzzle.pdf">Unreachable Points Puzzle </a></p></td>
+</tr>
+<tr>
+  <td height="4" colspan="3" valign="top" class="style1" style="width: 300px;" halign="center">&nbsp;</td>
+</tr>
+
+</tbody>
+</table>
+
+
+<h2>&nbsp;</h2>
+<h2>&nbsp;</h2>
+
+</div>
+
+
+</body>
+</html>

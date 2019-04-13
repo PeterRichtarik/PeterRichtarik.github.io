@@ -1,0 +1,49 @@
+<h2>Headline speaker:</h2>
+						<h2>Yurii Nesterov</h2>
+						<p><img src="imgs/YuriiNesterov.jpg" alt="A portrait of Yurii Nesterov by Peter Richtarik" /></p>
+
+					  <h2>Sponsors:</h2>
+
+<table width="250" border="0">
+  <tr>
+    <td align="center">
+    
+    <a href="http://www.nais.org.uk/"><img src="imgs/NAIS.png" alt="NAIS" width="200" align="middle" /></a>
+    <br>
+    
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+    
+    <img src="imgs/UoE.png" alt="UoE" width="120" height="120" />
+    
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+    
+    <a href="http://www.epsrc.ac.uk/Pages/default.aspx"><img src="imgs/epsrc.png" alt="EPSRC" width="180" /></a>
+    
+    </td>
+  </tr>
+  <tr>
+    <td align="center">&nbsp;</td>
+  </tr>
+</table>
+
+		
+										
+
+						
+
+						
+
+						<ul>
+							<li>     <a href="http://gow.epsrc.ac.uk/NGBOViewGrant.aspx?GrantRef=EP/I017127/1"> Mathematics for Vast Digital Resources </a>
+						  <li>	  <a href="http://www.nais.org.uk/">The Centre for Numerical Analysis and Intelligent Software (NAIS)</a>
+						  <li>	  <a href="http://www.maths.ed.ac.uk/">The University of Edinburgh School of Mathematics</span></a>
+						  <li>	  <a href="http://www.maths.ed.ac.uk/ERGO/">Edinburgh Research Group in Optimization (ERGO)</a>
+										<!-- <li>	  <a href="http://ecos.maths.ed.ac.uk/">Edinburgh Compressed Sensing Group (ECOS)</a> -->
+										<!-- <li>	  <a href="http://www.lfcs.inf.ed.ac.uk/research/complexity/">Edinburgh Algorithms and Complexity Group</a> -->
+					  </ul>

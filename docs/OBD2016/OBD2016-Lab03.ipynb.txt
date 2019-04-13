@@ -1,0 +1,311 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## <center>  MATH11146: Modern Optimization Methods for Big Data Problems </center>\n",
+    "\n",
+    "<center> University of Edinburgh</center>\n",
+    "\n",
+    "<center>Lecturer: Peter Richtarik</center>\n",
+    "\n",
+    "<center>Tutors: Dominik Csiba and Jakub Konecny</center>\n",
+    "\n",
+    "##  <center>Lab 3: Randomized Coordinate Descent with Arbitrary Sampling </center>\n",
+    "<center>(C) Peter Richtarik </center>\n",
+    "<center> 26.1.2016 </center>\n",
+    "\n",
+    "\n",
+    "## 1. Introduction\n",
+    "\n",
+    "## The Problem: Ridge Regression\n",
+    "\n",
+    "In this lab we will experiment with the NSync [1] algorithm applied to the <i>ridge regression</i> problem:\n",
+    "\n",
+    "$$\\min_{x\\in \\mathbb{R}^n} \\left[ \\; f(x) = \\frac{1}{2}\\|Ax-b\\|_2^2 + \\frac{\\lambda}{2} \\|x\\|_2^2 \\; \\right],$$\n",
+    "\n",
+    "where $A$ is an $m\\times n$ matrix, $b\\in \\mathbb{R}^m$ and $\\lambda>0$ is the ridge (regularization) parameter. Recall that the gradient of $f$ is given by\n",
+    "\n",
+    "$$\\nabla f(x) =  A^T (Ax-b) + \\lambda x.$$\n",
+    "\n",
+    "## NSync Algorithm\n",
+    "\n",
+    "The NSync algorithm proceeds as follows:\n",
+    "\n",
+    "- Initialization: \n",
+    "  - Start with $x_0\\in \\mathbb{R}^n$\n",
+    "  - Fix a proper sampling $\\hat{S}$ and compute positive parameters $v = (v_1,\\dots,v_n)$ such that \n",
+    "\n",
+    "$$ (f,\\hat{S}) \\sim ESO(v)$$\n",
+    "\n",
+    "- In iteration $k$ do:\n",
+    "  - Draw a fresh copy of $S_k\\sim \\hat{S}$ (i.e., independently from everything else)\n",
+    "  - For $i\\in S_k$ do\n",
+    "      $$ x_{k+1}^{(i)} = x_k^{(i)} - \\frac{1}{v_i} e_i^T \\nabla f(x_k) $$\n",
+    "  - For $i\\notin S_k$ do\n",
+    "      $$ x_{k+1}^{(i)} = x_k^{(i)}$$\n",
+    "\n",
+    "Recall that a sampling $\\hat{S}$ is proper if the quantity $p_i = \\mathbf{Prob}(i\\in \\hat{S})$ is positve for all $i\\in [n]=\\{1,2,\\dots,n\\}$.\n",
+    "\n",
+    "## Computing ESO parameters \n",
+    "\n",
+    "In order to be able to run the NSync method, we need to pre-compute the ESO parameters $v_1,\\dots,v_n$ before the methods starts. The following result will be helpful in this regard:\n",
+    "\n",
+    "${\\bf Theorem~(see~[2])}$ Let $P = (p_{ij})\\in \\mathbb{R}^{n\\times n}$ be the <i>probability matrix</i> associated with sampling $\\hat{S}$. That is,  $p_{ij} = \\mathbf{Prob}(i\\in \\hat{S}, j\\in \\hat{S})$. Then $(f,\\hat{S})\\sim ESO(v)$ holds if $v$ satisfies the inequality\n",
+    "\n",
+    "$$ P \\bullet (A^TA + \\lambda I) \\preceq Diag(p_1 v_1, \\dots, p_n v_n),$$\n",
+    "\n",
+    "where $p_i = p_{ii}$.\n",
+    "\n",
+    "The inequality $C \\preceq D$ means that $D-C$ is positive semidefinite. That is, it means that $x^T(D-C)x\\geq 0$ for all $x$.\n",
+    "\n",
+    "We have the following useful consequence:\n",
+    "\n",
+    "${\\bf Corollary~1}$ If $\\hat{S}$ is a serial sampling, i.e., if $p_{ij} = 0$ whenever $i\\neq j$, \n",
+    "then, $(f,\\hat{S})\\sim ESO(v)$ with \n",
+    "\n",
+    "$$v_i = \\|A_{:i}\\|_2^2 + \\lambda, \\qquad i=1,\\dots,n.$$\n",
+    "\n",
+    "<i>Proof:</i> Note that $P$ is diagonal, and so \n",
+    "\n",
+    "$$P \\bullet (A^TA + \\lambda I) = Diag(p_1 (\\|A_{:1}\\|_2^2 + \\lambda), \\dots, p_n (\\|A_{:n}\\|_2^2 + \\lambda)).$$\n",
+    "\n",
+    "The rest follows directly by applying the theorem.\n",
+    "\n",
+    "\n",
+    "${\\bf Corollary~2}$ If $\\hat{S}$ is the fully parallel sampling, i.e., if $S=\\{1,2,\\dots,n\\}$ with probability 1, then $P$ is the matrix of all ones and we have\n",
+    "\n",
+    "$$P \\bullet (A^TA + \\lambda I) = A^TA + \\lambda I.$$\n",
+    "\n",
+    "Therefore, $(f,\\hat{S})\\sim ESO(v)$ with \n",
+    "\n",
+    "$$v_i = \\lambda_{\\max}(A^T A) + \\lambda, \\qquad i=1,\\dots,n.$$\n",
+    "\n",
+    "<i>Proof:</i> For any symmetric matrix $M \\in \\mathbb{R}^{n\\times n}$, we have the inequality $M \\preceq \\lambda_{\\max}(M) I$. Moreover, \n",
+    "\n",
+    "$$\\lambda_{\\max}(A^T A + \\lambda I) = \\lambda_{\\max}(A^T A) + \\lambda.$$\n",
+    "\n",
+    "The rest follows by applying the theorem. \n",
+    "\n",
+    "\n",
+    "## References\n",
+    "\n",
+    "[1] Peter Richtarik and Martin Takac. On optimal probabilities in stochastic coordinate descent methods. <i>Optimization Letters</i>, 2015. [arXiv:1310.3438]\n",
+    "\n",
+    "[2] Zheng Qu and Peter Richtarik. Coordinate descent with arbitrary sampling II: expected separable overapproximation. <i>arXiv:1412.8063</i>, 2014."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 2. Generate a Random Problem"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "1000x1 Array{Float64,2}:\n",
+       " -0.0122404\n",
+       "  0.0456174\n",
+       " -0.0879646\n",
+       "  0.154522 \n",
+       " -0.0150453\n",
+       "  0.0      \n",
+       "  0.0      \n",
+       " -0.0208678\n",
+       " -0.0192128\n",
+       "  0.0      \n",
+       " -0.0768322\n",
+       " -0.0928322\n",
+       " -0.0653028\n",
+       "  ⋮        \n",
+       "  0.0      \n",
+       "  0.0      \n",
+       "  0.0      \n",
+       " -0.0155143\n",
+       "  0.0      \n",
+       "  0.137955 \n",
+       "  0.0      \n",
+       "  0.110739 \n",
+       " -0.0712157\n",
+       "  0.0      \n",
+       "  0.0113565\n",
+       "  0.0      "
+      ]
+     },
+     "execution_count": 2,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "m = 10\n",
+    "n = 1000\n",
+    "A = sprandn(m,n,0.1)/m # sparse random matrix\n",
+    "b = ones(m,1)\n",
+    "lambda = 1\n",
+    "\n",
+    "x_star = (A'*A + lambda*eye(n))\\(A'*b) # finds the point x where derivative is zero (the solution)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 3. The NSync Algorithm"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "NSync (generic function with 1 method)"
+      ]
+     },
+     "execution_count": 3,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "function NSync(A, b, lambda, T)\n",
+    "    \n",
+    "    m, n = size(A)\n",
+    "    \n",
+    "    v = zeros(n,1)\n",
+    "    x = zeros(n,1)    # staring point\n",
+    "    g = -b            # g will be maintained to be equal to A*x - b\n",
+    "    \n",
+    "    for i=1:n         # compute ESO parameters\n",
+    "        v[i] = (norm(A[:,i]))^2 + lambda\n",
+    "    end\n",
+    "    \n",
+    "    for k = 1:T\n",
+    "        i = rand(1:n)                                   # choose a random index \n",
+    "        h = (1/v[i]) * ( A[:,i]' * g + lambda * x[i] )  # compute the update\n",
+    "        x[i] = x[i] - h[1]                              # perform the update \n",
+    "        g = g - h[1] * A[:,i]                           # update the residual\n",
+    "    end\n",
+    "    \n",
+    "    return x\n",
+    "    \n",
+    "end"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 4. Testing"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "2.9099509478419146e-7"
+      ]
+     },
+     "execution_count": 6,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "T = 20*n\n",
+    "x = NSync(A,b,lambda,T)\n",
+    "norm(x-x_star)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Problem A\n",
+    "\n",
+    "Write a new version of the NSync function and call it NSyncPlot. This function will also visualize the results via a plot, as in Lab 1. Copy-paste the relevant code from Lab 1 and modify to make it work."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Problem B\n",
+    "\n",
+    "Implement NSync for 2 different serial samplings and compare the results."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Problem C\n",
+    "\n",
+    "Implement NSync with the <i>fully parallel sampling</i> given by $\\hat{S}=\\{1,2,\\dots,n\\}$ with probability 1. NSync then transforms into standard <i>gradient descent</i>. Compute the parameters $v$ satisfying the ESO assumption, and run the method for 50 iterations. Compare with NSync which uses the serial sampling and which is run for $T = 50n$ iterations. Is this comparison fair? \n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Problem D\n",
+    "\n",
+    "Implement a version of NSync for which $|\\hat{S}| = 100$ with probability 1. Compare with the previously developed versions."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Problem E\n",
+    "\n",
+    "Write a new version of NSync (with any sampling you like), this time applied to <i>logistic regression</i> instead of ridge regression. Read about logistic regression online. "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## *Problem F\n",
+    "\n",
+    "Find a way to perform the for loop in NSync in parallel. You will need to study Julia's documentation to pull this off."
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Julia 0.3.12",
+   "language": "julia",
+   "name": "julia-0.3"
+  },
+  "language_info": {
+   "file_extension": ".jl",
+   "mimetype": "application/julia",
+   "name": "julia",
+   "version": "0.3.12"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 0
+}
