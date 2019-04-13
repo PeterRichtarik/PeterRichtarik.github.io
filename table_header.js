@@ -1,12 +1,6 @@
 document.write("<table width=\"805\" border=\"0\" height=\"184\">");
 document.write("<tbody>");
 document.write("<tr>");
-document.write("<td valign=\"top\"><br>");
-document.write("<\/td>");
-document.write("<td valign=\"top\"><br>");
-document.write("<\/td>");
-document.write("<\/tr>");
-document.write("<tr>");
 document.write("<td> <img src=\"imgs\/pr.jpg\" alt=\"Peter Richtarik\"");
 document.write("width=\"161\" height=\"200\"> <\/td>");
 document.write("<td>");
