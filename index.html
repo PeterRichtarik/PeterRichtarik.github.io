@@ -28,12 +28,136 @@
       </ul>
       <div id="wrapper" class="main">
         <div id="content">
+          <h3>April 22, 2019</h3>
+          <br>
+          <span class="important">Four papers accepted to ICML 2019
+            (36th International Conference on Machine Learning)</span><br>
+          <br>
+          The long-awaited decisions just came! We've had four papers
+          accepted:<br>
+          <br>
+          <a href="https://arxiv.org/abs/1809.04146">"Nonconvex variance
+            reduced optimization with arbitrary sampling"</a> - joint
+          work with <a href="https://samuelhorvath.github.io/">Samuel
+            Horváth</a>.<br>
+          <br>
+          Abstract:<i> We provide the first importance sampling variants
+            of variance reduced algorithms for empirical risk
+            minimization with non-convex loss functions. In particular,
+            we analyze non-convex versions of SVRG, SAGA and SARAH. Our
+            methods have the capacity to speed up the training process
+            by an order of magnitude compared to the state of the art on
+            real datasets. Moreover, we also improve upon current
+            mini-batch analysis of these methods by proposing importance
+            sampling for minibatches in this setting. Surprisingly, our
+            approach can in some regimes lead to superlinear speedup
+            with respect to the minibatch size, which is not usually
+            present in stochastic optimization. All the above results
+            follow from a general analysis of the methods which works
+            with arbitrary sampling, i.e., fully general randomized
+            strategy for the selection of subsets of examples to be
+            sampled in each iteration. Finally, we also perform a novel
+            importance sampling analysis of SARAH in the convex setting.</i><br>
+          <br>
+          <a href="https://arxiv.org/abs/1901.09401">"SGD: General
+            analysis and improved rates"</a> - joint work with <a
+            href="https://gowerrobert.github.io/">Robert Mansel Gower</a>,
+          <a href="https://www.maths.ed.ac.uk/%7Es1461357/">Nicolas
+            Loizou</a>, <a href="https://qianxunk.github.io/">Xun Qian</a>,
+          <a href="http://www.ali-sa.org/">Alibek Sailanbayev</a> and
+          Egor Shulgin.<br>
+          <br>
+          Abstract:<i> We propose a general yet simple theorem
+            describing the convergence of SGD under the arbitrary
+            sampling paradigm. Our theorem describes the convergence of
+            an infinite array of variants of SGD, each of which is
+            associated with a specific probability law governing the
+            data selection rule used to form mini-batches. This is the
+            first time such an analysis is performed, and most of our
+            variants of SGD were never explicitly considered in the
+            literature before. Our analysis relies on the recently
+            introduced notion of expected smoothness and does not rely
+            on a uniform bound on the variance of the stochastic
+            gradients. By specializing our theorem to different
+            mini-batching strategies, such as sampling with replacement
+            and independent sampling, we derive exact expressions for
+            the stepsize as a function of the mini-batch size. With this
+            we can also determine the mini-batch size that optimizes the
+            total complexity, and show explicitly that as the variance
+            of the stochastic gradient evaluated at the minimum grows,
+            so does the optimal mini-batch size. For zero variance, the
+            optimal mini-batch size is one. Moreover, we prove
+            insightful stepsize-switching rules which describe when one
+            should switch from a constant to a decreasing stepsize
+            regime.</i><br>
+          <br>
+          <a href="https://arxiv.org/abs/1901.08669">"SAGA with
+            arbitrary sampling"</a> - joint work with <a
+            href="https://qianxunk.github.io/">Xun Qian</a> and <a
+            href="https://hkumath.hku.hk/%7Ezhengqu/">Zheng Qu</a>.<br>
+          <br>
+          Abstract:<i> We study the problem of minimizing the average of
+            a very large number of smooth functions, which is of key
+            importance in training supervised learning models. One of
+            the most celebrated methods in this context is the SAGA
+            algorithm. Despite years of research on the topic, a
+            general-purpose version of SAGA---one that would include
+            arbitrary importance sampling and minibatching
+            schemes---does not exist. We remedy this situation and
+            propose a general and flexible variant of SAGA following the
+            arbitrary sampling paradigm. We perform an iteration
+            complexity analysis of the method, largely possible due to
+            the construction of new stochastic Lyapunov functions. We
+            establish linear convergence rates in the smooth and
+            strongly convex regime, and under a quadratic functional
+            growth condition (i.e., in a regime not assuming strong
+            convexity). Our rates match those of the primal-dual method
+            Quartz for which an arbitrary sampling analysis is
+            available, which makes a significant step towards closing
+            the gap in our understanding of complexity of primal and
+            dual methods for finite sum problems.</i><br>
+          <br>
+          <a href="https://arxiv.org/abs/1811.10792">"Stochastic
+            gradient push for distributed deep learning"</a> - this is
+          the work of my student <a
+            href="https://www.maths.ed.ac.uk/%7Es1461357/">Nicolas
+            Loizou</a>, joint with his Facebook coauthors Mahmoud
+          Assran, Nicolas Ballas and Michael Rabbat.<br>
+          <br>
+          Abstract:<i> Distributed data-parallel algorithms aim to
+            accelerate the training of deep neural networks by
+            parallelizing the computation of large mini-batch gradient
+            updates across multiple nodes. Approaches that synchronize
+            nodes using exact distributed averaging (e.g., via
+            AllReduce) are sensitive to stragglers and communication
+            delays. The PushSum gossip algorithm is robust to these
+            issues, but only performs approximate distributed averaging.
+            This paper studies Stochastic Gradient Push (SGP), which
+            combines PushSum with stochastic gradient updates. We prove
+            that SGP converges to a stationary point of smooth,
+            non-convex objectives at the same sub-linear rate as SGD,
+            that all nodes achieve consensus, and that SGP achieves a
+            linear speedup with respect to the number of compute nodes.
+            Furthermore, we empirically validate the performance of SGP
+            on image classification (ResNet-50, ImageNet) and machine
+            translation (Transformer, WMT'16 En-De) workloads. Our code
+            will be made publicly available.</i><br>
+          <br>
+          <br>
+          <img alt="" src="imgs/fancy-line.png" width="196" height="36">
+          <br>
+          <br>
           <h3>April 14, 2019</h3>
           <br>
           Today, <a href="https://fhanzely.github.io/index.html">Filip
             Hanzely</a> is travelling to Naha, Okinawa, Japan, to attend
           <a href="https://www.aistats.org">AISTATS 2019.</a> He will
           present our paper <a href="https://arxiv.org/abs/1809.09354">"Accelerated
+
+
+
+
+
 
 
 
@@ -73,6 +197,11 @@
           functional analysis and computational complexity theory.<br>
           <br>
           Alexey will work with <a href="https://konstmish.github.io">Konstantin
+
+
+
+
+
 
 
 
@@ -261,8 +390,18 @@
 
 
 
+
+
+
+
+
             Nelson</a>, <a
             href="https://www.kaust.edu.sa/en/study/faculty/panagiotis-kalnis">Panos
+
+
+
+
+
 
 
 
@@ -373,8 +512,18 @@
 
 
 
+
+
+
+
+
             Kim</a>, <a
             href="https://www.cs.washington.edu/people/faculty/arvind">Arvind
+
+
+
+
+
 
 
 
@@ -485,8 +634,18 @@
 
 
 
+
+
+
+
+
             Moshref</a>, and <a
             href="https://www.microsoft.com/en-us/research/people/dports/">Dan
+
+
+
+
+
 
 
 
@@ -564,6 +723,11 @@
           Ľubomír Baňas (Bielefeld) is arriving today at KAUST for a
           research visit; he will stay for a week. He will give an <a
 href="https://cemse.kaust.edu.sa/events/Pages/AMCS-seminar--Numerical-approximation-of-the-stochastic-Cahn-Hilliard-equation-and-the-%28stochastic%29-Hele-Shaw-probl-125059.aspx">AMCS
+
+
+
+
+
 
 
 
@@ -727,9 +891,19 @@ href="https://cemse.kaust.edu.sa/events/Pages/AMCS-seminar--Numerical-approximat
 
 
 
+
+
+
+
+
               Schrödinger International Institute for Mathematics and
               Physics (ESI)</a> which is the hosting a program on <a
 href="https://www.esi.ac.at/activities/events/2019/modern-maximal-monotone-operator-theory">Modern
+
+
+
+
+
 
 
 
@@ -864,6 +1038,11 @@ href="https://www.esi.ac.at/activities/events/2019/modern-maximal-monotone-opera
 
 
 
+
+
+
+
+
             one</a>.<br>
           <br>
           During February 25-March 1, I am attending the workshop <a
@@ -931,9 +1110,19 @@ href="https://www.univie.ac.at/projektservice-mathematik/e/?event=nualnoop">Nume
 
 
 
+
+
+
+
+
             Algorithms in Nonsmooth Optimization</a>. My talk is on
           February 26; I am speaking about the <a
 href="https://papers.nips.cc/paper/7478-sega-variance-reduction-via-gradient-sketching">"SEGA"
+
+
+
+
+
 
 
 
@@ -1144,6 +1333,11 @@ href="https://vsrp.kaust.edu.sa/Pages/Topics%20in%20Machine%20Learning%20and%20O
 
 
 
+
+
+
+
+
             Student Research Program (VSRP).</a> These internships are a
           minimum 3 months and a maximum 6 months in duration. We have a
           different internship program dedicated to applicants from
@@ -1197,6 +1391,11 @@ href="https://vsrp.kaust.edu.sa/Pages/Topics%20in%20Machine%20Learning%20and%20O
             Bergou</a>, <a href="http://ozansener.net">Ozan Sener</a>
           and <a
             href="https://www.kaust.edu.sa/en/study/faculty/bernard-ghanem">Bernard
+
+
+
+
+
 
 
 
@@ -1387,6 +1586,11 @@ href="https://vsrp.kaust.edu.sa/Pages/Topics%20in%20Machine%20Learning%20and%20O
 
 
 
+
+
+
+
+
             Shulgin</a>.<br>
           <br>
           Abstract: <i>We propose a general yet simple theorem
@@ -1485,6 +1689,11 @@ href="https://vsrp.kaust.edu.sa/Pages/Topics%20in%20Machine%20Learning%20and%20O
             Houcine Bergou's</a> 1 year postdoc contract in my group
           ended; he now a postdoc in <a
             href="https://www.kaust.edu.sa/en/study/faculty/panagiotis-kalnis">Panos
+
+
+
+
+
 
 
 
@@ -1690,10 +1899,20 @@ href="https://mipt.ru/science/visiting_prof/piter-rikhtarik-peter-richtarik.php"
 
 
 
+
+
+
+
+
             group at MIPT</a> visiting me at KAUST during
           January-February: <br>
           <br>
           - <a href="https://www.researchgate.net/profile/Egor_Shulgin">Egor
+
+
+
+
+
 
 
 
@@ -1755,6 +1974,11 @@ href="https://mipt.ru/science/visiting_prof/piter-rikhtarik-peter-richtarik.php"
 coordinate
 
 descent
+
+
+
+
+
 
 
 
@@ -1835,6 +2059,11 @@ href="http://www.sinovationventures.com/index.php/home/aboutus/teams.html">Sinov
 
 
 
+
+
+
+
+
             Ventures</a>; former president of Google China; founder
           &amp; former managing director of Microsoft Research Asia) for
           a 2hr discussion about AI. I recommend that you watch some of
@@ -1901,6 +2130,11 @@ href="http://www.sinovationventures.com/index.php/home/aboutus/teams.html">Sinov
 
 Talk
 2018:
+
+
+
+
+
 
 
 
@@ -1986,6 +2220,11 @@ China,
 
 
 
+
+
+
+
+
             Silicon Valley and the New World Order</a><br>
           <br>
           <br>
@@ -2066,6 +2305,11 @@ href="https://researcher.watson.ibm.com/researcher/view.php?person=ibm-lamnguyen
 
 
 
+
+
+
+
+
             M. Nguyen</a>, <a
             href="https://scl.uconn.edu/people/ha/info.php">Phuong Ha
             Nguyen</a>, <a href="https://coral.ise.lehigh.edu/katyas/">Katya
@@ -2074,8 +2318,18 @@ href="https://researcher.watson.ibm.com/researcher/view.php?person=ibm-lamnguyen
 
 
 
+
+
+
+
+
             Scheinberg</a>, <a
             href="https://www.lehigh.edu/engineering/faculty/profiles/takac.html">Martin
+
+
+
+
+
 
 
 
@@ -3248,6 +3502,11 @@ Research
 
 
 
+
+
+
+
+
             (FAIR)</a>, where he has done some great work on
           decentralized training of deep learning models, and on
           accelerated decentralized gossip communication protocols. <br>
@@ -3299,6 +3558,11 @@ Research
           <br>
           Xun QIAN just joined my <a
             href="https://www.maths.ed.ac.uk/%7Eprichtar/i_team.html">group
+
+
+
+
+
 
 
 
@@ -3385,6 +3649,11 @@ supervised
 
 
 by
+
+
+
+
+
 
 
 
@@ -3483,6 +3752,11 @@ Journal
 
 
 on
+
+
+
+
+
 
 
 
@@ -3619,10 +3893,20 @@ Data
 
 
 
+
+
+
+
+
             Science Workshop</a> held here at KAUST. I am speaking about
           the <a href="https://arxiv.org/abs/1805.02632">JacSketch
             paper</a>. Here is a <a
             href="https://www.youtube.com/watch?v=gjgEck0zU7w&amp;feature=youtu.be">YouTube
+
+
+
+
+
 
 
 
@@ -3695,6 +3979,11 @@ Data
           <br>
           Abstract: <i>The last decade witnessed a rise in the
             importance of supervised learning applications involving <u>big
+
+
+
+
+
 
 
 
@@ -3828,6 +4117,11 @@ INFORMS
 
 
 Annual
+
+
+
+
+
 
 
 
@@ -3975,6 +4269,11 @@ Annual
 
 
 
+
+
+
+
+
             Xiao</a> at Microsoft Research in Redmond, Washington. He
           will be back roughly in a month. While in the US, he will also
           drop by Phoenix to give a talk at the <a
@@ -4081,6 +4380,11 @@ INFORMS
 
 
 Annual
+
+
+
+
+
 
 
 
@@ -4230,12 +4534,22 @@ by
 
 
 
+
+
+
+
+
             the SIAM Journal on Optimization</a>.<br>
           <br>
           Here are related <a href="talks/TALK-SPDHG.pdf">slides</a>, <a
 href="https://www.maths.ed.ac.uk/%7Eprichtar/posters/Poster-SPDHG.pdf">poster</a>,
           <a href="https://github.com/mehrhardt/spdhg">GitHub code</a>
           and a <a href="https://www.youtube.com/watch?v=iZc2eFqS2l4">YouTube
+
+
+
+
+
 
 
 
@@ -4414,6 +4728,11 @@ Linear
 
 
 
+
+
+
+
+
             Algebra and Applications"</a>. This workshop is a part of
           the semester-long program <a
             href="https://simons.berkeley.edu/programs/datascience2018">"Foundations
@@ -4519,6 +4838,11 @@ of
 
 
 Data
+
+
+
+
+
 
 
 
@@ -4635,9 +4959,19 @@ Methods:
 
 
 
+
+
+
+
+
             Variance Reduction via Jacobian Sketching"</a> (joint work
           with R.M. Gower and F. Bach). All <a
             href="https://simons.berkeley.edu/workshops/schedule/6681">talks
+
+
+
+
+
 
 
 
@@ -4750,6 +5084,11 @@ talk
 
 
 is
+
+
+
+
+
 
 
 
@@ -4885,6 +5224,11 @@ for
 
 
 
+
+
+
+
+
             minibatches"</a>, coauthored with Dominik Csiba, was just
           published by the Journal of Machine Learning Research.<br>
           <br>
@@ -4993,6 +5337,11 @@ for
 
 
 
+
+
+
+
+
             website</a>, the event gathered 500 participants from 34
           countries and 6 continents, out of which 290 were MS and PhD
           students and postdocs, and 110 professionals. Selected
@@ -5016,6 +5365,11 @@ for
           included a best-poster competition, with an impressive total
           of <a
             href="http://www.ds3-datascience-polytechnique.fr/posters/">170
+
+
+
+
+
 
 
 
@@ -5083,6 +5437,11 @@ News
 
 
 
+
+
+
+
+
             article</a> about this. <br>
           <br>
           <br>
@@ -5102,6 +5461,11 @@ News
             spectral and conjugate descent methods"</a> - joint work
           with Dmitry Kovalev, <a
             href="https://eduardgorbunov.github.io/index.html#header3-a">Eduard
+
+
+
+
+
 
 
 
@@ -5132,6 +5496,11 @@ News
           work with <a
             href="https://perso.telecom-paristech.fr/rgower/">Robert M.
             Gower</a>, <a href="https://fhanzely.github.io/index.html">Filip
+
+
+
+
+
 
 
 
@@ -5254,6 +5623,11 @@ News
 
 
 
+
+
+
+
+
             University</a> during August 13-15, 2018. The workshop is
           part of a larger event which also includes the MOPTA
           conference (Aug 15-17) and the TRIPODS Summer School for PhD
@@ -5272,9 +5646,19 @@ News
 
 
 
+
+
+
+
+
           [<a href="papers/acc_gossip.pdf">Allerton2018</a>]. <br>
           <br>
           The <a href="http://coral.ie.lehigh.edu/%7Emopta/program">speaker
+
+
+
+
+
 
 
 
@@ -5307,6 +5691,11 @@ News
             href="https://fhanzely.github.io/index.html">Filip Hanzely</a>
           and <a
             href="https://www.microsoft.com/en-us/research/people/lixiao/">Lin
+
+
+
+
+
 
 
 
@@ -5473,6 +5862,11 @@ primal-dual
 
 
 hybrid
+
+
+
+
+
 
 
 
@@ -5664,6 +6058,11 @@ and
 
 
 
+
+
+
+
+
               its Applications</i></a>.<br>
           <br>
           <br>
@@ -5830,11 +6229,21 @@ under
 
 
 
+
+
+
+
+
             interval uncertainty: highlights"</a><a> </a>
           <meta http-equiv="Content-Type" content="text/html;
             charset=UTF-8">
           - joint work with <a
             href="https://researcher.watson.ibm.com/person/ie-jakub.marecek">Jakub
+
+
+
+
+
 
 
 
@@ -5992,6 +6401,11 @@ Optimization
 
 
 with
+
+
+
+
+
 
 
 
@@ -6158,6 +6572,11 @@ via
 
 
 
+
+
+
+
+
             stochastic heavy ball method"</a><a> </a>- joint work with
           <a href="http://www.maths.ed.ac.uk/%7Es1461357/">Nicolas
             Loizou.</a> <br>
@@ -6309,6 +6728,11 @@ Methods
 
 
 and
+
+
+
+
+
 
 
 
@@ -6501,6 +6925,11 @@ Speaker: Ion Necoara, Univ. Politehnica Bucharest, RO, talk 809
 
 
 
+
+
+
+
+
             website</a>, the event gathered 500 participants from 34
           countries and 6 continents, out of which 290 were MS and PhD
           students and postdocs, and 110 professionals. Selected
@@ -6524,6 +6953,11 @@ Speaker: Ion Necoara, Univ. Politehnica Bucharest, RO, talk 809
           included a best-poster competition, with an impressive total
           of <a
             href="http://www.ds3-datascience-polytechnique.fr/posters/">170
+
+
+
+
+
 
 
 
@@ -6596,6 +7030,11 @@ href="http://www.ds3-datascience-polytechnique.fr/wp-content/uploads/2018/06/DS3
 
 
 
+
+
+
+
+
             Seminar</a> (School of Mathematics). <br>
           <br>
           <span style="font-style: italic;"> </span> <span
@@ -6618,7 +7057,17 @@ href="http://www.ds3-datascience-polytechnique.fr/wp-content/uploads/2018/06/DS3
 
 
 
+
+
+
+
+
             Sailanbayev</a>, <a href="http://www.bernardghanem.com">Bernard
+
+
+
+
+
 
 
 
@@ -6864,6 +7313,11 @@ href="http://www.ds3-datascience-polytechnique.fr/wp-content/uploads/2018/06/DS3
 
 
 
+
+
+
+
+
             Bach.</a><br>
           <br>
           Abstract:<span style="font-style: italic;"> We develop a new
@@ -6931,6 +7385,11 @@ href="https://warwick.ac.uk/fac/cross_fac/dimap/seminars/#010518Richtarik">DIMAP
           work with <a
             href="https://perso.telecom-paristech.fr/rgower/">Robert M.
             Gower</a> and <a href="http://www.di.ens.fr/%7Efbach/">Francis
+
+
+
+
+
 
 
 
@@ -7118,7 +7577,17 @@ Mathematical
 
 
 
+
+
+
+
+
             Olympiad</a><span style="font-style: italic;"> </span>and/or
+
+
+
+
+
 
 
 
@@ -7131,6 +7600,11 @@ Mathematical
           <br>
           This is a collaborative effort with <a
             href="https://www.kaust.edu.sa/en/study/faculty/diogo-gomes">Diogo
+
+
+
+
+
 
 
 
@@ -7261,6 +7735,11 @@ Optimization
 
 
 
+
+
+
+
+
             Society Conference</a> in Denver, Colorado. <br>
           <br>
           <br>
@@ -7330,6 +7809,11 @@ Optimization
 
 
 
+
+
+
+
+
             Schönlieb</a> at the University of Cambridge. During March
           8-11 he is participating in <a href="https://vhacks.org">VHacks</a>,
           the first ever hackathon at the Vatican. <br>
@@ -7352,6 +7836,11 @@ seminar
 
 
 talk
+
+
+
+
+
 
 
 
@@ -7390,6 +7879,11 @@ can
 
 
 be
+
+
+
+
+
 
 
 
@@ -7514,6 +8008,11 @@ be
 
 
 
+
+
+
+
+
             Gorbunov</a> and Elnur Gasanov.<br>
           <br>
           Abstract:<span style="font-style: italic;"> The
@@ -7573,6 +8072,11 @@ be
 
 
 
+
+
+
+
+
             Terlaky (Lehigh)</a> is the keynote speaker. <br>
           <br>
           Thanks to the KAUST Office for Sponsored Research, The Alan
@@ -7626,8 +8130,18 @@ be
 
 
 
+
+
+
+
+
             Harman</a> and <a
             href="http://www.iam.fmph.uniba.sk/ospm/Filova/index-sk.htm">Lenka
+
+
+
+
+
 
 
 
@@ -7666,11 +8180,21 @@ be
 
 
 
+
+
+
+
+
             Gorbunov</a> (a master's student visiting from MIPT, Moscow;
           will be here untill Feb 8), <a
             href="http://www.damtp.cam.ac.uk/user/me404/">Matthias
             Ehrhardt</a> (visiting from Cambridge, UK, untill February
           10) and <a href="http://maiage.jouy.inra.fr/?q=fr/bergou">Elhoucine
+
+
+
+
+
 
 
 
@@ -7691,6 +8215,11 @@ be
             href="http://acse.pub.ro/person/ion-necoara/">Ion Necoara</a>
           and <a
             href="https://www.researchgate.net/profile/Andrei_Patrascu2">Andrei
+
+
+
+
+
 
 
 
@@ -7729,6 +8258,11 @@ be
         <div id="sidebar">
           <h6>[9/2018] A <a
 href="https://www.youtube.com/watch?v=gjgEck0zU7w&amp;list=PLgKuh-lKre13E9dXSsif4KsGoFp4bjubd&amp;index=9">YouTube
+
+
+
+
+
 
 
 
@@ -7797,8 +8331,18 @@ href="https://comm.medias.polytechnique.fr/videos/richtarik_5_randonoptimization
 
 
 
+
+
+
+
+
               I</a>, <a
               href="http://icml.cc/2015/tutorials/2015_ICML_ConvexOptimization_II.pdf">Part
+
+
+
+
+
 
 
 
@@ -7832,9 +8376,19 @@ href="https://comm.medias.polytechnique.fr/videos/richtarik_5_randonoptimization
 
 
 
+
+
+
+
+
               video</a> of a talk I gave at the Simons Institute
             workshop on <a
               href="http://simons.berkeley.edu/workshops/bigdata2013-2">parallel
+
+
+
+
+
 
 
 
