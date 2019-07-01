@@ -5,7 +5,7 @@ document.write("<td> <img src=\"imgs\/pr.jpg\" alt=\"Peter Richtarik\"");
 document.write("width=\"161\" height=\"200\"> <\/td>");
 document.write("<td>");
 document.write("<h1>Peter Richtárik <\/h1>");
-document.write("<h2>Associate Professor of Computer Science<\/h2>");
+document.write("<h2>Professor of Computer Science<\/h2>");
 document.write("<h2><a href=\"https:\/\/kaust.edu.sa\/en\">KAUST<\/a><\/h2>");
 document.write("<br>");
 document.write("Address: Al Khawarizmi Building 1, Office 2221, Thuwal 23955-6900, Saudi Arabia <br>");
