@@ -31,6 +31,88 @@
 
 
 
+
+<h3>June 1, 2020</h3>
+<h1>Five Papers Accepted to ICML 2020</h1>
+<br>
+We've had five papers accepted to <a href="https://icml.cc/Conferences/2020">ICML 2020</a>, which will be run virtually during July 12-18, 2020.
+Here they are:<br><br>
+
+
+1) <a href="https://arxiv.org/abs/2002.04670">"Variance Reduced Coordinate Descent with Acceleration: New
+  Method With a Surprising Application to Finite-Sum Problems"</a> - joint work with
+<a href="https://fhanzely.github.io/index.html">Filip Hanzely</a> and
+<a href="https://www.dmitry-kovalev.com">Dmitry Kovalev.</a> <br>
+<br>
+Abstract: <i>We propose an accelerated version of stochastic variance reduced coordinate descent -- ASVRCD. As other variance reduced coordinate descent methods such as SEGA or SVRCD, our method can deal with problems that include a non-separable and non-smooth regularizer, while accessing a random block of partial derivatives in each iteration only. However, ASVRCD incorporates Nesterov's momentum, which offers favorable iteration complexity guarantees over both SEGA and SVRCD. As a by-product of our theory, we show that a variant of Allen-Zhu (2017) is a specific case of ASVRCD, recovering the optimal oracle complexity for the finite sum objective.</i><br>
+<br>
+
+
+
+2) <a href="https://arxiv.org/abs/2002.09526">"Stochastic Subspace Cubic Newton Method"</a> - joint work with
+<a href="https://fhanzely.github.io/index.html">Filip Hanzely</a>,
+<a href="https://scholar.google.ru/citations?user=YNBhhjUAAAAJ&hl=en">Nikita Doikov</a> and <a href="https://scholar.google.com/citations?user=DJ8Ep8YAAAAJ&hl=en">Yurii Nesterov</a>.
+<br>
+<br>
+Abstract: <i>In this paper, we propose a new randomized second-order optimization
+  algorithm---Stochastic Subspace Cubic Newton (SSCN)---for minimizing a high dimensional
+  convex function f. Our method can be seen both as a stochastic extension of the
+  cubically-regularized Newton method of Nesterov and Polyak (2006), and a second-order
+  enhancement of stochastic subspace descent of Kozak et al. (2019). We prove that as we vary
+  the minibatch size, the global convergence rate of SSCN interpolates between the rate of
+  stochastic coordinate descent (CD) and the rate of cubic regularized Newton, thus giving new
+  insights into the connection between first and second-order methods.
+  Remarkably, the local convergence rate of SSCN matches the rate of stochastic subspace
+  descent applied to the problem of minimizing the quadratic function 0.5 (x−xopt)^T f''(xopt) (x−xopt),
+  where xopt is the minimizer of f, and hence depends on the properties of f at the optimum only.
+  Our numerical experiments show that SSCN outperforms non-accelerated first-order CD algorithms
+  while being competitive to their accelerated variants. </i><br>
+<br>
+
+
+
+3) <a href="https://arxiv.org/abs/1910.09529">"Adaptive gradient descent without descent"</a> - work of  <a
+href="https://konstmish.github.io">Konstantin Mishchenko</a> and <a href="https://people.epfl.ch/yurii.malitskyi">Yura Malitsky</a>.<br>
+<br>
+Abstract: <i>We present a strikingly simple proof that two rules are sufficient to automate gradient descent: 1) don't increase the stepsize too fast and 2) don't overstep the local curvature. No need for functional values, no line search, no information about the function except for the gradients. By following these rules, you get a method adaptive to the local geometry, with convergence guarantees depending only on smoothness in a neighborhood of a solution. Given that the problem is convex, our method will converge even if the global smoothness constant is infinity. As an illustration, it can minimize arbitrary continuously twice-differentiable convex function. We examine its performance on a range of convex and nonconvex problems, including matrix factorization and training of ResNet-18. </i> <br>
+
+<br>
+<br>
+<img alt="" src="imgs/fancy-line.png" width="196" height="36">
+<br>
+<br>
+
+
+
+4) <a href="https://arxiv.org/abs/2004.01442">
+  "From Local SGD to Local Fixed Point Methods for Federated Learning"</a> - joint work with
+Grigory Malinovsky,
+<a href="https://www.dmitry-kovalev.com">Dmitry Kovalev</a>,
+<a href="http://elnurgasanov.me">Elnur Gasanov</a>, and
+<a href="https://lcondat.github.io">Laurent Condat</a>. <br>
+
+<br>
+Abstract: <i>Most algorithms for solving optimization problems or finding saddle points of convex-concave functions are fixed point algorithms. In this work we consider the generic problem of finding a fixed point of an average of operators, or an approximation thereof, in a distributed setting. Our work is motivated by the needs of federated learning. In this context, each local operator models the computations done locally on a mobile device. We investigate two strategies to achieve such a consensus: one based on a fixed number of local steps, and the other based on randomized computations. In both cases, the goal is to limit communication of the locally-computed variables, which is often the bottleneck in distributed frameworks. We perform convergence analysis of both methods and conduct a number of experiments highlighting the benefits of our approach.</i> <br>
+<br>
+
+
+
+
+5) <a href="https://arxiv.org/abs/2002.11364">"Acceleration for Compressed Gradient Descent in Distributed Optimization"</a>
+- joint work with
+<a href="https://zhizeli.github.io">Zhize Li</a>,
+<a href="https://www.dmitry-kovalev.com">Dmitry Kovalev</a>,
+and <a
+href="https://qianxunk.github.io">Xun Qian</a>.
+<br>
+<br>
+Abstract: <i>The abstract contains a lot of math symbols, so <a href="https://arxiv.org/abs/2002.11364">look here instead.</a> </i><br>
+<br>
+
+
+
+
+
 <h3>May 27, 2020</h3>
 <h1>NeurIPS Abstract Deadline Today</h1>
 <br>
