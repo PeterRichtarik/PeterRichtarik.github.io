@@ -45,21 +45,72 @@
 
 
 
+
+<h3>October 7, 2020</h3>
+<h1>New Paper</h1>
+<br>
+
+<span class="important">New paper out: </span>
+<a href="https://arxiv.org/abs/2010.00952">"Optimal Gradient Compression for Distributed and Federated Learning"</a> -
+joint work with <a href="https://alyazeedbasyoni.wixsite.com/blog">Alyazeed Albasyoni</a>, <a href="https://mher-safaryan.github.io">Mher Safaryan</a>,
+and <a href="https://lcondat.github.io">Laurent Condat</a>.<br>
+<br>
+
+Abstract: <i>
+Communicating information, like gradient vectors, between computing nodes in distributed and federated learning is typically an unavoidable burden, resulting in scalability issues. Indeed, communication might be slow and costly. Recent advances in communication-efficient training algorithms have reduced this bottleneck by using compression techniques, in the form of sparsification, quantization, or low-rank approximation. Since compression is a lossy, or inexact, process, the iteration complexity is typically worsened; but the total communication complexity can improve significantly, possibly leading to large computation time savings. In this paper, we investigate the fundamental trade-off between the number of bits needed to encode compressed vectors and the compression error. We perform both worst-case and average-case analysis, providing tight lower bounds. In the worst-case analysis, we introduce an efficient compression operator, Sparse Dithering, which is very close to the lower bound. In the average-case analysis, we design a simple compression operator, Spherical Compression, which naturally achieves the lower bound. Thus, our new compression schemes significantly outperform the state of the art. We conduct numerical experiments to illustrate this improvement.
+</i>
+<br>
+
+<br>
+<br>
+<img alt="" src="imgs/fancy-line.png" width="196" height="36">
+<br>
+<br>
+
+
+
+<h3>October 5, 2020</h3>
+<h1>New Paper</h1>
+<br>
+
+<span class="important">New paper out: </span>
+<a href="https://arxiv.org/abs/2010.02372">"Lower Bounds and Optimal Algorithms for Personalized Federated Learning"</a> -
+joint work with <a href="https://fhanzely.github.io/index.html">Filip Hanzely</a>, <a href="https://slavomirhanzely.wordpress.com">Slavomír Hanzely</a>,
+and <a href="https://samuelhorvath.github.io">Samuel Horváth</a>.<br>
+<br>
+
+Abstract: <i>
+In this work, we consider the optimization formulation of personalized federated learning recently introduced by Hanzely and Richtárik (2020)
+which was shown to give an alternative explanation to the workings of local SGD methods. Our first contribution is establishing the first lower
+bounds for this formulation, for both the communication complexity and the local oracle complexity. Our second contribution is the design of
+several optimal methods matching these lower bounds in almost all regimes. These are the first provably optimal methods for personalized federated
+learning. Our optimal methods include an accelerated variant of FedProx, and an accelerated variance-reduced version of FedAvg / Local SGD. We
+demonstrate the practical superiority of our methods through extensive numerical experiments.
+</i>
+<br>
+
+<br>
+<br>
+<img alt="" src="imgs/fancy-line.png" width="196" height="36">
+<br>
+<br>
+
+
+
+
 <h3>October 2, 2020</h3>
 <h1>New Paper </h1>
 <br>
 
 <span class="important">New paper out: </span>
-<a href="https://arxiv.org/abs/2010.00952">"Distributed proximal splitting algorithms with rates and acceleration"</a> -
+<a href="https://arxiv.org/abs/2010.00952">"Distributed Proximal Splitting Algorithms with Rates and Acceleration"</a> -
 joint work with <a href="https://lcondat.github.io">Laurent Condat</a> and Grigory Malinovsky.<br>
 <br>
-
 
 Abstract: <i>
 We analyze several generic proximal splitting algorithms well suited for large-scale convex nonsmooth optimization. We derive sublinear and linear convergence results with new rates on the function value suboptimality or distance to the solution, as well as new accelerated versions, using varying stepsizes. In addition, we propose distributed variants of these algorithms, which can be accelerated as well. While most existing results are ergodic, our nonergodic results significantly broaden our understanding of primal-dual optimization algorithms.
 </i>
 <br>
-
 
 <br>
 <br>
