@@ -43,8 +43,66 @@
         <div id="content">
 
 
+          <h3>February 14, 2021</h3>
+          <h1>New Paper</h1>
+          <br>
 
-          <h3>February 15, 2021</h3>
+          <span class="important">New paper out: </span>
+          <a href="https://arxiv.org/abs/2102.07245">"Smoothness Matrices Beat Smoothness Constants: Better Communication Compression Techniques for Distributed Optimization"</a> -
+          joint work with <a href="https://mher-safaryan.github.io">Mher Safaryan</a>, and
+          <a href="https://www.ttic.edu/faculty/hanzely/">Filip Hanzely</a>.<br>
+          <br>
+
+          Abstract: <i>
+           Large scale distributed optimization has become the default tool for the training of supervised machine
+           learning models with a large number of parameters and training data. Recent advancements in the field
+           provide several mechanisms for speeding up the training, including compressed communication, variance
+           reduction and acceleration. However, none of these methods is capable of exploiting the inherently rich data-dependent smoothness 
+           structure of the local losses beyond standard smoothness constants. In this paper, we argue that when
+           training supervised models, {\em smoothness matrices} -- information-rich generalizations of the ubiquitous
+           smoothness constants -- can and should be exploited for further dramatic gains, both in theory and practice.
+           In order to further alleviate the communication burden inherent in distributed optimization, we propose a
+           novel communication sparsification strategy that can take full advantage of the smoothness matrices
+           associated with local losses. To showcase the power of this tool, we describe how our sparsification
+           technique can be adapted to three distributed optimization algorithms -- DCGD, DIANA and ADIANA -- yielding
+           significant savings in terms of communication complexity. The new methods always outperform the baselines,
+           often dramatically so.
+          </i>
+          <br>
+
+          <br>
+          <br>
+          <img alt="" src="imgs/fancy-line.png" width="196" height="36">
+          <br>
+          <br>
+
+
+
+
+          <h3>February 13, 2021</h3>
+          <h1>New Paper</h1>
+          <br>
+
+          <span class="important">New paper out: </span>
+          <a href="https://arxiv.org/abs/2102.07158">"Distributed Second Order Methods with Fast Rates and Compressed Communication"</a> -
+          joint work with <a href="https://rustem-islamov.github.io">Rustem Islamov</a>, and
+          <a href="https://qianxunk.github.io">Xun Qian</a>.<br>
+          <br>
+
+          Abstract: <i>
+           We develop several new communication-efficient second-order methods for distributed optimization. Our first method, NEWTON-STAR, is a variant of Newton's method from which it inherits its fast local quadratic rate. However, unlike Newton's method, NEWTON-STAR enjoys the same per iteration communication cost as gradient descent. While this method is impractical as it relies on the use of certain unknown parameters characterizing the Hessian of the objective function at the optimum, it serves as the starting point which enables us design practical variants thereof with strong theoretical guarantees. In particular, we design a stochastic sparsification strategy for learning the unknown parameters in an iterative fashion in a communication efficient manner. Applying this strategy to NEWTON-STAR leads to our next method, NEWTON-LEARN, for which we prove local linear and superlinear rates independent of the condition number. When applicable, this method can have dramatically superior convergence behavior when compared to state-of-the-art methods. Finally, we develop a globalization strategy using cubic regularization which leads to our next method, CUBIC-NEWTON-LEARN, for which we prove global sublinear and linear convergence rates, and a fast superlinear rate. Our results are supported with experimental results on real datasets, and show several orders of magnitude improvement on baseline and state-of-the-art methods in terms of communication complexity.
+          </i>
+          <br>
+
+          <br>
+          <br>
+          <img alt="" src="imgs/fancy-line.png" width="196" height="36">
+          <br>
+          <br>
+
+
+
+          <h3>February 12, 2021</h3>
           <h1>New Paper</h1>
           <br>
 
