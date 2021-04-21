@@ -95,20 +95,28 @@ We've had three papers accepted to <a href="https://aistats.org/aistats2021/">Th
 We propose a new randomized first-order method which tackles the communication bottleneck by applying randomized compression operators to the communicated messages. By combining our scheme with a new variance reduction technique that progressively throughout the iterations reduces the adverse effect of the injected quantization noise, we obtain the first scheme that converges linearly on strongly convex decentralized problems while using compressed communication only.
 We prove that our method can solve the problems without any increase in the number of communications compared to the baseline which does not perform any communication compression while still allowing for a significant compression factor which depends on the conditioning of the problem and the topology of the network. Our key theoretical findings are supported by numerical experiments. <br> <br>
 
+<a href="posters/Poster-Decentralized-DIANA.pdf"> <img alt="" src="posters/Poster-Decentralized-DIANA-small.png" width="750" ></a>
+<br> <br>
 
 2. <a href="http://proceedings.mlr.press/v130/gorbunov21a.html">Local SGD: unified theory and new efficient methods</a>, joint work with  <a href="https://eduardgorbunov.github.io">Eduard Gorbunov</a> and <a href="https://fhanzely.github.io">Filip Hanzely</a>.<br><br>
 
 <i>Abstract:</i> We present a unified framework for analyzing local SGD methods in the convex and strongly convex regimes for distributed/federated training of supervised machine learning models. We recover several known methods as a special case of our general framework, including Local-SGD/FedAvg, SCAFFOLD, and several variants of SGD not originally designed for federated learning. Our framework covers both the identical and heterogeneous data settings, supports both random and deterministic number of local steps, and can work with a wide array of local stochastic gradient estimators, including shifted estimators which are able to adjust the fixed points of local iterations for faster convergence. As an application of our framework, we develop multiple novel FL optimizers which are superior to existing methods. In particular, we develop the first linearly converging local SGD method which does not require any data homogeneity or other strong assumptions. <br> <br>
 
 
-<a href="posters/Poster-Local-SGD-AISTATS-2021.pdf"> <img alt="" src="posters/Poster-Local-SGD-AISTATS-2021-small.png" width="700" ></a>
-<br>
+<a href="posters/Poster-Local-SGD-AISTATS-2021.pdf"> <img alt="" src="posters/Poster-Local-SGD-AISTATS-2021-small.png" width="750" ></a>
+<br> <br>
+
+
+
 
 
 3. <a href="http://proceedings.mlr.press/v130/horvath21a.html">Hyperparameter transfer learning with adaptive complexity</a>, joint work with  <a href="https://samuelhorvath.github.io">Samuel Horváth</a> and <a href="https://aaronkl.github.io">Aaron Klein</a>, and <a href="http://www0.cs.ucl.ac.uk/staff/c.archambeau/">Cedric Archambeau</a>.<br><br>
 
 <i>Abstract:</i>  Bayesian optimization (BO) is a data-efficient approach to automatically tune the hyperparameters of machine learning models. In practice, one frequently has to solve similar hyperparameter tuning problems sequentially. For example, one might have to tune a type of neural network learned across a series of different classification problems. Recent work on multi-task BO exploits knowledge gained from previous hyperparameter tuning tasks to speed up a new tuning task. However, previous approaches do not account for the fact that BO is a sequential decision making procedure. Hence, there is in general a mismatch between the number of evaluations collected in the current tuning task compared to the number of evaluations accumulated in all previously completed tasks. In this work, we enable multi-task BO to compensate for this mismatch, such that the transfer learning procedure is able to handle different data regimes in a principled way. We propose a new multi-task BO method that learns a set of ordered, non-linear basis functions of increasing complexity via nested drop-out and automatic relevance determination. Experiments on a variety of hyperparameter tuning problems show that our method improves the sample efficiency of recently published multi-task BO methods.
 <br>
+
+<a href="posters/Poster-ABRAC-AISTATS-2021.pdf"> <img alt="" src="posters/Poster-ABRAC-AISTATS-2021-small.png" width="750" ></a>
+
 
 
           <br>
