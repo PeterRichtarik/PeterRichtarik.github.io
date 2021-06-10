@@ -44,12 +44,56 @@
         <div id="content">
 
 
+          <h3>June 9, 2021</h3>
+          <h1>New Paper</h1>
+          <br>
+
+          <span class="important">New paper out: </span>
+          <a href="https://arxiv.org/abs/2106.05203">"EF21: A New, Simpler, Theoretically Better, and Practically Faster Error Feedback"</a> -
+          joint work with <a href="https://cemse.kaust.edu.sa/people/person/igor-sokolov">Igor Sokolov</a> and Ilyas Fatkhullin.<br>
+          <br>
+
+          Abstract: <i>
+Error feedback (EF), also known as error compensation, is an immensely popular convergence stabilization mechanism in the context of distributed training of supervised machine learning models enhanced by the use of contractive communication compression mechanisms, such as Top-k. First proposed by Seide et al (2014) as a heuristic, EF resisted any theoretical understanding until recently [Stich et al., 2018, Alistarh et al., 2018]. However, all existing analyses either i) apply to the single node setting only, ii) rely on very strong and often unreasonable assumptions, such global boundedness of the gradients, or iterate-dependent assumptions that cannot be checked a-priori and may not hold in practice, or iii) circumvent these issues via the introduction of additional unbiased compressors, which increase the communication cost. In this work we fix all these deficiencies by proposing and analyzing a new EF mechanism, which we call EF21, which consistently and substantially outperforms EF in practice. Our theoretical analysis relies on standard assumptions only, works in the distributed heterogeneous data setting, and leads to better and more meaningful rates. In particular, we prove that EF21 enjoys a fast O(1/T) convergence rate for smooth nonconvex problems, beating the previous bound of O(1/T^{2/3}), which was shown a bounded gradients assumption. We further improve this to a fast linear rate for PL functions, which is the first linear convergence result for an EF-type method not relying on unbiased compressors. Since EF has a large number of applications where it reigns supreme, we believe that our 2021 variant, EF21, can a large impact on the practice of communication efficient distributed learning.
+</i>
+          <br>
+
+          <br>
+          <br>
+          <img alt="" src="imgs/fancy-line.png" width="196" height="36">
+          <br>
+          <br>
+
+
+
+          <h3>June 8, 2021</h3>
+          <h1>New Paper</h1>
+          <br>
+
+          <span class="important">New paper out: </span>
+          <a href="https://arxiv.org/abs/2106.04469">"Lower Bounds and Optimal Algorithms for Smooth and Strongly Convex Decentralized Optimization Over Time-Varying Networks"</a> -
+          joint work with <a href="https://www.dmitry-kovalev.com">Dmitry Kovalev</a>, <a href="http://elnurgasanov.com">Elnur Gasanov</a> and <a href="https://www.hse.ru/en/org/persons/49503846">Alexander Gasnikov</a>.<br>
+          <br>
+
+          Abstract: <i>
+We consider the task of minimizing the sum of smooth and strongly convex functions stored in a decentralized manner across the nodes of a communication network whose links are allowed to change in time. We solve two fundamental problems for this task. First, we establish the first lower bounds on the number of decentralized communication rounds and the number of local computations required to find an ϵ-accurate solution. Second, we design two optimal algorithms that attain these lower bounds: (i) a variant of the recently proposed algorithm ADOM (Kovalev et al., 2021) enhanced via a multi-consensus subroutine, which is optimal in the case when access to the dual gradients is assumed, and (ii) a novel algorithm, called ADOM+, which is optimal in the case when access to the primal gradients is assumed. We corroborate the theoretical efficiency of these algorithms by performing an experimental comparison with existing state-of-the-art methods.
+</i>
+          <br>
+
+          <br>
+          <br>
+          <img alt="" src="imgs/fancy-line.png" width="196" height="36">
+          <br>
+          <br>
+
+
+
           <h3>June 6, 2021</h3>
           <h1>New Paper</h1>
           <br>
 
           <span class="important">New paper out: </span>
-          <a href="https://arxiv.org/abs/2106.03524">"Smoothness-aware quantization techniques"</a> -
+          <a href="https://arxiv.org/abs/2106.03524">"Smoothness-Aware Quantization Techniques"</a> -
           joint work with Bokun Wang, and <a href="https://mher-safaryan.github.io">Mher Safaryan</a>.<br>
           <br>
 
@@ -72,7 +116,7 @@ Distributed machine learning has become an indispensable tool for training large
           <br>
 
           <span class="important">New paper out: </span>
-          <a href="https://arxiv.org/abs/2106.03076">"Complexity analysis of Stein variational gradient descent under Talagrand's inequality T1"</a> -
+          <a href="https://arxiv.org/abs/2106.03076">"Complexity Analysis of Stein Variational Gradient Descent under Talagrand's Inequality T1"</a> -
           joint work with
           <a href="https://adil-salim.github.io">Adil Salim</a>, and <a href="https://lukangsun.github.io">Lukang Sun</a>.<br>
           <br>
