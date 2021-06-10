@@ -1,4 +1,4 @@
-document.write("<table width=\"805\" border=\"0\" height=\"184\">");
+document.write("<table width=\"815\" border=\"0\" height=\"184\">");
 document.write("<tbody>");
 document.write("<tr>");
 document.write("<td> <img src=\"imgs\/pr.jpg\" alt=\"Peter Richtarik\"");
