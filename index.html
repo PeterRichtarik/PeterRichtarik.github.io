@@ -272,6 +272,507 @@ the work of
 
 
 
+<h3>September 23, 2021</h3>
+<h1>New Paper</h1>
+<br>
+
+<span class="important">New paper out: </span>
+<a href="https://arxiv.org/abs/2109.10049">"Error Compensated Loopless SVRG, Quartz, and SDCA for Distributed Optimization"</a> -
+joint work with <a href="https://qianxunk.github.io">Xun Qian</a>, <a href="https://www.researchgate.net/profile/Hanze-Dong">Hanze Dong</a>, and <a href="http://tongzhang-ml.org">Tong Zhang</a>.<br>
+<br>
+
+Abstract: <i>
+The communication of gradients is a key bottleneck in distributed training of large scale machine learning models. In order to reduce the communication cost, gradient compression (e.g., sparsification and quantization) and error compensation techniques are often used. In this paper, we propose and study three new efficient methods in this space: error compensated loopless SVRG method (EC-LSVRG), error compensated Quartz (EC-Quartz), and error compensated SDCA (EC-SDCA). Our method is capable of working with any contraction compressor (e.g., TopK compressor), and we perform analysis for convex optimization problems in the composite case and smooth case for EC-LSVRG. We prove linear convergence rates for both cases and show that in the smooth case the rate has a better dependence on the parameter associated with the contraction compressor. Further, we show that in the smooth case, and under some certain conditions, error compensated loopless SVRG has the same convergence rate as the vanilla loopless SVRG method. Then we show that the convergence rates of EC-Quartz and EC-SDCA in the composite case are as good as EC-LSVRG in the smooth case. Finally, numerical experiments are presented to illustrate the efficiency of our methods.
+</i>
+<br>
+
+<br>
+<br>
+<img alt="" src="imgs/fancy-line.png" width="196" height="36">
+<br>
+<br>
+
+
+<h3>September 11, 2021</h3>
+<h1>New Paper</h1>
+ <br>
+
+<span class="important">New paper out: </span>
+<a href="https://arxiv.org/abs/2109.05198">"Doubly Adaptive Scaled Algorithm for Machine Learning Using Second-Order Information"</a> -
+joint work with <a href="https://coral.ise.lehigh.edu/maj316/">Majid Jahani</a>, <a href="https://scholar.google.com/citations?user=tdyw7IAAAAAJ&hl=lv">Sergey Rusakov</a>, <a href="https://coral.ise.lehigh.edu/zhs310/">Zheng Shi</a>,
+<a href="https://www.stat.berkeley.edu/~mmahoney/">Michael W. Mahoney</a>, and
+<a href="https://mtakac.com">Martin Takáč</a>.<br>
+ <br>
+Abstract: <i> We present a novel adaptive optimization algorithm for large-scale machine learning problems. Equipped with a low-cost estimate of local curvature and Lipschitz smoothness, our method dynamically adapts the search direction and step-size. The search direction contains gradient information preconditioned by a well-scaled diagonal preconditioning matrix that captures the local curvature information. Our methodology does not require the tedious task of learning rate tuning, as the learning rate is updated automatically without adding an extra hyperparameter. We provide convergence guarantees on a comprehensive collection of optimization problems, including convex, strongly convex, and nonconvex problems, in both deterministic and stochastic regimes. We also conduct an extensive empirical evaluation on standard machine learning problems, justifying our algorithm's versatility and demonstrating its strong performance compared to other start-of-the-art first-order and second-order methods.
+</i>
+
+ <br>
+
+ <br>
+ <br>
+ <img alt="" src="imgs/fancy-line.png" width="196" height="36">
+ <br>
+ <br>
+
+
+
+ <h3>August 29, 2021</h3>
+ <h1>Fall 2021 Semester Started</h1>
+
+ The Fall semester has started at KAUST today; I am teaching CS 331: Stochastic Gradient Descent Methods.
+ <br> <br>
+
+ <i>Brief course blurb:</i> Stochastic gradient descent (SGD) in one or another of its many variants is the workhorse method for training modern supervised machine learning models. However, the world of SGD methods is vast and expanding, which makes it hard for practitioners and even experts to understand its landscape and inhabitants. This course is a mathematically rigorous and comprehensive introduction to the field, and is based on the latest results and insights.
+ The course develops a convergence and complexity theory for serial, parallel, and distributed variants of SGD, in the strongly convex, convex and nonconvex setup, with randomness coming from sources such as subsampling and compression. Additional topics such as acceleration via Nesterov momentum or curvature information will be covered as well.
+ A substantial part of the course offers a unified analysis of a large family of variants of SGD which have so far required different intuitions, convergence analyses, have different applications, and which have been developed separately in various communities. This framework includes methods with and without the following tricks, and their combinations: variance reduction, data sampling, coordinate sampling, arbitrary sampling, importance sampling, mini-batching, quantization, sketching, dithering and sparsification.
+ <br>
+ <br>
+ <img alt="" src="imgs/fancy-line.png" width="196" height="36">
+ <br>
+ <br>
+
+
+
+ <h3>August 11, 2021</h3>
+ <h1>New Paper</h1>
+
+ <span class="important">New paper out: </span>
+ <a href="https://arxiv.org/abs/2108.04755">"FedPAGE: A Fast Local Stochastic Gradient Method for Communication-Efficient Federated Learning"</a> -
+ joint work with <a href="http://hyzhao.me">Haoyu Zhao</a> and <a href="https://zhizeli.github.io">Zhize Li</a>.<br>
+ <br>
+
+ Abstract: <i> Federated Averaging (FedAvg, also known as Local-SGD) [McMahan et al., 2017] is a classical federated learning algorithm in which
+   clients run multiple local SGD steps before communicating their update to an orchestrating server.  We propose a new federated learning algorithm,
+   FedPAGE,  able to further reduce the communication complexity by utilizing the recent optimal PAGE method [Li et al., 2021] instead of plain
+   SGD in FedAvg. We show that FedPAGE uses much fewer communication rounds than previous local methods for both federated convex and nonconvex
+   optimization. Concretely, 1) in the convex setting, the number of communication rounds of FedPAGE is $O(\frac{N^{3/4}}{S\epsilon})$, improving
+   the best-known result $O(\frac{N}{S\epsilon})$ of SCAFFOLD [Karimireddy et al., 2020] by a factor of $N^{1/4}$, where $N$ is the total number
+   of clients (usually is very large in federated learning), $S$ is the sampled subset of clients in each communication round, and $\epsilon$ is
+   the target error; 2) in the nonconvex setting, the number of communication rounds of FedPAGE is $O(\frac{\sqrt{N}+S}{S\epsilon^2})$, improving
+   the best-known result  $O(\frac{N^{2/3}}{S^{2/3}\epsilon^2})$ of SCAFFOLD by a factor of $N^{1/6}S^{1/3}$ if the sampled clients $S\leq \sqrt{N}$.
+   Note that in both settings, the communication cost for each round is the same for both FedPAGE and SCAFFOLD. As a result, FedPAGE achieves new
+   state-of-the-art results in terms of communication complexity for both federated convex and nonconvex optimization.
+ </i>
+ <br>
+
+ <br>
+ <br>
+ <img alt="" src="imgs/fancy-line.png" width="196" height="36">
+ <br>
+ <br>
+
+
+
+
+ <h3>July 20, 2021</h3>
+ <h1>New Paper</h1>
+ <br>
+
+ <span class="important">New paper out: </span>
+ <a href="https://arxiv.org/abs/2107.09461">"CANITA: Faster Rates for Distributed Convex Optimization with Communication Compression"</a> -
+ joint work with <a href="https://zhizeli.github.io">Zhize Li</a>.<br>
+ <br>
+ <br>
+ In this work we develop and analyze the first distributed gradient method  capable in the convex regime of benefiting from
+ communication compression and acceleration/momentum at the same time. The strongly convex regime was first handled in the <a href="http://proceedings.mlr.press/v119/li20g.html">ADIANA
+ paper (ICML 2020)</a>, and the nonconvex regime in the <a href="http://proceedings.mlr.press/v139/gorbunov21a.html">MARINA paper (ICML 2021)</a>.
+ <br>
+
+ <br>
+ <br>
+ <img alt="" src="imgs/fancy-line.png" width="196" height="36">
+ <br>
+ <br>
+
+
+
+ <h3>July 20, 2021</h3>
+ <h1>Talk at SIAM Conference on Optimization</h1>
+ <br>
+
+ Today I gave a talk in the <a href="https://meetings.siam.org/sess/dsp_programsess.cfm?SESSIONCODE=71575">Recent Advancements in Optimization Methods for Machine Learning - Part I of III</a> minisymposium
+ at the <a href="https://www.siam.org/conferences/cm/conference/op21">SIAM Conference on Optimization.</a> The conference was originally supposed to take place in Hong Kong in 2020, but due to the Covid-19
+ situation, this was not to be. Instead, the event is happening this year, and virtually. I was on the organizing committee for the conference, jointly resposible for inviting plenary and tutorial speakers.
+ <br>
+
+ <br>
+ <br>
+ <img alt="" src="imgs/fancy-line.png" width="196" height="36">
+ <br>
+ <br>
+
+
+
+ <h3>July 12, 2021</h3>
+ <h1>Optimization Without Borders Conference (Nesterov 65)</h1>
+ <br>
+
+ Today I am giving a talk at the <a href="https://cs.hse.ru/hdilab/opti/">"Optimization Without Borders"</a> conference, organized in the honor of <a href="https://en.wikipedia.org/wiki/Yurii_Nesterov">Yurii Nesterov's</a> 65th Birthday. This is a hybrid
+ event, with online and offline participants. The offline part takes place at the <a href="https://siriusuniversity.ru">Sirius University</a> in Sochi, Russia.
+ <br>    <br>
+ Other speakers at the event (in order of giving talks at the event): Gasnikov, Nesterov, myself, Spokoiny, Mordukhovich, Bolte, Belomestny, Srebro,
+ Zaitseva, Protasov, Shikhman, d'Aspremont, Polyak, Taylor, Stich, Teboulle, Lasserre, Nemirovski,  Vorobiev,
+ Yanitsky, Bakhurin, Dudorov, Molokov, Gornov, Rogozin, Hildebrand, Dvurechensky, Moulines, Juditsky,
+ Sidford, Tupitsa, Kamzolov, and Anikin.
+
+ <br>
+
+ <br>
+ <br>
+ <img alt="" src="imgs/fancy-line.png" width="196" height="36">
+ <br>
+ <br>
+
+
+
+ <h3>July 5, 2021</h3>
+ <h1>New Postdoc: Alexander Tyurin</h1>
+ <br>
+
+ <a href="https://k3nfalt.github.io">Alexander Tyurin</a> has joined my
+ Optimization and Machine Learning lab as a postdoc. Welcome!!!
+
+<br> <br>
+ Alexander obtained his PhD from
+ the Higher School of Economics (HSE) in December 2020, under the supervision of <a href="https://scholar.google.ru/citations?user=AmeE8qkAAAAJ">Alexander
+ Gasnikov</a>, with the thesis "Development of a method for solving structural
+ optimization problems". His 15 research papers can be found on <a href="https://scholar.google.com/citations?user=Es8-xocAAAAJ">Google Scholar</a>. He has a masters degree in CS from
+ HSE (2017), with a GPA of 9.84 / 10, and a BS degree in Computational Mathematics and Cybernetics from
+ Lomonosov Moscow State University, with a GPA of 4.97 / 5.
+
+<br> <br>
+  During his studies, and for a short period of time after his PhD,
+ Alexander worked as a research and development engineer in the Yandex self-driving cars team, where he was developing real-time algorithms for dynamic and static objects detection in a perception team
+ for self-driving cars Using lidar (3D point clouds) and cameras (images) sensors.
+His primary responsibilities there ranged from the creation of datasets, throught research (Python, SQL, MapReduce) and implementation of the
+proposed algorithms (C++). Prior to this, he was a Research Engineer at VisionLabs in Moscow where he developed a face recognition
+algorithm that achieved a top 2 result in the FRVT NIST international competition.
+
+ <br>
+
+ <br>
+ <br>
+ <img alt="" src="imgs/fancy-line.png" width="196" height="36">
+ <br>
+ <br>
+
+
+
+ <h3>July 4, 2021</h3>
+ <h1>Two New Interns</h1>
+ <br>
+
+ Two new people joined my team as Summer research interns:
+ <br><br>
+
+ <b>Rafał Szlendak</b> joined as an undergraduate intern.  Rafal is studying towards a <a href="https://warwick.ac.uk/study/undergraduate/courses/mathsstatsbsc/">BSc degree in Mathematics and Statistics</a> at the <a href="https://warwick.ac.uk">University of Warwick</a>, United Kingdom.
+ He was involved in a research project entitled "Properties and characterisations of sequences generated
+by weighted context-free grammars with one terminal symbol". Among Rafal’s successes belong
+ <br>
+ - Ranked #1 in the Mathematics and Statistics Programme at Warwick, 2020
+ <br>
+ - Finalist, Polish National Mathematical Olympiad, 2017 and 2018
+ <br>
+ - Member of MATEX: an experimental mathematics programme for gifted students. This high school was ranked the top high school in Poland in the 2019 Perspektywy ranking.
+
+
+
+<br>
+<br>
+ <b>Muhammad Harun Ali Khan</b> joined as an undergraduate intern. Harun is a US citizen of Pakistani ancestry, and studies towards a <a href="https://www.imperial.ac.uk/study/ug/courses/mathematics-department/mathematics-bsc/">BSc degree in Mathematics</a> at <a href="https://www.imperial.ac.uk">Imperial College London</a>. He has interests in
+ number theory, artificial intelligence and doing mathematics via the <a href="https://en.wikipedia.org/wiki/Lean_(proof_assistant)">Lean proof assistant</a>. Harun is the Head of Imperial College mathematics competition problem selection committee.
+ Harun has been active in various mathematics competitions at high school and university level. Some of his most notable recognitions and awards include
+ <br>
+ - <a href="https://www.imc-math.org.uk/?act=results&by=sum&year=2020">2nd Prize, International Mathematics Competition for University Students, 2020</a>
+ <br>
+ - Imperial College UROP Prize (for formalizing Fibonacci Squares in Lean)
+ <br>
+ - Imperial College Mathematics Competition, First Place in First Round
+ <br>
+ - <a href="https://www.imo-official.org/participant_r.aspx?id=27280">Bronze Medal, International Mathematical Olympiad, United Kingdom, 2019</a>
+ <br>
+ - <a href="https://www.apmo-official.org/country_report/PAK/2019">Bronze Medal, Asian Pacific Mathematics Olympiad, 2019</a>
+ <br>
+ - Honorable Mention, International Mathematical Olympiad, Romania, 2018
+ <br>
+ - Honorable Mention, International Mathematical Olympiad, Brazil, 2017
+<br>
+
+ <br>
+ <br>
+ <img alt="" src="imgs/fancy-line.png" width="196" height="36">
+ <br>
+ <br>
+
+
+ <h3>June 9, 2021</h3>
+ <h1>New Paper</h1>
+ <br>
+
+ <span class="important">New paper out: </span>
+ <a href="https://arxiv.org/abs/2106.05203">"EF21: A New, Simpler, Theoretically Better, and Practically Faster Error Feedback"</a> -
+ joint work with <a href="https://cemse.kaust.edu.sa/people/person/igor-sokolov">Igor Sokolov</a> and Ilyas Fatkhullin.<br>
+ <br>
+
+ Abstract: <i>
+Error feedback (EF), also known as error compensation, is an immensely popular convergence stabilization mechanism in the context of distributed training of supervised machine learning models enhanced by the use of contractive communication compression mechanisms, such as Top-k. First proposed by Seide et al (2014) as a heuristic, EF resisted any theoretical understanding until recently [Stich et al., 2018, Alistarh et al., 2018]. However, all existing analyses either i) apply to the single node setting only, ii) rely on very strong and often unreasonable assumptions, such global boundedness of the gradients, or iterate-dependent assumptions that cannot be checked a-priori and may not hold in practice, or iii) circumvent these issues via the introduction of additional unbiased compressors, which increase the communication cost. In this work we fix all these deficiencies by proposing and analyzing a new EF mechanism, which we call EF21, which consistently and substantially outperforms EF in practice. Our theoretical analysis relies on standard assumptions only, works in the distributed heterogeneous data setting, and leads to better and more meaningful rates. In particular, we prove that EF21 enjoys a fast O(1/T) convergence rate for smooth nonconvex problems, beating the previous bound of O(1/T^{2/3}), which was shown a bounded gradients assumption. We further improve this to a fast linear rate for PL functions, which is the first linear convergence result for an EF-type method not relying on unbiased compressors. Since EF has a large number of applications where it reigns supreme, we believe that our 2021 variant, EF21, can a large impact on the practice of communication efficient distributed learning.
+</i>
+ <br>
+
+ <br>
+ <br>
+ <img alt="" src="imgs/fancy-line.png" width="196" height="36">
+ <br>
+ <br>
+
+
+
+ <h3>June 8, 2021</h3>
+ <h1>New Paper</h1>
+ <br>
+
+ <span class="important">New paper out: </span>
+ <a href="https://arxiv.org/abs/2106.04469">"Lower Bounds and Optimal Algorithms for Smooth and Strongly Convex Decentralized Optimization Over Time-Varying Networks"</a> -
+ joint work with <a href="https://www.dmitry-kovalev.com">Dmitry Kovalev</a>, <a href="http://elnurgasanov.com">Elnur Gasanov</a> and <a href="https://www.hse.ru/en/org/persons/49503846">Alexander Gasnikov</a>.<br>
+ <br>
+
+ Abstract: <i>
+We consider the task of minimizing the sum of smooth and strongly convex functions stored in a decentralized manner across the nodes of a communication network whose links are allowed to change in time. We solve two fundamental problems for this task. First, we establish the first lower bounds on the number of decentralized communication rounds and the number of local computations required to find an ϵ-accurate solution. Second, we design two optimal algorithms that attain these lower bounds: (i) a variant of the recently proposed algorithm ADOM (Kovalev et al., 2021) enhanced via a multi-consensus subroutine, which is optimal in the case when access to the dual gradients is assumed, and (ii) a novel algorithm, called ADOM+, which is optimal in the case when access to the primal gradients is assumed. We corroborate the theoretical efficiency of these algorithms by performing an experimental comparison with existing state-of-the-art methods.
+</i>
+ <br>
+
+ <br>
+ <br>
+ <img alt="" src="imgs/fancy-line.png" width="196" height="36">
+ <br>
+ <br>
+
+
+
+ <h3>June 6, 2021</h3>
+ <h1>New Paper</h1>
+ <br>
+
+ <span class="important">New paper out: </span>
+ <a href="https://arxiv.org/abs/2106.03524">"Smoothness-Aware Quantization Techniques"</a> -
+ joint work with Bokun Wang, and <a href="https://mher-safaryan.github.io">Mher Safaryan</a>.<br>
+ <br>
+
+ Abstract: <i>
+Distributed machine learning has become an indispensable tool for training large supervised machine learning models. To address the high communication costs of distributed training, which is further exacerbated by the fact that modern highly performing models are typically overparameterized, a large body of work has been devoted in recent years to the design of various compression strategies, such as sparsification and quantization, and optimization algorithms capable of using them. Recently, Safaryan et al (2021) pioneered a dramatically different compression design approach: they first use the local training data to form local "smoothness matrices", and then propose to design a compressor capable of exploiting the smoothness information contained therein. While this novel approach leads to substantial savings in communication, it is limited to sparsification as it crucially depends on the linearity of the compression operator. In this work, we resolve this problem by extending their smoothness-aware compression strategy to arbitrary unbiased compression operators, which also includes sparsification. Specializing our results to quantization, we observe significant savings in communication complexity compared to standard quantization. In particular, we show theoretically that block quantization with n blocks outperforms single block quantization, leading to a reduction in communication complexity by an O(n) factor, where n is the number of nodes in the distributed system. Finally, we provide extensive numerical evidence that our smoothness-aware quantization strategies outperform existing quantization schemes as well the aforementioned smoothness-aware sparsification strategies with respect to all relevant success measures: the number of iterations, the total amount of bits communicated, and wall-clock time.
+</i>
+ <br>
+
+ <br>
+ <br>
+ <img alt="" src="imgs/fancy-line.png" width="196" height="36">
+ <br>
+ <br>
+
+
+
+
+ <h3>June 6, 2021</h3>
+ <h1>New Paper</h1>
+ <br>
+
+ <span class="important">New paper out: </span>
+ <a href="https://arxiv.org/abs/2106.03076">"Complexity Analysis of Stein Variational Gradient Descent under Talagrand's Inequality T1"</a> -
+ joint work with
+ <a href="https://adil-salim.github.io">Adil Salim</a>, and <a href="https://lukangsun.github.io">Lukang Sun</a>.<br>
+ <br>
+
+ Abstract: <i>
+We study the complexity of Stein Variational Gradient Descent (SVGD), which is an algorithm to sample from π(x)∝exp(−F(x)) where F smooth and nonconvex.
+We provide a clean complexity bound for SVGD in the population limit in terms of the
+Stein Fisher Information (or squared Kernelized Stein Discrepancy), as a function of the dimension of the problem d and the desired accuracy ε.
+Unlike existing work, we do not make any assumption on the trajectory of the algorithm. Instead, our key assumption is that the target distribution
+satisfies Talagrand's inequality T1.
+</i>
+ <br>
+
+ <br>
+ <br>
+ <img alt="" src="imgs/fancy-line.png" width="196" height="36">
+ <br>
+ <br>
+
+
+
+ <h3>June 6, 2021</h3>
+ <h1>New Paper</h1>
+ <br>
+
+ <span class="important">New paper out: </span>
+ <a href="https://arxiv.org/abs/2106.03056">"MURANA: A Generic Framework for Stochastic Variance-Reduced Optimization"</a> -
+ joint work with
+ <a href="https://lcondat.github.io">Laurent Condat</a>.<br>
+ <br>
+
+ Abstract: <i>
+We propose a generic variance-reduced algorithm, which we call MUltiple RANdomized Algorithm (MURANA), for minimizing a sum of several smooth functions plus a regularizer, in a sequential or distributed manner. Our method is formulated with general stochastic operators, which allow us to model various strategies for reducing the computational complexity. For example, MURANA supports sparse activation of the gradients, and also reduction of the communication load via compression of the update vectors. This versatility allows MURANA to cover many existing randomization mechanisms within a unified framework. However, MURANA also encodes new methods as special cases. We highlight one of them, which we call ELVIRA, and show that it improves upon Loopless SVRG.
+ </i>
+ <br>
+
+ <br>
+ <br>
+ <img alt="" src="imgs/fancy-line.png" width="196" height="36">
+ <br>
+ <br>
+
+
+
+ <h3>June 5, 2021</h3>
+ <h1>New Paper</h1>
+ <br>
+
+ <span class="important">New paper out: </span>
+ <a href="https://arxiv.org/abs/2106.02969">"FedNL: Making Newton-Type Methods Applicable to Federated Learning"</a> -
+ joint work with
+ <a href="https://mher-safaryan.github.io">Mher Safaryan</a>,
+ <a href="https://rustem-islamov.github.io">Rustem Islamov</a> and <a href="https://qianxunk.github.io">Xun Qian</a>.<br>
+ <br>
+
+ Abstract: <i>
+  Inspired by recent work of Islamov et al (2021), we propose a family of Federated Newton Learn (FedNL) methods, which we believe is a marked step in the direction of making second-order methods applicable to FL. In contrast to the aforementioned work, FedNL employs a different Hessian learning technique which i) enhances privacy as it does not rely on the training data to be revealed to the coordinating server, ii) makes it applicable beyond generalized linear models, and iii) provably works with general contractive compression operators for compressing the local Hessians, such as Top-K or Rank-R, which are vastly superior in practice. Notably, we do not need to rely on error feedback for our methods to work with contractive compressors. Moreover, we develop FedNL-PP, FedNL-CR and FedNL-LS, which are variants of FedNL that support partial participation, and globalization via cubic regularization and line search, respectively, and FedNL-BC, which is a variant that can further benefit from bidirectional compression of gradients and models, i.e., smart uplink gradient and smart downlink model compression. We prove local convergence rates that are independent of the condition number, the number of training data points, and compression variance. Our communication efficient Hessian learning technique provably learns the Hessian at the optimum. Finally, we perform a variety of numerical experiments that show that our FedNL methods have state-of-the-art communication complexity when compared to key baselines.
+ </i>
+ <br>
+
+ <br>
+ <br>
+ <img alt="" src="imgs/fancy-line.png" width="196" height="36">
+ <br>
+ <br>
+
+
+
+ <h3>June 5, 2021</h3>
+ <h1>Finally, the NeurIPS Month of Deadlines is Over</h1>
+
+ <br>
+ I've been silent here for a while due a stream of NeurIPS deadlines (abstract, paper, supplementary material). Me and my fantastic <a href="https://richtarik.org/i_team.html">team</a> can rest a bit now! <br>
+
+
+ <br>
+ <br>
+ <img alt="" src="imgs/fancy-line.png" width="196" height="36">
+ <br>
+ <br>
+
+
+
+ <h3>May 10, 2021</h3>
+ <h1>Papers Accepted to ICML 2021</h1>
+
+ We've had several papers accepted to the <a href="https://icml.cc/Conferences/2021">International Conference on Machine Learning (ICML 2021)</a>, which will be run virtually during July 18-24, 2021.
+ Here they are:<br><br>
+
+
+ <b> 1) "MARINA: Faster Non-convex Distributed Learning with Compression"</b> <a href="https://arxiv.org/abs/2102.07845">[arXiv]</a> [<a href="http://proceedings.mlr.press/v139/gorbunov21a.html">ICML</a>]  - joint work with
+ <a href="https://eduardgorbunov.github.io">Eduard Gorbunov</a>,
+ <a href="https://burlachenkok.github.io/home">Konstantin Burlachenko</a> and <a href="https://zhizeli.github.io">Zhize Li</a>.<br>
+ <br>
+
+ Abstract: <i>We develop and analyze MARINA: a new communication efficient method for non-convex distributed learning over heterogeneous datasets. MARINA employs a novel communication compression strategy based on the compression of gradient differences which is reminiscent of but different from the strategy employed in the DIANA method of Mishchenko et al (2019). Unlike virtually all competing distributed first-order methods, including DIANA, ours is based on a carefully designed biased gradient estimator, which is the key to its superior theoretical and practical performance. To the best of our knowledge, the communication complexity bounds we prove for MARINA are strictly superior to those of all previous first order methods. Further, we develop and analyze two variants of MARINA: VR-MARINA and PP-MARINA. The first method is designed for the case when the local loss functions owned by clients are either of a finite sum or of an expectation form, and the second method allows for partial participation of clients -- a feature important in federated learning. All our methods are superior to previous state-of-the-art methods in terms of the oracle/communication complexity. Finally, we provide convergence analysis of all methods for problems satisfying the Polyak-Lojasiewicz condition.
+ </i>
+
+ <br>
+ <br>
+
+ More material:
+ <ul>
+   <li><a href="https://www.youtube.com/watch?v=o5MwC4DYbGE&list=PLC28kDljnOrj-_w-MHKW36gVRvUe3XFjx&index=34">Short 5 min YouTube talk by Konstantin</a></li>
+   <li><a href="https://www.youtube.com/watch?v=bj0E94Siq74">Long 70 min YouTube talk by Eduard delivered at the FLOW seminar</a> </li>
+   <li><a href="">poster</a></li>
+ </ul>
+ <br>
+
+
+
+ <b> 2) "PAGE: A Simple and Optimal Probabilistic Gradient Estimator for Nonconvex Optimization"</b> <a href="https://arxiv.org/abs/2008.10898">[arXiv]</a> <a href="http://proceedings.mlr.press/v139/li21a.html">[ICML]</a>  - joint work with
+ <a href="https://zhizeli.github.io">Zhize Li</a>, <a href="https://cemse.kaust.edu.sa/people/person/hongyan-bao">Hongyan Bao</a>, and <a href="https://cemse.kaust.edu.sa/people/person/xiangliang-zhang">Xiangliang Zhang</a>.
+
+
+ <br>
+ <br>
+
+ Abstract: <i>In this paper, we propose a novel stochastic gradient estimator---ProbAbilistic Gradient Estimator (PAGE)---for nonconvex optimization. PAGE is easy to implement as it is designed via a small adjustment to vanilla SGD:
+   in each iteration, PAGE uses the vanilla minibatch SGD update with probability p or reuses the previous gradient with a small adjustment, at a much lower computational cost, with probability 1−p. We give a simple formula for the
+   optimal choice of p. We prove tight lower bounds for nonconvex problems, which are of independent interest. Moreover, we prove matching upper bounds both in the finite-sum and online regimes, which establish that PAGE is an optimal
+   method. Besides, we show that for nonconvex functions satisfying the Polyak-Łojasiewicz (PL) condition, PAGE can automatically switch to a faster linear convergence rate. Finally, we conduct several deep learning experiments (e.g.,
+   LeNet, VGG, ResNet) on real datasets in PyTorch, and the results demonstrate that PAGE not only converges much faster than SGD in training but also achieves the higher test accuracy, validating our theoretical results and confirming
+   the practical superiority of PAGE. </i>
+   <br>
+ <br>
+
+ More material:
+ <ul>
+   <li><a href="https://www.youtube.com/watch?v=_K3XPxN-vdk&list=PLC28kDljnOrj-_w-MHKW36gVRvUe3XFjx&index=29">Short 5 min YouTube talk by Zhize</a></li>
+ </ul>
+
+
+ <br>
+
+
+ <b> 3) "Distributed Second Order Methods with Fast Rates and Compressed Communication" </b> <a href="https://arxiv.org/abs/2102.07158">[arXiv]</a> <a href="http://proceedings.mlr.press/v139/islamov21a.html">[ICML]</a> - joint work with  <a
+ href="https://rustem-islamov.github.io">Rustem Islamov</a> and <a href="https://qianxunk.github.io">Xun Qian</a>.<br>
+ <br>
+
+ Abstract: <i>
+ We develop several new communication-efficient second-order methods for distributed optimization. Our first method, NEWTON-STAR, is a variant of Newton's method from which it inherits its fast local quadratic rate. However, unlike Newton's method, NEWTON-STAR enjoys the same per iteration communication cost as gradient descent. While this method is impractical as it relies on the use of certain unknown parameters characterizing the Hessian of the objective function at the optimum, it serves as the starting point which enables us design practical variants thereof with strong theoretical guarantees. In particular, we design a stochastic sparsification strategy for learning the unknown parameters in an iterative fashion in a communication efficient manner. Applying this strategy to NEWTON-STAR leads to our next method, NEWTON-LEARN, for which we prove local linear and superlinear rates independent of the condition number. When applicable, this method can have dramatically superior convergence behavior when compared to state-of-the-art methods. Finally, we develop a globalization strategy using cubic regularization which leads to our next method, CUBIC-NEWTON-LEARN, for which we prove global sublinear and linear convergence rates, and a fast superlinear rate. Our results are supported with experimental results on real datasets, and show several orders of magnitude improvement on baseline and state-of-the-art methods in terms of communication complexity.
+  </i> <br>
+ <br>
+
+ More material:
+ <ul>
+   <li><a href="https://www.youtube.com/watch?v=iSKBZXlaoWo&list=PLC28kDljnOrj-_w-MHKW36gVRvUe3XFjx&index=41">Short 5 min YouTube talk by Rustem</a></li>
+   <li><a href="https://www.youtube.com/watch?v=jqgyjN5kLqo">Long 80 min YouTube talk by myself delivered at the FLOW seminar</a></li>
+   <li><a href="https://richtarik.org/talks/TALK-2021-Newton-Learn.pdf">my FLOW talk slides</a></li>
+   <li><a href="https://richtarik.org/posters/Poster-Newton-Learn.pdf">poster</a></li>
+ </ul>
+ <br>
+
+ <b> 4) "Stochastic Sign Descent Methods: New Algorithms and Better Theory" </b>  <a href="https://arxiv.org/abs/1905.12938">[arXiv]</a> <a href="http://proceedings.mlr.press/v139/safaryan21a.html">[ICML]</a>  - joint work with <a href="https://mher-safaryan.github.io">Mher Safaryan</a>. <br>
+ <br>
+
+ Abstract: <i>
+ Various gradient compression schemes have been proposed to mitigate the communication cost in distributed training of large scale machine learning models. Sign-based methods, such as signSGD, have recently been gaining popularity because of their simple compression rule and connection to adaptive gradient methods, like ADAM. In this paper, we analyze sign-based methods for non-convex optimization in three key settings: (i) standard single node, (ii) parallel with shared data and (iii) distributed with partitioned data. For single machine case, we generalize the previous analysis of signSGD relying on intuitive bounds on success probabilities and allowing even biased estimators. Furthermore, we extend the analysis to parallel setting within a parameter server framework, where exponentially fast noise reduction is guaranteed with respect to number of nodes, maintaining 1-bit compression in both directions and using small mini-batch sizes. Next, we identify a fundamental issue with signSGD to converge in distributed environment. To resolve this issue, we propose a new sign-based method, Stochastic Sign Descent with Momentum (SSDM), which converges under standard bounded variance assumption with the optimal asymptotic rate. We validate several aspects of our theoretical findings with numerical experiments.
+ </i> <br>
+ <br>
+
+ More material:
+ <ul>
+   <li><a href="https://opt-ml.org/posters/2020/poster_14.png">poster</a></li>
+ </ul>
+ <br>
+
+
+ <b> 5) "ADOM: Accelerated Decentralized Optimization Method for Time-Varying Networks"</b> <a href="https://arxiv.org/abs/2102.09234">[arXiv] </a> <a href="http://proceedings.mlr.press/v139/kovalev21a.html">[ICML] </a>
+ - joint work with
+ <a href="https://www.dmitry-kovalev.com">Dmitry Kovalev</a>, <a href="https://shulgin-egor.github.io">Egor Shulgin</a>,
+  <a
+ href="https://scholar.google.com/citations?hl=ru&user=sEjyzkgAAAAJ">Alexander Rogozin</a> and <a href="https://www.hse.ru/en/org/persons/49503846">Alexander Gasnikov</a>.
+ <br>
+ <br>
+
+ Abstract: <i>We propose ADOM - an accelerated method for smooth and strongly convex decentralized optimization over time-varying networks. ADOM uses a dual oracle, i.e., we assume access to the gradient of the Fenchel conjugate of the individual loss functions. Up to a constant factor, which depends on the network structure only, its communication complexity is the same as that of accelerated Nesterov gradient method (Nesterov, 2003). To the best of our knowledge, only the algorithm of Rogozin et al. (2019) has a convergence rate with similar properties. However, their algorithm converges under the very restrictive assumption that the number of network changes can not be greater than a tiny percentage of the number of iterations. This assumption is hard to satisfy in practice, as the network topology changes usually can not be controlled. In contrast, ADOM merely requires the network to stay connected throughout time.
+ </i><br>
+
+ More material:
+ <ul>
+   <li>  <a href="https://www.youtube.com/watch?v=jO3t4eZFdkc&list=PLC28kDljnOrj-_w-MHKW36gVRvUe3XFjx&index=37">Short 5 min YouTube talk by Egor</a> </li>
+   <li>  <a href="posters/Poster-ADOM-ICML-2021.pdf">poster</a> </li>
+ </ul>
+
+
+
+ <br>
+ <br>
+ <img alt="" src="imgs/fancy-line.png" width="196" height="36">
+ <br>
+ <br>
+
+
 
 <h3>April 29, 2021</h3>
 <h1>Paper Accepted to IEEE Transactions on Information Theory</h1>
