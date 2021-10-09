@@ -44,6 +44,89 @@
         <div id="content">
 
 
+<h3>October 9, 2021</h3>
+<h1>New Paper</h1>
+<br>
+
+<span class="important">New paper out: </span>
+<a href="https://arxiv.org/abs/2110.03313">"Distributed Methods with Compressed Communication for Solving Variational Inequalities, with Theoretical Guarantees"</a> -
+joint work with <a href="https://anbeznosikov.github.io">Aleksandr Beznosikov</a>, <a href="https://www.hse.ru/en/staff/yhn112">Michael Diskin</a>, <a href="https://www.hse.ru/en/staff/mryabinin">Max Ryabinin</a>,
+<a href="https://www.hse.ru/en/org/persons/49503846">Alexander Gasnikov</a>.<br>
+<br>
+Abstract: <i>
+Variational inequalities in general and saddle point problems in particular are increasingly relevant in machine learning applications, including adversarial learning, GANs, transport and robust optimization. With increasing data and problem sizes necessary to train high performing models across these and other applications, it is necessary to rely on parallel and distributed computing. However, in distributed training, communication among the compute nodes is a key bottleneck during training, and this problem is exacerbated for high dimensional and over-parameterized models models. Due to these considerations, it is important to equip existing methods with strategies that would allow to reduce the volume of transmitted information during training while obtaining a model of comparable quality. In this paper, we present the first theoretically grounded distributed methods for solving variational inequalities and saddle point problems using compressed communication: MASHA1 and MASHA2. Our theory and methods allow for the use of both unbiased (such as RandK; MASHA1) and contractive (such as TopK; MASHA2) compressors. We empirically validate our conclusions using two experimental setups: a standard bilinear min-max problem, and large-scale distributed adversarial training of transformers.
+</i>
+<br>
+
+<br>
+<br>
+<img alt="" src="imgs/fancy-line.png" width="196" height="36">
+<br>
+<br>
+
+<h3>October 8, 2021</h3>
+<h1>New Paper</h1>
+<br>
+
+<span class="important">New paper out: </span>
+<a href="https://arxiv.org/abs/2110.03300">"Permutation Compressors for Provably Faster Distributed Nonconvex Optimization"</a> -
+joint work with <a href="https://www.linkedin.com/in/rafał-szlendak-552936220">Rafał Szlendak</a> and <a href="https://k3nfalt.github.io">Alexander Tyurin</a>.<br>
+<br>
+Abstract: <i>
+We study the MARINA method of Gorbunov et al (ICML, 2021) -- the current state-of-the-art distributed non-convex optimization method in terms of
+theoretical communication complexity. Theoretical superiority of this method can be largely attributed to two sources: the use of a carefully
+engineered biased stochastic gradient estimator, which leads to a reduction in the number of communication rounds, and  the reliance on
+independent stochastic communication compression operators, which leads to a reduction in the number of  transmitted bits within each
+ communication round. In this paper we i) extend the theory of MARINA to support a much wider class of potentially correlated
+ compressors, extending the reach of the method beyond the classical independent compressors setting, ii) show that a new quantity, for which we
+ coin the name Hessian variance, allows us to significantly refine the original analysis of MARINA without any additional assumptions, and
+ iii) identify a special class of correlated compressors based on the idea of random  permutations, for which we coin the term PermK, the use of
+ which leads to  $O(\sqrt{n})$ (resp. $O(1 + d/\sqrt{n})$) improvement in the theoretical communication complexity of MARINA in the low Hessian
+ variance regime when $d\geq n$ (resp. $d \leq n$), where $n$ is the number of workers and $d$ is the number of parameters describing the model
+ we are learning. We corroborate our theoretical results with carefully engineered synthetic experiments with minimizing the average of nonconvex
+ quadratics, and on autoencoder training with the MNIST dataset.
+
+</i>
+<br>
+
+<br>
+<br>
+<img alt="" src="imgs/fancy-line.png" width="196" height="36">
+<br>
+<br>
+
+<h3>October 7, 2021</h3>
+<h1>New Paper</h1>
+<br>
+
+<span class="important">New paper out: </span>
+<a href="https://arxiv.org/abs/2110.03294">"EF21 with Bells & Whistles: Practical Algorithmic Extensions of Modern Error Feedback"</a> -
+joint work with
+<a href="https://scholar.google.com/citations?user=G2OzFpIAAAAJ&hl=en">Ilyas Fatkhullin</a>,
+<a href="https://cemse.kaust.edu.sa/people/person/igor-sokolov">Igor Sokolov</a>,
+<a href="https://eduardgorbunov.github.io">Eduard Gorbunov</a>
+and
+<a href="https://zhizeli.github.io">Zhize Li</a>.<br>
+<br>
+Abstract: <i>
+First proposed by Seide et al (2014) as a heuristic, error feedback (EF) is a very popular mechanism for enforcing convergence of distributed gradient-based
+optimization methods enhanced with communication compression strategies based on the application of contractive compression operators. However, existing
+theory of EF relies on very strong assumptions (e.g., bounded gradients), and provides pessimistic convergence rates (e.g., while the best known rate for
+EF in the smooth nonconvex regime, and when full gradients are compressed, is O(1/T^{2/3}), the rate of gradient descent in the same regime is O(1/T).
+Recently, Richt\'{a}rik et al (2021) proposed a new error feedback mechanism,
+EF21, based on the construction of a Markov compressor induced by a contractive compressor. EF21 removes the aforementioned theoretical deficiencies
+of EF and at the same time works better in practice. In this work we propose six practical extensions of EF21: partial participation, stochastic
+approximation, variance reduction, proximal setting, momentum and bidirectional compression. Our extensions are supported by strong convergence
+theory in the smooth nonconvex and also Polyak-Łojasiewicz regimes. Several of these techniques were never analyzed in conjunction with EF before,
+and in cases where they were (e.g., bidirectional compression), our rates are vastly superior.
+</i>
+<br>
+
+<br>
+<br>
+<img alt="" src="imgs/fancy-line.png" width="196" height="36">
+<br>
+<br>
 
 
 <h3>September 23, 2021</h3>
