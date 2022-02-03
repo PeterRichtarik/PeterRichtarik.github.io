@@ -44,25 +44,26 @@
         <div id="content">
 
 
-<h3>February 1, 2022</h3>
+<h3>February 2, 2022</h3>
 
 <h1>New Paper</h1>
 <br>
 
 <span class="important">New paper out:</span>
-<a href="https://arxiv.org/abs/2201.13320">
-"BEER: Fast $O(1/T)$ rate for decentralized nonconvex optimization with communication compression"</a> -
+<a href="https://arxiv.org/abs/2202.00998">
+"3PC: Three point compressors for communication-efficient distributed training and a better theory for lazy aggregation"</a> -
 joint work with
-<a href="https://hyzhao.me">Haoyu Zhao</a>,
-<a href="https://scholar.google.com/citations?user=MbBwWzMAAAAJ&hl=en">Boyue Li</a>,
-<a href="https://zhizeli.github.io">Zhize Li</a>, and
-<a href="https://users.ece.cmu.edu/~yuejiec/">Yuejie Chi</a>.
+<a href="">Igor Sokolov</a>,
+<a href="">Ilyas Fatkhullin</a>,
+<a href="">Elnur Gasanov</a>,
+<a href="">Zhize Li</a>, and
+<a href="">Eduard Gorbunov</a>,
 
 <br>
 <br>
 Abstract:
 <i>
-Communication efficiency has been widely recognized as the bottleneck for large-scale decentralized machine learning applications in multi-agent or federated environments. To tackle the communication bottleneck, there have been many efforts to design communication-compressed algorithms for decentralized nonconvex optimization, where the clients are only allowed to communicate a small amount of quantized information (aka bits) with their neighbors over a predefined graph topology. Despite significant efforts, the state-of-the-art algorithm in the nonconvex setting still suffers from a slower rate of convergence $O((G/T)^{2/3})$ compared with their uncompressed counterpart, where $G$ measures the data heterogeneity across different clients, and $T$ is the number of communication rounds. This paper proposes BEER, which adopts communication compression with gradient tracking, and shows it converges at a faster rate of $O(1/T)$. This significantly improves over the state-of-the-art rate, by matching the rate without compression even under arbitrary data heterogeneity. Numerical experiments are also provided to corroborate our theory and confirm the practical superiority of BEER in the data heterogeneous regime.
+We propose and study a new class of gradient communication mechanisms for communication-efficient training -- three point compressors (3PC) -- as well as efficient distributed nonconvex optimization algorithms that can take advantage of them. Unlike most established approaches, which rely on a static compressor choice (e.g., Top-K), our class allows the compressors to {\em evolve} throughout the training process, with the aim of improving the theoretical communication complexity and practical efficiency of the underlying methods. We show that our general approach can recover the recently proposed state-of-the-art error feedback mechanism EF21 (Richtárik et al., 2021) and its theoretical properties as a special case, but also leads to a number of new efficient methods. Notably, our approach allows us to improve upon the state of the art in the algorithmic and theoretical foundations of the lazy aggregation literature (Chen et al., 2018). As a by-product that may be of independent interest, we provide a new and fundamental link between the lazy aggregation and error feedback literature. A special feature of our work is that we do not require the compressors to be unbiased.  
 </i>
 <br>
 
