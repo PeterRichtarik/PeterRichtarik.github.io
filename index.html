@@ -43,6 +43,95 @@
       <div id="wrapper" class="main">
         <div id="content">
 
+          <h3>February 2, 2022</h3>
+
+          <h1>New Paper</h1>
+          <br>
+
+          <span class="important">New paper out:</span>
+          <a href="https://arxiv.org/abs/2202.01268">
+          "Distributed nonconvex optimization with communication compression, optimal oracle complexity, and no client synchronization"</a> -
+          joint work with
+          <a href="https://k3nfalt.github.io">Alexander Tyurin</a>.
+
+          <br>
+          <br>
+          Abstract:
+          <i>
+            We develop and analyze DASHA: a new family of methods for nonconvex
+            distributed optimization problems. When the local functions at the nodes have a finite-sum
+            or an expectation form, our new methods, DASHA-PAGE and DASHA-SYNC-MVR, improve the theoretical
+            oracle and communication complexity of the previous state-of-the-art method MARINA by
+            Gorbunov et al. (2020). In particular,
+            to achieve an $\varepsilon$-stationary point, and considering the random sparsifier RandK as an
+            example, our methods compute the optimal number of gradients
+            $O(\sqrt{m}/(\varepsilon\sqrt{n}))$ and $O(\sigma/(\varepsilon^{3/2}n))$ in finite-sum and
+            expectation form cases, respectively, while
+            maintaining the SOTA communication complexity $O(d/(\varepsilon \sqrt{n}))$. Furthermore, unlike
+            MARINA,
+            the new methods DASHA, DASHA-PAGE and DASHA-MVR send compressed vectors only and never synchronize
+            the nodes, which makes them more practical for federated learning.
+            We extend our results to the case when the functions satisfy the Polyak-Łojasiewicz condition.
+            Finally, our theory is corroborated in practice: we see a significant improvement in experiments
+            with nonconvex classification and training of deep learning models.
+          </i>
+          <br>
+
+          <br>
+          <br>
+          <img alt="" src="imgs/fancy-line.png" width="196" height="36">
+          <br>
+          <br>
+
+
+
+
+<h3>July 2, 2022</h3>
+<h1>A New Research Intern: Abdurakhmon Sadiev</h1>
+<br>
+
+
+Abdurakhmon Sadiev joined my Optimization and Machine Learning Lab as a research intern. He arrived
+today at KAUST, and will be here for 5-6 months.
+Abdurakhmon is a final-year MS student in Applied Mathematics at <a href="https://mipt.ru">MIPT</a>; his
+advisor there is <a href="http://www.mathnet.ru/eng/person27590">Alexander Gasnikov</a>. He has received
+several scholarships and awards during his studies, including:
+
+<ul>
+<li> 3rd Degree Prof. Andrei Raigorodskii Personal Scholarship (2021),</li>
+<li> Increased State Academic Scholarship for 4 year bachelor and master students at MIPT (2020), and</li>
+<li> Abramov Scholarship for 1-3 year bachelor students with the best grades at MIPT (2018).</li>
+</ul>
+
+During his MIPT studies, he was a teaching assistant at MIPT for Functional Analysis (Department of Advanced Mathematics)
+and Methods of Optimal Control (Department of Mathematical Fundamentals of Control).
+<br>
+<br>
+Abdurakhmon is interested in min-max / saddle-point problems, derivative-free methods and federated learning.
+He has coauthored a number of papers, most of which can be
+found on his <a href="https://scholar.google.com/citations?hl=en&user=R-xZRIAAAAAJ">Google Scholar</a>
+and <a href="https://www.researchgate.net/profile/Abdurakhmon-Sadiev">ResearchGate</a> profiles:
+<ul>
+<li>Gradient-Free Methods for Saddle-Point Problem</li>
+<li>Zeroth-Order Algorithms for Smooth Saddle-Point Problems</li>
+<li>Solving Smooth Min-Min and Min-Max Problems by Mixed Oracle Algorithms</li>
+<li>Decentralized Personalized Federated Min-Max Problems</li>
+<li>Decentralized Personalized Federated Learning: Lower Bounds and Optimal Algorithm for All Personalization Modes</li>
+<li>Decentralized and Personalized Federated Learning</li>
+<li>Gradient-Free Methods with Inexact Oracle for Convex-Concave Stochastic Saddle-Point Problem</li>
+<li>Optimal Algorithms for Decentralized Stochastic Variational Inequalities</li>
+</ul>
+<br>
+Welcome to the team!!!
+<br>
+
+<br>
+<br>
+<img alt="" src="imgs/fancy-line.png" width="196" height="36">
+<br>
+<br>
+
+
 
 <h3>February 2, 2022</h3>
 
@@ -53,17 +142,17 @@
 <a href="https://arxiv.org/abs/2202.00998">
 "3PC: Three point compressors for communication-efficient distributed training and a better theory for lazy aggregation"</a> -
 joint work with
-<a href="">Igor Sokolov</a>,
-<a href="">Ilyas Fatkhullin</a>,
-<a href="">Elnur Gasanov</a>,
-<a href="">Zhize Li</a>, and
-<a href="">Eduard Gorbunov</a>,
+<a href="https://cemse.kaust.edu.sa/people/person/igor-sokolov">Igor Sokolov</a>,
+<a href="https://ai.ethz.ch/people/ilyas-fatkhullin.html">Ilyas Fatkhullin</a>,
+<a href="https://elnurgasanov.com/">Elnur Gasanov</a>,
+<a href="https://zhizeli.github.io/">Zhize Li</a>, and
+<a href="https://eduardgorbunov.github.io/">Eduard Gorbunov</a>.
 
 <br>
 <br>
 Abstract:
 <i>
-We propose and study a new class of gradient communication mechanisms for communication-efficient training -- three point compressors (3PC) -- as well as efficient distributed nonconvex optimization algorithms that can take advantage of them. Unlike most established approaches, which rely on a static compressor choice (e.g., Top-K), our class allows the compressors to {\em evolve} throughout the training process, with the aim of improving the theoretical communication complexity and practical efficiency of the underlying methods. We show that our general approach can recover the recently proposed state-of-the-art error feedback mechanism EF21 (Richtárik et al., 2021) and its theoretical properties as a special case, but also leads to a number of new efficient methods. Notably, our approach allows us to improve upon the state of the art in the algorithmic and theoretical foundations of the lazy aggregation literature (Chen et al., 2018). As a by-product that may be of independent interest, we provide a new and fundamental link between the lazy aggregation and error feedback literature. A special feature of our work is that we do not require the compressors to be unbiased.  
+We propose and study a new class of gradient communication mechanisms for communication-efficient training -- three point compressors (3PC) -- as well as efficient distributed nonconvex optimization algorithms that can take advantage of them. Unlike most established approaches, which rely on a static compressor choice (e.g., Top-K), our class allows the compressors to {\em evolve} throughout the training process, with the aim of improving the theoretical communication complexity and practical efficiency of the underlying methods. We show that our general approach can recover the recently proposed state-of-the-art error feedback mechanism EF21 (Richtárik et al., 2021) and its theoretical properties as a special case, but also leads to a number of new efficient methods. Notably, our approach allows us to improve upon the state of the art in the algorithmic and theoretical foundations of the lazy aggregation literature (Chen et al., 2018). As a by-product that may be of independent interest, we provide a new and fundamental link between the lazy aggregation and error feedback literature. A special feature of our work is that we do not require the compressors to be unbiased.
 </i>
 <br>
 
