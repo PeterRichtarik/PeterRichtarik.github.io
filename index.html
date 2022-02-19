@@ -44,6 +44,57 @@
         <div id="content">
 
 
+
+<h3>February 19, 2022</h3>
+
+<h1>New Paper</h1>
+
+<a href="papers/ProxSkip.pdf"><img alt="" src="imgs/ProxSkip-thmb.png" height="1000"></a>
+<br>
+
+<span class="important">New paper out:</span>
+<a href="papers/ProxSkip.pdf">
+"ProxSkip: Yes! Local Gradient Steps Provably Lead to Communication Acceleration! Finally!"</a> -
+joint work with
+<a href="https://konstmish.github.io/">Konstantin Mishchenko</a>,
+<a href="https://grigory-malinovsky.github.io/">Grigory Malinovsky</a> and
+<a href="http://sstich.ch/">Sebastian Stich</a>.
+
+<br>
+<br>
+Abstract:
+<i>
+We introduce ProxSkip---a surprisingly simple and provably efficient method for minimizing the sum of a smooth ($f$) and an expensive nonsmooth proximable ($\psi$) function. The canonical approach to solving such problems is via the proximal gradient descent (ProxGD) algorithm, which is based on the evaluation of the gradient of $f$ and the prox operator  of $\psi$ in each iteration. In this work we are specifically interested in the regime in which the evaluation of prox is costly relative to the evaluation of the gradient, which is the case in many applications. ProxSkip allows for the expensive prox operator to be skipped in most iterations: while its iteration complexity is $\cO(\kappa \log \nicefrac{1}{\varepsilon})$, where $\kappa$ is the condition number of $f$, the number of prox evaluations is $\cO(\sqrt{\kappa} \log \nicefrac{1}{\varepsilon})$ only. Our main motivation comes from federated learning, where evaluation of the gradient operator corresponds to taking a local GD step independently on all devices, and evaluation of prox corresponds to (expensive) communication in the form of gradient averaging. In this context, ProxSkip offers an effective <i>acceleration</i> of communication complexity. Unlike other local gradient-type methods, such as FedAvg, Scaffold, S-Local-GD and FedLin, whose theoretical communication complexity is worse than, or at best matching, that of vanilla GD in the heterogeneous data regime, we obtain a provable and large improvement without any heterogeneity-bounding assumptions.
+</i>
+<br>
+
+
+
+
+<br>
+<br>
+<img alt="" src="imgs/fancy-line.png" width="196" height="36">
+<br>
+<br>
+
+
+
+<h3>February 19, 2022</h3>
+
+<h1>Dagstuhl Seminar</h1>
+<br>
+I am on my way to Schloss Dagstuhl, Germany, to attend a week-long seminar on the <a href="https://www.dagstuhl.de/en/program/calendar/semhp/?semnr=22081">Theory
+of Randomized Optimization Heuristics</a>.
+<br>
+
+<br>
+<br>
+<img alt="" src="imgs/fancy-line.png" width="196" height="36">
+<br>
+<br>
+
+
+
 <h3>February 9, 2022</h3>
 
 <h1>Talk @ FLOW </h1>
