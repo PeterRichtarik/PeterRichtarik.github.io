@@ -16,6 +16,7 @@ document.write("<a href=\"https:\/\/scholar.google.com\/citations?user=pGh242UAA
 document.write("<a href=\"https:\/\/dblp.org\/pers\/hd\/r\/Richt=aacute=rik:Peter\"><img src=\"imgs\/dblp.png\" alt=\"dblp\" border=\"0\" height=\"25\"> <\/a> &nbsp;");
 document.write("<a href=\"https:\/\/www.semanticscholar.org\/author\/Peter-Richt%C3%A1rik\/2662221\"><img src=\"imgs\/semantic.png\" alt=\"Semantic Scholar\" width=\"25\" border=\"0\" height=\"25\"> <\/a> &nbsp;");
 document.write("<a href=\"https:\/\/orcid.org\/0000-0003-4380-5848\"> <img src=\"imgs\/orcid.png\" alt=\"ORCID\" width=\"25\" border=\"0\" height=\"25\"><\/a> &nbsp;");
+document.write("<a href=\"https:\/\/www.genealogy.math.ndsu.nodak.edu\/id.php?id=111470\"> <img src=\"imgs\/mg.png\" alt=\"Mathematics Genealogy Project\" width=\"25\" border=\"0\" height=\"25\"><\/a> &nbsp;");
 document.write("<a href=\"https:\/\/www.linkedin.com\/in\/richtarik\/\"> <img src=\"imgs\/linkedin.png\" alt=\"Linked In\" width=\"25\" border=\"0\" height=\"25\"><\/a> &nbsp;");
 document.write("<a href=\"https:\/\/twitter.com\/peter_richtarik\/\"> <img src=\"imgs\/twitter.png\" alt=\"Twitter\"  border=\"0\" height=\"25\"><\/a><br>");
 document.write("<\/td>");
