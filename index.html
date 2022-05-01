@@ -45,6 +45,36 @@
 
 
 
+<h3>April 27, 2022</h3>
+
+<h1>New Paper</h1>
+
+<span class="important">New paper out:</span>
+<a href="https://arxiv.org/abs/2204.13169">
+"FedShuffle: Recipes for Better Use of Local Work in Federated Learning"</a> -
+joint work with
+<a href="https://samuelhorvath.github.io">Samuel Horváth</a>,
+<a href="https://sites.google.com/view/maziar">Maziar Sanjabi</a>,
+<a href="https://linxiaolx.github.io">Lin Xiao</a>, and
+<a href="https://ai.facebook.com/people/michael-rabbat">Michael Rabbat</a>.
+
+<br>
+<br>
+Abstract:
+<i>
+The practice of applying several local updates before aggregation across clients has been empirically shown to be a successful approach to overcoming the communication bottleneck in Federated Learning (FL). In this work, we propose a general recipe, FedShuffle, that better utilizes the local updates in FL, especially in the heterogeneous regime. Unlike many prior works, FedShuffle does not assume any uniformity in the number of updates per device. Our FedShuffle recipe comprises four simple-yet-powerful ingredients: 1) local shuffling of the data, 2) adjustment of the local learning rates, 3) update weighting, and 4) momentum variance reduction (Cutkosky and Orabona, 2019). We present a comprehensive theoretical analysis of FedShuffle and show that both theoretically and empirically, our approach does not suffer from the objective function mismatch that is present in FL methods which assume homogeneous updates in heterogeneous FL setups, e.g., FedAvg (McMahan et al., 2017). In addition, by combining the ingredients above, FedShuffle improves upon FedNova (Wang et al., 2020), which was previously proposed to solve this mismatch. We also show that FedShuffle with momentum variance reduction can improve upon non-local methods under a Hessian similarity assumption. Finally, through experiments on synthetic and real-world datasets, we illustrate how each of the four ingredients used in FedShuffle helps improve the use of local updates in FL.
+</i>
+<br>
+
+
+
+
+<br>
+<br>
+<img alt="" src="imgs/fancy-line.png" width="196" height="36">
+<br>
+<br>
+
 
 
 <h3>April 27, 2022</h3>
