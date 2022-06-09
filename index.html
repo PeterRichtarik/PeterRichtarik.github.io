@@ -44,6 +44,58 @@
         <div id="content">
 
 
+<h3>June 7, 2022</h3>
+
+<h1>New Paper</h1>
+
+<span class="important">New paper out:</span>
+<a href="https://arxiv.org/abs/2206.03588">
+"Distributed Newton-Type Methods with Communication Compression and Bernoulli Aggregation"</a> - joint work with
+<a href="https://rustem-islamov.github.io">Rustem Islamov</a>, <a href="https://qianxunk.github.io">Xun Qian</a>, <a href="https://slavomir-hanzely.github.io">Slavomír Hanzely</a> and <a href="https://mher-safaryan.github.io">Mher Safaryan</a>.
+
+<br>
+<br>
+Abstract:
+<i>
+Despite their high computation and communication costs, Newton-type methods remain an appealing option for distributed training due to their robustness against ill-conditioned convex problems. In this work, we study ommunication compression and aggregation mechanisms for curvature information in order to reduce these costs while preserving theoretically superior local convergence guarantees. We prove that the recently developed class of three point compressors (3PC) of Richtarik et al. [2022] for gradient communication can be generalized to Hessian communication as well. This result opens up a wide variety of communication strategies, such as contractive compression} and lazy aggregation, available to our disposal to compress prohibitively costly curvature information. Moreover, we discovered several new 3PC mechanisms, such as adaptive thresholding and Bernoulli aggregation, which require reduced communication and occasional Hessian computations. Furthermore, we extend and analyze our approach to bidirectional communication compression and partial device participation setups to cater to the practical considerations of applications in federated learning. For all our methods, we derive fast condition-number-independent local linear and/or superlinear convergence rates. Finally, with extensive numerical evaluations on convex optimization problems, we illustrate that our designed schemes achieve state-of-the-art communication complexity compared to several key baselines using second-order information.
+</i>
+<br>
+
+
+<br>
+<br>
+<img alt="" src="imgs/fancy-line.png" width="196" height="36">
+<br>
+<br>
+
+
+
+
+<h3>June 6, 2022</h3>
+
+<h1>New Paper</h1>
+
+<span class="important">New paper out:</span>
+<a href="https://arxiv.org/abs/2206.02535">
+"Certified Robustness in Federated Learning"</a> - joint work with
+<a href="https://scholar.google.com/citations?user=caAyffEAAAAJ&hl=en">Motasem Alfarra</a>, <a href="https://juancprzs.github.io">Juan C. Pérez</a>, <a href="https://shulgin-egor.github.io">Egor Shulgin</a> and <a href="https://www.bernardghanem.com">Bernard Ghanem</a>.
+
+<br>
+<br>
+Abstract:
+<i>
+Federated learning has recently gained significant attention and popularity due to its effectiveness in training machine learning models on distributed data privately. However, as in the single-node supervised learning setup, models trained in federated learning suffer from vulnerability to imperceptible input transformations known as adversarial attacks, questioning their deployment in security-related applications. In this work, we study the interplay between federated training, personalization, and certified robustness. In particular, we deploy randomized smoothing, a widely-used and scalable certification method, to certify deep networks trained on a federated setup against input perturbations and transformations. We find that the simple federated averaging technique is effective in building not only more accurate, but also more certifiably-robust models, compared to training solely on local data. We further analyze personalization, a popular technique in federated training that increases the model's bias towards local data, on robustness. We show several advantages of personalization over both~(that is, only training on local data and federated training) in building more robust models with faster training. Finally, we explore the robustness of mixtures of global and local~(\ie personalized) models, and find that the robustness of local models degrades as they diverge from the global model
+</i>
+<br>
+
+
+<br>
+<br>
+<img alt="" src="imgs/fancy-line.png" width="196" height="36">
+<br>
+<br>
+
+
 
 
 <h3>June 5, 2022</h3>
@@ -62,7 +114,7 @@ Abstract:
 <i>
 We revisit the classical problem of finding an approximately stationary point of the average of n smooth and possibly nonconvex functions.
 The optimal complexity of stochastic first-order methods in terms of the number of gradient evaluations of individual functions is
-O(n+√n/ε), attained by the optimal SGD methods 𝖲𝖯𝖨𝖣𝖤𝖱 [Fang et al, NeurIPS 2018] and 𝖯𝖠𝖦𝖤 [Zhize et al, ICML 2021], for example, 
+O(n+√n/ε), attained by the optimal SGD methods 𝖲𝖯𝖨𝖣𝖤𝖱 [Fang et al, NeurIPS 2018] and 𝖯𝖠𝖦𝖤 [Zhize et al, ICML 2021], for example,
 where ε is the error tolerance. However, i) the big-O notation hides crucial dependencies on the smoothness constants associated with the functions,
 and ii) the rates and theory in these methods assume simplistic sampling mechanisms that do not offer any flexibility. In this work we remedy the
 situation. First, we generalize the 𝖯𝖠𝖦𝖤 algorithm so that it can provably work with virtually any (unbiased) sampling mechanism. This is particularly
