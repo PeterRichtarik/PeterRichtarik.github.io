@@ -44,6 +44,29 @@
         <div id="content">
 
 
+<h3>November 9-10, 2022</h3>
+
+<h1>Attending 2022 Workshop on Federated Learning and Analytics</h1>
+
+
+As in the past years, this year I have again been invited to attend a workshop organized by the Google Federated Learning team entitled
+"2022 Workshop on Federated Learning and Analytics". While this is an invite-only event, I can share my slides.
+
+<br>
+<a href="talks/TALK-2022-11-10-Google-FL-Workshop.pdf">
+<img alt="" src="imgs/FL2022-leading-slide.png" width="700">
+</a>
+<br>
+
+<br>
+
+<br>
+<br>
+<img alt="" src="imgs/fancy-line.png" width="196" height="36">
+<br>
+<br>
+
+
 
 <h3>November 2, 2022</h3>
 
@@ -56,6 +79,38 @@ more at the end of November. Should be fun!
 </a>.
 
 <br>
+
+<br>
+<br>
+<img alt="" src="imgs/fancy-line.png" width="196" height="36">
+<br>
+<br>
+
+
+
+<h3>October 31, 2022</h3>
+
+<h1>New Paper</h1>
+
+<span class="important">New paper out:</span>
+<a href="https://arxiv.org/abs/2211.00140">
+"A Damped Newton Method Achieves Global O(1/k^2) and Local Quadratic Convergence Rate"</a> -
+joint work with
+<a href="https://slavomir-hanzely.github.io">Slavomír Hanzely</a>,
+<a href="https://scholar.google.com/citations?user=7ezSoS-hLVAC&hl=en">Dmitry Kamzolov</a>,
+<a href="http://dmivilensky.ru">Dmitry Pasechnyuk</a>,
+<a href="https://scholar.google.com/citations?user=AmeE8qkAAAAJ">Alexander Gasnikov</a>, and
+<a href="https://mtakac.com">Martin Takáč</a>.
+
+
+<br>
+<br>
+Abstract:
+<i>
+In this work, we study distributed optimization algorithms that reduce the high communication costs of synchronization by allowing clients to perform multiple local gradient steps in each communication round. Recently, Mishchenko et al. (2022) proposed a new type of local method, called ProxSkip, that enjoys an accelerated communication complexity without any data similarity condition. However, their method requires all clients to call local gradient oracles with the same frequency. Because of statistical heterogeneity, we argue that clients with well-conditioned local problems should compute their local gradients less frequently than clients with ill-conditioned local problems. Our first contribution is the extension of the original ProxSkip method to the setup where clients are allowed to perform a different number of local gradient steps in each communication round. We prove that our modified method, GradSkip, still converges linearly, has the same accelerated communication complexity, and the required frequency for local gradient computations is proportional to the local condition number. Next, we generalize our method by extending the randomness of probabilistic alternations to arbitrary unbiased compression operators and considering a generic proximable regularizer. This generalization, GradSkip+, recovers several related methods in the literature. Finally, we present an empirical study to confirm our theoretical claims.
+</i>
+<br>
+
 
 <br>
 <br>
