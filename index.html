@@ -43,6 +43,47 @@
       <div id="wrapper" class="main">
         <div id="content">
 
+<h3>December 29, 2022</h3>
+
+<h1>New Paper</h1>
+
+<span class="important">New paper out:</span>
+<a href="https://arxiv.org/abs/2212.14370">
+"Can 5th Generation Local Training Methods Support Client Sampling? Yes!"</a> -
+joint work with
+<a href="https://www.linkedin.com/in/michał-grudzień-2141a2198/?originalSubdomain=uk">Michał Grudzień</a> and
+<a href="https://grigory-malinovsky.github.io/">Grigory Malinovsky</a>.
+
+
+<br>
+<br>
+Abstract:
+<i>
+The celebrated FedAvg algorithm of McMahan et al. (2017) is based on three components: client sampling (CS), data sampling (DS) and local training (LT). While the first two are reasonably well understood, the third component, whose role is to reduce the number of communication rounds needed to train the model, resisted all attempts at a satisfactory theoretical explanation. Malinovsky et al. (2022) identified four distinct generations of LT methods based on the quality of the provided theoretical communication complexity guarantees. Despite a lot of progress in this area, none of the existing works were able to show that it is theoretically better to employ multiple local gradient-type steps (i.e., to engage in LT) than to rely on a single local gradient-type step only in the important heterogeneous data regime. In a recent breakthrough embodied in their ProxSkip method and its theoretical analysis, Mishchenko et al. (2022) showed that LT indeed leads to provable communication acceleration for arbitrarily heterogeneous data, thus jump-starting the 5th generation of LT methods. However, while these latest generation LT methods are compatible with DS, none of them support CS. We resolve this open problem in the affirmative. In order to do so, we had to base our algorithmic development on new algorithmic and theoretical foundations.
+</i>
+<br>
+
+
+<br>
+<br>
+<img alt="" src="imgs/fancy-line.png" width="196" height="36">
+<br>
+<br>
+
+
+
+<h3>December 13, 2022</h3>
+
+<h1>Vacation</h1>
+
+I am on vacation until the end of the year. This includes the 3rd place World Cup match!
+<br>
+
+<br>
+<br>
+<img alt="" src="imgs/fancy-line.png" width="196" height="36">
+<br>
+<br>
 
 
 <h3>December 3, 2022</h3>
@@ -288,6 +329,37 @@ more at the end of November. Should be fun!
 </a>
 
 <br>
+
+<br>
+<br>
+<img alt="" src="imgs/fancy-line.png" width="196" height="36">
+<br>
+<br>
+
+
+
+<h3>October 31, 2022</h3>
+
+<h1>New Paper</h1>
+
+<span class="important">New paper out:</span>
+<a href="https://arxiv.org/abs/2211.00188">
+"Adaptive Compression for Communication-Efficient Distributed Training"</a> -
+joint work with
+<a href="https://www.makarenko.co/">Maksim Makarenko</a>,
+<a href="https://elnurgasanov.com/">Elnur Gasanov</a>,
+<a href="https://rustem-islamov.github.io/">Rustem Islamov</a>, and
+<a href="https://scholar.google.com/citations?user=g0CzD50AAAAJ&hl=en">Abdurakhmon Sadiev</a>.
+
+
+<br>
+<br>
+Abstract:
+<i>
+We propose Adaptive Compressed Gradient Descent (AdaCGD) - a novel optimization algorithm for communication-efficient training of supervised machine learning models with adaptive compression level. Our approach is inspired by the recently proposed three point compressor (3PC) framework of Richtarik et al. (2022), which includes error feedback (EF21), lazily aggregated gradient (LAG), and their combination as special cases, and offers the current state-of-the-art rates for these methods under weak assumptions. While the above mechanisms offer a fixed compression level, or adapt between two extremes only, our proposal is to perform a much finer adaptation. In particular, we allow the user to choose any number of arbitrarily chosen contractive compression mechanisms, such as Top-K sparsification with a user-defined selection of sparsification levels K, or quantization with a user-defined selection of quantization levels, or their combination. AdaCGD chooses the appropriate compressor and compression level adaptively during the optimization process. Besides i) proposing a theoretically-grounded multi-adaptive communication compression mechanism, we further ii) extend the 3PC framework to bidirectional compression, i.e., we allow the server to compress as well, and iii) provide sharp convergence bounds in the strongly convex, convex and nonconvex settings. The convex regime results are new even for several key special cases of our general mechanism, including 3PC and EF21. In all regimes, our rates are superior compared to all existing adaptive compression methods.
+</i>
+<br>
+
 
 <br>
 <br>
