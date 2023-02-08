@@ -42,6 +42,36 @@
       </ul>
       <div id="wrapper" class="main">
         <div id="content">
+        
+<h3>February 8, 2023</h3>
+
+<h1>New Paper</h1>
+
+<span class="important">New paper out:</span>
+<a href="https://arxiv.org/abs/2302.03662">
+"Federated Learning with Regularized Client Participation"</a> -
+joint work with
+<a href="https://grigory-malinovsky.github.io/">Grigory Malinovsky</a>,
+<a href="https://sites.google.com/view/samuelhorvath">Samuel Horváth</a>, and
+<a href="https://burlachenkok.github.io/home">Konstantin Burlachenko</a>.
+
+<br>
+<br>
+Abstract:
+<i>
+Federated Learning (FL) is a distributed machine learning approach where multiple clients work together to solve a machine learning task. One of the key challenges in FL is the issue of partial participation, which occurs when a large number of clients are involved in the training process. The traditional method to address this problem is randomly selecting a subset of clients at each communication round. In our research, we propose a new technique and design a novel regularized client participation scheme. Under this scheme, each client joins the learning process every R communication rounds, which we refer to as a meta epoch. We have found that this participation scheme leads to a reduction in the variance caused by client sampling. Combined with the popular FedAvg algorithm (McMahan et al., 2017), it results in superior rates under standard assumptions. For instance, the optimization term in our main convergence bound decreases linearly with the product of the number of communication rounds and the size of the local dataset of each client, and the statistical term scales with step size quadratically instead of linearly (the case for client sampling with replacement), leading to better convergence rate O(1/T^2) compared to O(1/T), where T is the total number of communication rounds. Furthermore, our results permit arbitrary client availability as long as each client is available for training once per each meta epoch..
+</i>
+<br>
+
+
+<br>
+<br>
+<img alt="" src="imgs/fancy-line.png" width="196" height="36">
+<br>
+<br>
+
+
+        
 
 <h3>February 2, 2023</h3>
 
