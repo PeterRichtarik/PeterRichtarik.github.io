@@ -8,7 +8,7 @@ document.write("<h1>Peter Richtárik <\/h1>");
 document.write("<h2>Professor of Computer Science<\/h2>");
 document.write("<h2><a href=\"https:\/\/kaust.edu.sa\/en\">KAUST<\/a><\/h2>");
 document.write("<br>");
-document.write("Address: Al Khawarizmi Building 1, Office 2221, Thuwal 23955-6900, Saudi Arabia <br>");
+document.write("Address: Office 3145, Bldg 12, 4700 KAUST, Thuwal 23955-6900, Saudi Arabia <br>");
 document.write("E-mail: peter.richtarik@kaust.edu.sa<br>");
 document.write("<br>");
 document.write("&nbsp;");
