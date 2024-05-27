@@ -50,6 +50,51 @@
 <h1>New Paper</h1>
 
 <span class="important">New paper out:</span>
+<a href="https://arxiv.org/abs/2405.15593">
+"MicroAdam: Accurate Adaptive Optimization with Low Space Overhead and Provable Convergence"</a> -
+joint work with Ionut-Vlad Modoranu, Mher Safaryan, Grigory Malinovsky, Eldar Kurtic, Thomas Robert, and Dan Alistarh.
+ <br>
+ <br>
+  
+Abstract: <i> We propose a new variant of the Adam optimizer [Kingma and Ba, 2014] called MICROADAM that specifically minimizes memory overheads, while maintaining theoretical convergence guarantees. We achieve this by compressing the gradient information before it is fed into the optimizer state, thereby reducing its memory footprint significantly. We control the resulting compression error via a novel instance of the classical error feedback mechanism from distributed optimization [Seide et al., 2014, Alistarh et al., 2018, Karimireddy et al., 2019] in which the error correction information is itself compressed to allow for practical memory gains. We prove that the resulting approach maintains theoretical convergence guarantees competitive to those of AMSGrad, while providing good practical performance. Specifically, we show that MICROADAM can be implemented efficiently on GPUs: on both million-scale (BERT) and billion-scale (LLaMA) models, MicroAdam provides practical convergence competitive to that of the uncompressed Adam baseline, with lower memory usage and similar running time. Our code is available at <a href="https://github.com/IST-DASLab/MicroAdam">this https URL</a>. </i>
+  
+<br>
+
+<br>
+<br>
+<img alt="" src="imgs/fancy-line.png" width="196" height="36">
+<br>
+<br> 
+
+
+<h3>May 24, 2024</h3>
+
+<h1>New Paper</h1>
+
+<span class="important">New paper out:</span>
+<a href="https://arxiv.org/abs/2405.15545">
+"Freya PAGE: First Optimal Time Complexity for Large-Scale Nonconvex Finite-Sum Optimization with Heterogeneous Asynchronous Computations"</a> -
+joint work with Alexander Tyurin and Kaja Gruntkowska.
+ <br>
+ <br>
+  
+Abstract: <i> In practical distributed systems, workers are typically not homogeneous, and due to differences in hardware configurations and network conditions, can have highly varying processing times. We consider smooth nonconvex finite-sum (empirical risk minimization) problems in this setup and introduce a new parallel method, Freya PAGE, designed to handle arbitrarily heterogeneous and asynchronous computations. By being robust to "stragglers" and adaptively ignoring slow computations, Freya PAGE offers significantly improved time complexity guarantees compared to all previous methods, including Asynchronous SGD, Rennala SGD, SPIDER, and PAGE, while requiring weaker assumptions. The algorithm relies on novel generic stochastic gradient collection strategies with theoretical guarantees that can be of interest on their own, and may be used in the design of future optimization methods. Furthermore, we establish a lower bound for smooth nonconvex finite-sum problems in the asynchronous setup, providing a fundamental time complexity limit. This lower bound is tight and demonstrates the optimality of Freya PAGE in the large-scale regime, i.e., when $\sqrt{m} \geq n$, where $n$ is # of workers, and $m$ is # of data samples. </i>
+  
+<br>
+
+<br>
+<br>
+<img alt="" src="imgs/fancy-line.png" width="196" height="36">
+<br>
+<br> 
+
+
+
+<h3>May 23, 2024</h3>
+
+<h1>New Paper</h1>
+
+<span class="important">New paper out:</span>
 <a href="https://arxiv.org/abs/2405.14852">
 "PV-Tuning: Beyond Straight-Through Estimation for Extreme LLM Compression"</a> -
 joint work with Vladimir Malinovskii, Denis Mazur, Ivan Ilin, Denis Kuznedelev, Konstantin Burlachenko, Kai Yi, and Dan Alistarh.
@@ -68,7 +113,7 @@ Abstract: <i> There has been significant interest in "extreme" compression of la
 
 
 
-<h3>May 24, 2024</h3>
+<h3>May 23, 2024</h3>
 
 <h1>New Paper</h1>
 
@@ -92,7 +137,7 @@ Abstract: <i> Monotone inclusions have a wide range of applications, including m
 
 
 
-<h3>May 24, 2024</h3>
+<h3>May 22, 2024</h3>
 
 <h1>New Paper</h1>
 
