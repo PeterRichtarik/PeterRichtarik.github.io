@@ -1,12 +1,12 @@
 document.write("<table width=\"815\" border=\"0\" height=\"184\">");
 document.write("<tbody>");
 document.write("<tr>");
-document.write("<td> <img src=\"imgs\/pr5.jpg\" alt=\"Peter Richtarik\"");
-document.write("width=\"161\" height=\"200\"> <\/td>");
+document.write("<td> <img src=\"imgs\/pr_200x200.jpg\" alt=\"Peter Richtarik\"");
+document.write("width=\"200\" height=\"200\"> <\/td>");
 document.write("<td>");
 document.write("<h1>Peter Richtárik <\/h1>");
 document.write("<h2>Professor of Computer Science<\/h2>");
-document.write("<h2><a href=\"https:\/\/kaust.edu.sa\/en\">KAUST<\/a><\/h2>");
+document.write("<h2>King Abdullah University of Science and Technology (KAUST)<\/h2>");
 document.write("<br>");
 document.write("Address: Office 3145, Bldg 12, 4700 KAUST, Thuwal 23955-6900, Saudi Arabia <br>");
 document.write("E-mail: peter.richtarik@kaust.edu.sa<br>");
@@ -18,7 +18,7 @@ document.write("<a href=\"https:\/\/www.semanticscholar.org\/author\/Peter-Richt
 document.write("<a href=\"https:\/\/orcid.org\/0000-0003-4380-5848\"> <img src=\"imgs\/orcid.png\" alt=\"ORCID\" width=\"25\" border=\"0\" height=\"25\"><\/a> &nbsp;");
 document.write("<a href=\"https:\/\/www.genealogy.math.ndsu.nodak.edu\/id.php?id=111470\"> <img src=\"imgs\/mg.png\" alt=\"Mathematics Genealogy Project\" width=\"25\" border=\"0\" height=\"25\"><\/a> &nbsp;");
 document.write("<a href=\"https:\/\/www.linkedin.com\/in\/richtarik\/\"> <img src=\"imgs\/linkedin.png\" alt=\"Linked In\" width=\"25\" border=\"0\" height=\"25\"><\/a> &nbsp;");
-document.write("<a href=\"https:\/\/twitter.com\/peter_richtarik\/\"> <img src=\"imgs\/twitter.png\" alt=\"Twitter\"  border=\"0\" height=\"25\"><\/a><br>");
+document.write("<a href=\"https:\/\/twitter.com\/peter_richtarik\/\"> <img src=\"imgs\/x.png\" alt=\"Twitter\"  border=\"0\" height=\"25\"><\/a><br>");
 document.write("<\/td>");
 document.write("<\/tr>");
 document.write("<\/tbody>");
