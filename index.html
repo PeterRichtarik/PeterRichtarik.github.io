@@ -46,18 +46,89 @@
 
 
 
-<h3>April 8-10, 2026</h3>
+<h3>April 10, 2026</h3>
 
-<h1>Keynote @ ICMI 2026</h1>
+<h1>New Paper</h1>
 
-On April 9, I am giving a keynote at the <a href="https://www.icmiconf.com">IEEE 5th International Conference on Computing and Machine Intelligence (ICMI 2026)</a>, held at King Faisal University in Al-Ahsa, Kingdom of Saudi Arabia.
-<br> 
+<span class="important">New paper out:</span>
+<a href="https://arxiv.org/abs/2604.09245">
+"A Nesterov-Accelerated Primal-Dual Splitting Algorithm for Convex Nonsmooth Optimization"</a> -
+joint work with Laurent Condat and Abdurakhmon Sadiev.
+<br>
+<br>
+  
+Abstract: <i>We investigate the integration of Nesterov-type acceleration into primal-dual methods for structured convex optimization. While proximal splitting algorithms efficiently handle composite problems of the form $\min f(x)+g(x)+h(Kx)$, accelerating their convergence with respect to the smooth term $f$ is notoriously challenging due to the rotational dynamics in the primal-dual space. In this paper, we overcome this barrier by proposing the Accelerated Proximal Alternating Predictor-Corrector algorithm (APAPC), focusing on the setting where $g(x)=\frac{\mu_g}{2} \|x\|^2$. Our analysis reveals that Nesterov momentum can be seamlessly integrated into a primal-dual forward-backward scheme by exploiting the strong convexity of the dual problem to stabilize the accelerated primal updates. Using a unified Lyapunov framework, we establish optimal $O(1/t^2)$ sublinear convergence rates, as well as accelerated linear convergence when $\mu_g>0$, across three regimes of dual strong convexity: (i) when h is smooth, (ii) when the linear operator $K^*$ is bounded below, and (iii) for linearly constrained optimization. Furthermore, leveraging recent results on accelerated gradient descent, we characterize the weak convergence of the primal-dual iterates to a saddle-point solution.</i>
+  
+<br>
 
 <br>
 <br>
 <img alt="" src="imgs/fancy-line.png" width="196" height="36">
 <br>
 <br> 
+
+
+
+<h3>April 8-10, 2026</h3>
+
+<h1>Keynote @ ICMI 2026</h1>
+
+On April 9, I am giving a keynote at the <a href="https://www.icmiconf.com">IEEE 5th International Conference on Computing and Machine Intelligence (ICMI 2026)</a>, held at King Faisal University in Al-Ahsa, Kingdom of Saudi Arabia.
+<br> <br> 
+
+Update: Unfortunately, due to technical issues with internet connection, I was not able to deliver this remote/Zoom talk. I apologize to all conference participants!
+
+<br>
+<br>
+<img alt="" src="imgs/fancy-line.png" width="196" height="36">
+<br>
+<br> 
+
+
+<h3>April 3, 2026</h3>
+
+<h1>New Paper</h1>
+
+<span class="important">New paper out:</span>
+<a href="https://arxiv.org/abs/2604.02943">
+"Stabilized Proximal Point Method via Trust Region Control"</a> -
+joint work with Hanmin Li and Peter Richtárik.
+<br>
+<br>
+  
+Abstract: <i>The Proximal Point Method (PPM) (Rockafellar, 1976) is a fundamental tool for nonsmooth convex optimization. However, its convergence is not linear under general convexity in the absence of strong convexity or other structural assumptions. To address this limitation, we study a trust-region stabilized proximal point scheme in which each proximal update is computed over a localized feasible region. We show that this simple stabilization enforces non-vanishing steps and yields a linear decrease in objective values outside any prescribed neighborhood, without assuming smoothness or strong convexity. Our analysis identifies a displacement condition as the key driver of linear descent and provides two complementary parameter regimes to guarantee it: fixing the trust-region radius and choosing the regularization properly, or fixing the regularization and selecting radii via a uniform displacement lower bound. We further give explicit characterization of the linear regime conditions respectively, and prove that the trust-region is redundant under strong convexity, Finally, we establish an exact equivalence with the Broximal Point Method (BPM) (Gruntkowska et al., 2025) in the active constraint regime.</i>
+  
+<br>
+
+<br>
+<br>
+<img alt="" src="imgs/fancy-line.png" width="196" height="36">
+<br>
+<br> 
+
+
+
+<h3>March 24, 2026</h3>
+
+<h1>New Paper</h1>
+
+<span class="important">New paper out:</span>
+<a href="https://arxiv.org/abs/2603.23472">
+"Byzantine-Robust and Differentially Private Federated Optimization under Weaker Assumptions"</a> -
+joint work with Rustem Islamov, Grigory Malinovsky, Alexander Gaponov, Aurelien Lucchi, and Eduard Gorbunov.
+<br>
+<br>
+  
+Abstract: <i>Federated Learning (FL) enables heterogeneous clients to collaboratively train a shared model without centralizing their raw data, offering an inherent level of privacy. However, gradients and model updates can still leak sensitive information, while malicious servers may mount adversarial attacks such as Byzantine manipulation. These vulnerabilities highlight the need to address differential privacy (DP) and Byzantine robustness within a unified framework. Existing approaches, however, often rely on unrealistic assumptions such as bounded gradients, require auxiliary server-side datasets, or fail to provide convergence guarantees. We address these limitations by proposing Byz-Clip21-SGD2M, a new algorithm that integrates robust aggregation with double momentum and carefully designed clipping. We prove high-probability convergence guarantees under standard L-smoothness and σ-sub-Gaussian gradient noise assumptions, thereby relaxing conditions that dominate prior work. Our analysis recovers state-of-the-art convergence rates in the absence of adversaries and improves utility guarantees under Byzantine and DP settings. Empirical evaluations on CNN and MLP models trained on MNIST further validate the effectiveness of our approach.</i>
+  
+<br>
+
+<br>
+<br>
+<img alt="" src="imgs/fancy-line.png" width="196" height="36">
+<br>
+<br> 
+
 
 
 
