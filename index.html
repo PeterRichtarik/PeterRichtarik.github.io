@@ -43,6 +43,118 @@
       </ul>
       <div id="wrapper" class="main">
         <div id="content">
+        
+
+
+<h3>May 30, 2026</h3>
+
+<h1>DIS 2026 in Czechia</h1>
+
+I am on my way to Ústí nad Labem, Czech Republic. On Tuesday (June 2nd), I'll deliver a plenary lecture at <a href="https://dis2026.ujep.cz/">The 9th International Conference on Dynamics of Information Systems (DIS 2026)</a>. Haven't been to Czechia for many years -- very much looking forward!
+
+<br>
+
+<br>
+<br>
+<img alt="" src="imgs/fancy-line.png" width="196" height="36">
+<br>
+<br> 
+
+
+
+        
+<h3>May 26, 2026</h3>
+
+<h1>New Paper</h1>
+
+<span class="important">New paper out:</span>
+<a href="https://arxiv.org/abs/2605.26985">
+"A Unified Primal-Dual Recipe for Accelerating Three-Operator Splitting Methods"</a> -
+joint work with Abdurakhmon Sadiev and Laurent Condat.
+<br>
+<br>
+  
+Abstract: <i>Composite optimization problems, formulated as the minimization of three functions, are ubiquitous in large-scale machine learning and signal processing. While state-of-the-art splitting methods such as Condat-Vũ (CV) [Condat, 2013, Vũ, 2013], Primal-Dual Davis-Yin (PDDY) [Salim et al., 2022b], and Primal-Dual Twice Reflected (PDTR) [Malitsky and Tam, 2026] are highly versatile, they inherently exhibit non-accelerated convergence rates. Existing accelerated primal-dual splitting results either focus on special structures like one of the functions being zero, or linearly constrained problems, or smooth regimes, or directly use Nesterov-type momentum. Our contribution is a unified Bregman primal-dual framework that yields four variants and a common Lyapunov analysis. By applying the Chambolle-Pock algorithm [Chambolle and Pock, 2011] to primal-dual reformulations, we systematically derive four novel accelerated algorithms: Accelerated Condat-Vũ (ACV-I and ACV-II) and Accelerated Primal-Dual Twice Reflected (APDTR-I and APDTR-II). Through a simplified Lyapunov-based analysis, we establish iteration complexities for both smooth and nonsmooth cases, successfully removing the restrictive assumptions restrictions required by prior works.</i>
+  
+<br>
+
+<br>
+<br>
+<img alt="" src="imgs/fancy-line.png" width="196" height="36">
+<br>
+<br> 
+
+
+
+        
+
+<h3>May 20, 2026</h3>
+
+<h1>New Paper</h1>
+
+<span class="important">New paper out:</span>
+<a href="https://arxiv.org/abs/2605.20866">
+"LOSCAR-SGD: Local SGD with Communication-Computation Overlap and Delay-Corrected Sparse Model Averaging"</a> -
+joint work with Yassine Maziane, Ammar Mahran, and Artavazd Maranjyan.
+<br>
+<br>
+  
+Abstract: <i>Communication is a major bottleneck in distributed learning, especially in large-scale settings and in federated learning environments with slow links. Three standard ways to reduce this cost are communication compression, local training, and communication-computation overlap. Methods that combine these ingredients are used in practice and have been found to be effective for large-scale training, but there is little theory for methods that combine all three. We study a heterogeneous-compute setting in which different workers may take different numbers of local steps, and we propose LOSCAR-SGD, a Local SGD method that communicates only a sparse subset of model coordinates and continues optimizing while communication is in flight. A key ingredient is a delay-corrected merge rule that incorporates delayed synchronized information without discarding the progress made during the overlap phase. We give convergence guarantees for smooth non-convex objectives and show how sparsity, overlap, and worker heterogeneity affect the rate. To the best of our knowledge, this is the first theory for this combination of ingredients. Experiments further show that communication-computation overlap reduces training time and that the delay-corrected merge outperforms naive overwriting.</i>
+  
+<br>
+
+<br>
+<br>
+<img alt="" src="imgs/fancy-line.png" width="196" height="36">
+<br>
+<br> 
+
+
+
+<h3>May 18, 2026</h3>
+
+<h1>New Paper</h1>
+
+<span class="important">New paper out:</span>
+<a href="https://arxiv.org/abs/2605.18999">
+"Distance-Aware Muon: Adaptive Step Scaling for Normalized Optimization"</a> -
+joint work with Yury Demidovich, Abhishek Chakraborty, Grigory Malinovsky, and Angelia Nedić.
+<br>
+<br>
+  
+Abstract: <i>Muon and related normalized optimizers decouple the choice of update direction from the choice of step scale, but their practical performance remains sensitive to the scale of the normalized step. We study adaptive scaling rules for Muon in general norm geometries and develop three complementary algorithms. For smooth non-convex objectives, we introduce Distance-Adaptive Muon, whose trust-region radius is set from the radius explored by the trajectory, and prove a stationarity guarantee under a bounded-trajectory assumption. We then turn to star-convex objectives, a tractable model of the favorable global geometry often used to reason about the empirical loss landscapes of deep neural networks, where objective-gap guarantees are possible. In this setting, we first introduce Scale-Calibrated Muon, which keeps Muon's exponential moving average but sets the step length from a local descent certificate computed from the current gradient and momentum. For this method, we prove a last-iterate O(1/T) objective-gap bound under a bounded initial sublevel-set assumption, where the corresponding radius parameter appears only in the analysis and not in the algorithm. Finally, we develop Distance-Free Muon, a recentered trust-region method that uses a scalar distance certificate and a majorized one-dimensional search to select the trust-region radius without requiring the unknown distance from the initialization to a global minimizer. Experiments on Transformer language modeling (GPT-124M/WikiText-103) and image classification (ViT-Tiny/CIFAR-100) show that the proposed adaptive scaling rules reduce sensitivity to manual scale tuning and match or improve tuned fixed-scale Muon baselines under the tested budgets.</i>
+  
+<br>
+
+<br>
+<br>
+<img alt="" src="imgs/fancy-line.png" width="196" height="36">
+<br>
+<br> 
+
+
+
+<h3>May 18, 2026</h3>
+
+<h1>New Paper</h1>
+
+<span class="important">New paper out:</span>
+<a href="https://arxiv.org/abs/2605.18174">
+"Ringmaster LMO: Asynchronous Linear Minimization Oracle Momentum Method"</a> -
+joint work with Abdurakhmon Sadiev, Artavazd Maranjyan, and Ivan Ilin.
+<br>
+<br>
+  
+Abstract: <i>Muon has recently emerged as a strong alternative to AdamW for training neural networks, with encouraging large-scale pretraining results and growing evidence that matrix-structured updates can be faster in practice. Yet Muon, and more generally Linear Minimization Oracle (LMO) based methods, are typically used synchronously. This is problematic in heterogeneous distributed systems, where workers complete gradient computations at different speeds and synchronous training must repeatedly wait for slower workers. In this work, we introduce Ringmaster LMO, an asynchronous LMO-based momentum method for unconstrained stochastic nonconvex optimization. Our method builds on the delay-thresholding idea of Ringmaster ASGD. For SGD-type methods, Ringmaster ASGD achieves optimal time complexity by discarding overly stale gradients. Ringmaster LMO extends this mechanism to general LMO-based updates. We establish convergence guarantees under generalized (L0,L1)-smoothness and further develop a parameter-agnostic variant with decreasing stepsizes and adaptive delay thresholds. Finally, we translate our iteration guarantees into time complexity bounds under heterogeneous worker computation times. In the classical Euclidean smooth setting, these bounds recover the optimal time complexity of Ringmaster ASGD. Experiments on stochastic quadratic problems and NanoChat language-model pretraining show that the advantages of Ringmaster LMO grow with system heterogeneity and that the method outperforms strong synchronous and asynchronous baselines..</i>
+  
+<br>
+
+<br>
+<br>
+<img alt="" src="imgs/fancy-line.png" width="196" height="36">
+<br>
+<br> 
+
 
 
 <h3>May 13, 2026</h3>
