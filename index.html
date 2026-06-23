@@ -46,6 +46,89 @@
         
 
 
+<h3>June 19, 2026</h3>
+
+<h1>New Paper</h1>
+
+<span class="important">New paper out:</span>
+<a href="https://arxiv.org/abs/2606.21581">
+"Convergence Analysis of Muon-type Methods with Inexact LMO in the Degenerate Case"</a> -
+joint work with Xun Qian.
+<br>
+<br>
+  
+Abstract: <i>Muon-type methods have demonstrated potentially superior performance over Adam and its variants, and have shown hyperparameter transferability across model sizes when specific norms are chosen for the LMO in deep architectures. However, while the LMO is solved approximately via iterative algorithms in practice, most convergence analyses consider the ideal case where the search direction is the exact solution to the LMO. Recently, the inexact Muon update was analyzed by Shulgin et al. [2025], which reveals a fundamental coupling between the inexactness and the optimal step size and momentum. However, the convergence is guaranteed for the non-degenerate case only, i.e., the smallest positive singular value of the rescaled momentum is assumed to be bounded below by some positive constant when the spectral norm is used. In this work, we investigate Muon-type methods with inexact LMO in the degenerate case, where the smallest positive singular value of the rescaled momentum can approach zero, for the general non-convex case and the star-convex case with weight decay. Novel assumptions are proposed to address the challenges posed by inexact LMO in such degenerate scenarios, and convergence rates are established under the layer-wise $(L^0,L^1)$-smooth assumption for both cases.</i>
+  
+<br>
+
+<br>
+<br>
+<img alt="" src="imgs/fancy-line.png" width="196" height="36">
+<br>
+<br> 
+
+
+
+<h3>June 16, 2026</h3>
+
+<h1>Back on campus</h1>
+
+After a series of research visits and conference travel, I am now back on at KAUST.<br>
+
+
+<br>
+<br>
+<img alt="" src="imgs/fancy-line.png" width="196" height="36">
+<br>
+<br> 
+
+
+<h3>June 14, 2026</h3>
+
+<h1>New Paper</h1>
+
+<span class="important">New paper out:</span>
+<a href="https://arxiv.org/abs/2606.15832">
+"SILAGE: Memory-Efficient, Full-Gradient-Free Nonconvex Optimization for Nested Finite Sums"</a> -
+joint work with Igor Sokolov and Laurent Condat.
+<br>
+<br>
+  
+Abstract: <i>Empirical risk minimization on massive datasets naturally exhibits a nested double finite-sum structure, where $N=nm$ total samples are logically or physically partitioned into n blocks of size $m$ (e.g., in pooled data silos, out-of-core learning, or deliberate stratification). While variance-reduced methods achieve optimal oracle complexities for nonconvex objectives, they suffer from severe scaling bottlenecks in this centralized regime. Recursive estimators, such as PAGE, require periodic global full-gradient refreshes over all $nm$ samples, which are computationally expensive. Conversely, single-loop methods, such as SILVER, avoid such refreshes but require an impractical $O(nm)$ memory footprint to store a control variate for every sample. In this paper, we propose SILAGE, a variance-reduced algorithm that addresses this trade-off. By actively exploiting the double-sum structure, SILAGE eliminates periodic global full-gradient refreshes over all $nm$ components (evaluating at most one local group gradient per iteration) while requiring only $O(n)$ memory. Furthermore, we provide a tight convergence analysis that avoids pessimistic worst-case Lipschitz constants. Instead, SILAGE's complexity natively adapts to the underlying data geometry via nested functional similarities: across-group ($\delta_1$) and within-group ($\delta_2$) heterogeneity. Our results improve existing state-of-the-art bounds in several practically relevant regimes.</i>
+  
+<br>
+
+<br>
+<br>
+<img alt="" src="imgs/fancy-line.png" width="196" height="36">
+<br>
+<br> 
+
+
+<h3>June 2, 2026</h3>
+
+<h1>New Paper</h1>
+
+<span class="important">New paper out:</span>
+<a href="https://arxiv.org/abs/2606.03498">
+"Demystifying Pipeline Parallelism: First Theory for PipeDream"</a> -
+joint work with Ivan Ilin.
+<br>
+<br>
+  
+Abstract: <i>Training modern machine learning models increasingly requires computation to be distributed across many accelerators. Data parallelism remains the default choice and is often paired with tensor-parallel sharding, but model parallelism becomes unavoidable once parameters, activations, or optimizer states no longer fit on a single device. This paper studies pipeline model parallelism through the lens of PipeDream (PD) (Harlap et al., 2018). Our first contribution is theoretical: we introduce Randomized PipeDream (RPD), a stale block-SGD abstraction that yields, to our knowledge, the first clean nonconvex convergence guarantee for a PD-style method. Our second contribution is a scaling diagnosis: we prove that the delay induced by steady-state PD grows as $S^2−S/2+O(1)$ for $S$ stages, so the stale-read contribution in the convergence theorem scales as $Θ(\gamma^2 S^4)$, equivalently as $Θ(S^4/K)$ in the tuned-rate form. Our third contribution is a comparison with LocalSGD, whose periodic model averaging trades weight staleness for synchronization bubbles. In our reported simulated-time experiments, the better-performing method depends on the objective: PD performs better on the quadratic objective and on a small language-modeling training-loss task, while for logistic regression LocalSGD becomes superior as the number of stages increases.</i>
+  
+<br>
+
+<br>
+<br>
+<img alt="" src="imgs/fancy-line.png" width="196" height="36">
+<br>
+<br> 
+
+
+
+
 <h3>May 30, 2026</h3>
 
 <h1>DIS 2026 in Czechia</h1>
