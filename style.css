@@ -266,3 +266,28 @@ padding: 10px 0 5px 20px;
 	color:rgb(247, 148, 29)	;
 }
 
+table.software {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 0;
+}
+
+table.software td {
+	padding: 14px 0;
+	border-bottom: 1px solid #e2e2e2;
+	vertical-align: top;
+}
+
+table.software tr:first-child td {
+	padding-top: 4px;
+}
+
+table.software td.name {
+	width: 180px;
+	padding-right: 24px;
+	white-space: nowrap;
+}
+
+table.software td.name a {
+	font-weight: 600;
+}
