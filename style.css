@@ -117,6 +117,12 @@ nav.menu a.active {
 	padding-top: 0.35em;
 }
 
+#content h2[id^="y"],
+#content h2#future {
+	margin-top: 2.75em;
+	padding-top: 1.35em;
+}
+
 #content p {
 	margin: 0 0 1.25em;
 }
