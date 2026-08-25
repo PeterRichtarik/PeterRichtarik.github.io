@@ -122,6 +122,28 @@ nav.menu a.active {
 	margin: 0 0 1.25em;
 }
 
+#content.team h1 {
+	padding: 0.85em 0 0.3em;
+}
+
+#content.team h1:first-of-type {
+	padding-top: 0.55em;
+}
+
+#content.team h2 {
+	margin: 0.8em 0 0.2em;
+	padding-top: 0;
+}
+
+#content.team ul {
+	margin: 0;
+	padding: 0 0 0.1em 1.3em;
+}
+
+#content.team ul li {
+	padding: 1px 0;
+}
+
 #content img[src*="youtube"] {
 	height: 15px;
 	width: auto;
