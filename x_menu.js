@@ -1,7 +1,7 @@
 (function () {
   var items = [
     ["index.html", "News"],
-    ["i_oldnews-2024.html", "Old News"],
+    ["i_oldnews.html", "Old News"],
     ["i_papers.html", "Papers"],
     ["i_talks.html", "Talks"],
     ["i_videotalks.html", "Video Talks"],
@@ -20,7 +20,7 @@
     var href = items[i][0];
     var label = items[i][1];
     var cls = "";
-    if (file === href || (href === "i_oldnews-2024.html" && file.indexOf("i_oldnews") === 0)) cls = ' class="active"';
+    if (file === href || (href === "i_oldnews.html" && file.indexOf("i_oldnews") === 0)) cls = ' class="active"';
     document.write("<li><a" + cls + ' href="' + href + '">' + label + "</a></li>");
   }
   document.write("</ul>");
