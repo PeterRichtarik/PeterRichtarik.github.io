@@ -1,13 +1,6 @@
 *{margin:0; padding:0;}
 
 
-.CERVENA {
-	font-size: 100%;
-	font-style: normal;
-	color: #F30;
-}
-
-
 body {
 font-family: Verdana, Arial, "Trebuchet MS", Sans-Serif, Georgia, Courier, "Times New Roman", Serif;
 font-size: 14px;
@@ -80,48 +73,6 @@ color: #336699;
 
 #header h1 a:hover {
 color: #111;
-}
-
-#menu h2 {
-text-align:right;
-color: #aaa;
-font-size: 13px;
-font-weight: 600;
-padding-right: 30px;
-}
-
-#publicLecture {
-text-align:center;
-margin-top: 12px;
-}
-
-#menu {
-background: #000;
-height: 20px;
-}
-
-#menu ul {
-list-style-type: none;
-margin: 0;
-padding-left: 30px;
-}
-
-#menu ul li {
-display: block;
-float: left;
-}
-
-#menu ul li a {
-display: block;
-padding: 0 5px 0 5px;
-text-decoration: none;
-color: #aaa;
-font-size: 13px;
-font-weight: 200;
-}
-
-#menu ul li a:hover {
-color: #fff;
 }
 
 #wrapper {
@@ -315,8 +266,3 @@ padding: 10px 0 5px 20px;
 	color:rgb(247, 148, 29)	;
 }
 
-g_right{float: right;}
-g_left{	float: left;
-}
-g_clear{clear: both;
-}
