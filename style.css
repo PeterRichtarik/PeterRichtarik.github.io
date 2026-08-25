@@ -117,11 +117,6 @@ nav.menu a.active {
 	padding-top: 0.2em;
 }
 
-#content.talks h2[id^="y"],
-#content.talks h2#future {
-	margin-top: 2.75em;
-	padding-top: 1.35em;
-}
 
 #content p {
 	margin: 0 0 1.25em;
