@@ -127,6 +127,12 @@ nav.menu a.active {
 	margin: 0 0 1.25em;
 }
 
+#content img[src*="youtube"] {
+	height: 15px;
+	width: auto;
+	max-width: none;
+}
+
 #content h3 {
 	font-weight: 400;
 	font-size: 0.95rem;
