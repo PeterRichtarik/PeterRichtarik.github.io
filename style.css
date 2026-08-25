@@ -113,7 +113,12 @@ nav.menu a.active {
 	font-size: 1.2rem;
 	font-weight: 600;
 	color: rgb(247, 148, 29);
-	margin: 4px 0 12px;
+	margin: 2em 0 0.85em;
+	padding-top: 0.35em;
+}
+
+#content p {
+	margin: 0 0 1.25em;
 }
 
 #content h3 {
