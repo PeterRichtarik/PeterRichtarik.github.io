@@ -59,7 +59,7 @@ img { border: none; max-width: 100%; height: auto; vertical-align: middle; }
 
 .icons { margin-top: 10px; }
 .icons a { margin-right: 8px; }
-.icons img { width: 25px; height: 25px; }
+.icons img { height: 25px; width: auto; max-width: none; }
 
 nav.menu {
 	text-align: center;
