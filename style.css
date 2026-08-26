@@ -31,8 +31,8 @@ img { border: none; max-width: 100%; height: auto; vertical-align: middle; }
 }
 
 .site-header .portrait {
-	width: 150px;
-	height: 150px;
+	width: 170px;
+	height: 170px;
 	object-fit: cover;
 	flex-shrink: 0;
 	border-radius: 4px;
