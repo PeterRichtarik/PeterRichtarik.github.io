@@ -355,7 +355,11 @@ a.chip:hover { color: #880000; }
 .algorithms code {
 	font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 	font-size: 0.9em;
-	color: #333;
+	color: #a31515;
+	background: #f4f4f4;
+	border: 1px solid #e2e2e2;
+	border-radius: 3px;
+	padding: 0.08em 0.35em;
 }
 
 .topic-jump {
@@ -373,6 +377,7 @@ a.chip:hover { color: #880000; }
 
 .topic-jump a + a::before {
 	content: "\00b7";
+	display: inline-block;
 	margin: 0 0.45em 0 0.2em;
 	color: #bbb;
 }
@@ -383,8 +388,9 @@ a.chip:hover { color: #880000; }
 
 .topic-jump a.is-active {
 	color: rgb(247, 148, 29);
-	border-bottom: 2px solid rgb(247, 148, 29);
-	padding-bottom: 1px;
+	text-decoration: underline;
+	text-decoration-thickness: 2px;
+	text-underline-offset: 2px;
 }
 
 .paper[hidden],
