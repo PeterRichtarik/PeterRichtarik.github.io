@@ -357,3 +357,38 @@ a.chip:hover { color: #880000; }
 	font-size: 0.9em;
 	color: #333;
 }
+
+.topic-jump {
+	margin: 0 0 1.25em;
+	font-size: 0.95rem;
+}
+
+#content.papers .year-jump {
+	margin: 0 0 0.15em;
+}
+
+#content.papers .topic-jump {
+	margin: 0 0 0.6em;
+}
+
+.topic-jump a + a::before {
+	content: "\00b7";
+	margin: 0 0.45em 0 0.2em;
+	color: #bbb;
+}
+
+.topic-jump a:hover::before {
+	color: #bbb;
+}
+
+.topic-jump a.is-active {
+	color: rgb(247, 148, 29);
+	border-bottom: 2px solid rgb(247, 148, 29);
+	padding-bottom: 1px;
+}
+
+.paper[hidden],
+h2[hidden],
+hr.news-rule[hidden] {
+	display: none;
+}
