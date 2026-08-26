@@ -405,3 +405,27 @@ hr.news-rule[hidden] {
 	font-size: 0.8rem;
 	margin: 0 0 0.15em;
 }
+
+.paper-filters {
+	margin: 0 0 0.6em;
+	font-size: 0.95rem;
+}
+.paper-filters > summary {
+	cursor: pointer;
+	color: #336699;
+	display: inline;
+	list-style: none;
+}
+.paper-filters > summary::-webkit-details-marker { display: none; }
+.paper-filters > summary::before {
+	content: "\25B8  ";
+	color: #888;
+	font-size: 0.85em;
+}
+.paper-filters[open] > summary {
+	display: inline-block;
+	margin-bottom: 0.45em;
+}
+.paper-filters[open] > summary::before { content: "\25BE  "; }
+#content.papers .paper-filters .year-jump { margin: 0 0 0.35em; }
+#content.papers .paper-filters .topic-jump { margin: 0; }

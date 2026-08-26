@@ -52,8 +52,9 @@
     </nav>
 <div id="wrapper" class="main">
         <div id="content" class="papers">
-<p class="year-jump">
-  <span class="jump-label">Filter by year</span>
+<details class="paper-filters">
+  <summary>Filters</summary>
+  <p class="year-jump">
   <a href="#y2026">2026</a>
   <a href="#y2025">2025</a>
   <a href="#y2024">2024</a>
@@ -71,7 +72,6 @@
   <a href="#y2012">2012 and earlier</a>
 </p>
 <p class="topic-jump">
-  <span class="jump-label">Filter by topic</span>
   <a href="#topic=all" data-topic="" class="is-active">All</a>
   <a href="#topic=async" data-topic="async">Asynchronous</a>
   <a href="#topic=broximal" data-topic="broximal">Broximal</a>
@@ -87,7 +87,8 @@
   <a href="#topic=second" data-topic="second">Second-order</a>
   <a href="#topic=stochastic" data-topic="stochastic">Stochastic</a>
   <a href="#topic=zero" data-topic="zero">Zero-order</a>
-</p>
+  </p>
+</details>
 
  All papers are listed below in reverse chronological order in which they appeared online.<br>
           <br>
@@ -3049,6 +3050,8 @@ Technical Report, 2009 <br>
         prev.hidden = !vis;
       }
     });
+    var box = document.querySelector("details.paper-filters");
+    if (box && current) box.open = true;
     if (updateHash) setHash(current);
   }
 
