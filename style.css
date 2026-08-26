@@ -347,7 +347,7 @@ a.chip:hover { color: #880000; }
 
 
 .algorithms {
-	display: block;
+	display: inline;
 	margin: 0;
 	color: #555;
 	font-size: 0.95rem;
