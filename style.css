@@ -345,3 +345,15 @@ table.software td.name a { font-weight: 600; }
 a.chip:hover { color: #880000; }
 .chip-plain { color: #555; }
 
+
+.algorithms {
+	display: block;
+	margin: 0;
+	color: #555;
+	font-size: 0.95rem;
+}
+.algorithms code {
+	font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+	font-size: 0.9em;
+	color: #333;
+}
