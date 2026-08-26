@@ -4,7 +4,7 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="style.css?v=20260826c">
+    <link rel="stylesheet" href="style.css?v=20260826d">
     <link rel="icon" href="favicon.png" type="image/png">
     <title>Peter Richtárik — Papers</title>
     <meta property="og:title" content="Peter Richtárik — Papers">
@@ -53,6 +53,7 @@
 <div id="wrapper" class="main">
         <div id="content" class="papers">
 <p class="year-jump">
+  <span class="jump-label">Filter by year</span>
   <a href="#y2026">2026</a>
   <a href="#y2025">2025</a>
   <a href="#y2024">2024</a>
@@ -70,12 +71,22 @@
   <a href="#y2012">2012 and earlier</a>
 </p>
 <p class="topic-jump">
+  <span class="jump-label">Filter by topic</span>
   <a href="#topic=all" data-topic="" class="is-active">All</a>
   <a href="#topic=async" data-topic="async">Asynchronous</a>
   <a href="#topic=broximal" data-topic="broximal">Broximal</a>
+  <a href="#topic=compressed" data-topic="compressed">Compressed communication</a>
+  <a href="#topic=convex" data-topic="convex">Convex</a>
   <a href="#topic=federated" data-topic="federated">Federated learning</a>
+  <a href="#topic=first" data-topic="first">First-order</a>
   <a href="#topic=llm" data-topic="llm">LLM</a>
+  <a href="#topic=local" data-topic="local">Local training</a>
+  <a href="#topic=momentum" data-topic="momentum">Momentum</a>
   <a href="#topic=muon" data-topic="muon">Muon</a>
+  <a href="#topic=nonconvex" data-topic="nonconvex">Non-convex</a>
+  <a href="#topic=second" data-topic="second">Second-order</a>
+  <a href="#topic=stochastic" data-topic="stochastic">Stochastic</a>
+  <a href="#topic=zero" data-topic="zero">Zero-order</a>
 </p>
 
  All papers are listed below in reverse chronological order in which they appeared online.<br>
@@ -87,7 +98,7 @@
 <h2 id="y2026"> Prepared in 2026 </h2>
 
 
-<div class="paper">
+<div class="paper" data-topics="first momentum">
 [316] 
 Egor Shulgin, Tamaz Gadaev, Sarit Khirirat, and Peter Richtárik<br>
 <b>Understanding MARS: when scaling momentum provably helps</b><br>
@@ -96,7 +107,7 @@ Egor Shulgin, Tamaz Gadaev, Sarit Khirirat, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="muon">
+<div class="paper" data-topics="muon first momentum">
 [315] 
 Egor Shulgin, Mohamed Awad, Peter Richtárik, and Eduard Gorbunov<br>
 <b>General analysis of LMO-based optimizers: beyond bounded variance</b><br>
@@ -106,7 +117,7 @@ Egor Shulgin, Mohamed Awad, Peter Richtárik, and Eduard Gorbunov<br>
 </div>
 
 
-<div class="paper" data-topics="muon">
+<div class="paper" data-topics="muon first momentum nonconvex">
 [314] 
 Xun Qian and Peter Richtárik<br>
 <b>Convergence analysis of Muon-type methods with inexact LMO in the degenerate case</b><br>
@@ -115,7 +126,7 @@ Xun Qian and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic nonconvex">
 [313] 
 Igor Sokolov, Laurent Condat, and Peter Richtárik<br>
 <b>SILAGE: memory-efficient, full-gradient-free nonconvex optimization for nested finite sums</b><br>
@@ -123,7 +134,7 @@ Igor Sokolov, Laurent Condat, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="async">
+<div class="paper" data-topics="async stochastic first nonconvex">
 [312] 
 Ivan Ilin and Peter Richtárik<br>
 <b>Demystifying pipeline parallelism: first theory for PipeDream</b><br>
@@ -132,7 +143,7 @@ Ivan Ilin and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first momentum">
 [311] 
 Abdurakhmon Sadiev, Laurent Condat, and Peter Richtárik<br>
 <b>A unified primal-dual recipe for accelerating three-operator splitting methods</b><br>
@@ -140,7 +151,7 @@ Abdurakhmon Sadiev, Laurent Condat, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="async">
+<div class="paper" data-topics="async compressed first local stochastic nonconvex">
 [310] 
 Yassine Maziane, Ammar Mahran, Artavazd Maranjyan, and Peter Richtárik<br>
 <b>LOSCAR-SGD: local SGD with communication-computation overlap and delay-corrected sparse model averaging</b><br>
@@ -149,7 +160,7 @@ Yassine Maziane, Ammar Mahran, Artavazd Maranjyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="muon">
+<div class="paper" data-topics="muon first momentum nonconvex">
 [309] 
 Yury Demidovich, Abhishek Chakraborty, Grigory Malinovsky, Angelia Nedić, and Peter Richtárik<br>
 <b>Distance-aware Muon: adaptive step scaling for normalized optimization</b><br>
@@ -158,7 +169,7 @@ Yury Demidovich, Abhishek Chakraborty, Grigory Malinovsky, Angelia Nedić, and P
 </div>
 
 
-<div class="paper" data-topics="async">
+<div class="paper" data-topics="async first momentum stochastic nonconvex">
 [308] 
 Abdurakhmon Sadiev, Artavazd Maranjyan, Ivan Ilin, and Peter Richtárik<br>
 <b>Ringmaster LMO: asynchronous linear minimization oracle momentum method</b><br>
@@ -167,7 +178,7 @@ Abdurakhmon Sadiev, Artavazd Maranjyan, Ivan Ilin, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="async">
+<div class="paper" data-topics="async first stochastic nonconvex">
 [307] 
 Ammar Mahran, Artavazd Maranjyan, and Peter Richtárik<br>
 <b>Rescaled asynchronous SGD: optimal distributed optimization under data and system heterogeneity</b><br>
@@ -176,7 +187,7 @@ Ammar Mahran, Artavazd Maranjyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="async">
+<div class="paper" data-topics="async first momentum stochastic nonconvex">
 [306] 
 Zhirayr Tovmasyan, Artavazd Maranjyan, and Peter Richtárik<br>
 <b>Rennala MVR: improved time complexity for parallel stochastic optimization via momentum-based variance reduction</b><br>
@@ -185,7 +196,7 @@ Zhirayr Tovmasyan, Artavazd Maranjyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="broximal">
+<div class="paper" data-topics="broximal first nonconvex convex">
 [305] 
 Peter Richtárik, Kaja Gruntkowska, and Hanmin Li<br>
 <b>Local LMO: constrained gradient optimization via a local linear minimization oracle</b><br>
@@ -194,7 +205,7 @@ Peter Richtárik, Kaja Gruntkowska, and Hanmin Li<br>
 </div>
 
 
-<div class="paper" data-topics="broximal">
+<div class="paper" data-topics="broximal first nonconvex">
 [304] 
 Kaja Gruntkowska, Hanmin Li, Xun Qian, and Peter Richtárik<br>
 <b>Broximal alignment for global non-convex optimization</b><br>
@@ -203,7 +214,7 @@ Kaja Gruntkowska, Hanmin Li, Xun Qian, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="muon">
+<div class="paper" data-topics="muon compressed first momentum stochastic">
 [303] 
 Xun Qian, Alexander Gaponov, Grigory Malinovsky, and Peter Richtárik<br>
 <b>Communication-efficient Gluon in federated learning</b><br>
@@ -212,7 +223,7 @@ Xun Qian, Alexander Gaponov, Grigory Malinovsky, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first momentum convex">
 [302] 
 Laurent Condat, Abdurakhmon Sadiev, and Peter Richtárik<br>
 <b>A Nesterov-accelerated primal-dual splitting algorithm for convex nonsmooth optimization</b><br>
@@ -220,7 +231,7 @@ Laurent Condat, Abdurakhmon Sadiev, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first convex">
 [301] 
 Hanmin Li, Kaja Gruntkowska, and Peter Richtárik<br>
 <b>Stabilized proximal point method via trust region control</b><br>
@@ -228,7 +239,7 @@ Hanmin Li, Kaja Gruntkowska, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated first momentum compressed stochastic">
 [300] 
 Rustem Islamov, Grigory Malinovsky, Alexander Gaponov, Aurelien Lucchi, Peter Richtárik, and Eduard Gorbunov<br>
 <b>Byzantine-robust and differentially private federated optimization under weaker assumptions</b><br>
@@ -238,7 +249,7 @@ Rustem Islamov, Grigory Malinovsky, Alexander Gaponov, Aurelien Lucchi, Peter Ri
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed local first stochastic convex">
 [299] 
 Laurent Condat, Artavazd Maranjyan, and Peter Richtárik<br>
 <b>BiCoLoR: Communication-efficient optimization with bidirectional compression and local training</b><br>
@@ -248,7 +259,7 @@ Laurent Condat, Artavazd Maranjyan, and Peter Richtárik<br>
 <hr class="news-rule">
 <h2 id="y2025"> Prepared in 2025 </h2>
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first stochastic">
 [298] 
 Egor Shulgin, Grigory Malinovsky, Sarit Khirirat, and Peter Richtárik<br>
 <b>First provable guarantees for practical private FL: beyond restrictive assumptions</b><br>
@@ -257,7 +268,7 @@ Egor Shulgin, Grigory Malinovsky, Sarit Khirirat, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first momentum second stochastic nonconvex">
 [297] 
 Adrien Fradin, Abdurakhmon Sadiev, Laurent Condat, and Peter Richtárik<br>
 <b>Tight lower bounds and optimal algorithms for stochastic nonconvex optimization with heavy-tailed noise</b><br>
@@ -266,7 +277,7 @@ Adrien Fradin, Abdurakhmon Sadiev, Laurent Condat, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="muon">
+<div class="paper" data-topics="muon first momentum stochastic nonconvex">
 [296] 
 Xun Qian, Hussein Rammal, Dmitry Kovalev, and Peter Richtárik<br>
 <b>Muon is provably faster with momentum variance reduction</b><br>
@@ -275,7 +286,7 @@ Xun Qian, Hussein Rammal, Dmitry Kovalev, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="muon">
+<div class="paper" data-topics="muon first momentum second stochastic">
 [295] 
 Sarit Khirirat, Abdurakhmon Sadiev, Yury Demidovich, and Peter Richtárik<br>
 <b>Better LMO-based momentum methods with second-order information</b><br>
@@ -284,7 +295,7 @@ Sarit Khirirat, Abdurakhmon Sadiev, Yury Demidovich, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="compressed first momentum stochastic">
 [294] 
 Abdurakhmon Sadiev, Yury Demidovich, Igor Sokolov, Grigory Malinovsky, Sarit Khirirat, and Peter Richtárik<br>
 <b>Improved convergence in parameter-agnostic error feedback through momentum</b><br>
@@ -292,7 +303,7 @@ Abdurakhmon Sadiev, Yury Demidovich, Igor Sokolov, Grigory Malinovsky, Sarit Khi
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first momentum stochastic">
 [293] 
 Egor Shulgin, Sultan AlRashed, Francesco Orabona, and Peter Richtárik<br>
 <b>Beyond the ideal: Analyzing the inexact Muon update</b><br>
@@ -301,7 +312,7 @@ Egor Shulgin, Sultan AlRashed, Francesco Orabona, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first second stochastic">
 [292] 
 Abdurakhmon Sadiev, Peter Richtárik, and Ilyas Fatkhullin<br>
 <b>Second-order optimization under heavy-tailed noise: Hessian clipping and sample complexity limits</b><br>
@@ -310,7 +321,7 @@ Abdurakhmon Sadiev, Peter Richtárik, and Ilyas Fatkhullin<br>
 </div>
 
 
-<div class="paper" data-topics="muon">
+<div class="paper" data-topics="muon first momentum stochastic">
 [291] 
 Kaja Gruntkowska, Yassine Maziane, Zheng Qu, and Peter Richtárik<br>
 <b>Drop-Muon: Update less, converge faster</b><br>
@@ -319,7 +330,7 @@ Kaja Gruntkowska, Yassine Maziane, Zheng Qu, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="broximal muon">
+<div class="paper" data-topics="broximal muon first convex">
 [290] 
 Kaja Gruntkowska and Peter Richtárik<br>
 <b>Non-Euclidean broximal point method: a blueprint for geometry-aware optimization</b><br>
@@ -329,7 +340,7 @@ Kaja Gruntkowska and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated muon">
+<div class="paper" data-topics="federated muon compressed first momentum stochastic">
 [289] 
 Kaja Gruntkowska, Alexander Gaponov, Zhirayr Tovmasyan, and Peter Richtárik<br>
 <b>Error feedback for Muon and friends</b><br>
@@ -340,7 +351,7 @@ Kaja Gruntkowska, Alexander Gaponov, Zhirayr Tovmasyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated first local stochastic nonconvex">
 [288] 
 Adrien Fradin, Peter Richtárik, and Alexander Tyurin<br>
 <b>Local SGD and federated averaging through the lens of time complexity</b><br>
@@ -349,7 +360,7 @@ Adrien Fradin, Peter Richtárik, and Alexander Tyurin<br>
 </div>
 
 
-<div class="paper" data-topics="async">
+<div class="paper" data-topics="async first stochastic nonconvex">
 [287] 
 Artavazd Maranjyan and Peter Richtárik<br>
 <b>Ringleader ASGD: The first asynchronous SGD with optimal time complexity under data heterogeneity</b><br>
@@ -359,7 +370,7 @@ Artavazd Maranjyan and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic nonconvex convex">
 [286] 
 Laurent Condat and Peter Richtárik<br>
 <b>Convergence Analysis of the ProbAbilistic Gradient Estimator Algorithm for Weakly Convex Finite-Sum Optimization</b><br>
@@ -368,7 +379,7 @@ Laurent Condat and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="llm">
+<div class="paper" data-topics="llm nonconvex convex">
 [285] 
 Igor Sokolov, Abdurakhmon Sadiev, Yury Demidovich, Fawaz S Al-Qahtani, and Peter Richtárik<br>
 <b>Bernoulli-LoRA: A theoretical framework for randomized low-rank adaptation</b><br>
@@ -377,7 +388,7 @@ Igor Sokolov, Abdurakhmon Sadiev, Yury Demidovich, Fawaz S Al-Qahtani, and Peter
 </div>
 
 
-<div class="paper" data-topics="muon">
+<div class="paper" data-topics="muon first momentum stochastic">
 [284] 
 Artem Riabinin, Egor Shulgin, Kaja Gruntkowska, and Peter Richtárik<br>
 <b>From Muon to Gluon: bridging theory and practice of LMO-based optimizers for LLMs</b><br>
@@ -387,7 +398,7 @@ Artem Riabinin, Egor Shulgin, Kaja Gruntkowska, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic convex">
 [283] 
 Laurent Condat, Elnur Gasanov, and Peter Richtárik<br>
 <b>The stochastic multi-proximal method for nonsmooth optimization</b><br>
@@ -404,7 +415,7 @@ Ivan Ilin and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic">
 [281] 
 Ali Beikmohammadi, Sarit Khirirat, Peter Richtárik, and Sindri Magnússon<br>
 <b>Collaborative value function estimation under model mismatch: a federated temporal difference analysis</b><br>
@@ -421,7 +432,7 @@ Konstantin Burlachenko and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="compressed first stochastic nonconvex">
 [279] 
 Egor Shulgin, Sarit Khirirat, and Peter Richtárik<br>
 <b>Smoothed normalization for efficient distributed private optimization</b><br>
@@ -429,7 +440,7 @@ Egor Shulgin, Sarit Khirirat, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic nonconvex">
 [278] 
 Artem Riabinin, Ahmed Khaled, and Peter Richtárik<br>
 <b>A novel unified parametric assumption for nonconvex optimization</b><br>
@@ -437,7 +448,7 @@ Artem Riabinin, Ahmed Khaled, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="compressed first momentum stochastic nonconvex">
 [277] 
 Rustem Islamov, Samuel Horváth, Aurelien Lucchi, Peter Richtárik, and Eduard Gorbunov<br>
 <b>Double momentum and error feedback for clipping with fast rates and differential privacy</b><br>
@@ -445,7 +456,7 @@ Rustem Islamov, Samuel Horváth, Aurelien Lucchi, Peter Richtárik, and Eduard G
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic">
 [276] 
 Zhirayr Tovmasyan, Grigory Malinovsky, Laurent Condat, and Peter Richtárik<br>
 <b>Revisiting stochastic proximal point methods: generalized smoothness and similarity</b><br>
@@ -454,7 +465,7 @@ Zhirayr Tovmasyan, Grigory Malinovsky, Laurent Condat, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="broximal">
+<div class="paper" data-topics="broximal first nonconvex convex">
 [275] 
 Kaja Gruntkowska, Hanmin Li, Aadi Rane, and Peter Richtárik<br>
 <b>The ball-proximal (="broximal") point method: a new algorithm, convergence theory, and applications</b><br>
@@ -482,7 +493,7 @@ Kai Yi and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="async">
+<div class="paper" data-topics="async first stochastic">
 [272] 
 Artavazd Maranjyan, Alexander Tyurin and Peter Richtárik<br>
 <b>Ringmaster ASGD: The first asynchronous SGD with optimal time complexity</b><br>
@@ -493,7 +504,7 @@ Artavazd Maranjyan, Alexander Tyurin and Peter Richtárik<br>
 <hr class="news-rule">
 <h2 id="y2024"> Prepared in 2024 </h2>
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic">
 [271] 
 Egor Shulgin and Peter Richtárik<br>
 <b>On the convergence of DP-SGD with adaptive clipping</b><br>
@@ -501,7 +512,7 @@ Egor Shulgin and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first stochastic convex">
 [270] 
 Igor Sokolov and Peter Richtárik<br>
 <b>MARINA-P: Superior performance in non-smooth federated optimization with adaptive stepsizes</b><br>
@@ -510,7 +521,7 @@ Igor Sokolov and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic">
 [269] 
 Artavazd Maranjyan, Abdurakhmon Sadiev, and Peter Richtárik<br>
 <b>Differentially private random block coordinate descent</b><br>
@@ -518,7 +529,7 @@ Artavazd Maranjyan, Abdurakhmon Sadiev, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic">
 [268] 
 Elnur Gasanov and Peter Richtárik<br>
 <b>Speeding up stochastic proximal optimization in the high Hessian dissimilarity setting</b><br>
@@ -526,7 +537,7 @@ Elnur Gasanov and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated local stochastic first nonconvex">
 [267] 
 Yury Demidovich, Petr Ostroukhov, Grigory Malinovsky, Samuel Horváth, Martin Takáč, Peter Richtárik, and Eduard Gorbunov<br>
 <b>Methods with local steps and random reshuffling for generally smooth non-convex federated optimization</b><br>
@@ -547,7 +558,7 @@ Vladimir Malinovskii, Andrei Panferov, Ivan Ilin, Han Guo, Peter Richtárik, and
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first momentum stochastic nonconvex">
 [265] 
 Sarit Khirirat, Abdurakhmon Sadiev, Artem Riabinin, Eduard Gorbunov, and Peter Richtárik<br>
 <b>Error feedback under $(L_0,L_1)$-smoothness: normalization and momentum </b><br>
@@ -557,7 +568,7 @@ Sarit Khirirat, Abdurakhmon Sadiev, Artem Riabinin, Eduard Gorbunov, and Peter R
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated first local convex">
 [264] 
 Wojciech Anyszka, Kaja Gruntkowska, Alexander Tyurin, and Peter Richtárik<br>
 <b>Tighter performance theory of FedExProx</b><br>
@@ -567,7 +578,7 @@ Wojciech Anyszka, Kaja Gruntkowska, Alexander Tyurin, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="compressed second">
 [263] 
 Konstantin Burlachenko and Peter Richtárik<br>
 <b>Unlocking FedNL: Self-contained compute-optimized implementation</b><br>
@@ -575,7 +586,7 @@ Konstantin Burlachenko and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="llm">
+<div class="paper" data-topics="llm nonconvex">
 [262] 
 Grigory Malinovsky, Umberto Michieli, Hasan Abed Al Kader Hammoud, Taha Ceritli, Hayder Elesedy, Mete Ozay, and Peter Richtárik<br>
 <b>Randomized asymmetric chain of LoRA: The first meaningful theoretical framework for low-rank adaptation</b><br>
@@ -584,7 +595,7 @@ Grigory Malinovsky, Umberto Michieli, Hasan Abed Al Kader Hammoud, Taha Ceritli,
 </div>
 
 
-<div class="paper" data-topics="async">
+<div class="paper" data-topics="async first stochastic nonconvex">
 [261] 
 Artavazd Maranjyan, Omar Shaikh Omar, and Peter Richtárik<br>
 <b>MindFlayer SGD: Efficient parallel SGD in the presence of heterogeneous and random worker compute times</b><br>
@@ -596,7 +607,7 @@ to be presented at <a href="https://deepmath-conference.com/submissions">Confere
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated first local convex">
 [260] 
 Hanmin Li and Peter Richtárik<br>
 <b>On the convergence of FedProx with extrapolation and inexact prox</b><br>
@@ -606,7 +617,7 @@ Hanmin Li and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first momentum stochastic convex">
 [259] 
 Eduard Gorbunov, Nazarii Tupitsa, Sayantan Choudhury, Alen Aliev, Peter Richtárik, Samuel Horváth, and Martin Takáč<br>
 <b>Methods for convex $(L_0,L_1)$-smooth optimization: clipping, acceleration, and adaptivity</b><br>
@@ -616,7 +627,7 @@ Eduard Gorbunov, Nazarii Tupitsa, Sayantan Choudhury, Alen Aliev, Peter Richtár
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated first local stochastic">
 [258] 
 Kai Yi, Timur Kharisov, Igor Sokolov, and Peter Richtárik<br>
 <b>Cohort squeeze: Beyond a single communication round per cohort in cross-device federated learning</b><br>
@@ -626,7 +637,7 @@ Kai Yi, Timur Kharisov, Igor Sokolov, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated first local">
 [257] 
 Georg Meinhardt, Kai Yi, Laurent Condat, and Peter Richtárik<br>
 <b>Sparse-ProxSkip: Accelerated sparse-to-sparse training in federated learning</b><br>
@@ -635,7 +646,7 @@ Georg Meinhardt, Kai Yi, Laurent Condat, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated first momentum stochastic nonconvex">
 [256] 
 Avetik Karagulyan, Egor Shulgin, Abdurakhmon Sadiev, and Peter Richtárik<br>
 <b>SPAM: Stochastic proximal point method with momentum variance reduction for non-convex cross-device federated learning</b><br>
@@ -645,7 +656,7 @@ Avetik Karagulyan, Egor Shulgin, Abdurakhmon Sadiev, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic convex">
 [255] 
 Laurent Condat and Peter Richtárik<br>
 <b>A simple linear convergence analysis of the Point-SAGA algorithm</b><br>
@@ -653,7 +664,7 @@ Laurent Condat and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first convex">
 [254] 
 Peter Richtárik, Simone Maria Giancola, Dymitr Lubczyk, and Robin Yadav<br>
 <b>Local curvature descent: Squeezing more curvature out of standard and Polyak gradient descent</b><br>
@@ -663,7 +674,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="async">
+<div class="paper" data-topics="async first stochastic">
 [253] 
 Alexander Tyurin and Peter Richtárik<br>
 <b>On the optimal time complexities in decentralized stochastic asynchronous optimization</b><br>
@@ -673,7 +684,7 @@ Alexander Tyurin and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic convex">
 [252] 
 Peter Richtárik, Abdurakhmon Sadiev, and Yury Demidovich<br>
 <b>A unified theory of stochastic proximal point methods without smoothness</b><br>  
@@ -681,7 +692,7 @@ Peter Richtárik, Abdurakhmon Sadiev, and Yury Demidovich<br>
 </div>
 
 
-<div class="paper" data-topics="llm">
+<div class="paper" data-topics="llm first momentum stochastic">
 [251] 
 Ionut-Vlad Modoranu, Mher Safaryan, Grigory Malinovsky, Eldar Kurtic, Thomas Robert, Peter Richtárik, and Dan Alistarh<br>
 <b>MicroAdam: Accurate adaptive optimization with low space overhead and provable convergence</b><br>
@@ -691,7 +702,7 @@ Ionut-Vlad Modoranu, Mher Safaryan, Grigory Malinovsky, Eldar Kurtic, Thomas Rob
 </div>
 
 
-<div class="paper" data-topics="async">
+<div class="paper" data-topics="async first stochastic nonconvex">
 [250] 
 Alexander Tyurin, Kaja Gruntkowska, and Peter Richtárik<br>
 <b>Freya PAGE: First optimal time complexity for large-scale nonconvex finite-sum optimization with heterogeneous asynchronous computations</b><br>
@@ -712,7 +723,7 @@ Vladimir Malinovskii, Denis Mazur, Ivan Ilin, Denis Kuznedelev, Konstantin Burla
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic">
 [248] 
 Abdurakhmon Sadiev, Laurent Condat, and Peter Richtárik<br>
 <b>Stochastic proximal point methods for monotone inclusions under expected similarity</b><br>
@@ -721,7 +732,7 @@ Abdurakhmon Sadiev, Laurent Condat, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated local first convex">
 [247] 
 Hanmin Li, Kirill Acharya, and Peter Richtárik<br>
 <b>The power of extrapolation in federated learning</b><br>
@@ -731,7 +742,7 @@ Hanmin Li, Kirill Acharya, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first local stochastic">
 [246] 
 Kai Yi, Georg Meinhardt, Laurent Condat, and Peter Richtárik<br>
 <b>FedComLoc: Communication-efficient distributed training of sparse and quantized models</b><br>
@@ -741,7 +752,7 @@ Kai Yi, Georg Meinhardt, Laurent Condat, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic nonconvex">
 [245] 
 Yury Demidovich, Grigory Malinovsky, and Peter Richtárik<br>
 <b>Streamlining in the Riemannian realm: Efficient Riemannian optimization with loopless variance reduction</b><br>
@@ -749,7 +760,7 @@ Yury Demidovich, Grigory Malinovsky, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed local first stochastic convex">
 [244] 
 Laurent Condat, Artavazd Maranjyan, and Peter Richtárik<br>
 <b>LoCoDL: Communication-efficient distributed learning with local training and compression</b><br>
@@ -762,7 +773,7 @@ Laurent Condat, Artavazd Maranjyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first nonconvex">
 [243] 
 Kaja Gruntkowska, Alexander Tyurin, and Peter Richtárik<br>
 <b>Improving the worst-case bidirectional communication complexity for nonconvex distributed optimization under function similarity</b><br>
@@ -773,7 +784,7 @@ Kaja Gruntkowska, Alexander Tyurin, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="async">
+<div class="paper" data-topics="async first stochastic nonconvex">
 [242] 
 Alexander Tyurin, Marta Pozzi, Ivan Ilin, and Peter Richtárik<br>
 <b>Shadowheart SGD: Distributed asynchronous SGD with optimal time complexity under arbitrary computation and communication heterogeneity</b><br>
@@ -783,7 +794,7 @@ Alexander Tyurin, Marta Pozzi, Ivan Ilin, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed stochastic first nonconvex">
 [241] 
 Andrei Panferov, Yury Demidovich, Ahmad Rammal, and Peter Richtárik<br>
 <b>Correlated quantization for faster nonconvex distributed optimization</b><br>
@@ -804,7 +815,7 @@ Kai Yi, Nidham Gazagnadou, Peter Richtárik, and Lingjuan Lyu<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated first stochastic compressed">
 [239] 
 Peter Richtárik, Elnur Gasanov, Konstantin Burlachenko<br>
 <b>Error feedback reloaded: From quadratic to arithmetic mean of smoothness constants</b><br>
@@ -814,7 +825,7 @@ Peter Richtárik, Elnur Gasanov, Konstantin Burlachenko<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first">
 [238] 
 Jihao Xin, Ivan Ilin, Shunkang Zhang, Marco Canini, Peter Richtárik<br>          
 <b>Kimad: Adaptive gradient compression with bandwidth awareness</b><br>
@@ -834,7 +845,7 @@ Konstantin Burlachenko, Abdulmajeed Alrowithi, Fahad Ali Albalawi, and Peter Ric
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first stochastic">
 [236] 
 Yury Demidovich, Grigory Malinovsky, Egor Shulgin, and Peter Richtárik<br>          
 <b>MAST: model-agnostic sparsified training</b><br>
@@ -845,7 +856,7 @@ Yury Demidovich, Grigory Malinovsky, Egor Shulgin, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first stochastic">
 [235] 
 Grigory Malinovsky, Peter Richtárik, Samuel Horváth, and Eduard Gorbunov<br>          
 <b>Byzantine robustness and partial participation can be achieved simultaneously: just clip gradient differences</b><br>
@@ -855,7 +866,7 @@ Grigory Malinovsky, Peter Richtárik, Samuel Horváth, and Eduard Gorbunov<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="stochastic zero nonconvex">
 [234] 
 Massimo Fornasier, Peter Richtárik, Konstantin Riedl, and Lukang Sun<br>          
 <b>Consensus-based optimization with truncated noise</b><br>
@@ -863,7 +874,7 @@ Massimo Fornasier, Peter Richtárik, Konstantin Riedl, and Lukang Sun<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first stochastic nonconvex">
 [233] 
 Ahmad Rammal, Kaja Gruntkowska, Nikita Fedin, Eduard Gorbunov, and Peter Richtárik<br>          
 <b>Communication compression for Byzantine robust learning: New efficient algorithms and improved rates</b><br>
@@ -873,7 +884,7 @@ Ahmad Rammal, Kaja Gruntkowska, Nikita Fedin, Eduard Gorbunov, and Peter Richtá
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first stochastic nonconvex">
 [232] 
 Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>          
 <b>MARINA meets matrix stepsizes: Variance reduced distributed non-convex optimization</b><br>
@@ -882,7 +893,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic convex">
 [231] Eduard Gorbunov, Abdurakhmon Sadiev, Marina Danilova, Samuel Horváth, Gauthier Gidel, Pavel Dvurechensky, Alexander Gasnikov, and Peter Richtárik<br>          
 <b>High-probability convergence for composite and distributed stochastic minimization and variational inequalities with heavy-tailed noise</b><br>
 <a href="https://openreview.net/forum?id=DBI6AuCD4a">41st International Conference on Machine Learning (ICML 2024) </a> <br>
@@ -892,7 +903,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed">
 [230] Egor Shulgin and Peter Richtárik<br>          
 <b>Towards a better theoretical understanding of independent subnetwork training</b><br>
 <a href="https://openreview.net/pdf?id=XUc29ydmLX">41st International Conference on Machine Learning (ICML 2024)</a> <br>
@@ -902,7 +913,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic nonconvex convex">
 [229] Rafał Szlendak, Elnur Gasanov, and Peter Richtárik<br>
           <b>Understanding progressive training through the framework of randomized coordinate descent</b><br>     
           <a href="https://proceedings.mlr.press/v238/szlendak24a.html">26th International Conference on Artificial Intelligence and Statistics (AISTATS 2024)</a> <br>               
@@ -910,7 +921,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed local momentum">
 [228] Michał Grudzień, Grigory Malinovsky, and Peter Richtárik<br>
           <b>Improving accelerated federated learning with compression and importance sampling</b><br>
           <a href="https://fl-icml2023.github.io">Federated Learning and Analytics in Practice: Algorithms, Systems, Applications, and Opportunities (ICML 2023 Workshop) </a> <br>          
@@ -919,14 +930,14 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="compressed first nonconvex">
 [227] Sarit Khirirat, Eduard Gorbunov, Samuel Horváth, Rustem Islamov, Fakhri Karray, and Peter Richtárik<br>
           <b>Clip21: Error feedback for gradient clipping</b><br>
           <a class="chip" href="https://arxiv.org/abs/2305.18929">arXiv</a> <br><span class="algorithms">Algorithms: <code>Clip21-Avg</code>, <code>Clip21-GD</code>, <code>DP-Clip21-GD</code>, <code>Press-Clip21-GD</code></span><br><br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first">
 [226] Jihao Xin, Marco Canini, Peter Richtárik, and Samuel Horváth<br>
           <b>Quantize once, train fast: allreduce-compatible compression with provable guarantees</b><br>
           <a href="https://ebooks.iospress.nl/volumearticle/76054">28th European Conference on Artificial Intelligence (ECAI 2025)</a><br>
@@ -935,7 +946,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic nonconvex convex">
 [225] Yury Demidovich, Grigory Malinovsky, Igor Sokolov and Peter Richtárik<br>
           <b>A guide through the zoo of biased SGD</b><br>
           <a href="https://openreview.net/forum?id=OCtv4NyahI">Advances in Neural Information Processing Systems 36 (NeurIPS 2023)</a> <br>
@@ -943,7 +954,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first nonconvex">
 [224] Peter Richtárik, Elnur Gasanov and Konstantin Burlachenko<br>
           <b>Error feedback shines when features are rare</b><br>
           
@@ -951,7 +962,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first momentum nonconvex">
 [223] Ilyas Fatkhullin, Alexander Tyurin and Peter Richtárik<br>
           <b>Momentum provably improves error feedback!</b><br>
           <a href="https://openreview.net/forum?id=w6LO3kqy9B#all">Advances in Neural Information Processing Systems 36 (NeurIPS 2023)</a> <br>          
@@ -961,7 +972,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated first local stochastic">
 [222] Kai Yi, Laurent Condat and Peter Richtárik<br>
           <b>Explicit personalization and local training: double communication acceleration in federated learning</b><br>
           <a href="https://openreview.net/pdf?id=qVUEuhlaEa">Transactions on Machine Learning Research (TMLR 2025)</a> <br>
@@ -970,7 +981,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="async">
+<div class="paper" data-topics="async first stochastic">
 [221] Alexander Tyurin and Peter Richtárik<br>
           <b>Optimal time complexities of parallel stochastic optimization methods under a fixed computation model</b><br>
           <a href="https://openreview.net/forum?id=B4xF1wfQnF">Advances in Neural Information Processing Systems 36 (NeurIPS 2023)</a> <br>
@@ -979,7 +990,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first momentum convex">
 [220] Alexander Tyurin and Peter Richtárik<br>
           <b>2Direction: Theoretically faster distributed training with bidirectional communication compression</b><br>
           <a href="https://openreview.net/forum?id=n18MhTsSGb">Advances in Neural Information Processing Systems 36 (NeurIPS 2023)</a> <br>          
@@ -988,7 +999,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first nonconvex">
 [219] Hanmin Li, Avetik Karagulyan and Peter Richtárik<br>
           <b>Det-CGD: Compressed gradient descent with matrix stepsizes for non-convex optimization</b><br>
           <a href="https://openreview.net/pdf?id=ZEZ0CPmoSI">12th International Conference on Learning Representations (ICLR 2024)</a> <br>
@@ -997,7 +1008,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first stochastic">
 [218] Avetik Karagulyan and Peter Richtárik<br>
           <b>ELF: Federated Langevin algorithms with primal, dual and bidirectional compression</b><br>
 <a href="https://proceedings.mlr.press/v286/karagulyan25a.html">41st Conference on Uncertainty in Artificial Intelligence (UAI 2025)</a> <br>          
@@ -1007,7 +1018,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated local momentum first stochastic convex">
 [217] Laurent Condat, Grigory Malinovsky and Peter Richtárik<br>
           <b>TAMUNA: Doubly accelerated distributed optimization under partial participation</b><br>
           
@@ -1015,7 +1026,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated first stochastic">
 [216] Grigory Malinovsky, Samuel Horváth, Konstantin Burlachenko and Peter Richtárik<br>
           <b>Federated learning with regularized client participation</b><br>
           <a href="https://fl-icml2023.github.io">Federated Learning and Analytics in Practice: Algorithms, Systems, Applications, and Opportunities (ICML 2023 Workshop) </a> <br>          
@@ -1024,7 +1035,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic nonconvex convex">
 [215] Abdurakhmon Sadiev, Marina Danilova, Eduard Gorbunov, Samuel Horváth, Gauthier Gidel, Pavel Dvurechensky, Alexander Gasnikov and Peter Richtárik<br>
           <b>High-probability bounds for stochastic optimization and variational inequalities: the case of unbounded variance</b><br>
           <a href="https://openreview.net/forum?id=JCpQcyjI7W">40th International Conference on Machine Learning (ICML 2023)</a><br>
@@ -1032,7 +1043,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first momentum stochastic convex">
 [214] Xun Qian, Hanze Dong, Tong Zhang and Peter Richtárik<br>
           <b>Catalyst acceleration of error compensated methods leads to better communication complexity</b><br>
           <a href="https://proceedings.mlr.press/v206/qian23a.html">25th International Conference on Artificial Intelligence and Statistics (AISTATS 2023)</a> <br>
@@ -1041,7 +1052,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic">
 [213] Slavomír Hanzely, Konstantin Mishchenko and Peter Richtárik<br>
           <b>Convergence of first-order algorithms for meta-learning with Moreau envelopes</b><br>
           <a href="https://fl-icml2023.github.io">Federated Learning and Analytics in Practice: Algorithms, Systems, Applications, and Opportunities (ICML 2023 Workshop) </a> <br>          
@@ -1050,7 +1061,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 <hr class="news-rule">
 <h2 id="y2022"> Prepared in 2022 </h2>
 
-          <div class="paper" data-topics="federated">
+          <div class="paper" data-topics="federated local momentum first">
 [212] Michał Grudzień, Grigory Malinovsky and Peter Richtárik<br>
           <b>Can 5th generation local training methods support client sampling? Yes!</b><br>
           <a href="https://proceedings.mlr.press/v206/grudzien23a.html">25th International Conference on Artificial Intelligence and Statistics (AISTATS 2023)</a> <br>
@@ -1059,7 +1070,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first nonconvex convex">
 [211] Maksim Makarenko, Elnur Gasanov, Rustem Islamov, Abdurakhmon Sadiev and Peter Richtárik<br>
           <b>Adaptive compression for communication-efficient distributed training</b><br>
           <a href="https://openreview.net/pdf?id=Rb6VDOHebB">Transactions on Machine Learning Research (TMLR 2023) </a><br>          
@@ -1068,7 +1079,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="second">
 [210] Slavomír Hanzely, Dmitry Kamzolov, Dmitry Pasechnyuk, Alexander Gasnikov, Peter Richtárik and Martin Takáč <br>
           <b>A damped Newton method achieves global $O (1/k^2)$ and local quadratic convergence rate</b><br>
           <a href="https://openreview.net/forum?id=rjDziEPQLQs">Advances in Neural Information Processing Systems 35 (NeurIPS 2022) </a><br>
@@ -1076,7 +1087,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated first local convex">
 [209] Artavazd Maranjyan, Mher Safaryan and Peter Richtárik <br>
           <b>GradSkip: Communication-accelerated local gradient methods with better computational complexity</b><br>
           
@@ -1084,7 +1095,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first local convex">
 [208] Laurent Condat, Ivan Agarský and Peter Richtárik <br>
           <b>CompressedScaffnew: the first theoretical double acceleration of communication from local training and compression in distributed optimization</b><br>
           <a href="https://doi.org/10.1080/02331934.2026.2653842">Optimization, 2026</a> <br>
@@ -1093,14 +1104,14 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first">
 [207] Lukang Sun and Peter Richtárik<br>
           <b>Improved Stein variational gradient descent with importance weights</b><br>
           <a class="chip" href="https://arxiv.org/abs/2210.00462">arXiv</a> <br><span class="algorithms">Algorithms: <code>beta-SVGD</code></span><br><br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first nonconvex convex">
 [206] Kaja Gruntkowska, Alexander Tyurin and Peter Richtárik<br>
           <b>EF21-P and friends: Improved theoretical communication complexity for distributed optimization with bidirectional compression</b><br>
           <a href="https://proceedings.mlr.press/v202/gruntkowska23a">40th International Conference on Machine Learning (ICML 2023)</a><br>
@@ -1109,7 +1120,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="stochastic zero nonconvex convex">
 [205] Soumia Boucherouite, Grigory Malinovsky, Peter Richtárik and El Houcine Bergou<br>
           <b>Minibatch stochastic three points method for unconstrained smooth minimization</b><br>
           <a href="https://ojs.aaai.org/index.php/AAAI/article/view/30016">38th AAAI Conference on Artificial Intelligence (AAAI 2024)</a> <br>
@@ -1117,7 +1128,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first local stochastic">
 [204] El Houcine Bergou, Konstantin Burlachenko, Aritra Dutta and Peter Richtárik <br>
           <b>Personalized federated learning with communication compression</b><br>
           <a href="https://openreview.net/forum?id=dZugyhbNFY">Transactions on Machine Learning Research (TMLR 2023)</a> <br>
@@ -1126,14 +1137,14 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic convex">
 [203] Samuel Horváth, Konstantin Mishchenko and Peter Richtárik <br>
           <b>Adaptive learning rates for faster stochastic gradient methods</b><br>
           <a class="chip" href="https://arxiv.org/abs/2208.05287">arXiv</a> <br><span class="algorithms">Algorithms: <code>StoPS</code>, <code>GraDs</code>, <code>StoP</code>, <code>GraD</code></span><br><br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated first stochastic convex">
 [202] Laurent Condat and Peter Richtárik <br>
           <b>RandProx: Primal-dual optimization algorithms with randomized proximal updates</b><br>
           <a href="https://openreview.net/forum?id=cB4N3G5udUS">11th International Conference on Learning Representations (ICLR 2023) </a><br>
@@ -1143,7 +1154,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated first local stochastic">
 [201] Grigory Malinovsky, Kai Yi and Peter Richtárik <br>
           <b>Variance reduced ProxSkip: algorithm, theory and application to federated learning</b><br>
           <a href="https://openreview.net/forum?id=edkno3SvKo">Advances in Neural Information Processing Systems 35 (NeurIPS 2022) </a><br>
@@ -1152,7 +1163,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated first local momentum convex">
 [200] Abdurakhmon Sadiev, Dmitry Kovalev and Peter Richtárik <br>
           <b>Communication acceleration of local gradient methods via an accelerated primal-dual algorithm with inexact prox</b><br>
           <a href="https://openreview.net/forum?id=W72rB0wwLVu">Advances in Neural Information Processing Systems 35 (NeurIPS 2022) </a><br>
@@ -1161,7 +1172,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first stochastic">
 [199] Egor Shulgin and Peter Richtárik <br>
           <b>Shifted compression framework: generalizations and improvements</b><br>
           <a href="https://proceedings.mlr.press/v180/shulgin22a.html">38th Conference on Uncertainty in Artificial Intelligence (UAI 2022) </a><br>
@@ -1170,14 +1181,14 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first">
 [198] Lukang Sun and Peter Richtárik <br>
           <b>A Note on the convergence of mirrored Stein variational gradient descent under (L_0, L_1) smoothness condition</b><br>
           <a class="chip" href="https://arxiv.org/abs/2206.09709">arXiv</a> <br><span class="algorithms">Algorithms: <code>MSVGD</code></span><br><br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first stochastic">
 [197] Abdurakhmon Sadiev, Grigory Malinovsky, Eduard Gorbunov, Igor Sokolov, Ahmed Khaled, Konstantin Burlachenko and Peter Richtárik <br>
           <b>Don't compress gradients in random reshuffling: compress gradient differences</b><br>       
 <a href="https://proceedings.neurips.cc/paper_files/paper/2024/file/99c80ceb10cb674110f03b2def6a5b76-Paper-Conference.pdf">Advances in Neural Information Processing Systems 38 (NeurIPS 2024)</a> <br>          
@@ -1187,7 +1198,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed second convex">
 [196] Rustem Islamov, Xun Qian, Slavomír Hanzely, Mher Safaryan and Peter Richtárik <br>
           <b>Distributed Newton-type methods with communication compression and Bernoulli aggregation</b><br>
 	  <a href="https://openreview.net/pdf?id=NekBTCKJ1H">Transactions on Machine Learning Research (TMLR 2023)</a> <br>         
@@ -1206,7 +1217,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated first stochastic nonconvex">
 [194] Alexander Tyurin, Lukang Sun, Konstantin Burlachenko and Peter Richtárik<br>
           <b>Sharper rates and flexible framework for nonconvex SGD with client and data sampling</b><br>
 	  <a href="https://openreview.net/pdf?id=zKgJ6TWAFE">Transactions on Machine Learning Research (TMLR 2023)</a> <br>
@@ -1215,7 +1226,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first stochastic nonconvex">
 [193] Lukang Sun, Adil Salim and Peter Richtárik<br>
           <b>Federated sampling with Langevin algorithm under isoperimetry</b><br>
 	  <a href="https://openreview.net/pdf?id=Sj7bFPeR6W">Transactions on Machine Learning Research (TMLR 2024)</a> <br>          
@@ -1224,7 +1235,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first stochastic nonconvex">
 [192] Eduard Gorbunov, Samuel Horváth, Peter Richtárik and Gauthier Gidel<br>
           <b>Variance reduction is an antidote to Byzantines: better rates, weaker assumptions and communication compression as a cherry on the top</b><br>
           <a href="https://openreview.net/forum?id=pfuqQQCB34">11th International Conference on Learning Representations (ICLR 2023) </a><br>
@@ -1233,7 +1244,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first">
 [191] Lukang Sun, Avetik Karagulyan and Peter Richtárik<br>
           <b>Convergence of Stein variational gradient descent under a weaker smoothness condition</b><br>
           <a href="https://proceedings.mlr.press/v206/sun23d.html">25th International Conference on Artificial Intelligence and Statistics (AISTATS 2023)</a> <br>
@@ -1241,7 +1252,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first stochastic nonconvex">
 [190] Alexander Tyurin and Peter Richtárik<br>
           <b>A computation and communication efficient method for distributed nonconvex problems in the partial participation setting</b><br>
           <a href="https://openreview.net/forum?id=loxinzXlCx">Advances in Neural Information Processing Systems 36 (NeurIPS 2023)</a> <br>          
@@ -1250,7 +1261,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first stochastic">
 [189] Laurent Condat, Kai Yi and Peter Richtárik<br>
           <b>EF-BV: A unified theory of error feedback and variance reduction mechanisms for biased and unbiased compression in distributed optimization</b><br>
           <a href="https://openreview.net/forum?id=PeJO709WUup">Advances in Neural Information Processing Systems 35 (NeurIPS 2022)</a> <br>
@@ -1259,7 +1270,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first local stochastic">
 [188] Grigory Malinovsky and Peter Richtárik<br>
           <b>Federated random reshuffling with compression and variance reduction</b><br>
           
@@ -1267,7 +1278,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated local stochastic">
 [187] Samuel Horváth, Maziar Sanjabi, Lin Xiao, Peter Richtárik and Michael Rabbat<br>
           <b>FedShuffle: Recipes for better use of local work in federated learning</b><br>
           <a href="https://openreview.net/pdf?id=Lgs5pQ1v30">Transactions on Machine Learning Research (TMLR 2022)</a> <br>
@@ -1276,7 +1287,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated first local">
 [186] Konstantin Mishchenko, Grigory Malinovsky, Sebastian Stich and Peter Richtárik<br>
           <b>ProxSkip: Yes! Local gradient steps provably lead to communication acceleration! Finally!</b><br>
           <a href="https://proceedings.mlr.press/v162/mishchenko22b.html">39th International Conference on Machine Learning (ICML 2022)</a><br>
@@ -1285,7 +1296,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="stochastic">
 [185] Dmitry Kovalev, Aleksandr Beznosikov, Abdurakhmon Sadiev, Michael Persiianov, Peter Richtárik and Alexander Gasnikov<br>
           <b>Optimal algorithms for decentralized stochastic variational inequalities</b><br>
          <a href="https://openreview.net/forum?id=omI5hgwgrsa">Advances in Neural Information Processing Systems 35 (NeurIPS 2022) </a><br>
@@ -1293,7 +1304,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first stochastic nonconvex">
 [184] Alexander Tyurin and Peter Richtárik<br>
           <b>DASHA: Distributed nonconvex optimization with communication compression and optimal oracle complexity</b><br>
           <a href="https://openreview.net/forum?id=VA1YpcNr7ul">10th International Conference on Learning Representations (ICLR 2023) </a><br>
@@ -1302,7 +1313,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first nonconvex">
 [183] Peter Richtárik, Igor Sokolov, Ilyas Fatkhullin, Elnur Gasanov, Zhize Li and Eduard Gorbunov<br>
           <b>3PC: Three point compressors for communication-efficient distributed training and a better theory for lazy aggregation</b><br>
           <a href="https://proceedings.mlr.press/v162/richtarik22a.html">39th International Conference on Machine Learning (ICML 2022)</a><br>
@@ -1311,7 +1322,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed nonconvex">
 [182] Haoyu Zhao, Boyue Li, Zhize Li, Peter Richtárik and Yuejie Chi<br>
           <b>BEER: Fast $O (1/T)$ rate for decentralized nonconvex optimization with communication compression</b><br>
           <a href="https://openreview.net/forum?id=I47eFCKa1f3">Advances in Neural Information Processing Systems 35 (NeurIPS 2022) </a><br>
@@ -1320,7 +1331,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated local stochastic nonconvex convex">
 [181] Grigory Malinovsky, Konstantin Mishchenko and Peter Richtárik<br>
           <b>Server-side stepsizes and sampling without replacement provably help in federated optimization</b><br>
           <a href="https://dl.acm.org/doi/10.1145/3630048.3630187">Proceedings of the 4th International Workshop on Distributed Machine Learning, 85--104, 2023 (DistributedML 2023) </a>
@@ -1331,7 +1342,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 <h2 id="y2021"> Prepared in 2021 </h2>
 
 
-          <div class="paper">
+          <div class="paper" data-topics="first momentum convex">
 [180] Dmitry Kovalev, Alexander Gasnikov and Peter Richtárik<br>
           <b>Accelerated primal-dual gradient method for smooth and convex-concave saddle-point problems with bilinear coupling</b><br>
           <a href="https://openreview.net/forum?id=FncDhRcRYiN">Advances in Neural Information Processing Systems 35 (NeurIPS 2022)</a> <br>
@@ -1339,7 +1350,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed stochastic nonconvex convex">
 [179] Haoyu Zhao, Konstantin Burlachenko, Zhize Li and Peter Richtárik<br>
           <b>Faster rates for compressed federated learning with client-variance reduction</b><br>
           <a href="https://epubs.siam.org/doi/10.1137/23M1553820">SIAM Journal on Mathematics of Data Science 6 (1):154-175, 2024</a><br>          
@@ -1357,7 +1368,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated first">
 [177] Elnur Gasanov, Ahmed Khaled, Samuel Horváth and Peter Richtárik<br>
           <b>FLIX: A simple and communication-efficient alternative to local methods in federated learning</b><br>
           <a href="https://proceedings.mlr.press/v151/gasanov22a.html">24th International Conference on Artificial Intelligence and Statistics (AISTATS 2022) </a><br>
@@ -1366,7 +1377,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed second">
 [176] Xun Qian, Rustem Islamov, Mher Safaryan and Peter Richtárik<br>
           <b>Basis matters: better communication-efficient second order methods for federated learning</b><br>
           <a href="https://proceedings.mlr.press/v151/qian22a.html">24th International Conference on Artificial Intelligence and Statistics (AISTATS 2022)</a> <br>
@@ -1375,7 +1386,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="compressed">
 [175] Aleksandr Beznosikov, Peter Richtárik, Michael Diskin, Max Ryabinin and Alexander Gasnikov<br>
           <b>Distributed methods with compressed communication for solving variational inequalities, with theoretical guarantees</b><br>          
           <a href="https://openreview.net/forum?id=wClmeg9u7G">Advances in Neural Information Processing Systems 35 (NeurIPS 2022) </a> <br>
@@ -1383,7 +1394,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first stochastic nonconvex">
 [174] Rafał Szlendak, Alexander Tyurin and Peter Richtárik<br>
           <b>Permutation compressors for provably faster distributed nonconvex optimization</b><br>
           <a href="https://openreview.net/pdf?id=GugZ5DzzAu">10th International Conference on Learning Representations (ICLR 2022)</a>  <br>
@@ -1392,7 +1403,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first momentum stochastic nonconvex">
 [173] Ilyas Fatkhullin, Igor Sokolov, Eduard Gorbunov, Zhize Li and Peter Richtárik<br>
           <b>EF21 with bells & whistles: practical algorithmic extensions of modern error feedback </b><br>
           <a href="https://www.jmlr.org/papers/v26/24-0059.html">Journal of Machine Learning Research, 2025</a> <br>
@@ -1401,7 +1412,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first stochastic convex">
 [172] Xun Qian, Hanze Dong, Peter Richtárik and Tong Zhang<br>
           <b>Error compensated loopless SVRG, Quartz, and SDCA for distributed optimization</b><br>
           
@@ -1409,7 +1420,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="second nonconvex convex">
 [171] Majid Jahani, Sergey Rusakov, Zheng Shi, Peter Richtárik, Michael W. Mahoney and Martin Takáč<br>
           <b>Doubly adaptive scaled algorithm for machine learning using second-order information</b><br>
           <a href="https://openreview.net/forum?id=HCelXXcSEuH">10th International Conference on Learning Representations (ICLR 2022) </a> <br>
@@ -1417,7 +1428,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated local stochastic first nonconvex convex">
 [170] Haoyu Zhao, Zhize Li and Peter Richtárik<br>
           <b>FedPAGE: A fast local stochastic gradient method for communication-efficient federated learning</b><br>
           
@@ -1425,7 +1436,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first momentum convex">
 [169] Zhize Li and Peter Richtárik<br>
           <b>CANITA: Faster rates for distributed convex optimization with communication compression</b><br>
           <a href="https://openreview.net/forum?id=eNB4WXnNczJ">Advances in Neural Information Processing Systems 34 (NeurIPS 2021)</a> <br>
@@ -1442,7 +1453,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first nonconvex">
 [167] Peter Richtárik, Igor Sokolov and Ilyas Fatkhullin<br>
           <b>EF21: A new, simpler, theoretically better, and practically faster error feedback</b><br>
           <a href="https://openreview.net/forum?id=8ygF02Zm51q">Advances in Neural Information Processing Systems 34 (NeurIPS 2021)</a> <br>
@@ -1451,7 +1462,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first momentum convex">
 [166] Dmitry Kovalev, Elnur Gasanov, Peter Richtárik and Alexander Gasnikov<br>
           <b>Lower bounds and optimal algorithms for smooth and strongly convex decentralized optimization over time-varying networks</b><br>
           <a href="https://openreview.net/forum?id=L8-54wkift">Advances in Neural Information Processing Systems 34 (NeurIPS 2021) </a><br>
@@ -1459,7 +1470,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first">
 [165] Bokun Wang, Mher Safaryan and Peter Richtárik<br>
           <b>Theoretically better and numerically faster distributed optimization with smoothness-aware quantization techniques</b><br>
           <a href="https://openreview.net/forum?id=BejkSpqao_N">Advances in Neural Information Processing Systems 35 (NeurIPS 2022)</a> <br>
@@ -1468,7 +1479,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first">
 [164] Adil Salim, Lukang Sun and Peter Richtárik<br>
           <b>A convergence theory for SVGD in the population limit under Talagrand’s inequality T1</b><br>
           <a href="https://proceedings.mlr.press/v162/salim22a.html">39th International Conference on Machine Learning (ICML 2022)</a><br>
@@ -1476,7 +1487,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated first stochastic">
 [163] Laurent Condat and Peter Richtárik<br>
           <b>MURANA: A generic framework for stochastic variance-reduced optimization</b><br>
           <a href="https://proceedings.mlr.press/v190/horvoth22a.html">Mathematical and Scientific Machine Learning 2022 (MSML 2022) </a><br>
@@ -1485,7 +1496,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed second">
 [162] Mher Safaryan, Rustem Islamov, Xun Qian and Peter Richtárik<br>
           <b>FedNL: Making Newton-type methods applicable to federated learning</b><br>
           <a href="https://proceedings.mlr.press/v162/safaryan22a.html">39th International Conference on Machine Learning (ICML 2022)</a><br>
@@ -1494,7 +1505,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic convex">
 [161] Grigory Malinovsky, Alibek Sailanbayev and Peter Richtárik<br>
           <b>Random reshuffling with variance reduction: new analysis and better rates</b><br>
           <a href="https://proceedings.mlr.press/v216/malinovsky23a">39th Conference on Uncertainty in Artificial Intelligence (UAI 2023)</a><br> 
@@ -1502,7 +1513,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated first stochastic nonconvex">
 [160] Zhize Li, Slavomír Hanzely and Peter Richtárik<br>
           <b>ZeroSARAH: Efficient nonconvex finite-sum optimization with zero full gradient computation </b><br>
           
@@ -1510,7 +1521,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="momentum convex">
 [159] Adil Salim, Laurent Condat, Dmitry Kovalev and Peter Richtárik<br>
           <b>An optimal algorithm for strongly convex minimization under affine constraints</b><br>
           <a href="https://proceedings.mlr.press/v151/salim22a.html">24th International Conference on Artificial Intelligence and Statistics (AISTATS 2022)</a> <br>
@@ -1518,7 +1529,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic">
 [158] Zhen Shi, Nicolas Loizou, Peter Richtárik and Martin Takáč<br>
           <b>AI-SARAH: Adaptive and implicit stochastic recursive gradient methods</b><br>
           <a href="https://openreview.net/forum?id=WoXJFsJ6Zw">Transactions on Machine Learning Research (TMLR 2023)</a> <br>
@@ -1526,7 +1537,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="momentum first convex">
 [157] Dmitry Kovalev, Egor Shulgin, Peter Richtárik, Alexander Rogozin and Alexander Gasnikov<br>
           <b>ADOM: Accelerated decentralized optimization method for time-varying networks</b><br>
           <a href="http://proceedings.mlr.press/v139/kovalev21a.html">38th International Conference on Machine Learning (ICML 2021)</a> <br>
@@ -1535,7 +1546,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first stochastic nonconvex convex">
 [156] Konstantin Mishchenko, Bokun Wang, Dmitry Kovalev and Peter Richtárik<br>
           <b>IntSGD: Floatless compression of stochastic gradients</b><br>
           <a href="https://openreview.net/forum?id=pFyXqxChZc">10th International Conference on Learning Representations (ICLR 2022) </a> <br>
@@ -1544,7 +1555,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first nonconvex">
 [155] Eduard Gorbunov, Konstantin Burlachenko, Zhize Li and Peter Richtárik<br>
           <b>MARINA: faster non-convex distributed learning with compression </b><br>
           <a href="http://proceedings.mlr.press/v139/gorbunov21a.html">38th International Conference on Machine Learning (ICML 2021) </a> <br>
@@ -1554,7 +1565,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first">
 [154] Mher Safaryan, Filip Hanzely and Peter Richtárik<br>
           <b>Smoothness matrices beat smoothness constants: better communication compression techniques for distributed optimization</b><br>
           <a href="https://proceedings.neurips.cc/paper/2021/hash/d79c6256b9bdac53a55801a066b70da3-Abstract.html">Advances in Neural Information Processing Systems 34 (NeurIPS 2021)</a> <br>
@@ -1565,7 +1576,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed second">
 [153] Rustem Islamov, Xun Qian and Peter Richtárik<br>
           <b>Distributed second order methods with fast rates and compressed communication</b><br>
           <a href="http://proceedings.mlr.press/v139/islamov21a.html">38th International Conference on Machine Learning (ICML 2021)</a> <br>
@@ -1575,7 +1586,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated first local stochastic convex">
 [152] Konstantin Mishchenko, Ahmed Khaled and Peter Richtárik<br>
           <b>Proximal and federated random reshuffling</b><br>
           <a href="https://proceedings.mlr.press/v162/mishchenko22a.html">39th International Conference on Machine Learning (ICML 2022)</a><br>
@@ -1595,7 +1606,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first stochastic convex">
 [150] Xun Qian, Hanze Dong, Peter Richtárik and Tong Zhang<br>
           <b>Error compensated loopless SVRG for distributed optimization</b><br>
           <a href="https://opt-ml.org/papers/2020/paper_61.pdf">OPT2020: 12th Annual Workshop on Optimization for Machine Learning (NeurIPS 2020 Workshop) </a> <br>
@@ -1604,7 +1615,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="compressed first stochastic">
 [149] Xun Qian, Hanze Dong, Peter Richtárik and Tong Zhang<br>
           <b>Error compensated proximal SGD and RDA</b><br>
           <a href="https://opt-ml.org/papers/2020/paper_59.pdf">OPT2020: 12th Annual Workshop on Optimization for Machine Learning (NeurIPS 2020 Workshop)</a> <br>
@@ -1612,7 +1623,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated first local stochastic convex">
 [148] Eduard Gorbunov, Filip Hanzely, and Peter Richtárik<br>
           <b>Local SGD: unified theory and new efficient methods</b><br>
           <a href="http://proceedings.mlr.press/v130/gorbunov21a.html">The 24th International Conference on Artificial Intelligence and Statistics (AISTATS 2021) </a><br>
@@ -1621,7 +1632,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first convex">
 [147] Dmitry Kovalev, Anastasia Koloskova, Martin Jaggi, Peter Richtárik, and Sebastian U. Stich<br>
           <b>A linearly convergent algorithm for decentralized optimization: sending less bits for free!</b><br>
           <a href="http://proceedings.mlr.press/v130/kovalev21a.html">The 24th International Conference on Artificial Intelligence and Statistics (AISTATS 2021)</a> <br>
@@ -1630,7 +1641,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated stochastic">
 [146] Wenlin Chen, Samuel Horváth, and Peter Richtárik<br>
           <b>Optimal client sampling for federated learning</b><br>
           <a href="https://openreview.net/pdf?id=8GvRCWKHIL">Transactions on Machine Learning Research (TMLR 2022)</a> <br>
@@ -1640,7 +1651,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first stochastic convex">
 [145] Eduard Gorbunov, Dmitry Kovalev, Dmitry Makarenko, and Peter Richtárik<br>
           <b>Linearly converging error compensated SGD</b><br>
           <a href="https://papers.nips.cc/paper/2020/hash/ef9280fbc5317f17d480e4d4f61b3751-Abstract.html">Advances in Neural Information Processing Systems 33 (NeurIPS 2020)</a> <br>
@@ -1649,7 +1660,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first">
 [144] Alyazeed Albasyoni, Mher Safaryan, Laurent Condat, and Peter Richtárik<br>
           <b>Optimal gradient compression for distributed and federated learning</b><br>
           <a href="http://icfl.cc/wp-content/uploads/2020/12/SpicyFL_2020_paper_31.pdf">SpicyFL 2020: NeurIPS Workshop on Scalability, Privacy, and Security in Federated Learning</a> <br>
@@ -1658,7 +1669,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated first local momentum stochastic">
 [143] Filip Hanzely, Slavomír Hanzely, Samuel Horváth, and Peter Richtárik<br>
           <b>Lower bounds and optimal algorithms for personalized federated learning</b><br>
           <a href="https://papers.nips.cc/paper/2020/hash/187acf7982f3c169b3075132380986e4-Abstract.html">Advances in Neural Information Processing Systems 33 (NeurIPS 2020)</a> <br>
@@ -1667,7 +1678,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="momentum convex">
 [142] Laurent Condat, Grigory Malinovsky, and Peter Richtárik<br>
           <b>Distributed proximal splitting algorithms with rates and acceleration</b><br>
           <a href="https://www.frontiersin.org/articles/10.3389/frsip.2021.776825/full?&utm_source=Email_to_authors_&utm_medium=Email&utm_content=T1_11.5e1_author&utm_campaign=Email_publication&field=&journalName=Frontiers_in_Signal_Processing&id=776825">Frontiers in Signal Processing, section Signal Processing for Communications, 2022</a><br>
@@ -1677,7 +1688,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic convex">
 [141] Robert M. Gower, Mark Schmidt, Francis Bach and Peter Richtárik<br>
           <b>Variance-reduced methods for machine learning</b><br>
           <a href="https://ieeexplore.ieee.org/document/9226504">Proceedings of the IEEE 108 (11):1968--1983, 2020</a> <br>
@@ -1685,7 +1696,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first momentum stochastic">
 [140] Xun Qian, Peter Richtárik, and Tong Zhang<br>
           <b>Error compensated distributed SGD can be accelerated</b><br>
           <a href="https://proceedings.neurips.cc/paper/2021/hash/ff1ced3097ccf17c1e67506cdad9ac95-Abstract.html">Advances in Neural Information Processing Systems 34 (NeurIPS 2021)</a> <br>
@@ -1695,7 +1706,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="second">
 [139] Albert S. Berahas, Majid Jahani, Peter Richtárik, and Martin Takáč<br>
           <b>Quasi-Newton methods for deep learning: forget the past, just sample</b><br>
           <a href="https://www.tandfonline.com/doi/full/10.1080/10556788.2021.1977806">Optimization Methods and Software 37(5):1668-1704, 2022</a> <br>
@@ -1704,7 +1715,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic nonconvex">
 [138] Zhize Li, Hongyan Bao, Xiangliang Zhang and Peter Richtárik <br>
           <b>PAGE: A simple and optimal probabilistic gradient estimator for nonconvex optimization</b><br>
           <a href="http://proceedings.mlr.press/v139/li21a.html">38th International Conference on Machine Learning (ICML 2021) </a><br>
@@ -1713,7 +1724,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="momentum convex">
 [137] Dmitry Kovalev, Adil Salim, and Peter Richtárik <br>
           <b>Optimal and practical algorithms for smooth and strongly convex decentralized optimization</b><br>
           <a href="https://papers.nips.cc/paper/2020/hash/d530d454337fb09964237fecb4bea6ce-Abstract.html">Advances in Neural Information Processing Systems 33 (NeurIPS 2020) </a><br>
@@ -1721,7 +1732,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="compressed first stochastic convex">
 [136] Ahmed Khaled, Othmane Sebbouh, Nicolas Loizou, Robert M. Gower, and Peter Richtárik <br>
           <b>Unified analysis of stochastic gradient methods for composite convex and smooth optimization</b><br>
           <a href="https://link.springer.com/article/10.1007/s10957-023-02297-y">Journal of Optimization Theory and Applications 199:499-540, 2023</a><br>
@@ -1729,7 +1740,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first stochastic">
 [135] Samuel Horváth and Peter Richtárik <br>
           <b>A better alternative to error feedback for communication-efficient distributed learning</b><br>
           <a href="https://openreview.net/forum?id=vYVI1CHPaQg">9th International Conference on Learning Representations (ICLR 2021)</a> <br>
@@ -1740,7 +1751,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic convex">
 [134] Adil Salim and Peter Richtárik <br>
           <b>Primal dual interpretation of the proximal stochastic gradient Langevin algorithm</b><br>
           <a href="https://papers.nips.cc/paper/2020/hash/2779fda014fbadb761f67dd708c1325e-Abstract.html">Advances in Neural Information Processing Systems 33 (NeurIPS 2020)</a> <br>
@@ -1748,7 +1759,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first stochastic nonconvex">
 [133] Zhize Li and Peter Richtárik <br>
           <b>A unified analysis of stochastic gradient methods for nonconvex federated optimization</b> <br>
           <a href="http://icfl.cc/wp-content/uploads/2020/12/SpicyFL_2020_paper_4.pdf">SpicyFL 2020: NeurIPS Workshop on Scalability, Privacy, and Security in Federated Learning</a> <br>
@@ -1757,7 +1768,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic nonconvex convex">
 [132] Konstantin Mishchenko, Ahmed Khaled, and Peter Richtárik <br>
           <b>Random reshuffling: simple analysis with vast improvements</b> <br>
           <a href="https://papers.nips.cc/paper/2020/hash/c8cc6e90ccbff44c9cee23611711cdc4-Abstract.html">Advances in Neural Information Processing Systems 33 (NeurIPS 2020)</a> <br>
@@ -1765,7 +1776,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic convex">
 [131] Motasem Alfarra, Slavomír Hanzely, Alyazeed Albasyoni, Bernard Ghanem, and Peter Richtárik <br>
           <b>Adaptive learning of the optimal mini-batch size of SGD</b> <br>
           <a href="https://opt-ml.org/posters/2020/poster_50.pdf">OPT2020: 12th Annual Workshop on Optimization for Machine Learning (NeurIPS 2020 Workshop) </a> <br>
@@ -1773,7 +1784,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic convex">
 [130] Adil Salim, Laurent Condat, Konstantin Mishchenko, and Peter Richtárik <br>
           <b>Dualize, split, randomize: fast nonsmooth optimization algorithms</b><br>
           <a href="https://link.springer.com/article/10.1007/s10957-022-02061-8">Journal of Optimization Theory and Applications 195: 102-130, 2022</a> <br>
@@ -1782,7 +1793,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="async">
+<div class="paper" data-topics="async first stochastic">
 [129] Atal Narayan Sahu, Aritra Dutta, Aashutosh Tiwari, and Peter Richtárik <br>
           <b>On the convergence analysis of asynchronous SGD for solving consistent linear systems</b><br>
 
@@ -1791,7 +1802,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated first local stochastic convex">
 [128] Grigory Malinovsky, Dmitry Kovalev, Elnur Gasanov, Laurent Condat, and Peter Richtárik <br>
           <b>From local SGD to local fixed point methods for federated learning</b><br>
           <a href="http://proceedings.mlr.press/v119/malinovskiy20a.html">37th International Conference on Machine Learning (ICML 2020)</a> <br>
@@ -1800,7 +1811,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first stochastic convex">
 [127] Aleksandr Beznosikov, Samuel Horváth, Peter Richtárik and Mher Safaryan<br>
           <b>On biased compression for distributed learning</b><br>
           <a href="http://jmlr.org/papers/v24/21-1548.html">Accepted to Journal of Machine Learning Research, 2022</a> <br>
@@ -1810,7 +1821,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first momentum convex">
 [126] Zhize Li, Dmitry Kovalev, Xun Qian and Peter Richtárik<br>
           <b>Acceleration for compressed gradient descent in distributed and federated optimization</b><br>
           <a href="http://proceedings.mlr.press/v119/li20g.html">37th International Conference on Machine Learning (ICML 2020)</a> <br>
@@ -1819,14 +1830,14 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="second">
 [125] Dmitry Kovalev, Robert M. Gower, Peter Richtárik and Alexander Rogozin<br>
           <b>Fast linear convergence of randomized BFGS</b><br>
           <a class="chip" href="https://arxiv.org/abs/2002.11337">arXiv</a> <br><span class="algorithms">Algorithms: <code>RBFGS</code></span><br><br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="second stochastic convex">
 [124] Filip Hanzely, Nikita Doikov, Peter Richtárik and Yurii Nesterov<br>
           <b>Stochastic subspace cubic Newton method</b><br>
           <a href="http://proceedings.mlr.press/v119/hanzely20a.html">37th International Conference on Machine Learning (ICML 2020)</a> <br>
@@ -1834,7 +1845,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed">
 [123] Mher Safaryan, Egor Shulgin and Peter Richtárik<br>
           <b>Uncertainty principle for communication compression in distributed and federated learning and the search for an optimal compressor</b><br>
           <a href="https://academic.oup.com/imaiai/advance-article/doi/10.1093/imaiai/iaab006/6220344">Information and Inference: A Journal of the IMA, 1--24, 2021</a> <br>
@@ -1843,7 +1854,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated local stochastic">
 [122] Filip Hanzely and Peter Richtárik<br>
           <b>Federated learning of a mixture of global and local models</b><br>
           <a href="http://icfl.cc/wp-content/uploads/2020/12/SpicyFL_2020_paper_75.pdf">SpicyFL 2020: NeurIPS Workshop on Scalability, Privacy, and Security in Federated Learning</a> <br>
@@ -1852,7 +1863,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="stochastic nonconvex">
 [121] Samuel Horváth, Lihua Lei, Peter Richtárik and Michael I. Jordan<br>
           <b>Adaptivity of stochastic gradient methods for nonconvex optimization</b><br>
           <a href="https://opt-ml.org/papers/2020/paper_50.pdf">OPT2020: 12th Annual Workshop on Optimization for Machine Learning (NeurIPS 2020 Workshop)</a> <br>
@@ -1861,7 +1872,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first momentum stochastic">
 [120] Filip Hanzely, Dmitry Kovalev and Peter Richtárik<br>
           <b>Variance reduced coordinate descent with acceleration: new method with a surprising application to finite-sum problems</b><br>
           <a href="http://proceedings.mlr.press/v119/hanzely20b.html">37th International Conference on Machine Learning (ICML 2020)</a> <br>
@@ -1869,7 +1880,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic nonconvex">
 [119] Ahmed Khaled and Peter Richtárik<br>
           <b>Better theory for SGD in the nonconvex world</b><br>
           <a href="https://openreview.net/pdf?id=AU4qHN2VkS">Transactions on Machine Learning Research (TMLR 2022)</a> <br>
@@ -1878,7 +1889,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 <hr class="news-rule">
 <h2 id="y2019"> Prepared in 2019 </h2>
 
-          <div class="paper" data-topics="federated">
+          <div class="paper" data-topics="federated first local stochastic">
 [118] Ahmed Khaled, Konstantin Mishchenko and Peter Richtárik<br>
           <b>Tighter theory for local SGD on identical and heterogeneous data</b><br>
           <a href="http://proceedings.mlr.press/v108/bayoumi20a.html">The 23rd International Conference on Artificial Intelligence and Statistics (AISTATS 2020)</a> <br>
@@ -1887,7 +1898,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first">
 [117] Sélim Chraibi, Ahmed Khaled, Dmitry Kovalev, Adil Salim,
           Peter Richtárik and Martin Takáč<br>
           <b>Distributed fixed point methods with compressed iterates</b><br>
@@ -1896,7 +1907,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="compressed stochastic">
 [116] Samuel Horváth, Chen-Yu Ho, Ľudovít Horváth, Atal Narayan Sahu, Marco Canini and Peter Richtárik<br>
           <b>IntML: Natural compression for distributed deep learning</b><br>
           <a href="http://learningsys.org/sosp19/index.html">Workshop on AI Systems at Symposium on Operating Systems Principles 2019 (SOSP'19)</a><br>
@@ -1904,7 +1915,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="second stochastic convex">
 [115] Dmitry Kovalev, Konstantin Mishchenko and Peter Richtárik<br>
           <b>Stochastic Newton and cubic Newton methods with simple local linear-quadratic rates</b><br>
           <a href="https://sites.google.com/site/optneurips19/">NeurIPS 2019 Workshop Beyond First Order Methods in ML</a><br>
@@ -1912,7 +1923,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated first local stochastic">
 [114] Ahmed Khaled, Konstantin Mishchenko and Peter Richtárik<br>
           <b>Better communication complexity for local SGD</b><br>
           <a href="http://federated-learning.org/fl-neurips-2019/">NeurIPS 2019 Workshop on Federated Learning for Data Privacy and Confidentiality</a><br>
@@ -1921,7 +1932,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first">
 [113] Ahmed Khaled and Peter Richtárik<br>
           <b>Gradient descent with compressed iterates</b><br>
           <a href="http://federated-learning.org/fl-neurips-2019/">NeurIPS 2019 Workshop on Federated Learning for Data Privacy and Confidentiality</a><br>
@@ -1930,7 +1941,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated first local convex">
 [112] Ahmed Khaled, Konstantin Mishchenko and Peter Richtárik<br>
           <b>First analysis of local GD on heterogeneous data</b><br>
           <a href="http://federated-learning.org/fl-neurips-2019/">NeurIPS 2019 Workshop on Federated Learning for Data Privacy and Confidentiality</a><br>
@@ -1939,7 +1950,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="stochastic">
 [111] Jinhui Xiong, Peter Richtárik and Wolfgang Heidrich<br>
           <b>Stochastic convolutional sparse coding</b><br>
           <a href="https://doi.org/10.2312/vmv.20191317">International Symposium on Vision, Modeling and Visualization 2019</a> <br>
@@ -1948,7 +1959,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first momentum stochastic nonconvex">
 [110] Xun Qian, Zheng Qu and Peter Richtárik<br>
           <b>L-SVRG and L-Katyusha with arbitrary sampling</b><br>
           <a href="https://jmlr.org/papers/v22/20-156.html">Journal of Machine Learning Research 22(112):1−47, 2021</a> <br>
@@ -1956,7 +1967,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic nonconvex convex">
 [109] Xun Qian, Alibek Sailanbayev, Konstantin Mishchenko and
           Peter Richtárik<br>
           <b>MISO is making a comeback with better proofs and rates</b><br>
@@ -1964,7 +1975,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="momentum stochastic zero nonconvex convex">
 [108] Eduard Gorbunov, Adel Bibi, Ozan Sezer, El Houcine Bergou and Peter Richtárik<br>
           <b>A stochastic derivative free optimization method with momentum</b><br>
           <a href="https://openreview.net/forum?id=HylAoJSKvH">8th International Conference on Learning Representations</a> (ICLR 2020)<br>
@@ -1972,7 +1983,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="compressed first stochastic nonconvex">
 [107] Mher Safaryan and Peter Richtárik<br>
           <b>Stochastic Sign Descent Methods: New Algorithms and Better Theory</b><br>
           <a href="http://proceedings.mlr.press/v139/safaryan21a.html">38th International Conference on Machine Learning (ICML 2021)</a><br>
@@ -1981,7 +1992,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic convex">
 [106] Adil Salim, Dmitry Kovalev and Peter Richtárik<br>
           <b>Stochastic proximal Langevin algorithm: potential splitting and nonasymptotic rates</b><br>
           <a href="http://papers.nips.cc/paper/8891-stochastic-proximal-langevin-algorithm-potential-splitting-and-nonasymptotic-rates">33rd Conference on Neural Information Processing Systems</a>
@@ -1990,7 +2001,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="momentum convex">
 [105] Aritra Dutta, El Houcine Bergou, Yunming Xiao, Marco Canini and Peter Richtárik<br>
           <b>Direct nonlinear acceleration</b><br>
           <a href="https://www.sciencedirect.com/science/article/pii/S2192440622000235">EURO Journal on Computational Optimization 10, 2022, 100047</a> <br>
@@ -1998,14 +2009,14 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic convex">
 [104] Konstantin Mishchenko and Peter Richtárik<br>
           <b>A stochastic decoupling method for minimizing the sum of smooth and non-smooth functions</b><br>
           <a class="chip" href="https://arxiv.org/abs/1905.11535">arXiv</a> <br><span class="algorithms">Algorithms: <code>SDM</code></span><br><br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic">
 [103] Konstantin Mishchenko, Dmitry Kovalev, Egor Shulgin, Peter Richtárik and Yura Malitsky<br>
           <b>Revisiting stochastic extragradient</b><br>
           <a href="http://proceedings.mlr.press/v108/mishchenko20a.html">The 23rd International Conference on Artificial Intelligence and Statistics (AISTATS 2020)</a><br>
@@ -2014,7 +2025,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic convex">
 [102] Filip Hanzely and Peter Richtárik<br>
           <b>One method to rule them all: variance reduction for data, parameters and many new methods</b><b><br>
           </b> <a class="chip" href="https://arxiv.org/abs/1905.11266">arXiv</a>
@@ -2022,7 +2033,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="compressed first stochastic">
 [101] Eduard Gorbunov, Filip Hanzely and Peter Richtárik<br>
           <b>A unified theory of SGD: variance reduction, sampling, quantization and coordinate descent</b><br>
           <a href="http://proceedings.mlr.press/v108/gorbunov20a">The 23rd International Conference on Artificial Intelligence and Statistics (AISTATS 2020)</a><br>
@@ -2030,7 +2041,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed stochastic">
 [100] Samuel Horváth, Chen-Yu Ho, Ľudovít Horváth, Atal
           Narayan Sahu, Marco Canini and Peter Richtárik<br>
           <b>Natural compression for distributed deep learning</b><br>
@@ -2040,7 +2051,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="second">
 [99] Robert M. Gower, Dmitry Kovalev, Felix Lieder and Peter
           Richtárik<br>
           <b>RSN: Randomized Subspace Newton</b><br>
@@ -2050,7 +2061,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first momentum nonconvex">
 [98] Aritra Dutta, Filip Hanzely, Jingwei Liang and Peter
           Richtárik<br>
           <b>Best pair formulation &amp; accelerated scheme for non-convex principal component pursuit</b><br>
@@ -2059,7 +2070,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="momentum stochastic">
 [97] Nicolas Loizou and Peter Richtárik<br>
           <b>Revisiting randomized gossip algorithms: general framework, convergence rates and novel block and accelerated protocols</b><br>
           <a href="https://ieeexplore.ieee.org/document/9539193">IEEE Transactions on Information Theory 67(12):8300--8324, 2021 </a><br>
@@ -2067,7 +2078,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic convex">
 [96] Nicolas Loizou and Peter Richtárik<br>
           <b>Convergence analysis of inexact randomized iterative methods</b><br>
           <a href="https://epubs.siam.org/doi/abs/10.1137/19M125248X">SIAM Journal on Scientific Computing 42(6), A3979–A4016, 2020</a> <br>
@@ -2085,7 +2096,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first stochastic nonconvex convex">
 [94] Samuel Horváth, Dmitry Kovalev, Konstantin Mishchenko, Peter Richtárik and Sebastian Stich<br>
           <b>Stochastic distributed learning with gradient quantization and double variance reduction</b><br>
           <a href="https://www.tandfonline.com/doi/full/10.1080/10556788.2022.2117355">Optimization Methods and Software 38(1):91-106, 2023</a> <br>
@@ -2095,7 +2106,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="stochastic zero nonconvex convex">
 [93] El Houcine Bergou, Eduard Gorbunov and Peter Richtárik<br>
           <b>Stochastic three points method for unconstrained smooth minimization</b><br>
           <a href="https://epubs.siam.org/doi/abs/10.1137/19M1244378">SIAM Journal on Optimization 30(4):2726-2749, 2020</a> <br>
@@ -2103,7 +2114,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="stochastic zero nonconvex convex">
 [92] Adel Bibi, El Houcine Bergou, Ozan Sener, Bernard Ghanem and Peter Richtárik<br>
           <b>A stochastic derivative-free optimization method with importance sampling</b><br>
           <a href="https://aaai.org/Conferences/AAAI-20/">34th AAAI Conference on Artificial Intelligence (AAAI 2020)</a> <br>
@@ -2111,7 +2122,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated first stochastic">
 [91] Konstantin Mishchenko, Filip Hanzely and Peter Richtárik<br>
           <b>99% of distributed optimization is a waste of time: the issue and how to fix it</b><br>
           <a href="https://www.auai.org/~w-auai/uai2020/proceedings/404_main_paper.pdf">36th Conference on Uncertainty in Artificial Intelligence (UAI 2020)</a> <br>
@@ -2120,7 +2131,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed first stochastic nonconvex convex">
 [90] Konstantin Mishchenko, Eduard Gorbunov, Martin Takáč and Peter Richtárik<br>
           <b>Distributed learning with compressed gradient differences</b><br>
           <a href="https://www.tandfonline.com/doi/abs/10.1080/10556788.2024.2358790">Optimization Methods and Software 40(5):1181--1196, 2025</a> <br>
@@ -2129,7 +2140,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic">
 [89] Robert Mansel Gower, Nicolas Loizou, Xun Qian, Alibek Sailanbayev, Egor Shulgin and Peter Richtárik<br>
           <b>SGD: general analysis and improved rates</b><br>
           <a href="http://proceedings.mlr.press/v97/qian19b.html">Proceedings of the 36th International Conference on Machine Learning, PMLR 97:5200-5209, 2019</a><br>
@@ -2137,7 +2148,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first momentum stochastic">
 [88] Dmitry Kovalev, Samuel Horváth and Peter Richtárik<br>
           <b>Don’t jump through hoops and remove those loops: SVRG and Katyusha are better without the outer loop<br>
           </b><a href="http://proceedings.mlr.press/v117/kovalev20a.html">31st International Conference on Learning Theory</a> (ALT 2020)<br>
@@ -2145,7 +2156,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic convex">
 [87] Xun Qian, Zheng Qu and Peter Richtárik<br>
           <b>SAGA with arbitrary sampling</b><br>
           <a href="http://proceedings.mlr.press/v97/qian19a.html">Proceedings of the 36th International Conference on Machine Learning, PMLR 97:5190-5199, 2019</a><br>
@@ -2154,7 +2165,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 <hr class="news-rule">
 <h2 id="y2018"> Prepared in 2018</h2>
 
-          <div class="paper">
+          <div class="paper" data-topics="first stochastic convex">
 [86] Lam M. Nguyen, Phuong Ha Nguyen, P. Richtárik, Katya Scheinberg, Martin Takáč and Marten van Dijk<br>
           <b>New convergence aspects of stochastic gradient algorithms</b><br>
           <a href="http://jmlr.org/papers/v20/18-759.html">Journal of Machine Learning Research 20(176):1-49, 2019</a><br>
@@ -2162,7 +2173,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="stochastic">
 [85] Filip Hanzely, Jakub Konečný, Nicolas Loizou, Peter Richtárik and Dmitry Grishchenko<br>
           <b>A privacy preserving randomized gossip algorithm via controlled noise insertion</b> <br>
           <a href="https://ppml-workshop.github.io/ppml/papers/57.pdf">NeurIPS Privacy Preserving Machine Learning Workshop, 2018</a><br>
@@ -2170,14 +2181,14 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="stochastic first nonconvex convex">
 [84] Konstantin Mishchenko and Peter Richtárik<br>
           <b>A stochastic penalty model for convex and nonconvex optimization with big constraints</b> <br>
           <a class="chip" href="https://arxiv.org/abs/1810.13387">arXiv</a><br><br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="momentum stochastic">
 [83] Nicolas Loizou, Michael G. Rabbat and Peter Richtárik<br>
           <b>Provably accelerated randomized gossip algorithms</b> <br>
           <a href="https://ieeexplore.ieee.org/document/8683847">2019 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP 2019)</a><br>
@@ -2185,7 +2196,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first momentum stochastic">
 [82] Filip Hanzely and Peter Richtárik<br>
           <b>Accelerated coordinate descent with arbitrary sampling and best rates for minibatches<br>
           </b><a href="http://proceedings.mlr.press/v89/hanzely19a.html">22nd International Conference on Artificial Intelligence and Statistics (2019</a><br>
@@ -2193,7 +2204,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic nonconvex convex">
 [81] Samuel Horváth and Peter Richtárik<br>
           <b> Nonconvex variance reduced optimization with arbitrary
             sampling</b> <br>
@@ -2207,7 +2218,7 @@ Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic convex">
 [80] Filip Hanzely, Konstantin Mishchenko and Peter Richtárik<br>
           <b>SEGA: Variance reduction via gradient sketching</b> <br>
           <a
@@ -2217,7 +2228,7 @@ href="https://papers.nips.cc/paper/7478-sega-variance-reduction-via-gradient-ske
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first momentum convex">
 [79] Filip Hanzely, Peter Richtárik and Lin Xiao<br>
           <b>Accelerated Bregman proximal gradient methods for relatively smooth convex optimization</b><br>
           <a href="https://link.springer.com/article/10.1007/s10589-021-00273-8">Computational Optimization and Applications 79:405–440, 2021</a> <br>
@@ -2233,7 +2244,7 @@ href="https://papers.nips.cc/paper/7478-sega-variance-reduction-via-gradient-ske
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="momentum stochastic">
 [77] Nicolas Loizou and Peter Richtárik <br>
           <b>Accelerated gossip via stochastic heavy ball method</b><br>
           <a href="https://proceedings.allerton.csl.illinois.edu/media/files/0190.pdf#search=%22Richtarik%22">56th Annual Allerton Conference on Communication, Control, and Computing, 927-934, 2018</a><br>
@@ -2242,14 +2253,14 @@ href="https://papers.nips.cc/paper/7478-sega-variance-reduction-via-gradient-ske
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic">
 [76] Adel Bibi, Alibek Sailanbayev, Bernard Ghanem, Robert Mansel Gower and Peter Richtárik <br>
           <b> Improving SAGA via a probabilistic interpolation with gradient descent</b> <br>
           <a class="chip" href="https://arxiv.org/abs/1806.05633">arXiv</a> <br><span class="algorithms">Algorithms: <code>SAGD</code></span><br><br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="nonconvex">
 [75] Aritra Dutta, Filip Hanzely and Peter Richtárik <br>
           <b>A nonconvex projection method for robust PCA</b><br>
           <a href="https://www.aaai.org/ojs/index.php/AAAI/article/view/3959">33rd AAAI Conference on Artificial Intelligence (AAAI 2019)</a> <br>
@@ -2257,7 +2268,7 @@ href="https://papers.nips.cc/paper/7478-sega-variance-reduction-via-gradient-ske
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic convex">
 [74] Robert M. Gower, Peter Richtárik and Francis Bach <br>
           <b>Stochastic quasi-gradient methods: variance reduction via Jacobian sketching </b><br>
           <a href="https://link.springer.com/article/10.1007/s10107-020-01506-0"> Mathematical Programming 188:135–192, 2021 </a> <br>
@@ -2273,7 +2284,7 @@ href="https://papers.nips.cc/paper/7478-sega-variance-reduction-via-gradient-ske
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic convex">
 [72] Filip Hanzely and Peter Richtárik <br>
           <b>Fastest rates for stochastic mirror descent methods</b><br>
           <a href="https://link.springer.com/article/10.1007/s10589-021-00284-5">Computational Optimization and Applications 79:717–766, 2021</a><br>
@@ -2281,7 +2292,7 @@ href="https://papers.nips.cc/paper/7478-sega-variance-reduction-via-gradient-ske
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic convex">
 [71] Lam M. Nguyen, Phuong Ha Nguyen, Marten van Dijk, Peter Richtárik, Katya Scheinberg and Martin Takáč <br>
           <b>SGD and Hogwild! convergence without the bounded gradients assumption</b> <br>
           <a href="http://proceedings.mlr.press/v80/nguyen18c.html">Proceedings of The 35th International Conference on Machine Learning, PMLR 80:3750-3758, 2018</a><br>
@@ -2289,7 +2300,7 @@ href="https://papers.nips.cc/paper/7478-sega-variance-reduction-via-gradient-ske
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="momentum second stochastic">
 [70] Robert M. Gower, Filip Hanzely, Peter Richtárik and Sebastian Stich <b><br>
             Accelerated stochastic matrix inversion: general theory and speeding up BFGS rules for faster second-order optimization</b><br>
           <a href="https://papers.nips.cc/paper/7434-accelerated-stochastic-matrix-inversion-general-theory-and-speeding-up-bfgs-rules-for-faster-second-order-optimization">Advances in Neural Information Processing Systems 31:1619-1629, 2018</a><br>
@@ -2297,7 +2308,7 @@ href="https://papers.nips.cc/paper/7478-sega-variance-reduction-via-gradient-ske
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="second stochastic convex">
 [69] Nikita Doikov and Peter Richtárik <br>
           <b>Randomized block cubic Newton method</b><br>
           <a href="http://proceedings.mlr.press/v80/doikov18a.html">Proceedings of The 35th International Conference on Machine Learning, PMLR 80:1290-1298, 2018</a><br>
@@ -2306,7 +2317,7 @@ href="https://papers.nips.cc/paper/7478-sega-variance-reduction-via-gradient-ske
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic">
 [68] Dmitry Kovalev, Eduard Gorbunov, Elnur Gasanov and Peter Richtárik<br>
            <b>Stochastic spectral and conjugate descent methods</b><br>
           <a href="https://papers.nips.cc/paper/7596-stochastic-spectral-and-conjugate-descent-methods">32nd Conference on Neural Information Processing Systems (NeurIPS 2018)</a><br>
@@ -2322,7 +2333,7 @@ href="https://papers.nips.cc/paper/7478-sega-variance-reduction-via-gradient-ske
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic convex">
 [66] Ion Necoara, Andrei Patrascu and Peter Richtárik <br>
           <b>Randomized projection methods for convex feasibility
             problems: conditioning and convergence rates</b><br>
@@ -2333,7 +2344,7 @@ href="https://papers.nips.cc/paper/7478-sega-variance-reduction-via-gradient-ske
           <hr class="news-rule">
 <h2 id="y2017"> Prepared in 2017</h2>
 
-          <div class="paper">
+          <div class="paper" data-topics="first momentum second stochastic">
 [65] Nicolas Loizou and Peter Richtárik<br>
           <b>Momentum and stochastic momentum for stochastic gradient, Newton, proximal point and subspace descent methods</b><br>
             <a href="http://link.springer.com/article/10.1007/s10589-020-00220-z">Computational Optimization and Applications 77(3):653-710, 2020</a> <br>
@@ -2351,7 +2362,7 @@ href="https://papers.nips.cc/paper/7478-sega-variance-reduction-via-gradient-ske
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="momentum stochastic first">
 [63] Nicolas Loizou and Peter Richtárik<br>
           <b>Linearly convergent stochastic heavy ball method for minimizing generalization error</b><br>
           NIPS Workshop on Optimization for Machine Learning, 2017<br>
@@ -2359,14 +2370,14 @@ href="https://papers.nips.cc/paper/7478-sega-variance-reduction-via-gradient-ske
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic nonconvex convex">
 [62] Dominik Csiba and Peter Richtárik<br>
           <b>Global convergence of arbitrary-block gradient methods for generalized Polyak-Łojasiewicz functions</b><br>
           <a class="chip" href="https://arxiv.org/abs/1709.03014">arXiv</a><br><br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic">
 [61] Ademir Alves Ribeiro and Peter Richtárik<br>
           <b>The complexity of primal-dual fixed point methods for ridge regression</b><br>
           <a href="https://www.sciencedirect.com/science/article/pii/S0024379518303434">Linear Algebra and its Applications 556:342-372, 2018</a><br>
@@ -2374,7 +2385,7 @@ href="https://papers.nips.cc/paper/7478-sega-variance-reduction-via-gradient-ske
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic">
 [60] Matthias J. Ehrhardt, Pawel Markiewicz, Antonin Chambolle, Peter Richtárik, Jonathan Schott and Carola-Bibiane Schoenlieb<br>
           <b>Faster PET reconstruction with a stochastic primal-dual hybrid gradient method</b><br>
           <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/10394/103941O/Faster-PET-reconstruction-with-a-stochastic-primal-dual-hybrid-gradient/10.1117/12.2272946.short?SSO=1">Proceedings of SPIE,</a><a
@@ -2393,7 +2404,7 @@ href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/10394/10
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="stochastic">
 [58] Filip Hanzely, Jakub Konečný, Nicolas Loizou, Peter
           Richtárik and Dmitry Grishchenko<br>
           <b>Privacy preserving randomized gossip algorithms</b><br>
@@ -2401,7 +2412,7 @@ href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/10394/10
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic convex">
 [57] Antonin Chambolle, Matthias J. Ehrhardt, Peter Richtárik
           and Carola-Bibiane Schoenlieb<br>
           <b>Stochastic primal-dual hybrid gradient algorithm with
@@ -2411,7 +2422,7 @@ href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/10394/10
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic">
 [56] Peter Richtárik and Martin Takáč<br>
           <b>Stochastic reformulations of linear systems: algorithms and convergence theory</b><br>
           <a href="https://epubs.siam.org/doi/abs/10.1137/18M1179249">SIAM Journal on Matrix Analysis and Applications 41(2):487–524, 2020</a><br>
@@ -2419,7 +2430,7 @@ href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/10394/10
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="second stochastic convex">
 [55] Mojmír Mutný and Peter Richtárik<br>
           <b>Parallel stochastic Newton method</b><br>
           <a href="https://doi.org/10.4208/jcm.1708-m2017-0113">Journal of Computational Mathematics 36(3):404-425, 2018</a><br>
@@ -2429,14 +2440,14 @@ href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/10394/10
 <h2 id="y2016"> Prepared in 2016</h2>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic">
 [54] Robert M. Gower and Peter Richtárik<br>
 <b>Linearly convergent randomized iterative methods for computing the pseudoinverse</b><br>
 <a class="chip" href="https://arxiv.org/abs/1612.06255">arXiv</a> <br><br>
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed">
 [53] Jakub Konečný and Peter Richtárik<br>
 <b>Randomized distributed mean estimation: accuracy vs communication<br>
 </b><a href="https://www.frontiersin.org/articles/10.3389/fams.2018.00062/abstract">Frontiers in Applied Mathematics and Statistics 2018</a><br>
@@ -2445,7 +2456,7 @@ href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/10394/10
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated compressed local first stochastic">
 [52] Jakub Konečný, H. Brendan McMahan, Felix Yu, Peter Richtárik, Ananda Theertha Suresh and Dave Bacon<br>
 <b>Federated learning: strategies for improving communication efficiency</b><br>
 <a href="https://nips.cc/Conferences/2016/Schedule?showEvent=6250">NIPS Private Multi-Party Machine Learning Workshop, 2016</a><br>
@@ -2462,7 +2473,7 @@ href="http://www.androidauthority.com/google-machine-learning-privacy-federated-
 </div>
 
 
-<div class="paper" data-topics="federated">
+<div class="paper" data-topics="federated local first stochastic">
 [51] Jakub Konečný, H. Brendan McMahan, Daniel Ramage and
 Peter Richtárik<br>
 <b>Federated optimization: distributed machine learning for
@@ -2483,7 +2494,7 @@ href="http://www.androidauthority.com/google-machine-learning-privacy-federated-
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="stochastic">
 [50] Nicolas Loizou and Peter Richtárik <br>
 <b>A new perspective on randomized gossip algorithms</b><br>
 <a href="http://ieeexplore.ieee.org/document/7905880/">IEEE Global Conference on Signal and Information Processing (GlobalSIP), 440-444, 2016</a><br>
@@ -2491,14 +2502,14 @@ href="http://www.androidauthority.com/google-machine-learning-privacy-federated-
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first local momentum stochastic">
 [49] Sashank J. Reddi, Jakub Konečný, Peter Richtárik, Barnabás Póczos, Alex Smola<br>
 <b>AIDE: fast and communication efficient distributed optimization</b><br>
 <a class="chip" href="https://arxiv.org/abs/1608.06879">arXiv</a> <a class="chip" href="posters/Poster-AIDE.pdf">poster</a><br><br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic">
 [48] Dominik Csiba and Peter Richtárik<br>
 <b>Coordinate descent face-off: primal or dual?</b><br>
 <a href="http://proceedings.mlr.press/v83/csiba18a">Proceedings of Algorithmic Learning Theory, PMLR 83:246-267, 2018</a><br>
@@ -2506,7 +2517,7 @@ href="http://www.androidauthority.com/google-machine-learning-privacy-federated-
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first momentum stochastic convex">
 [47] Olivier Fercoq and Peter Richtárik<br>
 <b>Optimization in high dimensions via accelerated, parallel and proximal coordinate descent</b><br>
 <a href="http://epubs.siam.org/doi/abs/10.1137/16M1085905">SIAM Review 58(4):739-771, 2016</a><br>
@@ -2515,7 +2526,7 @@ href="http://www.androidauthority.com/google-machine-learning-privacy-federated-
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="second stochastic">
 [46] Robert M. Gower, Donald Goldfarb and Peter Richtárik<br>
 <b>Stochastic block BFGS: squeezing more curvature out of data</b><br>
 <a href="http://proceedings.mlr.press/v48/gower16.html">Proceedings   of the 33rd International Conference on Machine Learning,
@@ -2524,7 +2535,7 @@ PMLR 48:1869-1878, 2016</a><br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="stochastic first">
 [45] Dominik Csiba and Peter Richtárik<br>
 <b>Importance sampling for minibatches</b><br>
 <a href="http://jmlr.org/papers/v19/16-241.html">Journal of
@@ -2533,7 +2544,7 @@ Machine Learning Research 19(27):1-21, 2018</a><br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="second">
 [44] Robert M. Gower and Peter Richtárik<br>
 <b>Randomized quasi-Newton updates are linearly convergent
 matrix inversion algorithms</b><br>
@@ -2549,7 +2560,7 @@ href="http://epubs.siam.org/action/showMostReadArticles?journalCode=sjmael&amp;"
 <hr class="news-rule">
 <h2 id="y2015">Prepared in 2015 </h2>
 
-<div class="paper">
+<div class="paper" data-topics="first momentum stochastic">
 <p>[43] Zeyuan Allen-Zhu, Zheng Qu, Peter Richtárik and Yang Yuan<br>
 <b>Even faster accelerated coordinate descent using non-uniform sampling</b><br>
 <a href="http://proceedings.mlr.press/v48/allen-zhuc16.html">Proceedings of the 33rd International Conference on Machine Learning, PMLR 48:1110-1119, 2016</a><br>
@@ -2558,7 +2569,7 @@ href="http://epubs.siam.org/action/showMostReadArticles?journalCode=sjmael&amp;"
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic">
 <p>[42] Robert M. Gower and Peter Richtárik<br>
 <b>Stochastic dual ascent for solving linear systems</b><br>
 <a class="chip" href="http://arxiv.org/abs/1512.06890">arXiv</a> <a class="chip" href="https://www.youtube.com/watch?v=RbkhWrTbrKs">video</a>
@@ -2566,7 +2577,7 @@ href="http://epubs.siam.org/action/showMostReadArticles?journalCode=sjmael&amp;"
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="local first stochastic">
 <p>[41] Chenxin Ma, Jakub Konečný, Martin Jaggi, Virginia
 Smith, Michael I Jordan, P. Richtárik and Martin Takáč <b>Distributed optimization with arbitrary local solvers</b><br>
 <a
@@ -2577,7 +2588,7 @@ href="http://www.tandfonline.com/doi/full/10.1080/10556788.2016.1278445">Optimiz
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic convex">
 <p>[40] Martin Takáč, Peter Richtárik and Nathan Srebro <br>
 <b>Distributed mini-batch SDCA</b><br>
 To appear in: Journal of Machine Learning Research<br>
@@ -2586,7 +2597,7 @@ To appear in: Journal of Machine Learning Research<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic">
 <p>[39] Robert M. Gower and Peter Richtárik<br>
 <b>Randomized iterative methods for linear systems</b> <br>
 <em> </em><a
@@ -2603,7 +2614,7 @@ href="http://epubs.siam.org/action/showMostReadArticles?journalCode=sjmael&amp;"
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="stochastic first nonconvex convex">
 <p>[38] Dominik Csiba and Peter Richtárik <br>
 <b>Primal method for ERM with flexible mini-batching schemes and non-convex losses</b><br>
 <a class="chip" href="http://arxiv.org/abs/1506.02227">arXiv</a> <br>
@@ -2611,7 +2622,7 @@ href="http://epubs.siam.org/action/showMostReadArticles?journalCode=sjmael&amp;"
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic convex">
 <p>[37] Jakub Konečný, Jie Liu, Peter Richtárik and Martin
 Takáč<br>
 <b>Mini-batch semi-stochastic gradient descent in the
@@ -2625,7 +2636,7 @@ Journal of Selected Topics in Signal Processing 10(2): 242-255,
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic convex">
 <p>[36] Rachael Tappenden, Martin Takáč and Peter Richtárik<br>
 <b>On the complexity of parallel coordinate descent</b><br>
 <a
@@ -2635,7 +2646,7 @@ href="http://www.tandfonline.com/doi/full/10.1080/10556788.2017.1392517">Optimiz
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="stochastic first convex">
 <p>[35] Dominik Csiba, Zheng Qu and Peter Richtárik<br>
 <b>Stochastic dual coordinate ascent with adaptive
 probabilities</b><br>
@@ -2652,7 +2663,7 @@ Implemented in Tensor Flow<br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first local stochastic convex">
 <p>[34] Chenxin Ma, Virginia Smith, Martin Jaggi, Michael I.
 Jordan, Peter Richtárik and Martin Takáč<br>
 <b>Adding vs. averaging in distributed primal-dual
@@ -2670,7 +2681,7 @@ href="https://github.com/tensorflow/tensorflow/commits/master/tensorflow/contrib
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="second stochastic">
 <p>[33] Zheng Qu, Peter Richtárik, Martin Takáč and Olivier
 Fercoq<br>
 <b>SDNA: Stochastic dual Newton ascent for empirical risk
@@ -2689,7 +2700,7 @@ of the 33rd International Conference on Machine Learning, PMLR 48:1823-1832, 201
 <hr class="news-rule">
 <h2 id="y2014">Prepared in 2014 </h2>
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic">
 <p>[32] Zheng Qu and Peter Richtárik<br>
 <b>Coordinate descent with arbitrary sampling II: expected
 separable overapproximation</b> <br>
@@ -2700,7 +2711,7 @@ Methods and Software 31(5):858-884, 2016</a><i><br>
 </i></p>
 </div>
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic convex">
 <p>[31] Zheng Qu and Peter Richtárik<br>
 <b>Coordinate descent with arbitrary sampling I: algorithms
 and complexity</b><br>
@@ -2711,7 +2722,7 @@ Methods and Software 31(5):829-857, 2016</a><br>
 <span class="algorithms">Algorithms: <code>ALPHA</code></span></p>
 </div>
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic convex">
 <p>[30] Jakub Konečný, Zheng Qu and Peter Richtárik<br>
 <b>Semi-stochastic coordinate descent</b><br>
 <a
@@ -2721,7 +2732,7 @@ Methods and Software 32(5):993-1005, 2017</a><br>
 <span class="algorithms">Algorithms: <code>S2CD</code></span></p>
 </div>
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic convex">
 <p>[29] Zheng Qu, Peter Richtárik and Tong Zhang<br>
 <b>Quartz: Randomized dual coordinate ascent with arbitrary
 sampling</b><br>
@@ -2732,7 +2743,7 @@ in Neural Information Processing Systems 28:865-873, 2015</a><br>
 <span class="algorithms">Algorithms: <code>QUARTZ</code></span></p>
 </div>
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic convex">
 <p>[28] Jakub Konečný, Jie Liu, Peter Richtárik and Martin
 Takáč<br>
 <b>mS2GD: Mini-batch semi-stochastic gradient descent in the
@@ -2742,7 +2753,7 @@ Workshop on Optimization for Machine Learning, 2014</a><br>
 <a class="chip" href="http://arxiv.org/abs/1410.4744">arXiv</a> <a class="chip" href="posters/Poster-mS2GD.pdf">poster</a> <br><span class="algorithms">Algorithms: <code>mS2GD</code></span></p>
 </div>
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic">
 <p>[27] Jakub Konečný, Zheng Qu and Peter Richtárik<br>
 <b>S2CD: Semi-stochastic coordinate descent</b><br>
 <em> </em><a href="http://opt-ml.org/papers.html">NIPS
@@ -2750,14 +2761,14 @@ Workshop on Optimization for Machine Learning, 2014</a><br>
 <a class="chip" href="papers/S2CD.pdf">pdf</a> <a class="chip" href="posters/Poster-S2CD.pdf">poster</a> <br><span class="algorithms">Algorithms: <code>S2CD</code></span></p>
 </div>
 
-<div class="paper">
+<div class="paper" data-topics="zero nonconvex convex">
 <p>[26] Jakub Konečný and Peter Richtárik<br>
 <b>Simple complexity analysis of simplified direct search</b><br>
 <a class="chip" href="http://arxiv.org/abs/1410.0390">arXiv</a> <a class="chip" href="talks/TALK-SDS-Slovak.ppsx">slides in Slovak</a>
 <br><span class="algorithms">Algorithms: <code>SDS</code></span></p>
 </div>
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic convex">
 <p>[25] Jakub Mareček, Peter Richtárik and Martin Takáč<br>
 <b>Distributed block coordinate descent for minimizing
 partially separable functions</b><br>
@@ -2769,7 +2780,7 @@ Statistics 134:261-288, 2015</a><br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first momentum stochastic convex">
 <p>[24] Olivier Fercoq, Zheng Qu, Peter Richtárik and Martin
 Takáč<br>
 <b>Fast distributed coordinate descent for minimizing
@@ -2805,7 +2816,7 @@ Journal      of Operational Research 256(1):35-42, 2017</a><br>
 <h2 id="y2013">Prepared in 2013 </h2>
 
 
-<div class="paper">
+<div class="paper" data-topics="first momentum stochastic convex">
 <p>[21] Olivier Fercoq and Peter Richtárik <br>
 <b>Accelerated, Parallel and PROXimal coordinate descent</b><br>
 <a href="http://epubs.siam.org/doi/abs/10.1137/130949993">SIAM
@@ -2820,7 +2831,7 @@ href="http://epubs.siam.org/action/showMostReadArticles?journalCode=sjope8">(Aug
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic convex">
 <p>[20] Jakub Konečný and Peter Richtárik<br>
 <b>Semi-stochastic gradient descent methods</b><br>
 <a href="https://doi.org/10.3389/fams.2017.00009">Frontiers
@@ -2832,7 +2843,7 @@ href="https://doi.org/10.3389/fams.2017.00009">3:9, 2017</a><br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic convex">
 <p>[19] Peter Richtárik and Martin Takáč<br>
 <b>On optimal probabilities in stochastic coordinate descent
 methods</b><br>
@@ -2846,7 +2857,7 @@ href="http://link.springer.com/article/10.1007%2Fs11590-015-0916-1">
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic">
 <p>[18] Peter Richtárik and Martin Takáč<br>
 <b>Distributed coordinate descent method for learning with
 big data</b><br>
@@ -2857,7 +2868,7 @@ of Machine Learning Research 17(75):1-25, 2016</a><br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic convex">
 <p>[17] Olivier Fercoq and Peter Richtárik<br>
 <b>Smooth minimization of nonsmooth functions with parallel
 coordinate descent methods</b><br>
@@ -2868,7 +2879,7 @@ href="https://link.springer.com/chapter/10.1007/978-3-030-12119-8_4">Springer  P
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="convex">
 <p>[16] Rachael Tappenden, Peter Richtárik and Burak Buke<br>
 <b>Separable approximations and decomposition methods for
 the augmented Lagrangian</b><br>
@@ -2880,7 +2891,7 @@ Methods   and Software 30(3):643-668, 2015</a><br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic convex">
 <p>[15] Rachael Tappenden, Peter Richtárik and Jacek Gondzio<br>
 <b>Inexact coordinate descent: complexity and
 preconditioning</b><br>
@@ -2904,7 +2915,7 @@ href="https://link.springer.com/chapter/10.1007/978-3-030-12119-8_8">Springer  P
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic convex">
 <p>[13] Martin Takáč, Avleen Bijral, Peter Richtárik and
 Nathan Srebro<br>
 <b>Mini-batch primal and dual methods for SVMs</b><br>
@@ -2943,7 +2954,7 @@ Technical Report, 2012 <br>
 
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic convex">
 <p>[10] Peter Richtárik and Martin Takáč<br>
 <b>Parallel coordinate descent methods for big data optimization</b><br>
 <a
@@ -2962,7 +2973,7 @@ href="http://www.maths.ed.ac.uk/%7Eprichtar/imgs/2017-MAPR-trending-papers.png">
 
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic">
 <p>
 [9] Peter Richtárik and Martin Takáč<br>
 <b>Efficient serial and parallel coordinate descent methods for huge-scale truss topology design</b><br>
@@ -2973,7 +2984,7 @@ href="http://www.maths.ed.ac.uk/%7Eprichtar/imgs/2017-MAPR-trending-papers.png">
 
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic convex">
 <p>
 [8] Peter Richtárik and Martin Takáč<br>
 <b>Iteration complexity of randomized block-coordinate descent methods for minimizing a composite function</b> <br>
@@ -2985,7 +2996,7 @@ href="http://www.maths.ed.ac.uk/%7Eprichtar/imgs/2017-MAPR-trending-papers.png">
 
 
 
-<div class="paper">
+<div class="paper" data-topics="first stochastic">
 <p>
 [7] Peter Richtárik and Martin Takáč<br>
 <b>Efficiency of randomized coordinate descent methods on minimization problems with a composite objective function</b><br>
@@ -3007,7 +3018,7 @@ Structured Representations</span>, 2011</a><br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first convex">
 <p>
 [5] Peter Richtárik<br>
 <b>Approximate level method for nonsmooth convex minimization</b><br>
@@ -3018,7 +3029,7 @@ of Optimization Theory and Applications 152(2):334–350, 2012</a><br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="nonconvex">
 <p>
 [4] Michel Journée, Yurii Nesterov, Peter Richtárik and Rodolphe Sepulchre<br>
 <b>Generalized power method for sparse principal component analysis</b><br>
@@ -3028,7 +3039,7 @@ of Optimization Theory and Applications 152(2):334–350, 2012</a><br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first convex">
 <p>
 [3] Peter Richtárik<br>
 <b>Improved algorithms for convex minimization in relative scale</b><br>
@@ -3038,7 +3049,7 @@ of Optimization Theory and Applications 152(2):334–350, 2012</a><br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first">
 <p>
 [2] Peter Richtárik<br>
 <b>Simultaneously solving seven optimization problems in relative scale</b><br>
@@ -3048,7 +3059,7 @@ Technical Report, 2009 <br>
 </div>
 
 
-<div class="paper">
+<div class="paper" data-topics="first convex">
 <p>
 [1] Peter Richtárik<br>
 <b>Some algorithms for large-scale convex and linear minimization in relative scale</b> <br>
@@ -3072,12 +3083,12 @@ Technical Report, 2009 <br>
   
 <script>
 (function () {
-  var TOPIC_IDS = {federated:1, async:1, muon:1, llm:1, broximal:1};
+  var TOPIC_IDS = {federated:1, async:1, muon:1, llm:1, broximal:1, first:1, second:1, zero:1, stochastic:1, local:1, momentum:1, compressed:1, convex:1, nonconvex:1};
   var current = "";
 
   function topicFromHash() {
     var h = location.hash || "";
-    var m = h.match(/^#topic=([A-Za-z]+)$/);
+    var m = h.match(/^#topic=([A-Za-z0-9-]+)$/);
     if (!m) return null;
     var id = m[1].toLowerCase();
     if (id === "all") return "";
