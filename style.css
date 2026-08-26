@@ -122,6 +122,21 @@ nav.menu a.active {
 	margin: 0 0 1.25em;
 }
 
+
+.page-crumb {
+	color: #888;
+	margin: 0;
+	padding: 0;
+}
+
+#content .page-crumb {
+	margin: 0;
+	padding: 0;
+}
+
+.page-crumb a { color: #888; }
+.page-crumb a:hover { color: #880000; }
+
 #content.papers h1 {
 	padding: 0.55em 0 0.3em;
 }
