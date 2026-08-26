@@ -57,8 +57,21 @@ img { border: none; max-width: 100%; height: auto; vertical-align: middle; }
 	color: #555;
 }
 
-.contact-email { margin: 0 0 4px; }
-.contact-address { margin: 0; }
+.contact-email { margin: 0 0 6px; font-size: 0.95rem; }
+.identity-contact .icons {
+	display: flex;
+	justify-content: flex-end;
+	flex-wrap: wrap;
+	gap: 7px;
+	margin: 0;
+}
+.identity-contact .icons a { margin: 0; }
+.identity-contact .icons img {
+	height: 16px;
+	width: auto;
+	max-width: none;
+}
+.contact-address { margin: 0 0 4px; font-size: 0.9rem; color: #555; }
 
 .site-name {
 	font-size: 1.75rem;
@@ -315,6 +328,7 @@ table.software td.name a { font-weight: 600; }
 		gap: 10px;
 	}
 	.identity-contact { text-align: left; }
+	.identity-contact .icons { justify-content: flex-start; }
 	nav.menu { text-align: left; }
 	nav.menu a { padding: 6px 9px; font-size: 0.92rem; }
 }
