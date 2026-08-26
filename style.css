@@ -24,19 +24,41 @@ img { border: none; max-width: 100%; height: auto; vertical-align: middle; }
 
 .site-header {
 	display: flex;
-	gap: 24px;
+	gap: 20px;
 	align-items: flex-start;
 	padding-top: 16px;
 	padding-bottom: 8px;
 }
 
 .site-header .portrait {
-	width: 168px;
-	height: 168px;
+	width: 80px;
+	height: 80px;
 	object-fit: cover;
 	flex-shrink: 0;
 	border-radius: 4px;
 }
+
+.identity {
+	flex: 1;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: 32px;
+	min-width: 0;
+}
+
+.identity-main { min-width: 0; }
+
+.identity-contact {
+	text-align: right;
+	flex-shrink: 0;
+	font-size: 0.9rem;
+	line-height: 1.45;
+	color: #555;
+}
+
+.contact-email { margin: 0 0 4px; }
+.contact-address { margin: 0; }
 
 .site-name {
 	font-size: 1.75rem;
@@ -58,7 +80,7 @@ img { border: none; max-width: 100%; height: auto; vertical-align: middle; }
 	font-size: 0.95rem;
 }
 
-.icons { margin-top: 10px; }
+.icons { margin: 2px 0 6px; }
 .icons a { margin-right: 8px; }
 .icons img { height: 25px; width: auto; max-width: none; }
 
@@ -284,10 +306,15 @@ table.software td.name a { font-weight: 600; }
 		gap: 12px;
 	}
 	.site-header .portrait {
-		width: 120px;
-		height: 120px;
+		width: 72px;
+		height: 72px;
 		border-radius: 4px;
 	}
+	.identity {
+		flex-direction: column;
+		gap: 10px;
+	}
+	.identity-contact { text-align: left; }
 	nav.menu { text-align: left; }
 	nav.menu a { padding: 6px 9px; font-size: 0.92rem; }
 }
