@@ -31,8 +31,8 @@ img { border: none; max-width: 100%; height: auto; vertical-align: middle; }
 }
 
 .site-header .portrait {
-	width: 80px;
-	height: 80px;
+	width: 150px;
+	height: 150px;
 	object-fit: cover;
 	flex-shrink: 0;
 	border-radius: 4px;
@@ -40,41 +40,33 @@ img { border: none; max-width: 100%; height: auto; vertical-align: middle; }
 
 .identity {
 	flex: 1;
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-start;
-	gap: 32px;
 	min-width: 0;
 }
 
-.identity-main { min-width: 0; }
-
-.identity-contact {
-	text-align: right;
-	flex-shrink: 0;
-	font-size: 0.9rem;
-	line-height: 1.45;
-	color: #555;
+.contact-email,
+.contact-address,
+.role {
+	margin: 0;
+	font-size: 1rem;
+	line-height: 1.5;
+	color: #333;
 }
 
-.contact-email { margin: 0 0 6px; font-size: 0.95rem; }
-.identity-contact .icons {
+.identity .icons {
 	display: flex;
-	justify-content: flex-end;
 	flex-wrap: wrap;
 	gap: 7px;
-	margin: 0;
+	margin: 6px 0 0;
 }
-.identity-contact .icons a { margin: 0; }
-.identity-contact .icons img {
+.identity .icons a { margin: 0; }
+.identity .icons img {
 	height: 16px;
 	width: auto;
 	max-width: none;
 }
-.contact-address { margin: 0 0 4px; font-size: 0.9rem; color: #555; }
 
 .site-name {
-	font-size: 1.75rem;
+	font-size: 1.4rem;
 	font-weight: 400;
 	margin: 0 0 4px;
 }
@@ -83,9 +75,10 @@ img { border: none; max-width: 100%; height: auto; vertical-align: middle; }
 .site-name a:hover { color: #111; }
 
 .role {
-	font-size: 1.05rem;
+	font-size: 1rem;
 	font-weight: 400;
 	margin: 0;
+	color: #333;
 }
 
 .contact {
@@ -319,16 +312,10 @@ table.software td.name a { font-weight: 600; }
 		gap: 12px;
 	}
 	.site-header .portrait {
-		width: 72px;
-		height: 72px;
+		width: 96px;
+		height: 96px;
 		border-radius: 4px;
 	}
-	.identity {
-		flex-direction: column;
-		gap: 10px;
-	}
-	.identity-contact { text-align: left; }
-	.identity-contact .icons { justify-content: flex-start; }
 	nav.menu { text-align: left; }
 	nav.menu a { padding: 6px 9px; font-size: 0.92rem; }
 }
