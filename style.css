@@ -291,3 +291,19 @@ table.software td.name a { font-weight: 600; }
 	nav.menu { text-align: left; }
 	nav.menu a { padding: 6px 9px; font-size: 0.92rem; }
 }
+
+.chip {
+	display: inline-block;
+	font-size: 0.8rem;
+	line-height: 1.25;
+	padding: 2px 8px;
+	margin: 0 0.28em 0.28em 0;
+	background: #f5f6f7;
+	border-radius: 4px;
+	color: #336699;
+	text-decoration: none;
+	vertical-align: middle;
+}
+a.chip:hover { color: #880000; }
+.chip-plain { color: #555; }
+
