@@ -356,10 +356,6 @@ a.chip:hover { color: #880000; }
 	font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 	font-size: 0.9em;
 	color: #a31515;
-	background: #f4f4f4;
-	border: 1px solid #e2e2e2;
-	border-radius: 3px;
-	padding: 0.08em 0.35em;
 }
 
 .topic-jump {
