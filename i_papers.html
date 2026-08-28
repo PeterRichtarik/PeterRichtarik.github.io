@@ -3019,7 +3019,7 @@ Technical Report, 2009 <br>
 <script>
 (function () {
   var TOPIC_IDS = {federated:1, async:1, muon:1, llm:1, broximal:1, first:1, second:1, zero:1, stochastic:1, local:1, momentum:1, compressed:1, convex:1, nonconvex:1, "primal-dual":1, "coordinate-descent":1, "error-feedback":1, lora:1, adaptive:1, proximal:1, sketching:1, "variance-reduction":1, acceleration:1, decentralized:1, privacy:1, "linear-algebra":1, minimax:1};
-  var currentTopic = "";
+  var currentTopics = [];
   var currentYear = "";
   var yearReady = false;
 
@@ -3040,8 +3040,8 @@ Technical Report, 2009 <br>
 
   function parseHash() {
     var h = (location.hash || "").replace(/^#/, "");
-    var year = "", topic = "";
-    if (!h) return { year: "", topic: "" };
+    var year = "", topics = [];
+    if (!h) return { year: "", topics: topics };
     h.split("&").forEach(function (part) {
       var i = part.indexOf("=");
       if (i === -1) return;
@@ -3049,8 +3049,10 @@ Technical Report, 2009 <br>
       var v = decodeURIComponent(part.slice(i + 1));
       if (k === "year" && v && v !== "all") year = v;
       if (k === "topic") {
-        var id = v.toLowerCase();
-        if (id && id !== "all" && TOPIC_IDS[id]) topic = id;
+        v.split(",").forEach(function (raw) {
+          var id = raw.toLowerCase().replace(/\+/g, " ").trim();
+          if (id && id !== "all" && TOPIC_IDS[id] && topics.indexOf(id) === -1) topics.push(id);
+        });
       }
     });
     var known = {};
@@ -3059,13 +3061,13 @@ Technical Report, 2009 <br>
       if (y) known[y] = 1;
     });
     if (year && !known[year]) year = "";
-    return { year: year, topic: topic };
+    return { year: year, topics: topics };
   }
 
   function setHash() {
     var parts = [];
     if (currentYear) parts.push("year=" + encodeURIComponent(currentYear));
-    if (currentTopic) parts.push("topic=" + currentTopic);
+    if (currentTopics.length) parts.push("topic=" + currentTopics.join(","));
     var next = parts.length ? "#" + parts.join("&") : (location.pathname + location.search);
     var cur = location.hash || "";
     if ((parts.length ? "#" + parts.join("&") : "") === cur) return;
@@ -3081,14 +3083,17 @@ Technical Report, 2009 <br>
     });
     document.querySelectorAll(".topic-jump a").forEach(function (a) {
       var t = a.getAttribute("data-topic") || "";
-      if (t === currentTopic) a.classList.add("is-active");
+      var on = t ? (currentTopics.indexOf(t) !== -1) : (currentTopics.length === 0);
+      if (on) a.classList.add("is-active");
       else a.classList.remove("is-active");
     });
     document.querySelectorAll(".paper").forEach(function (p) {
       var okTopic = true;
-      if (currentTopic) {
+      if (currentTopics.length) {
         var topics = (p.getAttribute("data-topics") || "").split(/\s+/).filter(Boolean);
-        okTopic = topics.indexOf(currentTopic) !== -1;
+        for (var i = 0; i < currentTopics.length; i++) {
+          if (topics.indexOf(currentTopics[i]) === -1) { okTopic = false; break; }
+        }
       }
       var okYear = !currentYear || (p.getAttribute("data-year") || "") === currentYear;
       p.hidden = !(okTopic && okYear);
@@ -3110,7 +3115,7 @@ Technical Report, 2009 <br>
       }
     });
     var box = document.querySelector("details.paper-filters");
-    if (box && (currentTopic || currentYear)) box.open = true;
+    if (box && (currentTopics.length || currentYear)) box.open = true;
     if (updateHash) setHash();
   }
 
@@ -3125,22 +3130,28 @@ Technical Report, 2009 <br>
     }
     if (topicA) {
       var id = topicA.getAttribute("data-topic") || "";
-      currentTopic = (id && id === currentTopic) ? "" : id;
+      if (!id) {
+        currentTopics = [];
+      } else {
+        var i = currentTopics.indexOf(id);
+        if (i === -1) currentTopics.push(id);
+        else currentTopics.splice(i, 1);
+      }
     }
     applyFilters(true);
   }
 
   document.addEventListener("click", onFilterClick);
   window.addEventListener("hashchange", function () {
-    var p = parseHash();
-    currentYear = p.year;
-    currentTopic = p.topic;
+    var parsed = parseHash();
+    currentYear = parsed.year;
+    currentTopics = parsed.topics;
     applyFilters(false);
   });
 
   var initial = parseHash();
   currentYear = initial.year;
-  currentTopic = initial.topic;
+  currentTopics = initial.topics;
   applyFilters(false);
 })();
 </script>
