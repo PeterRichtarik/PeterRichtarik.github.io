@@ -4,7 +4,7 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="style.css?v=20260827a">
+    <link rel="stylesheet" href="style.css?v=20260828a">
     <link rel="icon" href="favicon.png" type="image/png">
     <title>Peter Richtárik — Papers</title>
     <meta property="og:title" content="Peter Richtárik — Papers">
@@ -56,21 +56,22 @@
 <details class="paper-filters">
   <summary>Filters</summary>
   <p class="year-jump">
-  <a href="#y2026">2026</a>
-  <a href="#y2025">2025</a>
-  <a href="#y2024">2024</a>
-  <a href="#y2023">2023</a>
-  <a href="#y2022">2022</a>
-  <a href="#y2021">2021</a>
-  <a href="#y2020">2020</a>
-  <a href="#y2019">2019</a>
-  <a href="#y2018">2018</a>
-  <a href="#y2017">2017</a>
-  <a href="#y2016">2016</a>
-  <a href="#y2015">2015</a>
-  <a href="#y2014">2014</a>
-  <a href="#y2013">2013</a>
-  <a href="#y2012">2012 and earlier</a>
+  <a href="#year=all" data-year="" class="is-active">All</a>
+  <a href="#year=2026" data-year="2026">2026</a>
+  <a href="#year=2025" data-year="2025">2025</a>
+  <a href="#year=2024" data-year="2024">2024</a>
+  <a href="#year=2023" data-year="2023">2023</a>
+  <a href="#year=2022" data-year="2022">2022</a>
+  <a href="#year=2021" data-year="2021">2021</a>
+  <a href="#year=2020" data-year="2020">2020</a>
+  <a href="#year=2019" data-year="2019">2019</a>
+  <a href="#year=2018" data-year="2018">2018</a>
+  <a href="#year=2017" data-year="2017">2017</a>
+  <a href="#year=2016" data-year="2016">2016</a>
+  <a href="#year=2015" data-year="2015">2015</a>
+  <a href="#year=2014" data-year="2014">2014</a>
+  <a href="#year=2013" data-year="2013">2013</a>
+  <a href="#year=2012" data-year="2012">2012 and earlier</a>
 </p>
 <p class="topic-jump">
   <a href="#topic=all" data-topic="" class="is-active">All</a>
@@ -3002,38 +3003,79 @@ Technical Report, 2009 <br>
 <script>
 (function () {
   var TOPIC_IDS = {federated:1, async:1, muon:1, llm:1, broximal:1, first:1, second:1, zero:1, stochastic:1, local:1, momentum:1, compressed:1, convex:1, nonconvex:1};
-  var current = "";
+  var currentTopic = "";
+  var currentYear = "";
+  var yearReady = false;
 
-  function topicFromHash() {
-    var h = location.hash || "";
-    var m = h.match(/^#topic=([A-Za-z0-9-]+)$/);
-    if (!m) return null;
-    var id = m[1].toLowerCase();
-    if (id === "all") return "";
-    if (TOPIC_IDS[id]) return id;
-    return null;
+  function assignPaperYears() {
+    if (yearReady) return;
+    var root = document.querySelector("#content.papers");
+    if (!root) return;
+    var y = "";
+    for (var el = root.firstElementChild; el; el = el.nextElementSibling) {
+      if (el.tagName === "H2" && el.id && el.id.indexOf("y") === 0) {
+        y = el.id.slice(1);
+      } else if (el.classList && el.classList.contains("paper")) {
+        el.setAttribute("data-year", y);
+      }
+    }
+    yearReady = true;
   }
 
-  function setHash(topic) {
-    var next = topic ? "#topic=" + topic : (location.pathname + location.search);
-    if (location.hash === (topic ? "#topic=" + topic : "")) return;
+  function parseHash() {
+    var h = (location.hash || "").replace(/^#/, "");
+    var year = "", topic = "";
+    if (!h) return { year: "", topic: "" };
+    h.split("&").forEach(function (part) {
+      var i = part.indexOf("=");
+      if (i === -1) return;
+      var k = part.slice(0, i);
+      var v = decodeURIComponent(part.slice(i + 1));
+      if (k === "year" && v && v !== "all") year = v;
+      if (k === "topic") {
+        var id = v.toLowerCase();
+        if (id && id !== "all" && TOPIC_IDS[id]) topic = id;
+      }
+    });
+    var known = {};
+    document.querySelectorAll(".year-jump a[data-year]").forEach(function (a) {
+      var y = a.getAttribute("data-year") || "";
+      if (y) known[y] = 1;
+    });
+    if (year && !known[year]) year = "";
+    return { year: year, topic: topic };
+  }
+
+  function setHash() {
+    var parts = [];
+    if (currentYear) parts.push("year=" + encodeURIComponent(currentYear));
+    if (currentTopic) parts.push("topic=" + currentTopic);
+    var next = parts.length ? "#" + parts.join("&") : (location.pathname + location.search);
+    var cur = location.hash || "";
+    if ((parts.length ? "#" + parts.join("&") : "") === cur) return;
     try { history.replaceState(null, "", next); } catch (e) {}
   }
 
-  function applyTopic(topic, updateHash) {
-    current = topic || "";
+  function applyFilters(updateHash) {
+    assignPaperYears();
+    document.querySelectorAll(".year-jump a").forEach(function (a) {
+      var y = a.getAttribute("data-year") || "";
+      if (y === currentYear) a.classList.add("is-active");
+      else a.classList.remove("is-active");
+    });
     document.querySelectorAll(".topic-jump a").forEach(function (a) {
       var t = a.getAttribute("data-topic") || "";
-      if (t === current) a.classList.add("is-active");
+      if (t === currentTopic) a.classList.add("is-active");
       else a.classList.remove("is-active");
     });
     document.querySelectorAll(".paper").forEach(function (p) {
-      if (!current) {
-        p.hidden = false;
-        return;
+      var okTopic = true;
+      if (currentTopic) {
+        var topics = (p.getAttribute("data-topics") || "").split(/\s+/).filter(Boolean);
+        okTopic = topics.indexOf(currentTopic) !== -1;
       }
-      var topics = (p.getAttribute("data-topics") || "").split(/\s+/).filter(Boolean);
-      p.hidden = topics.indexOf(current) === -1;
+      var okYear = !currentYear || (p.getAttribute("data-year") || "") === currentYear;
+      p.hidden = !(okTopic && okYear);
     });
     document.querySelectorAll("#content.papers h2[id^='y']").forEach(function (h2) {
       var vis = false;
@@ -3052,29 +3094,38 @@ Technical Report, 2009 <br>
       }
     });
     var box = document.querySelector("details.paper-filters");
-    if (box && current) box.open = true;
-    if (updateHash) setHash(current);
+    if (box && (currentTopic || currentYear)) box.open = true;
+    if (updateHash) setHash();
   }
 
-  function onTopicClick(ev) {
-    var a = ev.target.closest("a[data-topic]");
-    if (!a || !a.closest(".topic-jump")) return;
+  function onFilterClick(ev) {
+    var yearA = ev.target.closest(".year-jump a[data-year]");
+    var topicA = ev.target.closest(".topic-jump a[data-topic]");
+    if (!yearA && !topicA) return;
     ev.preventDefault();
-    var id = a.getAttribute("data-topic") || "";
-    if (id && id === current) id = "";
-    applyTopic(id, true);
+    if (yearA) {
+      var y = yearA.getAttribute("data-year") || "";
+      currentYear = (y && y === currentYear) ? "" : y;
+    }
+    if (topicA) {
+      var id = topicA.getAttribute("data-topic") || "";
+      currentTopic = (id && id === currentTopic) ? "" : id;
+    }
+    applyFilters(true);
   }
 
-  document.addEventListener("click", onTopicClick);
+  document.addEventListener("click", onFilterClick);
   window.addEventListener("hashchange", function () {
-    var t = topicFromHash();
-    if (t === null) return;
-    applyTopic(t, false);
+    var p = parseHash();
+    currentYear = p.year;
+    currentTopic = p.topic;
+    applyFilters(false);
   });
 
-  var initial = topicFromHash();
-  if (initial !== null) applyTopic(initial, false);
-  else applyTopic("", false);
+  var initial = parseHash();
+  currentYear = initial.year;
+  currentTopic = initial.topic;
+  applyFilters(false);
 })();
 </script>
 </body>

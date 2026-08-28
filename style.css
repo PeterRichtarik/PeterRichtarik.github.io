@@ -382,7 +382,8 @@ a.chip:hover { color: #880000; }
 	color: #bbb;
 }
 
-.topic-jump a.is-active {
+.topic-jump a.is-active,
+.year-jump a.is-active {
 	color: rgb(247, 148, 29);
 	text-decoration: underline;
 	text-decoration-thickness: 2px;
