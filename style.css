@@ -425,5 +425,6 @@ hr.news-rule[hidden] {
 }
 .paper-filters[open] > summary::before { content: "\25BE  "; }
 #content.papers .paper-filters .year-jump { margin: 0 0 0.35em; }
-#content.talks .paper-filters .year-jump { margin: 0; }
+#content.talks .paper-filters .year-jump { margin: 0 0 0.35em; }
+#content.talks .paper-filters .topic-jump { margin: 0; }
 #content.papers .paper-filters .topic-jump { margin: 0; }
