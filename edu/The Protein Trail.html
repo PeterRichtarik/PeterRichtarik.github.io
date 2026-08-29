@@ -1,0 +1,1377 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Protein Trail</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+  :root{
+    --paper:#eef2f6;
+    --paper-raised:#ffffff;
+    --grid-line:#c9d7e6;
+    --grid-line-soft:#e2eaf2;
+    --ink:#1b2838;
+    --ink-soft:#56687c;
+    --ink-faint:#93a3b4;
+    --accent:#c65b2e;
+    --accent-soft:#f3ddcf;
+    --pine:#2f7a63;
+    --pine-soft:#d8ebe4;
+    --gold:#ad7a1f;
+    --gold-soft:#f2e2bd;
+    --danger:#b1483f;
+    --danger-soft:#f4dcd9;
+    --locked:#c4cdd6;
+    --shadow:rgba(27,40,56,0.10);
+    --font-display:'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;
+    --font-body:'Public Sans', system-ui, -apple-system, sans-serif;
+    --font-mono:'IBM Plex Mono', 'SFMono-Regular', Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#121822;
+      --paper-raised:#1a2230;
+      --grid-line:#2b3a4b;
+      --grid-line-soft:#1c2634;
+      --ink:#eaf0f6;
+      --ink-soft:#a9b8c8;
+      --ink-faint:#647588;
+      --accent:#e58a54;
+      --accent-soft:#402a1c;
+      --pine:#5cb69a;
+      --pine-soft:#1d332c;
+      --gold:#e0b04e;
+      --gold-soft:#3a2f18;
+      --danger:#e0897d;
+      --danger-soft:#3a2320;
+      --locked:#37414d;
+      --shadow:rgba(0,0,0,0.4);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#121822;
+    --paper-raised:#1a2230;
+    --grid-line:#2b3a4b;
+    --grid-line-soft:#1c2634;
+    --ink:#eaf0f6;
+    --ink-soft:#a9b8c8;
+    --ink-faint:#647588;
+    --accent:#e58a54;
+    --accent-soft:#402a1c;
+    --pine:#5cb69a;
+    --pine-soft:#1d332c;
+    --gold:#e0b04e;
+    --gold-soft:#3a2f18;
+    --danger:#e0897d;
+    --danger-soft:#3a2320;
+    --locked:#37414d;
+    --shadow:rgba(0,0,0,0.4);
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:
+      linear-gradient(var(--paper),var(--paper)),
+      repeating-linear-gradient(0deg, transparent, transparent 27px, var(--grid-line-soft) 27px, var(--grid-line-soft) 28px),
+      repeating-linear-gradient(90deg, transparent, transparent 27px, var(--grid-line-soft) 27px, var(--grid-line-soft) 28px);
+    color:var(--ink);
+    font-family:var(--font-body);
+    line-height:1.5;
+  }
+  h1,h2,h3,h4{font-family:var(--font-display); text-wrap:balance; margin:0; letter-spacing:-0.01em;}
+  .mono{font-family:var(--font-mono);}
+  button{font-family:inherit; cursor:pointer;}
+  button:focus-visible, a:focus-visible, input:focus-visible{outline:2px solid var(--accent); outline-offset:2px;}
+  ::selection{background:var(--accent-soft);}
+
+  #app{max-width:900px; margin:0 auto; min-height:100vh; display:flex; flex-direction:column;}
+
+  /* ---------- topbar ---------- */
+  .topbar{position:sticky; top:0; z-index:5; backdrop-filter: blur(6px); background:color-mix(in srgb, var(--paper) 88%, transparent); border-bottom:1px solid var(--grid-line);}
+  .topbar-inner{display:flex; align-items:center; justify-content:space-between; padding:12px 20px;}
+  .icon-btn{background:none; border:1px solid var(--grid-line); color:var(--ink); width:38px; height:38px; display:flex; align-items:center; justify-content:center; border-radius:8px;}
+  .icon-btn:hover{border-color:var(--accent); color:var(--accent);}
+  .brandmark{display:flex; align-items:center; gap:10px; color:var(--ink-soft); font-size:13px; text-transform:uppercase; letter-spacing:0.08em;}
+  .score-chip{display:flex; align-items:center; gap:8px; border:1px solid var(--grid-line); background:var(--paper-raised); padding:6px 12px; border-radius:8px;}
+  .score-label{font-size:11px; letter-spacing:0.1em; color:var(--ink-faint); text-transform:uppercase;}
+  .score-value{font-family:var(--font-mono); font-weight:600; font-variant-numeric:tabular-nums; font-size:15px;}
+
+  main{flex:1; padding:28px 20px 64px;}
+  .screen{animation:fadein .35s ease;}
+  @keyframes fadein{from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:none;}}
+  @media (prefers-reduced-motion:reduce){ .screen{animation:none;} }
+  [hidden]{display:none !important;}
+
+  /* ---------- title screen ---------- */
+  .title-wrap{min-height:70vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:22px; padding:20px 0;}
+  .title-mark{color:var(--accent);}
+  .title-eyebrow{font-family:var(--font-mono); font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:var(--ink-soft);}
+  .title-name{font-size:clamp(34px,6vw,54px); font-weight:700;}
+  .title-tag{max-width:440px; color:var(--ink-soft); font-size:16px;}
+  .btn{border:none; font-family:var(--font-display); font-weight:600; font-size:16px; padding:14px 30px; border-radius:9px; background:var(--ink); color:var(--paper); transition:transform .12s ease;}
+  .btn:hover{transform:translateY(-1px);}
+  .btn:active{transform:translateY(0);}
+  .btn-accent{background:var(--accent); color:#fff;}
+  .btn-ghost{background:none; border:1px solid var(--grid-line); color:var(--ink);}
+  .btn-ghost:hover{border-color:var(--accent); color:var(--accent);}
+  .link-reset{background:none; border:none; color:var(--ink-faint); font-size:13px; text-decoration:underline; text-underline-offset:3px;}
+  .link-reset:hover{color:var(--danger);}
+
+  /* ---------- level map ---------- */
+  .map-header{display:flex; align-items:baseline; justify-content:space-between; margin-bottom:18px; gap:12px; flex-wrap:wrap;}
+  .chapter-label{display:flex; align-items:center; gap:10px; margin:34px 0 12px; color:var(--ink-soft);}
+  .chapter-label:first-of-type{margin-top:6px;}
+  .chapter-label .num{font-family:var(--font-mono); font-size:12px; border:1px solid var(--grid-line); border-radius:999px; padding:2px 9px; color:var(--ink-faint);}
+  .chapter-label h3{font-size:15px; letter-spacing:0.04em; text-transform:uppercase; color:var(--ink-soft); font-weight:600;}
+  .trail-row{display:flex; align-items:center; gap:16px; margin:10px 0;}
+  .trail-row.right{flex-direction:row-reverse;}
+  .node-btn{position:relative; width:64px; height:64px; border-radius:50%; border:2px solid var(--grid-line); background:var(--paper-raised); display:flex; align-items:center; justify-content:center; flex:none; color:var(--ink-faint);}
+  .node-btn .lvl-num{position:absolute; bottom:-20px; font-family:var(--font-mono); font-size:11px; color:var(--ink-faint);}
+  .node-btn.unlocked{border-color:var(--ink); color:var(--ink); background:var(--paper-raised);}
+  .node-btn.unlocked:hover{border-color:var(--accent); color:var(--accent); transform:scale(1.05);}
+  .node-btn.done{border-color:var(--pine); background:var(--pine-soft); color:var(--pine);}
+  .node-btn.locked{cursor:default; opacity:0.55;}
+  .node-btn .stars{position:absolute; top:-16px; display:flex; gap:1px;}
+  .trail-title{font-size:14px; color:var(--ink-soft); max-width:220px;}
+  .trail-row.locked .trail-title{color:var(--ink-faint);}
+  .map-legend{display:flex; gap:18px; flex-wrap:wrap; margin-top:40px; padding-top:18px; border-top:1px dashed var(--grid-line); font-size:12.5px; color:var(--ink-soft);}
+  .map-legend span{display:inline-flex; align-items:center; gap:6px;}
+
+  /* ---------- intro / quiz shared ---------- */
+  .panel{background:var(--paper-raised); border:1px solid var(--grid-line); border-radius:10px; padding:26px;}
+  .back-row{display:flex; align-items:center; gap:10px; margin-bottom:18px;}
+  .back-row button{background:none;border:none;color:var(--ink-soft);font-size:13px;display:flex;align-items:center;gap:6px;}
+  .back-row button:hover{color:var(--accent);}
+  .level-tag{font-family:var(--font-mono); font-size:12px; letter-spacing:0.08em; color:var(--ink-faint); text-transform:uppercase; margin-bottom:6px;}
+  .level-title{font-size:26px; margin-bottom:14px; display:flex; align-items:center; gap:12px;}
+  .level-title .icon-badge{color:var(--accent); flex:none;}
+  .intro-grid{display:grid; grid-template-columns:1fr; gap:22px;}
+  @media (min-width:680px){ .intro-grid{grid-template-columns: 1.05fr 1fr;} }
+  .intro-text p{color:var(--ink-soft); font-size:15.5px; margin:0 0 12px;}
+  .intro-text p:last-child{margin-bottom:0;}
+  .diagram-card{background:var(--paper); border:1px solid var(--grid-line); border-radius:8px; padding:14px; position:relative;
+    background-image: repeating-linear-gradient(0deg, transparent, transparent 21px, var(--grid-line-soft) 21px, var(--grid-line-soft) 22px), repeating-linear-gradient(90deg, transparent, transparent 21px, var(--grid-line-soft) 21px, var(--grid-line-soft) 22px);
+  }
+  .diagram-card .fig-tab{font-family:var(--font-mono); font-size:10.5px; color:var(--ink-faint); letter-spacing:0.06em; position:absolute; top:8px; left:12px;}
+  .diagram-card svg{width:100%; height:auto; display:block; margin-top:8px;}
+  .cta-row{margin-top:22px; display:flex; justify-content:flex-end;}
+
+  .quiz-layout{display:grid; grid-template-columns:1fr; gap:22px;}
+  @media (min-width:680px){ .quiz-layout{grid-template-columns:1fr 1fr;} }
+  .progress-dots{display:flex; gap:7px; margin-bottom:16px;}
+  .progress-dots .dot{width:9px;height:9px;border-radius:50%;background:var(--grid-line);}
+  .progress-dots .dot.current{background:var(--accent);}
+  .progress-dots .dot.done-ok{background:var(--pine);}
+  .progress-dots .dot.done-bad{background:var(--danger);}
+  .q-prompt{font-size:18px; margin-bottom:16px; font-weight:600;}
+  .choices{display:flex; flex-direction:column; gap:10px;}
+  .choice-btn{text-align:left; border:1.5px solid var(--grid-line); background:var(--paper-raised); color:var(--ink); padding:12px 16px; border-radius:8px; font-size:15px;}
+  .choice-btn:hover:not(:disabled){border-color:var(--accent);}
+  .choice-btn.selected{border-color:var(--ink);}
+  .choice-btn.correct{border-color:var(--pine); background:var(--pine-soft); color:var(--pine);}
+  .choice-btn.incorrect{border-color:var(--danger); background:var(--danger-soft); color:var(--danger);}
+  .choice-btn:disabled{cursor:default;}
+  .tf-row{display:flex; gap:12px;}
+  .tf-row .choice-btn{flex:1; text-align:center; font-weight:600;}
+  .num-row{display:flex; align-items:center; gap:10px; flex-wrap:wrap;}
+  .num-input{font-family:var(--font-mono); font-size:20px; width:140px; padding:10px 12px; border:1.5px solid var(--grid-line); border-radius:8px; background:var(--paper-raised); color:var(--ink);}
+  .num-input.correct{border-color:var(--pine); color:var(--pine);}
+  .num-input.incorrect{border-color:var(--danger); color:var(--danger);}
+  .unit-label{color:var(--ink-soft); font-size:14px;}
+  .submit-row{margin-top:14px; display:flex; gap:10px;}
+  .feedback{margin-top:16px; padding:14px 16px; border-radius:8px; font-size:14.5px; display:none;}
+  .feedback.show{display:block; animation:fadein .25s ease;}
+  .feedback.ok{background:var(--pine-soft); color:var(--pine);}
+  .feedback.bad{background:var(--danger-soft); color:var(--danger);}
+  .feedback strong{display:block; font-family:var(--font-display); font-size:15px; margin-bottom:4px;}
+  .next-row{margin-top:18px; display:flex; justify-content:flex-end;}
+
+  /* ---------- complete / final ---------- */
+  .complete-wrap, .final-wrap{min-height:60vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:16px; padding:30px 0;}
+  .stars-big{display:flex; gap:8px;}
+  .points-line{font-family:var(--font-mono); font-size:15px; color:var(--ink-soft);}
+  .points-line b{color:var(--ink); font-size:22px;}
+  .complete-actions{display:flex; gap:12px; margin-top:14px; flex-wrap:wrap; justify-content:center;}
+  .rosette{color:var(--gold);}
+  .final-list{text-align:left; max-width:420px; margin:10px auto 0; color:var(--ink-soft); font-size:14.5px;}
+  .final-list div{display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px dashed var(--grid-line);}
+
+  footer.appfoot{text-align:center; padding:18px; color:var(--ink-faint); font-size:12px; font-family:var(--font-mono);}
+</style>
+
+
+</head>
+<body>
+<div id="app">
+  <header class="topbar" id="topbar" hidden>
+    <div class="topbar-inner">
+      <button class="icon-btn" id="btn-map-home" aria-label="Level map" title="Level map"></button>
+      <div class="brandmark mono">THE PROTEIN TRAIL</div>
+      <div class="score-chip"><span class="score-label">Score</span><span class="score-value mono" id="score-value">0</span></div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="screen" id="screen-title">
+      <div class="title-wrap">
+        <div class="title-mark" id="title-icon"></div>
+        <div class="title-eyebrow">A MOLECULAR FIELD EXPEDITION</div>
+        <h1 class="title-name">The Protein Trail</h1>
+        <p class="title-tag">Twenty stops on the trail from atoms to the molecules that build, move, and defend your body. Earn stars, collect points, and build proteins up from scratch &mdash; one bond at a time.</p>
+        <button class="btn btn-accent" id="btn-start"></button>
+        <button class="link-reset" id="btn-reset" hidden>Reset my progress</button>
+      </div>
+    </section>
+
+    <section class="screen" id="screen-map" hidden>
+      <div class="map-header">
+        <h2>Your Trail</h2>
+        <span class="mono" style="font-size:13px;color:var(--ink-soft);" id="map-progress">0 / 20 complete</span>
+      </div>
+      <div id="trail-container"></div>
+      <div class="map-legend">
+        <span><svg width="14" height="14" viewBox="0 0 14 14"><circle cx="7" cy="7" r="6" fill="none" stroke="var(--locked)" stroke-width="2"></circle></svg> Locked</span>
+        <span><svg width="14" height="14" viewBox="0 0 14 14"><circle cx="7" cy="7" r="6" fill="none" stroke="var(--ink)" stroke-width="2"></circle></svg> Unlocked</span>
+        <span><svg width="14" height="14" viewBox="0 0 14 14"><circle cx="7" cy="7" r="6" fill="var(--pine-soft)" stroke="var(--pine)" stroke-width="2"></circle></svg> Completed</span>
+      </div>
+    </section>
+
+    <section class="screen" id="screen-intro" hidden>
+      <div class="back-row"><button id="btn-intro-back">&larr; Trail map</button></div>
+      <div class="panel">
+        <div class="level-tag" id="intro-tag"></div>
+        <h2 class="level-title"><span class="icon-badge" id="intro-icon"></span><span id="intro-title"></span></h2>
+        <div class="intro-grid">
+          <div class="intro-text" id="intro-text"></div>
+          <div class="diagram-card"><span class="fig-tab" id="intro-fig"></span><svg id="intro-svg" viewBox="0 0 320 320" preserveAspectRatio="xMidYMid meet"></svg></div>
+        </div>
+        <div class="cta-row"><button class="btn btn-accent" id="btn-intro-go">Start practice &rarr;</button></div>
+      </div>
+    </section>
+
+    <section class="screen" id="screen-quiz" hidden>
+      <div class="back-row"><button id="btn-quiz-back">&larr; Trail map</button></div>
+      <div class="panel">
+        <div class="level-tag" id="quiz-tag"></div>
+        <div class="progress-dots" id="quiz-dots"></div>
+        <div class="quiz-layout">
+          <div>
+            <div class="q-prompt" id="q-prompt"></div>
+            <div id="q-answer-area"></div>
+            <div class="feedback" id="q-feedback"></div>
+            <div class="next-row"><button class="btn btn-accent" id="btn-next" hidden>Next &rarr;</button></div>
+          </div>
+          <div class="diagram-card" id="q-diagram-wrap"><span class="fig-tab" id="q-fig"></span><svg id="q-svg" viewBox="0 0 320 320" preserveAspectRatio="xMidYMid meet"></svg></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen" id="screen-complete" hidden>
+      <div class="complete-wrap">
+        <div class="stars-big" id="complete-stars"></div>
+        <h2 id="complete-title">Level Complete!</h2>
+        <div class="points-line">This attempt: <b id="complete-points">0</b> pts &nbsp;&middot;&nbsp; Trail total: <b id="complete-total">0</b> pts</div>
+        <div class="complete-actions">
+          <button class="btn btn-ghost" id="btn-complete-map">Trail map</button>
+          <button class="btn btn-ghost" id="btn-complete-retry">Retry level</button>
+          <button class="btn btn-accent" id="btn-complete-next">Next level &rarr;</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen" id="screen-final" hidden>
+      <div class="final-wrap">
+        <div class="rosette" id="final-rosette"></div>
+        <h2>Expedition Complete</h2>
+        <p style="max-width:440px;color:var(--ink-soft);">You've walked every stop on the Protein Trail — from a single atom to the proteins that build, move, defend, and power your entire body.</p>
+        <div class="points-line">Final score: <b id="final-score">0</b> pts</div>
+        <div class="final-list" id="final-list"></div>
+        <div class="complete-actions">
+          <button class="btn btn-ghost" id="btn-final-map">Revisit any level</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <footer class="appfoot">MADE FOR EXPLORERS OF THE HUMAN BODY &middot; NO ACCOUNT, NO CLOUD &mdash; YOUR PROGRESS LIVES IN THIS BROWSER</footer>
+</div>
+
+<script>
+(function(){
+"use strict";
+
+/* ============================== ICONS ============================== */
+const SVGNS = 'http://www.w3.org/2000/svg';
+function ic(name, size){
+  size = size || 22;
+  const s = (paths)=> `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${paths}</svg>`;
+  switch(name){
+    case 'map': return s('<path d="M4 6 L9 4 L15 6 L20 4 V18 L15 20 L9 18 L4 20 Z"/><path d="M9 4 V18"/><path d="M15 6 V20"/>');
+    case 'atom': return s('<circle cx="12" cy="12" r="1.8" fill="currentColor"/><ellipse cx="12" cy="12" rx="9" ry="3.8"/><ellipse cx="12" cy="12" rx="9" ry="3.8" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="9" ry="3.8" transform="rotate(120 12 12)"/>');
+    case 'flask': return s('<path d="M10 3 H14 M10.5 3 V9 L5.2 18.5 A2 2 0 0 0 7 21.5 H17 A2 2 0 0 0 18.8 18.5 L13.5 9 V3"/><path d="M8 16 H16"/>');
+    case 'molecule': return s('<circle cx="7" cy="7" r="2.3"/><circle cx="17" cy="7" r="2.3"/><circle cx="12" cy="17" r="2.3"/><path d="M7.9 8.7 L11.1 15.3 M16.1 8.7 L12.9 15.3"/>');
+    case 'chain': return s('<circle cx="5" cy="12" r="2.3"/><circle cx="12" cy="12" r="2.3"/><circle cx="19" cy="12" r="2.3"/><path d="M7.3 12 H9.7 M14.3 12 H16.7"/>');
+    case 'aminoacid': return s('<circle cx="12" cy="12" r="1.8" fill="currentColor"/><path d="M12 12 L6.5 8 M12 12 L17.5 8 M12 12 L9 18.5 M12 12 L15.5 19"/>');
+    case 'bond': return s('<circle cx="7" cy="12" r="3"/><circle cx="17" cy="12" r="3"/><path d="M10.2 12 H13.8"/><path d="M12 8 V4.5"/>');
+    case 'sigma': return s('<path d="M5 6 H19"/><path d="M5 18 H19"/>');
+    case 'helix': return s('<path d="M4 8 Q8 2.5 12 8 T20 8"/><path d="M4 16.5 Q8 11 12 16.5 T20 16.5"/><path d="M6 8 V16.5 M18 8 V16.5" stroke-dasharray="1 2.4"/>');
+    case 'sheet': return s('<path d="M4 6 L10 6 L10 12 L16 12 L16 18 L21 18"/><path d="M17.5 15.5 L21 18 L17.5 20"/>');
+    case 'blob': return s('<path d="M12 3 C17 3 20 7 19 12 C18 17 14 20.5 9 19.5 C4 18.5 3 13 5 9 C6 5 8 3 12 3 Z"/>');
+    case 'quaternary': return s('<circle cx="9" cy="9" r="5"/><circle cx="16" cy="9" r="5"/><circle cx="9" cy="16" r="5"/><circle cx="16" cy="16" r="5"/>');
+    case 'thermo': return s('<path d="M12 3 V14.5"/><circle cx="12" cy="17.5" r="3"/><path d="M9.3 6.5 H14.7"/>');
+    case 'lock': return s('<rect x="5.5" y="11" width="13" height="9.5" rx="1.6"/><path d="M8 11 V7.8 A4 4 0 0 1 16 7.8 V11"/>');
+    case 'antibody': return s('<path d="M12 21 V13"/><path d="M12 13 L6 5"/><path d="M12 13 L18 5"/><circle cx="6" cy="5" r="1.8" fill="currentColor"/><circle cx="18" cy="5" r="1.8" fill="currentColor"/>');
+    case 'rope': return s('<path d="M5 4 Q8.5 8.5 5 13 Q1.5 17.5 5 21"/><path d="M12 4 Q15.5 8.5 12 13 Q8.5 17.5 12 21"/><path d="M19 4 Q22.5 8.5 19 13 Q15.5 17.5 19 21"/>');
+    case 'checkcross': return s('<circle cx="12" cy="12" r="8.5"/><path d="M8 12.5 L10.5 15 L16 8.5"/>');
+    case 'mix': return s('<circle cx="12" cy="5" r="1.9" fill="currentColor"/><circle cx="5.5" cy="18" r="1.9" fill="currentColor"/><circle cx="18.5" cy="18" r="1.9" fill="currentColor"/><path d="M12 7 L5.5 16 M12 7 L18.5 16 M5.5 18 H18.5" stroke-dasharray="1.5 2.6"/>');
+    case 'trophy': return s('<path d="M7 4 H17 V9 A5 5 0 0 1 7 9 Z"/><path d="M7 5 H4 V7 A3 3 0 0 0 7 10"/><path d="M17 5 H20 V7 A3 3 0 0 1 17 10"/><path d="M12 14 V18"/><path d="M8.5 20 H15.5"/><path d="M9.5 18 H14.5 L15 20 H9 Z"/>');
+    default: return s('<circle cx="12" cy="12" r="8"/>');
+  }
+}
+function starPoints(cx,cy,rOuter,rInner){
+  let pts=[];
+  for(let i=0;i<10;i++){
+    const r = (i%2===0)?rOuter:rInner;
+    const a = (Math.PI/5)*i - Math.PI/2;
+    pts.push(`${(cx+r*Math.cos(a)).toFixed(1)},${(cy+r*Math.sin(a)).toFixed(1)}`);
+  }
+  return pts.join(' ');
+}
+function starSvg(filled, size){
+  size = size || 20;
+  const col = filled ? 'var(--gold)' : 'var(--grid-line)';
+  return `<svg width="${size}" height="${size}" viewBox="0 0 24 24"><polygon points="${starPoints(12,12,10,4)}" fill="${filled?col:'none'}" stroke="${col}" stroke-width="1.5"/></svg>`;
+}
+function rosetteSvg(){
+  return `<svg width="96" height="96" viewBox="0 0 24 24"><polygon points="${starPoints(12,10,9,3.6)}" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="1.4"/><path d="M9 15 L6 21 L9.3 20 L11 22.5 Z" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="1.2"/><path d="M15 15 L18 21 L14.7 20 L13 22.5 Z" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="1.2"/></svg>`;
+}
+
+/* ============================== UTILITIES ============================== */
+function rndInt(min,max){ return Math.floor(Math.random()*(max-min+1))+min; }
+function pick(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
+function shuffle(arr){ const a=arr.slice(); for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+function sampleN(arr,n){ return shuffle(arr).slice(0,n); }
+function fmt(n){
+  if (typeof n === 'string') return n;
+  if (Number.isInteger(n)) return String(n);
+  return (Math.round(n*100)/100).toString();
+}
+function plural(n, word){ return n===1 ? word : word+'s'; }
+function computeShells(protons){
+  const caps=[2,8,8]; const shells=[]; let remaining=protons;
+  for(const cap of caps){ if(remaining<=0) break; const take=Math.min(cap,remaining); shells.push(take); remaining-=take; }
+  return shells;
+}
+
+/* ============================== DOMAIN DATA ============================== */
+const ELEMENTS = [
+  {protons:1, name:'Hydrogen', symbol:'H'},
+  {protons:6, name:'Carbon', symbol:'C'},
+  {protons:7, name:'Nitrogen', symbol:'N'},
+  {protons:8, name:'Oxygen', symbol:'O'},
+  {protons:15, name:'Phosphorus', symbol:'P'},
+  {protons:16, name:'Sulfur', symbol:'S'}
+];
+const MOLECULES = {
+  water:    { formula:'H₂O', count:3, atoms:[{s:'O',p:[0,0.5]},{s:'H',p:[-1.3,-0.7]},{s:'H',p:[1.3,-0.7]}], bonds:[[0,1],[0,2]] },
+  co2:      { formula:'CO₂', count:3, atoms:[{s:'O',p:[-1.8,0]},{s:'C',p:[0,0]},{s:'O',p:[1.8,0]}], bonds:[[0,1],[1,2]] },
+  ammonia:  { formula:'NH₃', count:4, atoms:[{s:'N',p:[0,0.7]},{s:'H',p:[-1.4,-0.6]},{s:'H',p:[0,-1.4]},{s:'H',p:[1.4,-0.6]}], bonds:[[0,1],[0,2],[0,3]] },
+  methane:  { formula:'CH₄', count:5, atoms:[{s:'C',p:[0,0]},{s:'H',p:[-1.4,1.2]},{s:'H',p:[1.4,1.2]},{s:'H',p:[-1.4,-1.2]},{s:'H',p:[1.4,-1.2]}], bonds:[[0,1],[0,2],[0,3],[0,4]] },
+  oxygen:   { formula:'O₂', count:2, atoms:[{s:'O',p:[-1.1,0]},{s:'O',p:[1.1,0]}], bonds:[[0,1]] }
+};
+const MOLECULE_NAMES = Object.keys(MOLECULES);
+const MATCHUPS = [
+  { scenario:'Speeds up a reaction in your stomach, without being used up itself.', answer:'Enzyme' },
+  { scenario:'Gives skin and tendons their strength and stretch.', answer:'Structural protein' },
+  { scenario:'Carries oxygen from your lungs to your muscles.', answer:'Transport protein' },
+  { scenario:'Marks a flu virus so your immune system can destroy it.', answer:'Antibody' },
+  { scenario:'Tells liver cells to start storing extra sugar.', answer:'Signal protein' },
+  { scenario:'Builds the tough, flexible fiber inside your hair and nails.', answer:'Structural protein' },
+  { scenario:'Breaks large food molecules into smaller pieces during digestion.', answer:'Enzyme' }
+];
+const CATEGORIES = ['Enzyme','Antibody','Structural protein','Transport protein','Signal protein'];
+
+/* ============================== QUESTION BUILDERS ============================== */
+function mcQ(o){ return Object.assign({type:'mc'}, o); }
+function numQ(o){ return Object.assign({type:'num', tolerance:0.01, unit:''}, o); }
+function tfQ(o){ return Object.assign({type:'tf'}, o); }
+
+function qCountAtoms(name){
+  const m = MOLECULES[name];
+  return numQ({
+    prompt:`${m.formula} is shown below. How many atoms make up one molecule of it, in total?`,
+    diagram:{kind:'molecule', name}, answer:m.count, tolerance:0, unit:'atoms',
+    explanation:`Count every circle in the diagram: ${m.atoms.map(a=>a.s).join(' + ')} = ${m.count} atoms in total.`
+  });
+}
+function qIdentifyElement(el){
+  const distractors = shuffle(ELEMENTS.filter(e=>e.name!==el.name)).slice(0,2).map(e=>e.name);
+  const choices = shuffle([el.name, ...distractors]);
+  return mcQ({
+    prompt:`This atom has ${el.protons} ${plural(el.protons,'proton')} in its nucleus. Which element is it?`,
+    diagram:{kind:'atom', shells:computeShells(el.protons)},
+    choices, correctIndex: choices.indexOf(el.name),
+    explanation:`${el.protons} protons means an atomic number of ${el.protons} — that's ${el.name} (${el.symbol}). It's one of the six main elements of life: C, H, O, N, P, S — "CHNOPS."`
+  });
+}
+function qCountBonds(n){
+  return numQ({
+    prompt:`This chain has ${n} amino acids linked together. How many peptide bonds hold it together?`,
+    diagram:{kind:'chain', n}, answer:n-1, tolerance:0,
+    explanation:`Count the gaps between beads, not the beads themselves: ${n} amino acids means ${n-1} links, so ${n} − 1 = ${n-1} peptide bonds.`
+  });
+}
+function qBondsFromChainLength(n){
+  return numQ({
+    prompt:`A protein chain contains ${n} amino acids. How many peptide bonds hold it together?`,
+    diagram:null, answer:n-1, tolerance:0,
+    explanation:`bonds = n − 1 = ${n} − 1 = ${n-1}.`
+  });
+}
+function qStructureID(kind){
+  const bank = {
+    primary:   { diagram:{kind:'chain', n:7}, prompt:'What do we call the exact sequence of amino acids in a protein chain, from end to end?', choices:['Primary structure','Secondary structure','Quaternary structure'], correct:'Primary structure',
+      explanation:'The order of amino acids — the sequence itself — is the primary structure. Everything else folds on top of it.' },
+    helix:     { diagram:{kind:'helix'}, prompt:'This coiled, spring-like local shape is called a(n)...', choices:['Alpha helix','Beta sheet','Tertiary structure'], correct:'Alpha helix',
+      explanation:'A repeating coil held together by hydrogen bonds along the backbone is an alpha helix — one type of secondary structure.' },
+    sheet:     { diagram:{kind:'sheet'}, prompt:'This pleated, zig-zag local shape is called a(n)...', choices:['Beta sheet','Alpha helix','Primary structure'], correct:'Beta sheet',
+      explanation:'Strands lying side by side, hydrogen-bonded into a pleated ribbon, form a beta sheet — the other common secondary structure.' },
+    tertiary:  { diagram:{kind:'blob'}, prompt:'The full, unique 3D shape that one entire folded chain settles into is called...', choices:['Tertiary structure','Secondary structure','Primary structure'], correct:'Tertiary structure',
+      explanation:'Once the whole chain (helices, sheets, and all) folds into one 3D shape, that’s tertiary structure — shaped by the R groups.' },
+    quaternary:{ diagram:{kind:'quaternary'}, prompt:'A structure built from two or more separately-folded chains joined together is called...', choices:['Quaternary structure','Tertiary structure','A single amino acid'], correct:'Quaternary structure',
+      explanation:'When multiple folded subunits combine into one working protein, that combined structure is the quaternary structure.' }
+  };
+  const b = bank[kind];
+  const choices = shuffle(b.choices);
+  return mcQ({ prompt:b.prompt, diagram:b.diagram, choices, correctIndex: choices.indexOf(b.correct), explanation:b.explanation });
+}
+function qMatchup(item){
+  const distractors = shuffle(CATEGORIES.filter(c=>c!==item.answer)).slice(0,2);
+  const choices = shuffle([item.answer, ...distractors]);
+  return mcQ({
+    prompt:`${item.scenario} Which kind of protein is this?`,
+    diagram:null, choices, correctIndex: choices.indexOf(item.answer),
+    explanation:`That's a job for a ${item.answer.toLowerCase()}.`
+  });
+}
+function qDenatureRandom(){
+  const pool = [
+    { s:'Frying an egg permanently changes the shape of its proteins — cooked egg white never turns back into clear, runny liquid.', a:true,
+      e:'Heat unravels (denatures) the egg’s proteins into a new tangled shape. That change of shape is permanent.' },
+    { s:'A denatured protein still has the exact same primary structure (amino acid sequence) as before it was denatured.', a:true,
+      e:'Denaturation unfolds the 3D shape, but it does not break the peptide bonds — the sequence itself is unchanged.' },
+    { s:'Very strong stomach acid can denature proteins in food, which helps digestive enzymes break them apart.', a:true,
+      e:'Stomach acid unfolds food proteins, exposing the chain so digestive enzymes can cut it into pieces.' },
+    { s:'Once a protein is denatured, it will always refold back into its original working shape a few minutes later.', a:false,
+      e:'Most denatured proteins do not spontaneously refold — that’s why a cooked egg white stays solid, not runny.' },
+    { s:'Denaturation changes a protein’s primary structure by rearranging its amino acid sequence.', a:false,
+      e:'Denaturation changes the folded shape (secondary/tertiary/quaternary structure), not the underlying sequence.' }
+  ];
+  const item = pick(pool);
+  return tfQ({ prompt:item.s, diagram:{kind:'denature'}, answer:item.a, explanation:item.e });
+}
+function qEnzymeConcept(){
+  const pool = [
+    { type:'mc', prompt:'The pocket on an enzyme where its substrate fits is called the...', choices:['Active site','R group','Peptide bond'], correct:0,
+      explanation:'The active site is precisely shaped to fit one substrate — like a lock built for one particular key.' },
+    { type:'tf', prompt:'One enzyme can usually speed up almost any reaction, with almost any molecule.', answer:false,
+      explanation:'Enzymes are highly specific: an active site’s shape usually fits only one substrate.' },
+    { type:'mc', prompt:'What happens to an enzyme itself after it helps a reaction happen?', choices:['It’s released unchanged, ready to work again','It’s permanently used up','It turns into the product'], correct:0,
+      explanation:'Enzymes are catalysts: they speed reactions up without being consumed, so one enzyme can be reused again and again.' }
+  ];
+  const item = pick(pool);
+  if (item.type==='mc'){
+    const idx = shuffle(item.choices.map((c,i)=>i));
+    const choices = idx.map(i=>item.choices[i]);
+    return mcQ({ prompt:item.prompt, diagram:{kind:'enzyme'}, choices, correctIndex: idx.indexOf(item.correct), explanation:item.explanation });
+  }
+  return tfQ({ prompt:item.prompt, diagram:{kind:'enzyme'}, answer:item.answer, explanation:item.explanation });
+}
+
+/* ============================== LEVEL DEFINITIONS ============================== */
+const LEVELS = [
+{ id:1, chapter:0, icon:'atom', title:'Everything Is Made of Atoms',
+  intro:['Every material thing in your body — and everywhere else — is built from atoms: tiny particles far too small to see. Each atom has a dense center called the nucleus, surrounded by a cloud of electrons.',
+         'Let\'s meet the parts of an atom before we build anything bigger.'],
+  gen(){
+    const spec = {kind:'atom', shells:[2,4]};
+    return [
+      mcQ({ prompt:'What do we call the tiny, negatively-charged particles that orbit the nucleus?', diagram:spec,
+            choices:['Electrons','Protons','Neutrons'], correctIndex:0,
+            explanation:'Electrons are the small, negatively-charged particles found in shells around the nucleus.' }),
+      mcQ({ prompt:'What do we call the dense center of an atom, where protons and neutrons are packed together?', diagram:spec,
+            choices:['The nucleus','The shell','The orbit'], correctIndex:0,
+            explanation:'The nucleus sits at the center of every atom, holding its protons and neutrons.' }),
+      mcQ({ prompt:'Protons carry a positive charge. What charge do electrons carry?', diagram:spec,
+            choices:['Negative','Positive','No charge at all'], correctIndex:0,
+            explanation:'Electrons are negatively charged — opposite to the positively-charged protons in the nucleus.' })
+    ];
+  }
+},
+{ id:2, chapter:0, icon:'molecule', title:'Atoms Join Together',
+  intro:['When atoms link up by sharing or transferring electrons, that link is called a bond — and two or more bonded atoms make a molecule.',
+         'Some molecules are tiny. Let\'s count the atoms in a few you already know well.'],
+  gen(){ return sampleN(MOLECULE_NAMES, 3).map(qCountAtoms); }
+},
+{ id:3, chapter:0, icon:'flask', title:'The Elements of Life',
+  intro:['Just six elements make up about 99% of your body\'s mass: Carbon, Hydrogen, Oxygen, Nitrogen, Phosphorus, and Sulfur — remembered by the nickname "CHNOPS."',
+         'An atom\'s number of protons — its atomic number — decides which element it is. Let\'s identify a few.'],
+  gen(){ return sampleN(ELEMENTS, 3).map(qIdentifyElement); }
+},
+{ id:4, chapter:0, icon:'chain', title:'Small Molecules, Big Molecules',
+  intro:['Some molecules stay small forever, like water or oxygen. Others, called polymers, are built by linking many small repeating units — monomers — into one long chain.',
+         'Proteins, DNA, and starch are all polymers. Let\'s tell small molecules and polymer chains apart.'],
+  gen(){
+    return [
+      tfQ({ prompt:'A polymer is built from many repeating monomer units linked together in a chain.', diagram:{kind:'chain', n:7}, answer:true,
+            explanation:'That\'s exactly what a polymer is: monomers, repeated and linked into a chain.' }),
+      mcQ({ prompt:'Which of these is built as a long chain of repeating units — a polymer?', diagram:{kind:'chain', n:8},
+            choices:['A protein','A single water molecule','A single oxygen molecule'], correctIndex:0,
+            explanation:'A protein is a polymer built from many amino acid monomers. Water and oxygen are small, stand-alone molecules.' }),
+      tfQ({ prompt:'Water (H₂O) is a polymer made of many repeating monomers.', diagram:{kind:'molecule', name:'water'}, answer:false,
+            explanation:'Water is a small molecule made of just 3 atoms — not a chain of repeating units.' })
+    ];
+  }
+},
+{ id:5, chapter:1, icon:'aminoacid', title:'Meet the Amino Acid',
+  intro:['Proteins are polymers, and their monomer is the amino acid. Every amino acid shares the same basic plan: a central carbon attached to an amino group, a carboxyl group, a hydrogen, and a variable "R group."',
+         'The R group is what makes each of the 20 different amino acids unique. Let\'s label the parts.'],
+  gen(){
+    const spec = {kind:'aminoacid'};
+    return [
+      mcQ({ prompt:'Which group gives amino acids their name, and always contains nitrogen?', diagram:spec,
+            choices:['The amino group (–NH₂)','The carboxyl group (–COOH)','The R group'], correctIndex:0,
+            explanation:'The amino group (–NH₂) is where "amino acid" gets its name.' }),
+      mcQ({ prompt:'Which part is different in each of the 20 amino acids, giving each one its own personality?', diagram:spec,
+            choices:['The R group','The central carbon','The amino group'], correctIndex:0,
+            explanation:'The R group is the only part that changes from one amino acid to the next.' }),
+      mcQ({ prompt:'Which acidic group is shared by every single amino acid, no matter its R group?', diagram:spec,
+            choices:['The carboxyl group (–COOH)','The R group','The hydrogen atom'], correctIndex:0,
+            explanation:'Every amino acid has the same carboxyl group (–COOH) attached to its central carbon.' })
+    ];
+  }
+},
+{ id:6, chapter:1, icon:'bond', title:'Joining Two Amino Acids',
+  intro:['When two amino acids link up, the carboxyl group of one reacts with the amino group of the next. A water molecule is released, and a new bond — the peptide bond — holds the pair together.',
+         'This reaction is called dehydration synthesis, or condensation — "dehydration" because water leaves.'],
+  gen(){
+    const spec = {kind:'peptidebond'};
+    return [
+      mcQ({ prompt:'What small molecule is released when two amino acids join together?', diagram:spec,
+            choices:['Water (H₂O)','Oxygen (O₂)','Carbon dioxide (CO₂)'], correctIndex:0,
+            explanation:'A water molecule is released every time a new peptide bond forms — that\'s the "dehydration" in dehydration synthesis.' }),
+      mcQ({ prompt:'What do we call the new bond that forms between the two amino acids?', diagram:spec,
+            choices:['A peptide bond','A hydrogen bond','An ionic bond'], correctIndex:0,
+            explanation:'The bond linking one amino acid\'s carboxyl group to the next one\'s amino group is called a peptide bond.' }),
+      mcQ({ prompt:'This joining reaction — releasing water to form a new bond — is called...', diagram:spec,
+            choices:['Dehydration synthesis (condensation)','Hydrolysis','Ionization'], correctIndex:0,
+            explanation:'Dehydration synthesis builds the bond by removing water. The reverse reaction, hydrolysis, adds water back in to break it.' })
+    ];
+  }
+},
+{ id:7, chapter:1, icon:'chain', title:'Count the Chain',
+  intro:['String more amino acids together and you get a polypeptide chain. Every link between two neighboring amino acids is one peptide bond.',
+         'Count carefully: a chain always has one fewer bond than it has amino acids.'],
+  gen(){ return sampleN([4,6,9,11], 3).map(qCountBonds); }
+},
+{ id:8, chapter:1, icon:'sigma', title:'The Peptide Bond Formula',
+  intro:['Let\'s write what you just discovered as a rule. For a chain of n amino acids, the number of peptide bonds is always n − 1.',
+         'One formula, any chain length.'],
+  gen(){
+    return [
+      mcQ({ prompt:'If a polypeptide chain has n amino acids, how many peptide bonds does it have?', diagram:null,
+            choices:['n − 1','n','n + 1','2n'], correctIndex:0,
+            explanation:'bonds = n − 1, because bonds only form between neighboring amino acids.' }),
+      mcQ({ prompt:'Why is it n − 1, and not n?', diagram:null,
+            choices:['Bonds form BETWEEN neighboring amino acids, so the two end amino acids have no bond beyond them','One amino acid in every chain never bonds at all','Every third amino acid always skips its bond'], correctIndex:0,
+            explanation:'Picture the gaps between beads on a string: n beads always have exactly n − 1 gaps between them.' }),
+      qBondsFromChainLength(pick([28,35,42,53]))
+    ];
+  }
+},
+{ id:9, chapter:2, icon:'chain', title:'Primary Structure',
+  intro:['A protein\'s primary structure is simply the exact order — the sequence — of amino acids in its chain, from one end to the other.',
+         'Change even one amino acid in the sequence, and you can change how — or whether — the whole protein works.'],
+  gen(){
+    return [
+      qStructureID('primary'),
+      tfQ({ prompt:'Swapping just one amino acid in a long chain can never affect how a protein works.', diagram:{kind:'chain', n:7}, answer:false,
+            explanation:'Even a single swapped amino acid can change a protein\'s shape enough to change — or destroy — its function.' }),
+      mcQ({ prompt:'What ultimately decides a protein\'s primary structure?', diagram:{kind:'chain', n:6},
+            choices:['The order in which amino acids are joined together','The body\'s temperature at the time','The color of the amino acids'], correctIndex:0,
+            explanation:'Primary structure is nothing more (and nothing less) than the sequence — the order — of amino acids.' })
+    ];
+  }
+},
+{ id:10, chapter:2, icon:'helix', title:'Secondary Structure',
+  intro:['Once a chain is built, nearby amino acids form hydrogen bonds with each other, folding local sections into repeating shapes. The two most common are the coiled alpha helix and the pleated beta sheet.'],
+  gen(){
+    return [ qStructureID('helix'), qStructureID('sheet'),
+      mcQ({ prompt:'What holds these secondary-structure shapes together?', diagram:{kind:'helix'},
+            choices:['Hydrogen bonds between nearby parts of the backbone','Peptide bonds between distant amino acids','Static electricity'], correctIndex:0,
+            explanation:'Hydrogen bonds between nearby backbone atoms pull the chain into coils (helices) or pleats (sheets).' })
+    ];
+  }
+},
+{ id:11, chapter:2, icon:'blob', title:'Tertiary Structure',
+  intro:['Zoom out further, and the entire chain — helices, sheets, and all — folds into one unique 3D shape. That\'s the tertiary structure, and it\'s shaped by interactions between the R groups.'],
+  gen(){
+    return [ qStructureID('tertiary'),
+      tfQ({ prompt:'Tertiary structure is shaped mainly by interactions between the R groups of different amino acids.', diagram:{kind:'blob'}, answer:true,
+            explanation:'R groups attract, repel, and bond with each other, pulling the chain into its final 3D shape.' }),
+      mcQ({ prompt:'Amino acids that dislike water (hydrophobic) tend to end up...', diagram:{kind:'blob'},
+            choices:['Tucked inside the folded core, away from water','Always on the very outside surface','Removed from the chain entirely'], correctIndex:0,
+            explanation:'Hydrophobic R groups cluster inside the fold, away from the watery surroundings — much like oil beading away from water.' })
+    ];
+  }
+},
+{ id:12, chapter:2, icon:'quaternary', title:'Quaternary Structure',
+  intro:['Some proteins aren\'t finished at one chain. When two or more separately-folded chains — subunits — come together, that combined structure is the quaternary structure.',
+         'Hemoglobin, which carries oxygen in your blood, is a classic example: four subunits working as one.'],
+  gen(){
+    return [ qStructureID('quaternary'),
+      numQ({ prompt:'Hemoglobin is built from 2 alpha subunits and 2 beta subunits. How many subunits does it have in total?', diagram:{kind:'quaternary'}, answer:4, tolerance:0,
+             explanation:'2 alpha + 2 beta = 4 subunits joined into one hemoglobin molecule.' }),
+      tfQ({ prompt:'Every protein needs more than one subunit in order to function.', diagram:{kind:'quaternary'}, answer:false,
+            explanation:'Many proteins work perfectly well as a single folded chain — quaternary structure is common, but not required.' })
+    ];
+  }
+},
+{ id:13, chapter:2, icon:'thermo', title:'Shape Equals Function',
+  intro:['A protein\'s shape isn\'t just decoration — it\'s what lets the protein do its job, like a key that fits only one lock. Heat, extreme pH, or certain chemicals can unravel that shape. That\'s called denaturation.',
+         'Once denatured, a protein usually stops working — even though its amino acid sequence hasn\'t changed at all.'],
+  gen(){ return [ qDenatureRandom(), qDenatureRandom(), qDenatureRandom(), qDenatureRandom() ]; }
+},
+{ id:14, chapter:3, icon:'lock', title:'Enzymes — Biological Catalysts',
+  intro:['Enzymes are proteins that speed up chemical reactions in your body without being used up themselves. Each enzyme has an active site shaped to fit one specific molecule, called its substrate — like a lock and key.'],
+  gen(){ return [ qEnzymeConcept(), qEnzymeConcept(), qEnzymeConcept() ]; }
+},
+{ id:15, chapter:3, icon:'antibody', title:'Antibodies & Defense',
+  intro:['Antibodies are Y-shaped proteins made by your immune system. The tips of the Y are custom-shaped to grab onto one specific invader — a virus or bacterium — marking it for destruction.'],
+  gen(){
+    const spec = {kind:'antibody'};
+    return [
+      mcQ({ prompt:'What is the main job of an antibody?', diagram:spec,
+            choices:['Recognize and mark a specific invader for the immune system','Carry oxygen through the bloodstream','Speed up digestion in the stomach'], correctIndex:0,
+            explanation:'Antibodies latch onto a specific invader shape, flagging it for the rest of the immune system to destroy.' }),
+      tfQ({ prompt:'The same antibody shape works equally well against any invader.', diagram:spec, answer:false,
+            explanation:'Like an enzyme\'s active site, an antibody\'s tips are shaped for one specific target — not every invader.' }),
+      mcQ({ prompt:'Antibodies belong to which category of the body\'s molecules?', diagram:spec,
+            choices:['Proteins','Carbohydrates','Lipids'], correctIndex:0,
+            explanation:'Antibodies are proteins, built from folded chains of amino acids just like enzymes and hemoglobin.' })
+    ];
+  }
+},
+{ id:16, chapter:3, icon:'rope', title:'Structural Proteins',
+  intro:['Not every protein reacts with something — some just build and support structure. Collagen (three chains twisted into a rope) strengthens skin, bone, and tendons. Keratin makes up hair and nails.'],
+  gen(){
+    return [
+      mcQ({ prompt:'Three protein chains twisted together like a rope describe...', diagram:{kind:'triplehelix'},
+            choices:['Collagen','Hemoglobin','An enzyme\'s active site'], correctIndex:0,
+            explanation:'Collagen\'s signature shape is exactly this: three chains wound into a triple helix rope.' }),
+      mcQ({ prompt:'Which protein makes up most of your hair and nails?', diagram:{kind:'triplehelix'},
+            choices:['Keratin','Insulin','Hemoglobin'], correctIndex:0,
+            explanation:'Keratin is the tough structural protein that builds hair, nails, and the outer layer of skin.' }),
+      tfQ({ prompt:'Structural proteins like collagen mainly provide strength and support, rather than speeding up reactions.', diagram:{kind:'triplehelix'}, answer:true,
+            explanation:'Structural proteins are the body\'s building materials — unlike enzymes, their job isn\'t to catalyze reactions.' })
+    ];
+  }
+},
+{ id:17, chapter:3, icon:'quaternary', title:'Transport & Signal Proteins',
+  intro:['Some proteins move things around the body. Hemoglobin (four subunits, remember?) picks up oxygen in the lungs and drops it off in your tissues. Other proteins, like insulin, act as chemical signals instructing cells what to do.'],
+  gen(){
+    return [
+      mcQ({ prompt:'Hemoglobin\'s main job is to...', diagram:{kind:'quaternary', withO2:true},
+            choices:['Transport oxygen through the bloodstream','Digest food in the stomach','Build the structure of bone'], correctIndex:0,
+            explanation:'Hemoglobin binds oxygen in the lungs and releases it in tissues that need it — a transport protein through and through.' }),
+      mcQ({ prompt:'Insulin is a protein that acts as a...', diagram:null,
+            choices:['Signal telling cells to absorb sugar from the blood','Structural, rope-like fiber','Digestive enzyme'], correctIndex:0,
+            explanation:'Insulin is a signal protein (a hormone): it tells cells around the body to take in glucose from the bloodstream.' }),
+      numQ({ prompt:'Each hemoglobin molecule has 4 subunits, and each subunit can carry 1 oxygen molecule. How many oxygen molecules can one hemoglobin molecule carry at once?', diagram:{kind:'quaternary', withO2:true}, answer:4, tolerance:0,
+             explanation:'4 subunits × 1 O₂ each = 4 oxygen molecules per hemoglobin.' })
+    ];
+  }
+},
+{ id:18, chapter:3, icon:'checkcross', title:'Which Protein Does This?',
+  intro:['You\'ve now met five kinds of proteins at work: enzymes, antibodies, structural proteins, transport proteins, and signal proteins. Given a job, can you name the category?'],
+  gen(){ return sampleN(MATCHUPS, 4).map(qMatchup); }
+},
+{ id:19, chapter:3, icon:'mix', title:'Mixed Challenge',
+  intro:['Everything so far, shuffled together. No hints about which topic comes next — that\'s the point.'],
+  gen(){
+    return [
+      qIdentifyElement(pick(ELEMENTS)),
+      qCountBonds(pick([5,7,10,13])),
+      qStructureID(pick(['primary','helix','sheet','tertiary','quaternary'])),
+      qDenatureRandom(),
+      qMatchup(pick(MATCHUPS))
+    ];
+  }
+},
+{ id:20, chapter:3, icon:'trophy', title:'Protein Master Challenge',
+  intro:['The final stretch — six questions, everything from atoms to antibodies.', 'Good luck, biologist — you\'ve earned this.'],
+  gen(){
+    return [
+      qCountAtoms(pick(MOLECULE_NAMES)),
+      qIdentifyElement(pick(ELEMENTS)),
+      qBondsFromChainLength(pick([17,24,31,60])),
+      qStructureID(pick(['tertiary','quaternary'])),
+      qEnzymeConcept(),
+      qMatchup(pick(MATCHUPS))
+    ];
+  }
+}
+];
+const CHAPTER_NAMES = ['Foundations','The Discovery','Solving Structures','Real-World Expedition'];
+
+/* ============================== SVG RENDERING ============================== */
+function fitPoints(points, vbW, vbH, pad){
+  const xs=points.map(p=>p[0]), ys=points.map(p=>p[1]);
+  const minX=Math.min.apply(null,xs), maxX=Math.max.apply(null,xs);
+  const minY=Math.min.apply(null,ys), maxY=Math.max.apply(null,ys);
+  const w=(maxX-minX)||1, h=(maxY-minY)||1;
+  const scale = Math.min((vbW-2*pad)/w, (vbH-2*pad)/h);
+  const offX = pad + (vbW-2*pad-w*scale)/2;
+  const offY = pad + (vbH-2*pad-h*scale)/2;
+  return points.map(([x,y])=> [ (x-minX)*scale+offX, vbH - ((y-minY)*scale+offY) ]);
+}
+function sub(a,b){ return [a[0]-b[0], a[1]-b[1]]; }
+function add(a,b){ return [a[0]+b[0], a[1]+b[1]]; }
+function scl(a,k){ return [a[0]*k, a[1]*k]; }
+function len(a){ return Math.hypot(a[0],a[1]); }
+function unit(a){ const l=len(a)||1; return [a[0]/l, a[1]/l]; }
+function mkEl(tag, attrs){ const el=document.createElementNS(SVGNS, tag); for(const k in attrs) el.setAttribute(k, attrs[k]); return el; }
+function ptsAttr(pts){ return pts.map(p=>p[0].toFixed(2)+','+p[1].toFixed(2)).join(' '); }
+function textEl(x,y,str,opts){
+  opts = opts||{};
+  const el = mkEl('text', Object.assign({ x:x.toFixed(2), y:y.toFixed(2), 'font-family':'var(--font-mono)', 'font-size':opts.size||14, fill:opts.fill||'var(--ink)', 'text-anchor':opts.anchor||'middle', 'dominant-baseline':opts.baseline||'middle', 'font-weight':opts.weight||600 }, opts.attrs||{}));
+  el.textContent = str;
+  return el;
+}
+function clearSvg(svg){ while(svg.firstChild) svg.removeChild(svg.firstChild); svg.setAttribute('viewBox','0 0 320 320'); }
+
+function blobPoints(cx, cy, baseR, wobble){
+  const n = wobble.length;
+  const pts = [];
+  for(let i=0;i<n;i++){
+    const ang = (2*Math.PI/n)*i - Math.PI/2;
+    const r = baseR*(1+wobble[i]);
+    pts.push([cx+r*Math.cos(ang), cy+r*Math.sin(ang)]);
+  }
+  return pts;
+}
+const BLOB_WOBBLE = [0.05,-0.08,0.1,-0.04,0.12,-0.1,0.06,-0.06,0.1,-0.05];
+
+function drawAtom(svg, spec){
+  clearSvg(svg);
+  const shells = spec.shells;
+  const cx=160, cy=140, nucleusR=22;
+  svg.appendChild(mkEl('circle',{cx,cy,r:nucleusR, fill:'var(--accent-soft)', stroke:'var(--accent)', 'stroke-width':2}));
+  svg.appendChild(textEl(cx,cy,'nucleus',{size:10, fill:'var(--accent)'}));
+  let maxR = nucleusR;
+  shells.forEach((count,i)=>{
+    const r = nucleusR + 32 + i*34;
+    maxR = r;
+    svg.appendChild(mkEl('circle',{cx,cy,r, fill:'none', stroke:'var(--ink-soft)', 'stroke-width':1.2, 'stroke-dasharray':'3 5', opacity:0.55}));
+    for(let k=0;k<count;k++){
+      const ang = (2*Math.PI/count)*k - Math.PI/2 + i*0.3;
+      const ex = cx+r*Math.cos(ang), ey=cy+r*Math.sin(ang);
+      svg.appendChild(mkEl('circle',{cx:ex,cy:ey,r:5.5, fill:'var(--pine)'}));
+    }
+  });
+  const totalElectrons = shells.reduce((a,b)=>a+b,0);
+  svg.appendChild(textEl(cx, Math.min(cy+maxR+28, 300), `${totalElectrons} ${plural(totalElectrons,'proton')} · ${totalElectrons} ${plural(totalElectrons,'electron')}`, {size:12.5, fill:'var(--ink-soft)'}));
+}
+
+function drawMolecule(svg, spec){
+  clearSvg(svg);
+  const m = MOLECULES[spec.name];
+  const svgPts = fitPoints(m.atoms.map(a=>a.p), 320, 300, 62);
+  const colorFor = {C:'var(--ink)', O:'var(--accent)', H:'var(--pine)', N:'var(--gold)'};
+  m.bonds.forEach(([i,j])=>{
+    svg.appendChild(mkEl('line',{x1:svgPts[i][0],y1:svgPts[i][1],x2:svgPts[j][0],y2:svgPts[j][1], stroke:'var(--ink-soft)', 'stroke-width':3}));
+  });
+  m.atoms.forEach((a,i)=>{
+    svg.appendChild(mkEl('circle',{cx:svgPts[i][0],cy:svgPts[i][1], r:21, fill:'var(--paper-raised)', stroke:colorFor[a.s]||'var(--ink)', 'stroke-width':2.4}));
+    svg.appendChild(textEl(svgPts[i][0], svgPts[i][1], a.s, {size:15, fill:colorFor[a.s]||'var(--ink)', weight:700}));
+  });
+  svg.appendChild(textEl(160, 296, m.formula, {size:13, fill:'var(--ink-soft)'}));
+}
+
+function drawAminoAcid(svg){
+  clearSvg(svg);
+  const C=[0,0], NH2=[-1.5,1.25], COOH=[1.5,1.25], H=[-1.0,-1.3], R=[1.0,-1.6];
+  const [sC,sNH2,sCOOH,sH,sR] = fitPoints([C,NH2,COOH,H,R], 320,320,62);
+  [sNH2,sCOOH,sH,sR].forEach(p=>{
+    svg.appendChild(mkEl('line',{x1:sC[0],y1:sC[1],x2:p[0],y2:p[1], stroke:'var(--ink-soft)', 'stroke-width':2.4}));
+  });
+  svg.appendChild(mkEl('circle',{cx:sC[0],cy:sC[1],r:9, fill:'var(--ink)'}));
+  svg.appendChild(textEl(sC[0],sC[1]-18,'Cα',{size:12,fill:'var(--ink-soft)'}));
+  svg.appendChild(mkEl('circle',{cx:sR[0],cy:sR[1],r:24, fill:'none', stroke:'var(--accent)', 'stroke-width':2, 'stroke-dasharray':'4 4'}));
+  svg.appendChild(textEl(sR[0],sR[1],'R',{size:16, fill:'var(--accent)', weight:700}));
+  svg.appendChild(textEl(sNH2[0],sNH2[1],'–NH₂',{size:15, fill:'var(--pine)', weight:700}));
+  svg.appendChild(textEl(sCOOH[0],sCOOH[1],'–COOH',{size:15, fill:'var(--gold)', weight:700}));
+  svg.appendChild(textEl(sH[0],sH[1],'H',{size:15, fill:'var(--ink)', weight:700}));
+}
+
+function drawPeptideBond(svg){
+  clearSvg(svg);
+  const p1=[-1.6,0], p2=[1.6,0], pw=[0,1.5];
+  const [sP1,sP2,sW] = fitPoints([p1,p2,pw], 320,320,56);
+  svg.appendChild(mkEl('line',{x1:sP1[0],y1:sP1[1],x2:sP2[0],y2:sP2[1], stroke:'var(--accent)', 'stroke-width':4}));
+  const mid = scl(add(sP1,sP2),0.5);
+  svg.appendChild(mkEl('line',{x1:mid[0],y1:mid[1],x2:sW[0],y2:sW[1], stroke:'var(--ink-faint)', 'stroke-width':1.6, 'stroke-dasharray':'3 4'}));
+  const dir = unit(sub(sW,mid));
+  const tip = sW;
+  const left = add(tip, scl([-dir[1]*0.5-dir[0], dir[0]*0.5-dir[1]], 5));
+  svg.appendChild(mkEl('circle',{cx:sP1[0],cy:sP1[1],r:36, fill:'var(--pine-soft)', stroke:'var(--pine)', 'stroke-width':2}));
+  svg.appendChild(textEl(sP1[0],sP1[1],'AA₁',{size:15, fill:'var(--pine)', weight:700}));
+  svg.appendChild(mkEl('circle',{cx:sP2[0],cy:sP2[1],r:36, fill:'var(--gold-soft)', stroke:'var(--gold)', 'stroke-width':2}));
+  svg.appendChild(textEl(sP2[0],sP2[1],'AA₂',{size:15, fill:'var(--gold)', weight:700}));
+  svg.appendChild(mkEl('circle',{cx:sW[0],cy:sW[1],r:20, fill:'var(--paper-raised)', stroke:'var(--ink-faint)', 'stroke-width':1.6, 'stroke-dasharray':'3 3'}));
+  svg.appendChild(textEl(sW[0],sW[1],'H₂O',{size:12.5, fill:'var(--ink-soft)'}));
+  svg.appendChild(textEl(mid[0], mid[1]-16, 'peptide bond', {size:11, fill:'var(--accent)'}));
+}
+
+function drawChain(svg, spec){
+  clearSvg(svg);
+  const n = spec.n;
+  const mathPts = [];
+  for(let i=0;i<n;i++) mathPts.push([i - (n-1)/2, 0]);
+  const svgPts = fitPoints(mathPts, 320, 200, 40);
+  const cy = svgPts[0][1] + 60;
+  svgPts.forEach(p=> p[1] = cy);
+  for(let i=0;i<n-1;i++){
+    svg.appendChild(mkEl('line',{x1:svgPts[i][0],y1:svgPts[i][1],x2:svgPts[i+1][0],y2:svgPts[i+1][1], stroke:'var(--ink-soft)', 'stroke-width':2.4}));
+  }
+  svgPts.forEach((p,i)=>{
+    svg.appendChild(mkEl('circle',{cx:p[0],cy:p[1],r:13, fill:'var(--accent-soft)', stroke:'var(--accent)', 'stroke-width':2}));
+  });
+  svg.appendChild(textEl(160, cy+42, `${n} amino acids`, {size:13, fill:'var(--ink-soft)'}));
+}
+
+function drawHelix(svg){
+  clearSvg(svg);
+  const pts1=[], pts2=[];
+  const turns=3.2, samples=80, width=220, amp=34;
+  for(let i=0;i<=samples;i++){
+    const t = i/samples;
+    const x = t*width;
+    const y = Math.sin(t*turns*2*Math.PI)*amp;
+    pts1.push([x,y]);
+  }
+  const svgPts = fitPoints(pts1, 320, 260, 46);
+  for(let i=0;i<svgPts.length-1;i++){
+    svg.appendChild(mkEl('line',{x1:svgPts[i][0],y1:svgPts[i][1],x2:svgPts[i+1][0],y2:svgPts[i+1][1], stroke:'var(--pine)', 'stroke-width':4, 'stroke-linecap':'round'}));
+  }
+  for(let i=8;i<svgPts.length-8;i+=8){
+    svg.appendChild(mkEl('line',{x1:svgPts[i][0],y1:svgPts[i][1]-14,x2:svgPts[i][0],y2:svgPts[i][1]+14, stroke:'var(--ink-faint)', 'stroke-width':1.2, 'stroke-dasharray':'2 3'}));
+  }
+  svg.appendChild(textEl(160, 280, 'alpha helix', {size:13, fill:'var(--ink-soft)'}));
+}
+
+function drawSheet(svg){
+  clearSvg(svg);
+  const n=4, width=220, amp=44;
+  const pts=[];
+  for(let i=0;i<=n*2;i++){
+    const x = (i/(n*2))*width;
+    const y = (i%2===0)? -amp/2 : amp/2;
+    pts.push([x,y]);
+  }
+  const svgPts = fitPoints(pts, 320,260,46);
+  for(let i=0;i<svgPts.length-1;i++){
+    svg.appendChild(mkEl('line',{x1:svgPts[i][0],y1:svgPts[i][1],x2:svgPts[i+1][0],y2:svgPts[i+1][1], stroke:'var(--gold)', 'stroke-width':5, 'stroke-linecap':'round', 'stroke-linejoin':'round'}));
+  }
+  const last = svgPts[svgPts.length-1], prev = svgPts[svgPts.length-2];
+  const dir = unit(sub(last,prev)); const perp=[-dir[1],dir[0]];
+  const tip = add(last, scl(dir,16));
+  const b1 = add(add(last, scl(perp,9)), scl(dir,-4));
+  const b2 = add(add(last, scl(perp,-9)), scl(dir,-4));
+  svg.appendChild(mkEl('polygon',{points:ptsAttr([tip,b1,b2]), fill:'var(--gold)'}));
+  svg.appendChild(textEl(160, 280, 'beta sheet', {size:13, fill:'var(--ink-soft)'}));
+}
+
+function drawBlob(svg){
+  clearSvg(svg);
+  const pts = blobPoints(0,0,90,BLOB_WOBBLE);
+  const svgPts = fitPoints(pts, 320,320,44);
+  svg.appendChild(mkEl('polygon',{points:ptsAttr(svgPts), fill:'var(--accent-soft)', stroke:'var(--accent)', 'stroke-width':2.4}));
+  function centroid(p){ const s=p.reduce((a,b)=>[a[0]+b[0],a[1]+b[1]],[0,0]); return [s[0]/p.length, s[1]/p.length]; }
+  const c = centroid(svgPts);
+  svg.appendChild(mkEl('circle',{cx:c[0],cy:c[1],r:16, fill:'var(--ink)', opacity:0.85}));
+  svg.appendChild(textEl(c[0],c[1],'core',{size:10, fill:'var(--paper)'}));
+}
+
+function drawQuaternary(svg, spec){
+  clearSvg(svg);
+  const centers = [[-1,1],[1,1],[-1,-1],[1,-1]];
+  const colors = ['var(--pine)','var(--pine)','var(--gold)','var(--gold)'];
+  const soft = ['var(--pine-soft)','var(--pine-soft)','var(--gold-soft)','var(--gold-soft)'];
+  const allPts = [];
+  const subBlobs = centers.map(c=> blobPoints(c[0]*95, c[1]*95, 62, BLOB_WOBBLE));
+  subBlobs.forEach(b=> allPts.push(...b));
+  const svgAll = fitPoints(allPts, 320,320,40);
+  const per = BLOB_WOBBLE.length;
+  for(let s=0;s<4;s++){
+    const poly = svgAll.slice(s*per,(s+1)*per);
+    svg.appendChild(mkEl('polygon',{points:ptsAttr(poly), fill:soft[s], stroke:colors[s], 'stroke-width':2.2}));
+    if (spec && spec.withO2){
+      function centroid(p){ const su=p.reduce((a,b)=>[a[0]+b[0],a[1]+b[1]],[0,0]); return [su[0]/p.length, su[1]/p.length]; }
+      const c = centroid(poly);
+      svg.appendChild(mkEl('circle',{cx:c[0],cy:c[1]-4,r:9, fill:'var(--paper-raised)', stroke:'var(--accent)', 'stroke-width':1.8}));
+      svg.appendChild(textEl(c[0],c[1]-4,'O₂',{size:9, fill:'var(--accent)', weight:700}));
+    }
+  }
+}
+
+function drawDenature(svg){
+  clearSvg(svg);
+  const leftPts = blobPoints(-70,0,52,BLOB_WOBBLE);
+  const zn=7; const zigMath=[];
+  for(let i=0;i<=zn;i++){ zigMath.push([70 + (i/zn)*90 - 45, (i%2===0? -30:30)]); }
+  const svgAll = fitPoints(leftPts.concat(zigMath), 320,260,50);
+  const blobOnly = svgAll.slice(0, leftPts.length);
+  const svgZig = svgAll.slice(leftPts.length);
+  svg.appendChild(mkEl('polygon',{points:ptsAttr(blobOnly), fill:'var(--pine-soft)', stroke:'var(--pine)', 'stroke-width':2.2}));
+  for(let i=0;i<svgZig.length-1;i++){
+    svg.appendChild(mkEl('line',{x1:svgZig[i][0],y1:svgZig[i][1],x2:svgZig[i+1][0],y2:svgZig[i+1][1], stroke:'var(--danger)', 'stroke-width':2.6, 'stroke-linecap':'round'}));
+  }
+  function avgX(pts){ return pts.reduce((a,p)=>a+p[0],0)/pts.length; }
+  const blobCenterX = avgX(blobOnly), zigCenterX = avgX(svgZig);
+  const midX = (blobCenterX+zigCenterX)/2;
+  svg.appendChild(textEl(midX, 30, 'heat / pH', {size:11, fill:'var(--ink-faint)'}));
+  svg.appendChild(mkEl('line',{x1:midX-22,y1:150,x2:midX+22,y2:150, stroke:'var(--ink-faint)', 'stroke-width':1.6}));
+  const arrowTip=[midX+22,150];
+  svg.appendChild(mkEl('polygon',{points:ptsAttr([[arrowTip[0]-6,arrowTip[1]-5],[arrowTip[0]-6,arrowTip[1]+5],[arrowTip[0]+3,arrowTip[1]]]), fill:'var(--ink-faint)'}));
+  svg.appendChild(textEl(blobCenterX, 230, 'folded (working)', {size:11, fill:'var(--pine)'}));
+  svg.appendChild(textEl(zigCenterX, 230, 'denatured', {size:11, fill:'var(--danger)'}));
+}
+
+function drawEnzyme(svg){
+  clearSvg(svg);
+  const wob = BLOB_WOBBLE.slice();
+  const n = wob.length;
+  const pts = [];
+  for(let i=0;i<n;i++){
+    const ang = (2*Math.PI/n)*i - Math.PI/2;
+    let r = 88*(1+wob[i]);
+    if (i===2 || i===3) r *= 0.45;
+    pts.push([Math.cos(ang)*r, Math.sin(ang)*r]);
+  }
+  const svgPts = fitPoints(pts, 320,320,50);
+  svg.appendChild(mkEl('polygon',{points:ptsAttr(svgPts), fill:'var(--pine-soft)', stroke:'var(--pine)', 'stroke-width':2.4}));
+  function centroid(p){ const s=p.reduce((a,b)=>[a[0]+b[0],a[1]+b[1]],[0,0]); return [s[0]/p.length, s[1]/p.length]; }
+  const notch = scl(add(svgPts[2],svgPts[3]),0.5);
+  const c = centroid(svgPts);
+  const inward = unit(sub(c,notch));
+  const subCenter = add(notch, scl(inward, 26));
+  svg.appendChild(mkEl('rect',{x:subCenter[0]-16,y:subCenter[1]-16,width:32,height:32, fill:'var(--accent-soft)', stroke:'var(--accent)', 'stroke-width':2, transform:`rotate(20 ${subCenter[0].toFixed(1)} ${subCenter[1].toFixed(1)})`}));
+  svg.appendChild(textEl(c[0], c[1]+70, 'active site', {size:11, fill:'var(--pine)'}));
+  svg.appendChild(textEl(subCenter[0], subCenter[1]-32, 'substrate', {size:11, fill:'var(--accent)'}));
+}
+
+function drawAntibody(svg){
+  clearSvg(svg);
+  const stem=[0,-1.4], center=[0,0], armL=[-1.1,1.2], armR=[1.1,1.2];
+  const [sStem,sCenter,sArmL,sArmR] = fitPoints([stem,center,armL,armR], 320,320,60);
+  svg.appendChild(mkEl('line',{x1:sCenter[0],y1:sCenter[1],x2:sStem[0],y2:sStem[1], stroke:'var(--ink)', 'stroke-width':5, 'stroke-linecap':'round'}));
+  svg.appendChild(mkEl('line',{x1:sCenter[0],y1:sCenter[1],x2:sArmL[0],y2:sArmL[1], stroke:'var(--ink)', 'stroke-width':5, 'stroke-linecap':'round'}));
+  svg.appendChild(mkEl('line',{x1:sCenter[0],y1:sCenter[1],x2:sArmR[0],y2:sArmR[1], stroke:'var(--ink)', 'stroke-width':5, 'stroke-linecap':'round'}));
+  svg.appendChild(mkEl('circle',{cx:sArmL[0],cy:sArmL[1],r:14, fill:'var(--accent-soft)', stroke:'var(--accent)', 'stroke-width':2.4}));
+  svg.appendChild(mkEl('circle',{cx:sArmR[0],cy:sArmR[1],r:14, fill:'var(--accent-soft)', stroke:'var(--accent)', 'stroke-width':2.4}));
+  svg.appendChild(textEl(sArmL[0],sArmL[1]-24,'binding site',{size:10.5, fill:'var(--accent)'}));
+}
+
+function drawTriplehelix(svg){
+  clearSvg(svg);
+  const strands = [-1,0,1];
+  const samples=48, turns=2.4, width=220, amp=26;
+  const allPts=[];
+  const perStrand = strands.map(phaseIdx=>{
+    const pts=[];
+    for(let i=0;i<=samples;i++){
+      const t=i/samples;
+      const x=t*width;
+      const y=Math.sin(t*turns*2*Math.PI + phaseIdx*(2*Math.PI/3))*amp + phaseIdx*6;
+      pts.push([x,y]);
+    }
+    allPts.push(...pts);
+    return pts;
+  });
+  const svgAll = fitPoints(allPts, 320,300,44);
+  const per = samples+1;
+  const colors = ['var(--pine)','var(--gold)','var(--accent)'];
+  for(let s=0;s<3;s++){
+    const poly = svgAll.slice(s*per,(s+1)*per);
+    for(let i=0;i<poly.length-1;i++){
+      svg.appendChild(mkEl('line',{x1:poly[i][0],y1:poly[i][1],x2:poly[i+1][0],y2:poly[i+1][1], stroke:colors[s], 'stroke-width':3, 'stroke-linecap':'round'}));
+    }
+  }
+  svg.appendChild(textEl(160, 288, 'triple helix (collagen)', {size:12.5, fill:'var(--ink-soft)'}));
+}
+
+function renderDiagram(svg, spec){
+  if (!spec){ svg.parentElement.style.display='none'; return; }
+  svg.parentElement.style.display='';
+  switch(spec.kind){
+    case 'atom': return drawAtom(svg, spec);
+    case 'molecule': return drawMolecule(svg, spec);
+    case 'aminoacid': return drawAminoAcid(svg);
+    case 'peptidebond': return drawPeptideBond(svg);
+    case 'chain': return drawChain(svg, spec);
+    case 'helix': return drawHelix(svg);
+    case 'sheet': return drawSheet(svg);
+    case 'blob': return drawBlob(svg);
+    case 'quaternary': return drawQuaternary(svg, spec);
+    case 'denature': return drawDenature(svg);
+    case 'enzyme': return drawEnzyme(svg);
+    case 'antibody': return drawAntibody(svg);
+    case 'triplehelix': return drawTriplehelix(svg);
+    default: return;
+  }
+}
+
+/* ============================== STATE / PERSISTENCE ============================== */
+const STORAGE_KEY = 'proteinTrailProgress_v1';
+let memoryState = null;
+function loadState(){
+  try{
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) return JSON.parse(raw);
+  } catch(e){}
+  return memoryState || { levels:{} };
+}
+function saveState(state){
+  memoryState = state;
+  try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch(e){}
+}
+let STATE = loadState();
+
+function totalScore(){
+  let sum=0;
+  for(const k in STATE.levels){ sum += (STATE.levels[k].bestPoints||0); }
+  return sum;
+}
+function isUnlocked(levelId){
+  if (levelId===1) return true;
+  const prev = STATE.levels[levelId-1];
+  return !!(prev && prev.completed);
+}
+function levelState(id){ return STATE.levels[id] || {completed:false, stars:0, bestPoints:0}; }
+
+/* ============================== APP FLOW ============================== */
+const $ = (sel)=>document.querySelector(sel);
+const screens = ['title','map','intro','quiz','complete','final'];
+function showScreen(name){
+  screens.forEach(s=>{ $('#screen-'+s).hidden = (s!==name); });
+  $('#topbar').hidden = (name==='title');
+  window.scrollTo(0,0);
+}
+
+let currentLevelId = null;
+let currentQuestions = [];
+let qIndex = 0;
+let qAttempts = 0;
+let levelPointsEarned = 0;
+let qResults = [];
+
+function init(){
+  $('#title-icon').innerHTML = ic('atom', 64);
+  $('#btn-map-home').innerHTML = ic('map', 18);
+  updateScoreChip();
+  $('#btn-start').textContent = totalScore()>0 || Object.keys(STATE.levels).length ? 'Continue the trail' : 'Begin the trail';
+  $('#btn-reset').hidden = Object.keys(STATE.levels).length===0;
+
+  $('#btn-start').addEventListener('click', renderMap);
+  $('#btn-reset').addEventListener('click', ()=>{
+    if (confirm('Reset all trail progress? This cannot be undone.')){
+      STATE = { levels:{} }; saveState(STATE); updateScoreChip(); init();
+    }
+  });
+  $('#btn-map-home').addEventListener('click', renderMap);
+  $('#btn-intro-back').addEventListener('click', renderMap);
+  $('#btn-quiz-back').addEventListener('click', ()=>{
+    if (confirm('Leave this level? Your progress on this attempt will be lost.')){ renderMap(); }
+  });
+  $('#btn-intro-go').addEventListener('click', startQuiz);
+  $('#btn-complete-map').addEventListener('click', renderMap);
+  $('#btn-complete-retry').addEventListener('click', ()=> openLevel(currentLevelId));
+  $('#btn-complete-next').addEventListener('click', ()=>{
+    const next = currentLevelId+1;
+    if (next<=20) openLevel(next); else { renderFinal(); showScreen('final'); }
+  });
+  $('#btn-final-map').addEventListener('click', renderMap);
+
+  showScreen('title');
+}
+function updateScoreChip(){ $('#score-value').textContent = totalScore(); }
+
+function renderMap(){
+  updateScoreChip();
+  const container = $('#trail-container');
+  container.innerHTML = '';
+  let doneCount = 0;
+  let lastChapter = -1;
+  LEVELS.forEach((lvl, idx)=>{
+    if (lvl.chapter !== lastChapter){
+      lastChapter = lvl.chapter;
+      const label = document.createElement('div');
+      label.className = 'chapter-label';
+      label.innerHTML = `<span class="num mono">CH.${lvl.chapter+1}</span><h3>${CHAPTER_NAMES[lvl.chapter]}</h3>`;
+      container.appendChild(label);
+    }
+    const st = levelState(lvl.id);
+    if (st.completed) doneCount++;
+    const unlocked = isUnlocked(lvl.id);
+    const row = document.createElement('div');
+    row.className = 'trail-row' + (idx%2===1?' right':'') + (!unlocked?' locked':'');
+    const btn = document.createElement('button');
+    btn.className = 'node-btn ' + (st.completed?'done':(unlocked?'unlocked':'locked'));
+    btn.setAttribute('aria-label', `Level ${lvl.id}: ${lvl.title}`);
+    btn.innerHTML = ic(lvl.icon, 24) + `<span class="lvl-num">${lvl.id}</span>` + (st.completed ? `<span class="stars">${starSvg(st.stars>=1,10)}${starSvg(st.stars>=2,10)}${starSvg(st.stars>=3,10)}</span>` : '');
+    if (unlocked){ btn.addEventListener('click', ()=> openIntro(lvl.id)); } else { btn.disabled = true; }
+    const title = document.createElement('div');
+    title.className = 'trail-title';
+    title.textContent = `${lvl.id}. ${lvl.title}`;
+    row.appendChild(btn);
+    row.appendChild(title);
+    container.appendChild(row);
+  });
+  $('#map-progress').textContent = `${doneCount} / 20 complete`;
+  showScreen('map');
+  drawTrailConnector(container);
+}
+
+function drawTrailConnector(container){
+  const old = container.querySelector('.trail-connector-svg');
+  if (old) old.remove();
+  const nodeEls = Array.from(container.querySelectorAll('.node-btn'));
+  if (nodeEls.length < 2) return;
+  const rect = container.getBoundingClientRect();
+  if (rect.width===0 || rect.height===0) return;
+  const svg = document.createElementNS(SVGNS,'svg');
+  svg.setAttribute('class','trail-connector-svg');
+  svg.setAttribute('width', String(rect.width));
+  svg.setAttribute('height', String(rect.height));
+  svg.style.position='absolute'; svg.style.left='0'; svg.style.top='0'; svg.style.zIndex='0'; svg.style.pointerEvents='none';
+  let d = '';
+  nodeEls.forEach((el,i)=>{
+    const r = el.getBoundingClientRect();
+    const cx = r.left - rect.left + r.width/2;
+    const cy = r.top - rect.top + r.height/2;
+    d += (i===0?'M':'L') + cx.toFixed(1) + ' ' + cy.toFixed(1) + ' ';
+  });
+  const path = mkEl('path', {d:d.trim(), fill:'none', stroke:'var(--grid-line)', 'stroke-width':3, 'stroke-dasharray':'1 11', 'stroke-linecap':'round'});
+  svg.appendChild(path);
+  container.style.position='relative';
+  container.insertBefore(svg, container.firstChild);
+}
+
+function openIntro(levelId){
+  currentLevelId = levelId;
+  const lvl = LEVELS.find(l=>l.id===levelId);
+  $('#intro-tag').textContent = `LEVEL ${lvl.id} · CHAPTER ${lvl.chapter+1}: ${CHAPTER_NAMES[lvl.chapter].toUpperCase()}`;
+  $('#intro-icon').innerHTML = ic(lvl.icon, 26);
+  $('#intro-title').textContent = lvl.title;
+  $('#intro-text').innerHTML = lvl.intro.map(p=>`<p>${p}</p>`).join('');
+  $('#intro-fig').textContent = `FIG. ${lvl.id}.0`;
+  const introSvg = $('#intro-svg');
+  const sampleQs = lvl.gen();
+  const firstWithDiagram = sampleQs.find(q=>q.diagram);
+  renderDiagram(introSvg, firstWithDiagram ? firstWithDiagram.diagram : null);
+  showScreen('intro');
+}
+
+function startQuiz(){
+  const lvl = LEVELS.find(l=>l.id===currentLevelId);
+  currentQuestions = lvl.gen();
+  qIndex = 0; levelPointsEarned = 0; qResults = new Array(currentQuestions.length).fill(null);
+  showScreen('quiz');
+  renderQuestion();
+}
+
+function renderDots(){
+  const wrap = $('#quiz-dots'); wrap.innerHTML='';
+  currentQuestions.forEach((q,i)=>{
+    const d = document.createElement('span');
+    d.className = 'dot' + (i===qIndex?' current':'') + (qResults[i]==='ok'?' done-ok':'') + (qResults[i]==='bad'?' done-bad':'');
+    wrap.appendChild(d);
+  });
+}
+
+function renderQuestion(){
+  const lvl = LEVELS.find(l=>l.id===currentLevelId);
+  const q = currentQuestions[qIndex];
+  qAttempts = 0;
+  $('#quiz-tag').textContent = `LEVEL ${lvl.id} · QUESTION ${qIndex+1} OF ${currentQuestions.length}`;
+  renderDots();
+  $('#q-prompt').textContent = q.prompt;
+  $('#q-fig').textContent = `FIG. ${lvl.id}.${qIndex+1}`;
+  renderDiagram($('#q-svg'), q.diagram);
+  $('#q-feedback').className = 'feedback';
+  $('#q-feedback').innerHTML = '';
+  $('#btn-next').hidden = true;
+
+  const area = $('#q-answer-area');
+  area.innerHTML = '';
+  if (q.type==='mc'){
+    const wrap = document.createElement('div'); wrap.className='choices';
+    q.choices.forEach((choiceText, idx)=>{
+      const b = document.createElement('button');
+      b.className = 'choice-btn'; b.textContent = choiceText;
+      b.addEventListener('click', ()=> answerMC(idx, q, wrap));
+      wrap.appendChild(b);
+    });
+    area.appendChild(wrap);
+  } else if (q.type==='tf'){
+    const wrap = document.createElement('div'); wrap.className='tf-row';
+    [['Yes / True',true],['No / False',false]].forEach(([label,val])=>{
+      const b = document.createElement('button');
+      b.className='choice-btn'; b.textContent=label;
+      b.addEventListener('click', ()=> answerTF(val, q, wrap));
+      wrap.appendChild(b);
+    });
+    area.appendChild(wrap);
+  } else if (q.type==='num'){
+    const wrap = document.createElement('div'); wrap.className='num-row';
+    const input = document.createElement('input');
+    input.type='text'; input.inputMode='decimal'; input.className='num-input'; input.placeholder='?';
+    input.id='num-input-live';
+    const unit = document.createElement('span'); unit.className='unit-label'; unit.textContent=q.unit||'';
+    wrap.appendChild(input); if(q.unit) wrap.appendChild(unit);
+    area.appendChild(wrap);
+    const subRow = document.createElement('div'); subRow.className='submit-row';
+    const subBtn = document.createElement('button'); subBtn.className='btn btn-accent'; subBtn.textContent='Check answer';
+    subBtn.addEventListener('click', ()=> answerNum(input, q, subBtn));
+    input.addEventListener('keydown', (e)=>{ if(e.key==='Enter'){ e.preventDefault(); answerNum(input,q,subBtn); } });
+    subRow.appendChild(subBtn);
+    area.appendChild(subRow);
+    setTimeout(()=>input.focus(), 50);
+  }
+}
+
+function lockChoices(wrap){
+  wrap.querySelectorAll('button').forEach(b=> b.disabled = true);
+}
+function showFeedback(ok, explanation){
+  const fb = $('#q-feedback');
+  fb.className = 'feedback show ' + (ok?'ok':'bad');
+  fb.innerHTML = `<strong>${ok? (qAttempts<=1?'Correct!':'Correct — nice recovery.') : 'Not quite.'}</strong>${explanation}`;
+  $('#btn-next').hidden = false;
+  $('#btn-next').textContent = (qIndex===currentQuestions.length-1) ? 'See results →' : 'Next →';
+  $('#btn-next').onclick = advanceQuestion;
+}
+function awardAndRecord(correctNow){
+  qAttempts++;
+  if (correctNow){
+    const pts = qAttempts===1?10:(qAttempts===2?5:2);
+    levelPointsEarned += pts;
+    qResults[qIndex]='ok';
+    return true;
+  }
+  if (qAttempts>=2){
+    levelPointsEarned += 2;
+    qResults[qIndex]='bad';
+    return true;
+  }
+  return false;
+}
+function answerMC(idx,q,wrap){
+  const btns = wrap.querySelectorAll('button');
+  const correct = idx===q.correctIndex;
+  const done = awardAndRecord(correct);
+  btns[idx].classList.add(correct?'correct':'incorrect');
+  if (!done){
+    btns[idx].disabled = true;
+    return;
+  }
+  if(!correct) btns[q.correctIndex].classList.add('correct');
+  lockChoices(wrap);
+  renderDots();
+  showFeedback(correct, q.explanation);
+}
+function answerTF(val,q,wrap){
+  const btns = wrap.querySelectorAll('button');
+  const idx = val? 0:1;
+  const correct = val===q.answer;
+  const done = awardAndRecord(correct);
+  btns[idx].classList.add(correct?'correct':'incorrect');
+  if (!done){ btns[idx].disabled = true; return; }
+  if(!correct) btns[q.answer?0:1].classList.add('correct');
+  lockChoices(wrap);
+  renderDots();
+  showFeedback(correct, q.explanation);
+}
+function answerNum(input,q,subBtn){
+  const val = parseFloat(input.value);
+  if (Number.isNaN(val)){ input.focus(); return; }
+  const correct = Math.abs(val - q.answer) <= (q.tolerance||0.01)+1e-9;
+  const done = awardAndRecord(correct);
+  input.classList.add(correct?'correct':'incorrect');
+  if (!done){
+    input.classList.remove('correct','incorrect');
+    input.classList.add('incorrect');
+    setTimeout(()=>{ input.classList.remove('incorrect'); }, 500);
+    return;
+  }
+  input.disabled = true; subBtn.disabled = true;
+  if (!correct) input.value = fmt(q.answer);
+  renderDots();
+  showFeedback(correct, q.explanation);
+}
+function advanceQuestion(){
+  if (qIndex < currentQuestions.length-1){ qIndex++; renderQuestion(); }
+  else { finishLevel(); }
+}
+
+function finishLevel(){
+  const n = currentQuestions.length;
+  const maxPts = n*10;
+  const pct = levelPointsEarned/maxPts;
+  const stars = pct>=0.9?3:(pct>=0.55?2:1);
+  const prev = STATE.levels[currentLevelId] || {bestPoints:0, stars:0};
+  STATE.levels[currentLevelId] = {
+    completed:true,
+    stars: Math.max(stars, prev.stars||0),
+    bestPoints: Math.max(levelPointsEarned, prev.bestPoints||0)
+  };
+  saveState(STATE);
+  updateScoreChip();
+  renderComplete(stars, levelPointsEarned);
+}
+function renderComplete(stars, pts){
+  $('#complete-stars').innerHTML = [1,2,3].map(i=>starSvg(i<=stars,30)).join('');
+  $('#complete-title').textContent = stars===3?'Level Complete — Perfect!':'Level Complete!';
+  $('#complete-points').textContent = pts;
+  $('#complete-total').textContent = totalScore();
+  const isLast = currentLevelId===20;
+  $('#btn-complete-next').hidden = false;
+  $('#btn-complete-next').textContent = isLast ? 'See your certificate →' : 'Next level →';
+  showScreen('complete');
+}
+function openLevel(id){ openIntro(id); }
+
+function renderFinal(){
+  $('#final-rosette').innerHTML = rosetteSvg();
+  $('#final-score').textContent = totalScore();
+  const list = $('#final-list'); list.innerHTML='';
+  LEVELS.forEach(lvl=>{
+    const st = levelState(lvl.id);
+    const row = document.createElement('div');
+    row.innerHTML = `<span>${lvl.id}. ${lvl.title}</span><span class="mono">${st.stars||0}★ · ${st.bestPoints||0}pt</span>`;
+    list.appendChild(row);
+  });
+}
+
+if (document.readyState==='loading'){ document.addEventListener('DOMContentLoaded', init); } else { init(); }
+
+})();
+</script>
+
+</body>
+</html>

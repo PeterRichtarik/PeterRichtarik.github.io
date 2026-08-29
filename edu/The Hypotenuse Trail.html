@@ -1,0 +1,1232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Hypotenuse Trail</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+  :root{
+    --paper:#eef2f6;
+    --paper-raised:#ffffff;
+    --grid-line:#c9d7e6;
+    --grid-line-soft:#e2eaf2;
+    --ink:#1b2838;
+    --ink-soft:#56687c;
+    --ink-faint:#93a3b4;
+    --accent:#c65b2e;
+    --accent-soft:#f3ddcf;
+    --pine:#2f7a63;
+    --pine-soft:#d8ebe4;
+    --gold:#ad7a1f;
+    --gold-soft:#f2e2bd;
+    --danger:#b1483f;
+    --danger-soft:#f4dcd9;
+    --locked:#c4cdd6;
+    --shadow:rgba(27,40,56,0.10);
+    --font-display:'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;
+    --font-body:'Public Sans', system-ui, -apple-system, sans-serif;
+    --font-mono:'IBM Plex Mono', 'SFMono-Regular', Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#121822;
+      --paper-raised:#1a2230;
+      --grid-line:#2b3a4b;
+      --grid-line-soft:#1c2634;
+      --ink:#eaf0f6;
+      --ink-soft:#a9b8c8;
+      --ink-faint:#647588;
+      --accent:#e58a54;
+      --accent-soft:#402a1c;
+      --pine:#5cb69a;
+      --pine-soft:#1d332c;
+      --gold:#e0b04e;
+      --gold-soft:#3a2f18;
+      --danger:#e0897d;
+      --danger-soft:#3a2320;
+      --locked:#37414d;
+      --shadow:rgba(0,0,0,0.4);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#121822;
+    --paper-raised:#1a2230;
+    --grid-line:#2b3a4b;
+    --grid-line-soft:#1c2634;
+    --ink:#eaf0f6;
+    --ink-soft:#a9b8c8;
+    --ink-faint:#647588;
+    --accent:#e58a54;
+    --accent-soft:#402a1c;
+    --pine:#5cb69a;
+    --pine-soft:#1d332c;
+    --gold:#e0b04e;
+    --gold-soft:#3a2f18;
+    --danger:#e0897d;
+    --danger-soft:#3a2320;
+    --locked:#37414d;
+    --shadow:rgba(0,0,0,0.4);
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:
+      linear-gradient(var(--paper),var(--paper)),
+      repeating-linear-gradient(0deg, transparent, transparent 27px, var(--grid-line-soft) 27px, var(--grid-line-soft) 28px),
+      repeating-linear-gradient(90deg, transparent, transparent 27px, var(--grid-line-soft) 27px, var(--grid-line-soft) 28px);
+    color:var(--ink);
+    font-family:var(--font-body);
+    line-height:1.5;
+  }
+  h1,h2,h3,h4{font-family:var(--font-display); text-wrap:balance; margin:0; letter-spacing:-0.01em;}
+  .mono{font-family:var(--font-mono);}
+  button{font-family:inherit; cursor:pointer;}
+  button:focus-visible, a:focus-visible, input:focus-visible{outline:2px solid var(--accent); outline-offset:2px;}
+  ::selection{background:var(--accent-soft);}
+
+  #app{max-width:900px; margin:0 auto; min-height:100vh; display:flex; flex-direction:column;}
+
+  /* ---------- topbar ---------- */
+  .topbar{position:sticky; top:0; z-index:5; backdrop-filter: blur(6px); background:color-mix(in srgb, var(--paper) 88%, transparent); border-bottom:1px solid var(--grid-line);}
+  .topbar-inner{display:flex; align-items:center; justify-content:space-between; padding:12px 20px;}
+  .icon-btn{background:none; border:1px solid var(--grid-line); color:var(--ink); width:38px; height:38px; display:flex; align-items:center; justify-content:center; border-radius:8px;}
+  .icon-btn:hover{border-color:var(--accent); color:var(--accent);}
+  .brandmark{display:flex; align-items:center; gap:10px; color:var(--ink-soft); font-size:13px; text-transform:uppercase; letter-spacing:0.08em;}
+  .score-chip{display:flex; align-items:center; gap:8px; border:1px solid var(--grid-line); background:var(--paper-raised); padding:6px 12px; border-radius:8px;}
+  .score-label{font-size:11px; letter-spacing:0.1em; color:var(--ink-faint); text-transform:uppercase;}
+  .score-value{font-family:var(--font-mono); font-weight:600; font-variant-numeric:tabular-nums; font-size:15px;}
+
+  main{flex:1; padding:28px 20px 64px;}
+  .screen{animation:fadein .35s ease;}
+  @keyframes fadein{from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:none;}}
+  @media (prefers-reduced-motion:reduce){ .screen{animation:none;} }
+  [hidden]{display:none !important;}
+
+  /* ---------- title screen ---------- */
+  .title-wrap{min-height:70vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:22px; padding:20px 0;}
+  .title-mark{color:var(--accent);}
+  .title-eyebrow{font-family:var(--font-mono); font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:var(--ink-soft);}
+  .title-name{font-size:clamp(34px,6vw,54px); font-weight:700;}
+  .title-tag{max-width:440px; color:var(--ink-soft); font-size:16px;}
+  .btn{border:none; font-family:var(--font-display); font-weight:600; font-size:16px; padding:14px 30px; border-radius:9px; background:var(--ink); color:var(--paper); transition:transform .12s ease;}
+  .btn:hover{transform:translateY(-1px);}
+  .btn:active{transform:translateY(0);}
+  .btn-accent{background:var(--accent); color:#fff;}
+  .btn-ghost{background:none; border:1px solid var(--grid-line); color:var(--ink);}
+  .btn-ghost:hover{border-color:var(--accent); color:var(--accent);}
+  .link-reset{background:none; border:none; color:var(--ink-faint); font-size:13px; text-decoration:underline; text-underline-offset:3px;}
+  .link-reset:hover{color:var(--danger);}
+
+  /* ---------- level map ---------- */
+  .map-header{display:flex; align-items:baseline; justify-content:space-between; margin-bottom:18px; gap:12px; flex-wrap:wrap;}
+  .chapter-label{display:flex; align-items:center; gap:10px; margin:34px 0 12px; color:var(--ink-soft);}
+  .chapter-label:first-of-type{margin-top:6px;}
+  .chapter-label .num{font-family:var(--font-mono); font-size:12px; border:1px solid var(--grid-line); border-radius:999px; padding:2px 9px; color:var(--ink-faint);}
+  .chapter-label h3{font-size:15px; letter-spacing:0.04em; text-transform:uppercase; color:var(--ink-soft); font-weight:600;}
+  .trail-row{display:flex; align-items:center; gap:16px; margin:10px 0;}
+  .trail-row.right{flex-direction:row-reverse;}
+  .node-btn{position:relative; width:64px; height:64px; border-radius:50%; border:2px solid var(--grid-line); background:var(--paper-raised); display:flex; align-items:center; justify-content:center; flex:none; color:var(--ink-faint);}
+  .node-btn .lvl-num{position:absolute; bottom:-20px; font-family:var(--font-mono); font-size:11px; color:var(--ink-faint);}
+  .node-btn.unlocked{border-color:var(--ink); color:var(--ink); background:var(--paper-raised);}
+  .node-btn.unlocked:hover{border-color:var(--accent); color:var(--accent); transform:scale(1.05);}
+  .node-btn.done{border-color:var(--pine); background:var(--pine-soft); color:var(--pine);}
+  .node-btn.locked{cursor:default; opacity:0.55;}
+  .node-btn .stars{position:absolute; top:-16px; display:flex; gap:1px;}
+  .node-connector{flex:1; height:2px; background-image:linear-gradient(to right, var(--grid-line) 60%, transparent 0%); background-size:10px 2px; background-repeat:repeat-x; min-width:16px;}
+  .trail-title{font-size:14px; color:var(--ink-soft); max-width:220px;}
+  .trail-row.locked .trail-title{color:var(--ink-faint);}
+  .map-legend{display:flex; gap:18px; flex-wrap:wrap; margin-top:40px; padding-top:18px; border-top:1px dashed var(--grid-line); font-size:12.5px; color:var(--ink-soft);}
+  .map-legend span{display:inline-flex; align-items:center; gap:6px;}
+
+  /* ---------- intro / quiz shared ---------- */
+  .panel{background:var(--paper-raised); border:1px solid var(--grid-line); border-radius:10px; padding:26px;}
+  .back-row{display:flex; align-items:center; gap:10px; margin-bottom:18px;}
+  .back-row button{background:none;border:none;color:var(--ink-soft);font-size:13px;display:flex;align-items:center;gap:6px;}
+  .back-row button:hover{color:var(--accent);}
+  .level-tag{font-family:var(--font-mono); font-size:12px; letter-spacing:0.08em; color:var(--ink-faint); text-transform:uppercase; margin-bottom:6px;}
+  .level-title{font-size:26px; margin-bottom:14px; display:flex; align-items:center; gap:12px;}
+  .level-title .icon-badge{color:var(--accent); flex:none;}
+  .intro-grid{display:grid; grid-template-columns:1fr; gap:22px;}
+  @media (min-width:680px){ .intro-grid{grid-template-columns: 1.05fr 1fr;} }
+  .intro-text p{color:var(--ink-soft); font-size:15.5px; margin:0 0 12px;}
+  .intro-text p:last-child{margin-bottom:0;}
+  .diagram-card{background:var(--paper); border:1px solid var(--grid-line); border-radius:8px; padding:14px; position:relative;
+    background-image: repeating-linear-gradient(0deg, transparent, transparent 21px, var(--grid-line-soft) 21px, var(--grid-line-soft) 22px), repeating-linear-gradient(90deg, transparent, transparent 21px, var(--grid-line-soft) 21px, var(--grid-line-soft) 22px);
+  }
+  .diagram-card .fig-tab{font-family:var(--font-mono); font-size:10.5px; color:var(--ink-faint); letter-spacing:0.06em; position:absolute; top:8px; left:12px;}
+  .diagram-card svg{width:100%; height:auto; display:block; margin-top:8px;}
+  .cta-row{margin-top:22px; display:flex; justify-content:flex-end;}
+
+  .quiz-layout{display:grid; grid-template-columns:1fr; gap:22px;}
+  @media (min-width:680px){ .quiz-layout{grid-template-columns:1fr 1fr;} }
+  .progress-dots{display:flex; gap:7px; margin-bottom:16px;}
+  .progress-dots .dot{width:9px;height:9px;border-radius:50%;background:var(--grid-line);}
+  .progress-dots .dot.current{background:var(--accent);}
+  .progress-dots .dot.done-ok{background:var(--pine);}
+  .progress-dots .dot.done-bad{background:var(--danger);}
+  .q-prompt{font-size:18px; margin-bottom:16px; font-weight:600;}
+  .choices{display:flex; flex-direction:column; gap:10px;}
+  .choice-btn{text-align:left; border:1.5px solid var(--grid-line); background:var(--paper-raised); color:var(--ink); padding:12px 16px; border-radius:8px; font-size:15px;}
+  .choice-btn:hover:not(:disabled){border-color:var(--accent);}
+  .choice-btn.selected{border-color:var(--ink);}
+  .choice-btn.correct{border-color:var(--pine); background:var(--pine-soft); color:var(--pine);}
+  .choice-btn.incorrect{border-color:var(--danger); background:var(--danger-soft); color:var(--danger);}
+  .choice-btn:disabled{cursor:default;}
+  .tf-row{display:flex; gap:12px;}
+  .tf-row .choice-btn{flex:1; text-align:center; font-weight:600;}
+  .num-row{display:flex; align-items:center; gap:10px; flex-wrap:wrap;}
+  .num-input{font-family:var(--font-mono); font-size:20px; width:140px; padding:10px 12px; border:1.5px solid var(--grid-line); border-radius:8px; background:var(--paper-raised); color:var(--ink);}
+  .num-input.correct{border-color:var(--pine); color:var(--pine);}
+  .num-input.incorrect{border-color:var(--danger); color:var(--danger);}
+  .unit-label{color:var(--ink-soft); font-size:14px;}
+  .submit-row{margin-top:14px; display:flex; gap:10px;}
+  .feedback{margin-top:16px; padding:14px 16px; border-radius:8px; font-size:14.5px; display:none;}
+  .feedback.show{display:block; animation:fadein .25s ease;}
+  .feedback.ok{background:var(--pine-soft); color:var(--pine);}
+  .feedback.bad{background:var(--danger-soft); color:var(--danger);}
+  .feedback strong{display:block; font-family:var(--font-display); font-size:15px; margin-bottom:4px;}
+  .next-row{margin-top:18px; display:flex; justify-content:flex-end;}
+
+  /* ---------- complete / final ---------- */
+  .complete-wrap, .final-wrap{min-height:60vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:16px; padding:30px 0;}
+  .stars-big{display:flex; gap:8px;}
+  .points-line{font-family:var(--font-mono); font-size:15px; color:var(--ink-soft);}
+  .points-line b{color:var(--ink); font-size:22px;}
+  .complete-actions{display:flex; gap:12px; margin-top:14px; flex-wrap:wrap; justify-content:center;}
+  .rosette{color:var(--gold);}
+  .final-list{text-align:left; max-width:420px; margin:10px auto 0; color:var(--ink-soft); font-size:14.5px;}
+  .final-list div{display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px dashed var(--grid-line);}
+
+  footer.appfoot{text-align:center; padding:18px; color:var(--ink-faint); font-size:12px; font-family:var(--font-mono);}
+</style>
+
+
+</head>
+<body>
+<div id="app">
+  <header class="topbar" id="topbar" hidden>
+    <div class="topbar-inner">
+      <button class="icon-btn" id="btn-map-home" aria-label="Level map" title="Level map"></button>
+      <div class="brandmark mono">THE HYPOTENUSE TRAIL</div>
+      <div class="score-chip"><span class="score-label">Score</span><span class="score-value mono" id="score-value">0</span></div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="screen" id="screen-title">
+      <div class="title-wrap">
+        <div class="title-mark" id="title-icon"></div>
+        <div class="title-eyebrow">A GEOMETRY FIELD EXPEDITION</div>
+        <h1 class="title-name">The Hypotenuse Trail</h1>
+        <p class="title-tag">Twenty stops on the trail from right angles to the theorem that ties every right triangle together. Earn stars, collect points, and prove it for yourself &mdash; one square at a time.</p>
+        <button class="btn btn-accent" id="btn-start"></button>
+        <button class="link-reset" id="btn-reset" hidden>Reset my progress</button>
+      </div>
+    </section>
+
+    <section class="screen" id="screen-map" hidden>
+      <div class="map-header">
+        <h2>Your Trail</h2>
+        <span class="mono" style="font-size:13px;color:var(--ink-soft);" id="map-progress">0 / 20 complete</span>
+      </div>
+      <div id="trail-container"></div>
+      <div class="map-legend">
+        <span><svg width="14" height="14" viewBox="0 0 14 14"><circle cx="7" cy="7" r="6" fill="none" stroke="var(--locked)" stroke-width="2"></circle></svg> Locked</span>
+        <span><svg width="14" height="14" viewBox="0 0 14 14"><circle cx="7" cy="7" r="6" fill="none" stroke="var(--ink)" stroke-width="2"></circle></svg> Unlocked</span>
+        <span><svg width="14" height="14" viewBox="0 0 14 14"><circle cx="7" cy="7" r="6" fill="var(--pine-soft)" stroke="var(--pine)" stroke-width="2"></circle></svg> Completed</span>
+      </div>
+    </section>
+
+    <section class="screen" id="screen-intro" hidden>
+      <div class="back-row"><button id="btn-intro-back">&larr; Trail map</button></div>
+      <div class="panel">
+        <div class="level-tag" id="intro-tag"></div>
+        <h2 class="level-title"><span class="icon-badge" id="intro-icon"></span><span id="intro-title"></span></h2>
+        <div class="intro-grid">
+          <div class="intro-text" id="intro-text"></div>
+          <div class="diagram-card"><span class="fig-tab" id="intro-fig"></span><svg id="intro-svg" viewBox="0 0 320 320" preserveAspectRatio="xMidYMid meet"></svg></div>
+        </div>
+        <div class="cta-row"><button class="btn btn-accent" id="btn-intro-go">Start practice &rarr;</button></div>
+      </div>
+    </section>
+
+    <section class="screen" id="screen-quiz" hidden>
+      <div class="back-row"><button id="btn-quiz-back">&larr; Trail map</button></div>
+      <div class="panel">
+        <div class="level-tag" id="quiz-tag"></div>
+        <div class="progress-dots" id="quiz-dots"></div>
+        <div class="quiz-layout">
+          <div>
+            <div class="q-prompt" id="q-prompt"></div>
+            <div id="q-answer-area"></div>
+            <div class="feedback" id="q-feedback"></div>
+            <div class="next-row"><button class="btn btn-accent" id="btn-next" hidden>Next &rarr;</button></div>
+          </div>
+          <div class="diagram-card" id="q-diagram-wrap"><span class="fig-tab" id="q-fig"></span><svg id="q-svg" viewBox="0 0 320 320" preserveAspectRatio="xMidYMid meet"></svg></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen" id="screen-complete" hidden>
+      <div class="complete-wrap">
+        <div class="stars-big" id="complete-stars"></div>
+        <h2 id="complete-title">Level Complete!</h2>
+        <div class="points-line">This attempt: <b id="complete-points">0</b> pts &nbsp;&middot;&nbsp; Trail total: <b id="complete-total">0</b> pts</div>
+        <div class="complete-actions">
+          <button class="btn btn-ghost" id="btn-complete-map">Trail map</button>
+          <button class="btn btn-ghost" id="btn-complete-retry">Retry level</button>
+          <button class="btn btn-accent" id="btn-complete-next">Next level &rarr;</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen" id="screen-final" hidden>
+      <div class="final-wrap">
+        <div class="rosette" id="final-rosette"></div>
+        <h2>Expedition Complete</h2>
+        <p style="max-width:440px;color:var(--ink-soft);">You've walked every stop on the Hypotenuse Trail and proven the Pythagorean theorem for yourself, from a single right angle to real-world diagonals.</p>
+        <div class="points-line">Final score: <b id="final-score">0</b> pts</div>
+        <div class="final-list" id="final-list"></div>
+        <div class="complete-actions">
+          <button class="btn btn-ghost" id="btn-final-map">Revisit any level</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <footer class="appfoot">MADE FOR EXPLORERS OF GEOMETRY &middot; NO ACCOUNT, NO CLOUD &mdash; YOUR PROGRESS LIVES IN THIS BROWSER</footer>
+</div>
+
+<script>
+(function(){
+"use strict";
+
+/* ============================== ICONS ============================== */
+const SVGNS = 'http://www.w3.org/2000/svg';
+function ic(name, size){
+  size = size || 22;
+  const s = (paths)=> `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${paths}</svg>`;
+  switch(name){
+    case 'map': return s('<path d="M4 6 L9 4 L15 6 L20 4 V18 L15 20 L9 18 L4 20 Z"/><path d="M9 4 V18"/><path d="M15 6 V20"/>');
+    case 'angle': return s('<path d="M4 19 H20"/><path d="M4 19 L16 6"/>');
+    case 'triangle': return s('<path d="M4 4 V20 H20 Z"/><rect x="4" y="16" width="4" height="4"/>');
+    case 'grid': return s('<rect x="4" y="4" width="16" height="16"/><path d="M9.3 4 V20 M14.7 4 V20 M4 9.3 H20 M4 14.7 H20"/>');
+    case 'magnifier': return s('<circle cx="10" cy="10" r="6"/><path d="M14.5 14.5 L20 20"/>');
+    case 'sigma': return s('<path d="M5 6 H19"/><path d="M5 18 H19"/>');
+    case 'target': return s('<circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/>');
+    case 'radical': return s('<path d="M3 13 L6.5 17 L11 4 L21 4"/>');
+    case 'ladder': return s('<path d="M7 3 V21"/><path d="M17 3 V21"/><path d="M7 7 H17"/><path d="M7 11.5 H17"/><path d="M7 16 H17"/>');
+    case 'tv': return s('<rect x="3" y="5" width="18" height="12" rx="1"/><path d="M9 20 H15"/><path d="M12 17 V20"/>');
+    case 'rectdiag': return s('<rect x="4" y="4" width="16" height="16"/><path d="M4 4 L20 20"/>');
+    case 'coord': return s('<path d="M4 20 H20"/><path d="M4 20 V4"/><circle cx="14" cy="9" r="1.6" fill="currentColor"/><circle cx="8" cy="15" r="1.6" fill="currentColor"/><path d="M8 15 L14 9" stroke-dasharray="2 2"/>');
+    case 'checkcross': return s('<circle cx="12" cy="12" r="8.5"/><path d="M8 12.5 L10.5 15 L16 8.5"/>');
+    case 'compass': return s('<circle cx="12" cy="13" r="8"/><path d="M12 13 L15.5 6.5"/><circle cx="12" cy="13" r="1.1" fill="currentColor"/><path d="M10.5 3 L13.5 3"/>');
+    case 'trophy': return s('<path d="M7 4 H17 V9 A5 5 0 0 1 7 9 Z"/><path d="M7 5 H4 V7 A3 3 0 0 0 7 10"/><path d="M17 5 H20 V7 A3 3 0 0 1 17 10"/><path d="M12 14 V18"/><path d="M8.5 20 H15.5"/><path d="M9.5 18 H14.5 L15 20 H9 Z"/>');
+    default: return s('<circle cx="12" cy="12" r="8"/>');
+  }
+}
+function starPoints(cx,cy,rOuter,rInner){
+  let pts=[];
+  for(let i=0;i<10;i++){
+    const r = (i%2===0)?rOuter:rInner;
+    const a = (Math.PI/5)*i - Math.PI/2;
+    pts.push(`${(cx+r*Math.cos(a)).toFixed(1)},${(cy+r*Math.sin(a)).toFixed(1)}`);
+  }
+  return pts.join(' ');
+}
+function starSvg(filled, size){
+  size = size || 20;
+  const col = filled ? 'var(--gold)' : 'var(--grid-line)';
+  return `<svg width="${size}" height="${size}" viewBox="0 0 24 24"><polygon points="${starPoints(12,12,10,4)}" fill="${filled?col:'none'}" stroke="${col}" stroke-width="1.5"/></svg>`;
+}
+function rosetteSvg(){
+  return `<svg width="96" height="96" viewBox="0 0 24 24"><polygon points="${starPoints(12,10,9,3.6)}" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="1.4"/><path d="M9 15 L6 21 L9.3 20 L11 22.5 Z" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="1.2"/><path d="M15 15 L18 21 L14.7 20 L13 22.5 Z" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="1.2"/></svg>`;
+}
+
+/* ============================== UTILITIES ============================== */
+function rndInt(min,max){ return Math.floor(Math.random()*(max-min+1))+min; }
+function pick(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
+function shuffle(arr){ const a=arr.slice(); for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+function isPerfectSquare(n){ const r=Math.round(Math.sqrt(n)); return r*r===n; }
+function round2(n){ return Math.round(n*100)/100; }
+function fmt(n){
+  if (typeof n === 'string') return n;
+  if (Number.isInteger(n)) return String(n);
+  return (Math.round(n*100)/100).toString();
+}
+
+const TRIPLES_EASY = [[3,4,5],[6,8,10],[9,12,15],[12,16,20]];
+const TRIPLES_HARD = [[5,12,13],[8,15,17],[7,24,25],[20,21,29],[9,40,41],[10,24,26],[18,24,30],[15,20,25]];
+const TRIPLES_ALL = TRIPLES_EASY.concat(TRIPLES_HARD);
+const NEAR_MISSES = [[5,6,8],[7,10,12],[9,10,14],[6,7,10],[10,11,15],[8,9,13]];
+
+/* ============================== QUESTION BUILDERS ============================== */
+function mcQ(o){ return Object.assign({type:'mc'}, o); }
+function numQ(o){ return Object.assign({type:'num', tolerance:0.01, unit:''}, o); }
+function tfQ(o){ return Object.assign({type:'tf'}, o); }
+
+function triLabelSpec(a,b,unknown,dOverrides){
+  const c = round2(Math.sqrt(a*a+b*b));
+  const spec = {kind:'trianglelabeled', a, b, da: fmt(a), db: fmt(b), dc: fmt(c), unknown};
+  if (dOverrides) Object.assign(spec, dOverrides);
+  if (unknown==='a') spec.da='?';
+  if (unknown==='b') spec.db='?';
+  if (unknown==='c') spec.dc='?';
+  return spec;
+}
+
+function qHypotenuse(triple){
+  const [a,b,c]=triple;
+  return numQ({
+    prompt:`This right triangle has legs ${a} and ${b}. What is the length of the hypotenuse, c?`,
+    diagram: triLabelSpec(a,b,'c'),
+    answer:c, tolerance:0.01,
+    explanation:`c² = a² + b² = ${a}² + ${b}² = ${a*a} + ${b*b} = ${a*a+b*b}, so c = √${a*a+b*b} = ${c}.`
+  });
+}
+function qLeg(triple){
+  const [a,b,c]=triple;
+  const hideA = Math.random()<0.5;
+  const known = hideA? b : a;
+  const missing = hideA? a : b;
+  return numQ({
+    prompt:`This right triangle has a hypotenuse of ${c} and one leg of ${known}. What is the length of the other leg?`,
+    diagram: triLabelSpec(a,b, hideA?'a':'b'),
+    answer:missing, tolerance:0.01,
+    explanation:`missing² = c² − ${known}² = ${c}² − ${known}² = ${c*c} − ${known*known} = ${c*c-known*known}, so the leg = √${c*c-known*known} = ${missing}.`
+  });
+}
+function qNonPerfect(lo,hi){
+  let a,b,sum;
+  do{ a=rndInt(lo,hi); b=rndInt(lo,hi); sum=a*a+b*b; } while(isPerfectSquare(sum) || a===b);
+  const c = round2(Math.sqrt(sum));
+  return numQ({
+    prompt:`Find the hypotenuse, c. Round to 2 decimal places.`,
+    diagram: triLabelSpec(a,b,'c'),
+    answer:c, tolerance:0.05,
+    explanation:`c² = ${a}² + ${b}² = ${sum}. Since ${sum} isn't a perfect square, c = √${sum} ≈ ${c}.`
+  });
+}
+function qConverse(triple, isRight){
+  const [a,b,c] = triple;
+  const sum = a*a+b*b;
+  return tfQ({
+    prompt:`Could ${a}, ${b}, and ${c} be the side lengths of a right triangle?`,
+    diagram:{kind:'sideslist', a, b, c},
+    answer: isRight,
+    explanation: isRight
+      ? `Check it: ${a}² + ${b}² = ${a*a} + ${b*b} = ${sum}, and ${c}² = ${c*c}. They match, so yes — it's a right triangle!`
+      : `Check it: ${a}² + ${b}² = ${a*a} + ${b*b} = ${sum}, but ${c}² = ${c*c}. They don't match, so no — this is not a right triangle.`
+  });
+}
+function qConverseRandom(){
+  return Math.random()<0.5 ? qConverse(pick(TRIPLES_ALL), true) : qConverse(pick(NEAR_MISSES), false);
+}
+function qWordLadder(triple){
+  const [a,b,c]=triple; // a=base, b=height, c=ladder
+  const hideHeight = Math.random()<0.5;
+  return numQ({
+    prompt: hideHeight
+      ? `A ${c}-foot ladder leans against a wall. Its base sits ${a} feet from the wall. How high up the wall does it reach?`
+      : `A ${c}-foot ladder leans against a wall, reaching ${b} feet up. How far is the base of the ladder from the wall?`,
+    diagram:{kind:'ladder', ladder:c, base:a, height:b, unknown: hideHeight?'height':'base'},
+    answer: hideHeight? b : a, tolerance:0.05, unit:'feet',
+    explanation:`Wall, ground, and ladder form a right triangle: ${a}² + ${b}² = ${a*a} + ${b*b} = ${c*c} = ${c}². The missing length is ${hideHeight?b:a} feet.`
+  });
+}
+function qScreen(triple){
+  const [w,h,d]=triple;
+  return numQ({
+    prompt:`A rectangular phone screen is ${w} cm wide and ${h} cm tall. What is the length of its diagonal?`,
+    diagram:{kind:'rectdiag', w, h, d, unknown:'d', style:'screen'},
+    answer:d, tolerance:0.05, unit:'cm',
+    explanation:`width² + height² = diagonal²: ${w}² + ${h}² = ${w*w+h*h} = ${d}². The diagonal is ${d} cm.`
+  });
+}
+function qRectSide(triple){
+  const [w,h,d]=triple;
+  const hideW = Math.random()<0.5;
+  const known = hideW? h : w;
+  const missing = hideW? w : h;
+  return numQ({
+    prompt:`A rectangular garden has a diagonal path of ${d} m, and one side measures ${known} m. How long is the other side?`,
+    diagram:{kind:'rectdiag', w: hideW?'?':w, h: hideW?h:'?', d, unknown: hideW?'w':'h', style:'garden'},
+    answer:missing, tolerance:0.05, unit:'m',
+    explanation:`side² = diagonal² − ${known}² = ${d*d} − ${known*known} = ${d*d-known*known}, so the other side = ${missing} m.`
+  });
+}
+function qCoordDistance(nice){
+  let x1=rndInt(0,3), y1=rndInt(0,3), dx, dy;
+  if (nice){ const t = pick(TRIPLES_EASY.concat([[6,8,10]])); dx=t[0]; dy=t[1]; }
+  else { dx=rndInt(4,9); dy=rndInt(3,8); }
+  const x2=x1+dx, y2=y1+dy;
+  const dist = round2(Math.sqrt(dx*dx+dy*dy));
+  return numQ({
+    prompt:`Two markers sit at (${x1}, ${y1}) and (${x2}, ${y2}) on the map grid. What is the straight-line distance between them?`,
+    diagram:{kind:'coordgrid', x1,y1,x2,y2},
+    answer:dist, tolerance: nice?0.01:0.05,
+    explanation:`The legs of the right triangle are Δx = ${dx} and Δy = ${dy}. distance² = ${dx}² + ${dy}² = ${dx*dx+dy*dy}, so distance = ${dist}.`
+  });
+}
+
+/* ============================== LEVEL DEFINITIONS ============================== */
+const LEVELS = [
+{ id:1, chapter:0, icon:'angle', title:'Right Angles All Around',
+  intro:['A right angle is a corner that measures exactly 90° — like the corner of a sheet of paper. It gets its own little square marker whenever you see one in a diagram.',
+         'Before we can talk about right triangles, you need a sharp eye for the right angle itself. Let\'s test it.'],
+  gen(){
+    const pool = shuffle([ {deg:90,ans:true},{deg:52,ans:false},{deg:90,ans:true},{deg:138,ans:false},{deg:28,ans:false},{deg:90,ans:true} ]);
+    return pool.slice(0,4).map(p=> tfQ({
+      prompt:'Is this a right angle — exactly 90°?',
+      diagram:{kind:'angle', deg:p.deg, markRight:p.ans},
+      answer:p.ans,
+      explanation: p.ans ? 'Yes — this corner forms a perfect 90° angle.' : `No — a right angle must be exactly 90°. This one measures about ${p.deg}°.`
+    }));
+  }
+},
+{ id:2, chapter:0, icon:'triangle', title:'Meet the Right Triangle',
+  intro:['A right triangle is any triangle with one 90° angle inside it. The side opposite that right angle — always the longest side — is called the hypotenuse.',
+         'The other two sides, which form the right angle, are called the legs.'],
+  gen(){
+    const spec = triLabelSpec(3,4,null,{da:'p',db:'q',dc:'r'});
+    return [
+      mcQ({ prompt:'Which side is the hypotenuse — the longest side, opposite the right angle?', diagram:spec,
+            choices:['Side p','Side q','Side r'], correctIndex:2,
+            explanation:'r is the hypotenuse: it\'s the longest side, and it sits directly opposite the right angle.'}),
+      mcQ({ prompt:'Which two sides are the "legs" of this right triangle?', diagram:spec,
+            choices:['p and q','p and r','q and r'], correctIndex:0,
+            explanation:'The legs are the two shorter sides that form the right angle itself — here, p and q.'}),
+      mcQ({ prompt:'The hypotenuse is always located...', diagram:spec,
+            choices:['opposite the right angle','next to the right angle, on the left only','at the very top of the triangle, no matter how it\'s drawn'], correctIndex:0,
+            explanation:'No matter how the triangle is rotated on the page, the hypotenuse is the side opposite the right angle.'})
+    ];
+  }
+},
+{ id:3, chapter:0, icon:'grid', title:'Squares Have Area',
+  intro:['The area of a square is how many unit squares fit inside it. Split a square\'s side into equal units, and you get a grid.',
+         'A square with side length n always contains exactly n × n unit squares — we write that as n², "n squared".'],
+  gen(){
+    const ns = shuffle([3,4,5,6,7]).slice(0,3);
+    return ns.map(n=> numQ({
+      prompt:'This square is divided into unit squares. How many unit squares fit inside it in total?',
+      diagram:{kind:'grid', n}, answer:n*n, tolerance:0, unit:'unit squares',
+      explanation:`It's a ${n}×${n} grid, so the area is ${n} × ${n} = ${n*n}. That's why area of a square = side² .`
+    }));
+  }
+},
+{ id:4, chapter:0, icon:'grid', title:'Bigger Squares, Bigger Areas',
+  intro:['As a square\'s side gets longer, its area grows much faster — because area is side × side, not just side.',
+         'A side that\'s twice as long gives a square with four times the area, not just twice. Let\'s compare a few.'],
+  gen(){
+    const pairs = []; const used = new Set();
+    while(pairs.length<3){ const p=rndInt(3,10), q=rndInt(3,10); if(p===q) continue; const key=[p,q].sort().join('-'); if(used.has(key)) continue; used.add(key); pairs.push([p,q]); }
+    return pairs.map(([p,q])=>{
+      const bigger = Math.max(p,q), smaller=Math.min(p,q);
+      const biggerLabel = p>q? 'p' : 'q';
+      return mcQ({
+        prompt:`Square P has side ${p}. Square Q has side ${q}. Which has the larger area?`,
+        diagram:{kind:'comparesquares', p, q},
+        choices:[`Square P (area ${p*p})`,`Square Q (area ${q*q})`],
+        correctIndex: p>q? 0:1,
+        explanation:`Side ${bigger} → area ${bigger}×${bigger} = ${bigger*bigger}. Side ${smaller} → area ${smaller*smaller}. Because area grows with the square of the side, even a modest difference in side length makes a big difference in area.`
+      });
+    });
+  }
+},
+{ id:5, chapter:1, icon:'magnifier', title:'Squares on a Triangle',
+  intro:['Here\'s the classic setup mathematicians have used for over 2000 years: take a right triangle, and build a square on each of its three sides.',
+         'Just by looking — before any counting — what do you notice about the three squares?'],
+  gen(){
+    const [t1,t2] = shuffle(TRIPLES_EASY).slice(0,2);
+    return [
+      mcQ({ prompt:'Which square has the largest area?', diagram:{kind:'trianglesquares', a:t1[0], b:t1[1]},
+            choices:['The square on leg a','The square on leg b','The square on the hypotenuse, c'], correctIndex:2,
+            explanation:'Since c is the longest side, the square built on c always has the largest area of the three.'}),
+      mcQ({ prompt:'Which pair of squares looks like it might combine to cover the same area as the big square on the hypotenuse?', diagram:{kind:'trianglesquares', a:t2[0], b:t2[1]},
+            choices:['The squares on legs a and b, together','Just the square on leg a alone','Just the square on leg b alone'], correctIndex:0,
+            explanation:'That\'s exactly the idea we\'re about to test: area(a) + area(b) might equal area(c). Time to count and find out!'})
+    ];
+  }
+},
+{ id:6, chapter:1, icon:'grid', title:'Count the Squares',
+  intro:['Let\'s make the last level exact. Take a 3-4-5 right triangle and count the unit squares in the squares built on its two legs.',
+         'Keep your two totals in mind — you\'ll need them very soon.'],
+  gen(){
+    const [a,b] = TRIPLES_EASY[0];
+    const [a2,b2] = pick(TRIPLES_EASY.slice(1));
+    return [
+      numQ({ prompt:`Count the unit squares in the square built on this leg (length ${a}).`, diagram:{kind:'grid', n:a}, answer:a*a, tolerance:0,
+             explanation:`${a}×${a} = ${a*a} unit squares — the area of the square on side a.` }),
+      numQ({ prompt:`Now count the unit squares in the square built on this leg (length ${b}).`, diagram:{kind:'grid', n:b}, answer:b*b, tolerance:0,
+             explanation:`${b}×${b} = ${b*b} unit squares — the area of the square on side b.` }),
+      numQ({ prompt:`One more, for practice, with a different triangle: count the unit squares in this square (side ${a2}).`, diagram:{kind:'grid', n:a2}, answer:a2*a2, tolerance:0,
+             explanation:`${a2}×${a2} = ${a2*a2}. Same idea, every time: side × side.` })
+    ];
+  }
+},
+{ id:7, chapter:1, icon:'sigma', title:'The Big Reveal',
+  intro:['Now count the unit squares in the square built on the hypotenuse — and compare that number to the sum of your two earlier counts.',
+         'This is the moment the whole theorem is built on.'],
+  gen(){
+    const [a,b,c] = TRIPLES_EASY[0];
+    return [
+      numQ({ prompt:`Count the unit squares in the square built on the hypotenuse (length ${c}).`, diagram:{kind:'grid', n:c}, answer:c*c, tolerance:0,
+             explanation:`${c}×${c} = ${c*c}. Hold on to that number.` }),
+      numQ({ prompt:`Earlier: the square on side a (${a}) had area ${a*a}, and the square on side b (${b}) had area ${b*b}. What is ${a*a} + ${b*b}?`,
+             diagram:{kind:'trianglesquares', a, b}, answer:a*a+b*b, tolerance:0,
+             explanation:`${a*a} + ${b*b} = ${a*a+b*b} — exactly the same as the area of the square on the hypotenuse! For a right triangle, that's never a coincidence.` }),
+      mcQ({ prompt:'So what does this tell us about the three squares, in general?', diagram:{kind:'trianglesquares', a, b},
+            choices:['area(a) + area(b) = area(c)','area(a) − area(b) = area(c)','area(a) × area(b) = area(c)','The three areas are unrelated'], correctIndex:0,
+            explanation:'Yes — for any right triangle, the areas of the two smaller squares always add up to the area of the square on the hypotenuse. That is the Pythagorean theorem, in pictures.' })
+    ];
+  }
+},
+{ id:8, chapter:1, icon:'sigma', title:'The Pythagorean Theorem',
+  intro:['Let\'s write what you just discovered as a formula. For any right triangle with legs a and b, and hypotenuse c:', 'a² + b² = c²',
+         'This one equation is what the rest of the trail is about — learning to use it.'],
+  gen(){
+    const spec = triLabelSpec(6,8,'c');
+    return [
+      mcQ({ prompt:'Which equation is the Pythagorean theorem? (a, b = legs, c = hypotenuse)', diagram:null,
+            choices:['a + b = c','a² + b² = c²','a² − b² = c²','a × b = c'], correctIndex:1,
+            explanation:'a² + b² = c² — the sum of the squares of the two legs equals the square of the hypotenuse.' }),
+      mcQ({ prompt:'In a² + b² = c², which letter always stands for the hypotenuse?', diagram:null,
+            choices:['a','b','c'], correctIndex:2,
+            explanation:'c is reserved for the hypotenuse — the longest side, opposite the right angle.' }),
+      numQ({ prompt:'A right triangle has legs 6 and 8. What does c² equal? (Hint: compute 6² + 8²)', diagram:spec, answer:100, tolerance:0,
+             explanation:'c² = 6² + 8² = 36 + 64 = 100. Next up: turning c² into the actual length of c.' })
+    ];
+  }
+},
+{ id:9, chapter:2, icon:'target', title:'Find the Hypotenuse I',
+  intro:['Time to put the formula to work. Given both legs, solve for c: rearrange a² + b² = c² into c = √(a² + b²).',
+         'Every triangle below has whole-number sides — a "Pythagorean triple".'],
+  gen(){ return shuffle(TRIPLES_EASY).slice(0,3).map(qHypotenuse); }
+},
+{ id:10, chapter:2, icon:'target', title:'Find the Hypotenuse II',
+  intro:['Same skill, bigger numbers. The method never changes: square both legs, add them, then take the square root.'],
+  gen(){ return shuffle(TRIPLES_HARD).slice(0,3).map(qHypotenuse); }
+},
+{ id:11, chapter:2, icon:'target', title:'Find a Leg',
+  intro:['The theorem also runs in reverse. If you know the hypotenuse and one leg, rearrange to a² = c² − b² to find the missing leg.',
+         'Same formula, just solved for a different letter.'],
+  gen(){ return shuffle(TRIPLES_ALL).slice(0,3).map(qLeg); }
+},
+{ id:12, chapter:2, icon:'radical', title:'Square Roots 101',
+  intro:['A square root undoes squaring. If side × side = area, then side = √area. Since the Pythagorean theorem is full of squares, square roots are how you get back to plain side lengths.',
+         'Try a few — some as squares, some in √ notation.'],
+  gen(){
+    const ns = shuffle([4,5,6,7,8,9,10,11,12,13]).slice(0,4);
+    return ns.map((n,i)=>{
+      if (i<2){
+        return numQ({ prompt:`This square has an area of ${n*n} square units. What is the length of its side?`, diagram:{kind:'grid', n}, answer:n, tolerance:0,
+                      explanation:`Since side × side = ${n*n} and ${n}×${n} = ${n*n}, the side is ${n}. We write this as √${n*n} = ${n}.` });
+      }
+      return numQ({ prompt:`What is √${n*n}?`, diagram:null, answer:n, tolerance:0,
+                    explanation:`√${n*n} = ${n}, because ${n} × ${n} = ${n*n}.` });
+    });
+  }
+},
+{ id:13, chapter:2, icon:'target', title:'Not-So-Perfect Triangles',
+  intro:['Most right triangles don\'t have neat whole-number hypotenuses. That\'s fine — the formula still works, you just round your answer.',
+         'Round every answer here to 2 decimal places.'],
+  gen(){ return [ qNonPerfect(4,9), qNonPerfect(6,12), qNonPerfect(8,16) ]; }
+},
+{ id:14, chapter:3, icon:'ladder', title:'The Leaning Ladder',
+  intro:['Wall, ground, and ladder form a right triangle every time: the wall and ground are the legs, and the ladder itself is the hypotenuse.',
+         'That makes ladder problems one of the most common real uses of this theorem.'],
+  gen(){ return shuffle(TRIPLES_ALL.filter(t=>t[2]<=30)).slice(0,3).map(qWordLadder); }
+},
+{ id:15, chapter:3, icon:'tv', title:'Screen Size Challenge',
+  intro:['A screen\'s advertised "size" is always the diagonal, not the width or height — and that diagonal is the hypotenuse of the rectangle.'],
+  gen(){ return shuffle([[12,16,20],[9,12,15],[8,6,10],[15,20,25]]).slice(0,3).map(qScreen); }
+},
+{ id:16, chapter:3, icon:'rectdiag', title:'Diagonal of a Rectangle',
+  intro:['Any rectangle — a garden, a room, a field — splits into two right triangles along its diagonal. Same theorem, new setting, and sometimes you\'ll solve for a side instead of the diagonal.'],
+  gen(){
+    const t1 = pick([[9,12,15],[6,8,10],[12,16,20]]);
+    const t2 = pick([[8,15,17],[7,24,25],[5,12,13]]);
+    return [ qRectSide(t1), qRectSide(t2), qNonPerfect(5,13) ];
+  }
+},
+{ id:17, chapter:3, icon:'coord', title:'Points on a Map',
+  intro:['On a coordinate grid, the horizontal and vertical distance between two points are the legs of a right triangle. The straight-line distance between the points is its hypotenuse.'],
+  gen(){ return [ qCoordDistance(true), qCoordDistance(true), qCoordDistance(false) ]; }
+},
+{ id:18, chapter:3, icon:'checkcross', title:'Is It a Right Triangle?',
+  intro:['The theorem also works backwards as a test: if a² + b² = c² for three side lengths, the triangle they form MUST have a right angle. If it doesn\'t match, it can\'t be a right triangle.'],
+  gen(){
+    const trues = shuffle(TRIPLES_ALL).slice(0,2).map(t=>qConverse(t,true));
+    const falses = shuffle(NEAR_MISSES).slice(0,2).map(t=>qConverse(t,false));
+    return shuffle(trues.concat(falses));
+  }
+},
+{ id:19, chapter:3, icon:'target', title:'Mixed Challenge',
+  intro:['Everything so far, shuffled together. No hints about which skill comes next — that\'s the point.'],
+  gen(){
+    return [ qHypotenuse(pick(TRIPLES_HARD)), qLeg(pick(TRIPLES_ALL)), qNonPerfect(6,14), qWordLadder(pick(TRIPLES_ALL.filter(t=>t[2]<=30))), qConverseRandom() ];
+  }
+},
+{ id:20, chapter:3, icon:'trophy', title:'Pythagoras Master Challenge',
+  intro:['The final stretch. Six questions, every skill on the trail, hardest numbers yet.', 'Good luck, mathematician — you\'ve earned this.'],
+  gen(){
+    return [ qHypotenuse(pick(TRIPLES_HARD)), qLeg(pick(TRIPLES_HARD)), qNonPerfect(8,17), qScreen(pick([[9,12,15],[15,20,25]])), qCoordDistance(false), qConverseRandom() ];
+  }
+}
+];
+const CHAPTER_NAMES = ['Foundations','The Discovery','Solving Triangles','Real-World Expedition'];
+
+/* ============================== GEOMETRY / SVG RENDERING ============================== */
+function fitPoints(points, vbW, vbH, pad){
+  const xs=points.map(p=>p[0]), ys=points.map(p=>p[1]);
+  const minX=Math.min.apply(null,xs), maxX=Math.max.apply(null,xs);
+  const minY=Math.min.apply(null,ys), maxY=Math.max.apply(null,ys);
+  const w=(maxX-minX)||1, h=(maxY-minY)||1;
+  const scale = Math.min((vbW-2*pad)/w, (vbH-2*pad)/h);
+  const offX = pad + (vbW-2*pad-w*scale)/2;
+  const offY = pad + (vbH-2*pad-h*scale)/2;
+  return points.map(([x,y])=> [ (x-minX)*scale+offX, vbH - ((y-minY)*scale+offY) ]);
+}
+function sub(a,b){ return [a[0]-b[0], a[1]-b[1]]; }
+function add(a,b){ return [a[0]+b[0], a[1]+b[1]]; }
+function scl(a,k){ return [a[0]*k, a[1]*k]; }
+function len(a){ return Math.hypot(a[0],a[1]); }
+function unit(a){ const l=len(a)||1; return [a[0]/l, a[1]/l]; }
+function mkEl(tag, attrs){ const el=document.createElementNS(SVGNS, tag); for(const k in attrs) el.setAttribute(k, attrs[k]); return el; }
+function ptsAttr(pts){ return pts.map(p=>p[0].toFixed(2)+','+p[1].toFixed(2)).join(' '); }
+function textEl(x,y,str,opts){
+  opts = opts||{};
+  const el = mkEl('text', Object.assign({ x:x.toFixed(2), y:y.toFixed(2), 'font-family':'var(--font-mono)', 'font-size':opts.size||14, fill:opts.fill||'var(--ink)', 'text-anchor':opts.anchor||'middle', 'dominant-baseline':opts.baseline||'middle', 'font-weight':opts.weight||600 }, opts.attrs||{}));
+  el.textContent = str;
+  return el;
+}
+
+function clearSvg(svg){ while(svg.firstChild) svg.removeChild(svg.firstChild); svg.setAttribute('viewBox','0 0 320 320'); }
+
+function drawRightAngleMark(svg, cornerSvg, dirToA, dirToB, size){
+  const p1 = add(cornerSvg, scl(dirToA, size));
+  const p2 = add(add(cornerSvg, scl(dirToA,size)), scl(dirToB,size));
+  const p3 = add(cornerSvg, scl(dirToB, size));
+  svg.appendChild(mkEl('polyline', {points:ptsAttr([p1,p2,p3]), fill:'none', stroke:'var(--ink-soft)', 'stroke-width':1.4}));
+}
+
+function drawAngle(svg, spec){
+  clearSvg(svg);
+  const rad = spec.deg*Math.PI/180;
+  const vertexM=[0,0], rayAM=[10,0], rayBM=[10*Math.cos(rad),10*Math.sin(rad)];
+  const [V,A,B] = fitPoints([vertexM, rayAM, rayBM], 320,320,50);
+  svg.appendChild(mkEl('line', {x1:V[0],y1:V[1],x2:A[0],y2:A[1], stroke:'var(--ink)', 'stroke-width':3}));
+  svg.appendChild(mkEl('line', {x1:V[0],y1:V[1],x2:B[0],y2:B[1], stroke:'var(--ink)', 'stroke-width':3}));
+  if (Math.abs(spec.deg-90)<0.01){
+    drawRightAngleMark(svg, V, unit(sub(A,V)), unit(sub(B,V)), 18);
+  } else {
+    const r=34;
+    const a1 = Math.atan2(A[1]-V[1], A[0]-V[0]);
+    const a2 = Math.atan2(B[1]-V[1], B[0]-V[0]);
+    const large = Math.abs(spec.deg) > 180 ? 1 : 0;
+    const sweep = spec.deg>0 && spec.deg<=180 ? 1 : 1;
+    const p1=[V[0]+r*Math.cos(a1), V[1]+r*Math.sin(a1)];
+    const p2=[V[0]+r*Math.cos(a2), V[1]+r*Math.sin(a2)];
+    svg.appendChild(mkEl('path', {d:`M ${p1[0].toFixed(1)} ${p1[1].toFixed(1)} A ${r} ${r} 0 0 0 ${p2[0].toFixed(1)} ${p2[1].toFixed(1)}`, fill:'none', stroke:'var(--accent)', 'stroke-width':2}));
+  }
+}
+
+function drawGrid(svg, n){
+  clearSvg(svg);
+  const size=240, pad=40;
+  const cell=size/n;
+  const g = mkEl('g',{});
+  svg.appendChild(g);
+  g.appendChild(mkEl('rect',{x:pad,y:pad,width:size,height:size, fill:'var(--pine-soft)', stroke:'var(--ink)', 'stroke-width':2}));
+  for(let i=1;i<n;i++){
+    g.appendChild(mkEl('line',{x1:pad+i*cell, y1:pad, x2:pad+i*cell, y2:pad+size, stroke:'var(--pine)', 'stroke-width':0.8, opacity:0.55}));
+    g.appendChild(mkEl('line',{x1:pad, y1:pad+i*cell, x2:pad+size, y2:pad+i*cell, stroke:'var(--pine)', 'stroke-width':0.8, opacity:0.55}));
+  }
+  g.appendChild(textEl(pad+size/2, pad-16, '', {size:13}));
+  g.appendChild(textEl(pad+size/2, pad+size+22, `side = ${n}`, {size:13, fill:'var(--ink-soft)'}));
+}
+
+function drawComparesquares(svg, p, q){
+  clearSvg(svg);
+  const maxSide = Math.max(p,q);
+  const scale = 130/maxSide;
+  const gap = 30;
+  const sp = p*scale, sq = q*scale;
+  const totalW = sp+sq+gap;
+  const startX = (320-totalW)/2;
+  const baseY = 250;
+  svg.appendChild(mkEl('rect',{x:startX, y:baseY-sp, width:sp, height:sp, fill:'var(--accent-soft)', stroke:'var(--ink)', 'stroke-width':2}));
+  svg.appendChild(textEl(startX+sp/2, baseY+20, `P: side ${p}`, {size:13,fill:'var(--ink-soft)'}));
+  svg.appendChild(mkEl('rect',{x:startX+sp+gap, y:baseY-sq, width:sq, height:sq, fill:'var(--gold-soft)', stroke:'var(--ink)', 'stroke-width':2}));
+  svg.appendChild(textEl(startX+sp+gap+sq/2, baseY+20, `Q: side ${q}`, {size:13,fill:'var(--ink-soft)'}));
+}
+
+function trianglePointsMath(a,b){
+  return { P0:[0,0], Pa:[a,0], Pb:[0,b] };
+}
+function drawTriangleLabeled(svg, spec){
+  clearSvg(svg);
+  const {a,b,da,db,dc} = spec;
+  const {P0,Pa,Pb} = trianglePointsMath(a,b);
+  const svgPts = fitPoints([P0,Pa,Pb], 320,320,54);
+  const [sP0,sPa,sPb] = svgPts;
+  svg.appendChild(mkEl('polygon',{points:ptsAttr([sP0,sPa,sPb]), fill:'var(--accent-soft)', stroke:'var(--ink)', 'stroke-width':2.2, 'fill-opacity':0.5}));
+  drawRightAngleMark(svg, sP0, unit(sub(sPa,sP0)), unit(sub(sPb,sP0)), 16);
+  const midA = scl(add(sP0,sPa),0.5), midB = scl(add(sP0,sPb),0.5), midC = scl(add(sPa,sPb),0.5);
+  svg.appendChild(textEl(midA[0], midA[1]+22, da, {size:16, fill:'var(--ink)'}));
+  svg.appendChild(textEl(midB[0]-26, midB[1], db, {size:16, fill:'var(--ink)'}));
+  const away = unit(sub(midC, sP0));
+  const labelC = add(midC, scl(away, 20));
+  svg.appendChild(textEl(labelC[0], labelC[1], dc, {size:16, fill:'var(--ink)'}));
+}
+
+function drawTrianglesquares(svg, a, b){
+  clearSvg(svg);
+  const c = Math.sqrt(a*a+b*b);
+  const P0=[0,0], Pa=[a,0], Pb=[0,b];
+  const SqA = [P0, Pa, [a,-a], [0,-a]];
+  const SqB = [P0, Pb, [-b,b], [-b,0]];
+  const Q1 = [b, a+b], Q2=[a+b, a];
+  const SqC = [Pa, Pb, Q1, Q2];
+  const all = [].concat(SqA,SqB,SqC);
+  const svgAll = fitPoints(all, 320,320,44);
+  const n=SqA.length;
+  const sSqA = svgAll.slice(0,4), sSqB = svgAll.slice(4,8), sSqC = svgAll.slice(8,12);
+  svg.appendChild(mkEl('polygon',{points:ptsAttr(sSqA), fill:'var(--pine-soft)', stroke:'var(--pine)', 'stroke-width':2}));
+  svg.appendChild(mkEl('polygon',{points:ptsAttr(sSqB), fill:'var(--gold-soft)', stroke:'var(--gold)', 'stroke-width':2}));
+  svg.appendChild(mkEl('polygon',{points:ptsAttr(sSqC), fill:'var(--accent-soft)', stroke:'var(--accent)', 'stroke-width':2}));
+  svg.appendChild(mkEl('polygon',{points:ptsAttr([sSqA[0],sSqA[1],sSqB[1]]), fill:'var(--paper-raised)', stroke:'var(--ink)', 'stroke-width':2.2}));
+  drawRightAngleMark(svg, sSqA[0], unit(sub(sSqA[1],sSqA[0])), unit(sub(sSqB[1],sSqA[0])), 14);
+  function centroid(pts){ const s=pts.reduce((acc,p)=>[acc[0]+p[0],acc[1]+p[1]],[0,0]); return [s[0]/pts.length, s[1]/pts.length]; }
+  const cA=centroid(sSqA), cB=centroid(sSqB), cC=centroid(sSqC);
+  svg.appendChild(textEl(cA[0],cA[1],'a²',{size:16, fill:'var(--pine)'}));
+  svg.appendChild(textEl(cB[0],cB[1],'b²',{size:16, fill:'var(--gold)'}));
+  svg.appendChild(textEl(cC[0],cC[1],'c²',{size:16, fill:'var(--accent)'}));
+}
+
+function drawLadder(svg, spec){
+  clearSvg(svg);
+  const {ladder, base, height, unknown} = spec;
+  const P0=[0,0], PTop=[0,height], PBase=[base,0];
+  const svgPts = fitPoints([P0,PTop,PBase], 320,320,48);
+  const [sP0,sTop,sBase] = svgPts;
+  svg.appendChild(mkEl('line',{x1:sP0[0],y1:sP0[1]-14,x2:sTop[0],y2:sTop[1], stroke:'var(--ink)', 'stroke-width':6, 'stroke-linecap':'round'}));
+  svg.appendChild(mkEl('line',{x1:sP0[0]-14,y1:sP0[1],x2:sBase[0]+8,y2:sBase[1], stroke:'var(--ink)', 'stroke-width':6, 'stroke-linecap':'round'}));
+  svg.appendChild(mkEl('line',{x1:sTop[0],y1:sTop[1],x2:sBase[0],y2:sBase[1], stroke:'var(--accent)', 'stroke-width':4, 'stroke-linecap':'round'}));
+  const dir = unit(sub(sBase,sTop));
+  const perp = [-dir[1], dir[0]];
+  for(let t=0.2;t<1;t+=0.2){
+    const c = add(sTop, scl(sub(sBase,sTop), t));
+    svg.appendChild(mkEl('line',{x1:c[0]-perp[0]*5,y1:c[1]-perp[1]*5,x2:c[0]+perp[0]*5,y2:c[1]+perp[1]*5, stroke:'var(--accent)', 'stroke-width':2.4}));
+  }
+  drawRightAngleMark(svg, sP0, unit(sub(sTop,sP0)), unit(sub(sBase,sP0)), 15);
+  svg.appendChild(textEl((sP0[0]+sBase[0])/2, sBase[1]+22, unknown==='base'?'? ft':`${base} ft`, {size:14}));
+  svg.appendChild(textEl(sP0[0]-26, (sP0[1]+sTop[1])/2, unknown==='height'?'? ft':`${height} ft`, {size:14}));
+  const mid = scl(add(sTop,sBase),0.5);
+  svg.appendChild(textEl(mid[0]+18, mid[1]-14, `${ladder} ft`, {size:13, fill:'var(--accent)'}));
+}
+
+function drawRectdiag(svg, spec){
+  clearSvg(svg);
+  const wNum = typeof spec.w==='number'? spec.w: 8, hNum = typeof spec.h==='number'? spec.h: 6;
+  const P0=[0,0], P1=[wNum,0], P2=[wNum,hNum], P3=[0,hNum];
+  const svgPts = fitPoints([P0,P1,P2,P3], 320,300,48);
+  const [s0,s1,s2,s3] = svgPts;
+  svg.appendChild(mkEl('polygon',{points:ptsAttr([s0,s1,s2,s3]), fill:spec.style==='screen'?'var(--paper-raised)':'var(--pine-soft)', stroke:'var(--ink)', 'stroke-width':2.4}));
+  svg.appendChild(mkEl('line',{x1:s0[0],y1:s0[1],x2:s2[0],y2:s2[1], stroke:'var(--accent)', 'stroke-width':3, 'stroke-dasharray':spec.style==='screen'?'0':'0'}));
+  drawRightAngleMark(svg, s0, unit(sub(s1,s0)), unit(sub(s3,s0)), 14);
+  svg.appendChild(textEl((s0[0]+s1[0])/2, s1[1]+22, spec.unknown==='w'?'? ':`${spec.w}`, {size:14}));
+  svg.appendChild(textEl(s2[0]+24, (s1[1]+s2[1])/2, spec.unknown==='h'?'?':`${spec.h}`, {size:14}));
+  const mid = scl(add(s0,s2),0.5);
+  svg.appendChild(textEl(mid[0]-8, mid[1]-10, spec.unknown==='d'?'?':`${spec.d}`, {size:14, fill:'var(--accent)'}));
+}
+
+function drawCoordgrid(svg, spec){
+  clearSvg(svg);
+  const maxX = Math.max(spec.x1,spec.x2)+2, maxY=Math.max(spec.y1,spec.y2)+2;
+  const size=230, pad=44;
+  function toSvg(x,y){ return [pad + x/maxX*size, pad+size - y/maxY*size]; }
+  const axisO = toSvg(0,0);
+  svg.appendChild(mkEl('line',{x1:axisO[0],y1:axisO[1],x2:pad+size,y2:axisO[1], stroke:'var(--ink-soft)', 'stroke-width':1.6}));
+  svg.appendChild(mkEl('line',{x1:axisO[0],y1:axisO[1],x2:axisO[0],y2:pad, stroke:'var(--ink-soft)', 'stroke-width':1.6}));
+  const P1 = toSvg(spec.x1, spec.y1), P2 = toSvg(spec.x2, spec.y2);
+  const corner = [P2[0], P1[1]];
+  svg.appendChild(mkEl('line',{x1:P1[0],y1:P1[1],x2:corner[0],y2:corner[1], stroke:'var(--gold)', 'stroke-width':2, 'stroke-dasharray':'5 4'}));
+  svg.appendChild(mkEl('line',{x1:corner[0],y1:corner[1],x2:P2[0],y2:P2[1], stroke:'var(--gold)', 'stroke-width':2, 'stroke-dasharray':'5 4'}));
+  svg.appendChild(mkEl('line',{x1:P1[0],y1:P1[1],x2:P2[0],y2:P2[1], stroke:'var(--accent)', 'stroke-width':3}));
+  svg.appendChild(mkEl('circle',{cx:P1[0],cy:P1[1],r:5, fill:'var(--ink)'}));
+  svg.appendChild(mkEl('circle',{cx:P2[0],cy:P2[1],r:5, fill:'var(--ink)'}));
+  svg.appendChild(textEl(P1[0]-8,P1[1]+18,`(${spec.x1},${spec.y1})`,{size:11, fill:'var(--ink-soft)', anchor:'end'}));
+  svg.appendChild(textEl(P2[0]+8,P2[1]-12,`(${spec.x2},${spec.y2})`,{size:11, fill:'var(--ink-soft)', anchor:'start'}));
+}
+
+function drawSideslist(svg, spec){
+  clearSvg(svg);
+  const P0=[20,260], P1=[260,275], P2=[150,40];
+  svg.appendChild(mkEl('polygon',{points:ptsAttr([P0,P1,P2]), fill:'var(--paper)', stroke:'var(--ink-soft)', 'stroke-width':2, 'stroke-dasharray':'0'}));
+  const mid01=scl(add(P0,P1),0.5), mid12=scl(add(P1,P2),0.5), mid20=scl(add(P2,P0),0.5);
+  svg.appendChild(textEl(mid01[0],mid01[1]+22,`${spec.a}`,{size:18}));
+  svg.appendChild(textEl(mid12[0]+30,mid12[1],`${spec.b}`,{size:18}));
+  svg.appendChild(textEl(mid20[0]-30,mid20[1],`${spec.c}`,{size:18}));
+}
+
+function renderDiagram(svg, spec){
+  if (!spec){ svg.parentElement.style.display='none'; return; }
+  svg.parentElement.style.display='';
+  switch(spec.kind){
+    case 'angle': return drawAngle(svg, spec);
+    case 'grid': return drawGrid(svg, spec.n);
+    case 'comparesquares': return drawComparesquares(svg, spec.p, spec.q);
+    case 'trianglelabeled': return drawTriangleLabeled(svg, spec);
+    case 'trianglesquares': return drawTrianglesquares(svg, spec.a, spec.b);
+    case 'ladder': return drawLadder(svg, spec);
+    case 'rectdiag': return drawRectdiag(svg, spec);
+    case 'coordgrid': return drawCoordgrid(svg, spec);
+    case 'sideslist': return drawSideslist(svg, spec);
+    default: return;
+  }
+}
+
+/* ============================== STATE / PERSISTENCE ============================== */
+const STORAGE_KEY = 'hypotenuseTrailProgress_v1';
+let memoryState = null;
+function loadState(){
+  try{
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) return JSON.parse(raw);
+  } catch(e){}
+  return memoryState || { levels:{} };
+}
+function saveState(state){
+  memoryState = state;
+  try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch(e){}
+}
+let STATE = loadState();
+
+function totalScore(){
+  let sum=0;
+  for(const k in STATE.levels){ sum += (STATE.levels[k].bestPoints||0); }
+  return sum;
+}
+function isUnlocked(levelId){
+  if (levelId===1) return true;
+  const prev = STATE.levels[levelId-1];
+  return !!(prev && prev.completed);
+}
+function levelState(id){ return STATE.levels[id] || {completed:false, stars:0, bestPoints:0}; }
+
+/* ============================== APP FLOW ============================== */
+const $ = (sel)=>document.querySelector(sel);
+const screens = ['title','map','intro','quiz','complete','final'];
+function showScreen(name){
+  screens.forEach(s=>{ $('#screen-'+s).hidden = (s!==name); });
+  $('#topbar').hidden = (name==='title');
+  window.scrollTo(0,0);
+}
+
+let currentLevelId = null;
+let currentQuestions = [];
+let qIndex = 0;
+let qAttempts = 0;
+let levelPointsEarned = 0;
+let qResults = []; // 'ok' | 'bad' per question for dot display
+
+function init(){
+  $('#title-icon').innerHTML = ic('compass', 64);
+  $('#btn-map-home').innerHTML = ic('map', 18);
+  updateScoreChip();
+  $('#btn-start').textContent = totalScore()>0 || Object.keys(STATE.levels).length ? 'Continue the trail' : 'Begin the trail';
+  $('#btn-reset').hidden = Object.keys(STATE.levels).length===0;
+
+  $('#btn-start').addEventListener('click', renderMap);
+  $('#btn-reset').addEventListener('click', ()=>{
+    if (confirm('Reset all trail progress? This cannot be undone.')){
+      STATE = { levels:{} }; saveState(STATE); updateScoreChip(); init();
+    }
+  });
+  $('#btn-map-home').addEventListener('click', renderMap);
+  $('#btn-intro-back').addEventListener('click', renderMap);
+  $('#btn-quiz-back').addEventListener('click', ()=>{
+    if (confirm('Leave this level? Your progress on this attempt will be lost.')){ renderMap(); }
+  });
+  $('#btn-intro-go').addEventListener('click', startQuiz);
+  $('#btn-complete-map').addEventListener('click', renderMap);
+  $('#btn-complete-retry').addEventListener('click', ()=> openLevel(currentLevelId));
+  $('#btn-complete-next').addEventListener('click', ()=>{
+    const next = currentLevelId+1;
+    if (next<=20) openLevel(next); else { renderFinal(); showScreen('final'); }
+  });
+  $('#btn-final-map').addEventListener('click', renderMap);
+
+  showScreen('title');
+}
+function updateScoreChip(){ $('#score-value').textContent = totalScore(); }
+
+function renderMap(){
+  updateScoreChip();
+  const container = $('#trail-container');
+  container.innerHTML = '';
+  let doneCount = 0;
+  let lastChapter = -1;
+  LEVELS.forEach((lvl, idx)=>{
+    if (lvl.chapter !== lastChapter){
+      lastChapter = lvl.chapter;
+      const label = document.createElement('div');
+      label.className = 'chapter-label';
+      label.innerHTML = `<span class="num mono">CH.${lvl.chapter+1}</span><h3>${CHAPTER_NAMES[lvl.chapter]}</h3>`;
+      container.appendChild(label);
+    }
+    const st = levelState(lvl.id);
+    if (st.completed) doneCount++;
+    const unlocked = isUnlocked(lvl.id);
+    const row = document.createElement('div');
+    row.className = 'trail-row' + (idx%2===1?' right':'') + (!unlocked?' locked':'');
+    const btn = document.createElement('button');
+    btn.className = 'node-btn ' + (st.completed?'done':(unlocked?'unlocked':'locked'));
+    btn.setAttribute('aria-label', `Level ${lvl.id}: ${lvl.title}`);
+    btn.innerHTML = ic(lvl.icon, 24) + `<span class="lvl-num">${lvl.id}</span>` + (st.completed ? `<span class="stars">${starSvg(st.stars>=1,10)}${starSvg(st.stars>=2,10)}${starSvg(st.stars>=3,10)}</span>` : '');
+    if (unlocked){ btn.addEventListener('click', ()=> openIntro(lvl.id)); } else { btn.disabled = true; }
+    const title = document.createElement('div');
+    title.className = 'trail-title';
+    title.textContent = `${lvl.id}. ${lvl.title}`;
+    row.appendChild(btn);
+    row.appendChild(title);
+    container.appendChild(row);
+  });
+  $('#map-progress').textContent = `${doneCount} / 20 complete`;
+  showScreen('map');
+  drawTrailConnector(container);
+}
+
+function drawTrailConnector(container){
+  const old = container.querySelector('.trail-connector-svg');
+  if (old) old.remove();
+  const nodeEls = Array.from(container.querySelectorAll('.node-btn'));
+  if (nodeEls.length < 2) return;
+  const rect = container.getBoundingClientRect();
+  if (rect.width===0 || rect.height===0) return;
+  const svg = document.createElementNS(SVGNS,'svg');
+  svg.setAttribute('class','trail-connector-svg');
+  svg.setAttribute('width', String(rect.width));
+  svg.setAttribute('height', String(rect.height));
+  svg.style.position='absolute'; svg.style.left='0'; svg.style.top='0'; svg.style.zIndex='0'; svg.style.pointerEvents='none';
+  let d = '';
+  nodeEls.forEach((el,i)=>{
+    const r = el.getBoundingClientRect();
+    const cx = r.left - rect.left + r.width/2;
+    const cy = r.top - rect.top + r.height/2;
+    d += (i===0?'M':'L') + cx.toFixed(1) + ' ' + cy.toFixed(1) + ' ';
+  });
+  const path = mkEl('path', {d:d.trim(), fill:'none', stroke:'var(--grid-line)', 'stroke-width':3, 'stroke-dasharray':'1 11', 'stroke-linecap':'round'});
+  svg.appendChild(path);
+  container.style.position='relative';
+  container.insertBefore(svg, container.firstChild);
+}
+
+function openIntro(levelId){
+  currentLevelId = levelId;
+  const lvl = LEVELS.find(l=>l.id===levelId);
+  $('#intro-tag').textContent = `LEVEL ${lvl.id} · CHAPTER ${lvl.chapter+1}: ${CHAPTER_NAMES[lvl.chapter].toUpperCase()}`;
+  $('#intro-icon').innerHTML = ic(lvl.icon, 26);
+  $('#intro-title').textContent = lvl.title;
+  $('#intro-text').innerHTML = lvl.intro.map(p=>`<p>${p}</p>`).join('');
+  $('#intro-fig').textContent = `FIG. ${lvl.id}.0`;
+  const introSvg = $('#intro-svg');
+  const sampleQs = lvl.gen();
+  const firstWithDiagram = sampleQs.find(q=>q.diagram);
+  renderDiagram(introSvg, firstWithDiagram ? firstWithDiagram.diagram : null);
+  showScreen('intro');
+}
+
+function startQuiz(){
+  const lvl = LEVELS.find(l=>l.id===currentLevelId);
+  currentQuestions = lvl.gen();
+  qIndex = 0; levelPointsEarned = 0; qResults = new Array(currentQuestions.length).fill(null);
+  showScreen('quiz');
+  renderQuestion();
+}
+
+function renderDots(){
+  const wrap = $('#quiz-dots'); wrap.innerHTML='';
+  currentQuestions.forEach((q,i)=>{
+    const d = document.createElement('span');
+    d.className = 'dot' + (i===qIndex?' current':'') + (qResults[i]==='ok'?' done-ok':'') + (qResults[i]==='bad'?' done-bad':'');
+    wrap.appendChild(d);
+  });
+}
+
+function renderQuestion(){
+  const lvl = LEVELS.find(l=>l.id===currentLevelId);
+  const q = currentQuestions[qIndex];
+  qAttempts = 0;
+  $('#quiz-tag').textContent = `LEVEL ${lvl.id} · QUESTION ${qIndex+1} OF ${currentQuestions.length}`;
+  renderDots();
+  $('#q-prompt').textContent = q.prompt;
+  $('#q-fig').textContent = `FIG. ${lvl.id}.${qIndex+1}`;
+  renderDiagram($('#q-svg'), q.diagram);
+  $('#q-feedback').className = 'feedback';
+  $('#q-feedback').innerHTML = '';
+  $('#btn-next').hidden = true;
+
+  const area = $('#q-answer-area');
+  area.innerHTML = '';
+  if (q.type==='mc'){
+    const wrap = document.createElement('div'); wrap.className='choices';
+    q.choices.forEach((choiceText, idx)=>{
+      const b = document.createElement('button');
+      b.className = 'choice-btn'; b.textContent = choiceText;
+      b.addEventListener('click', ()=> answerMC(idx, q, wrap));
+      wrap.appendChild(b);
+    });
+    area.appendChild(wrap);
+  } else if (q.type==='tf'){
+    const wrap = document.createElement('div'); wrap.className='tf-row';
+    [['Yes / True',true],['No / False',false]].forEach(([label,val])=>{
+      const b = document.createElement('button');
+      b.className='choice-btn'; b.textContent=label;
+      b.addEventListener('click', ()=> answerTF(val, q, wrap));
+      wrap.appendChild(b);
+    });
+    area.appendChild(wrap);
+  } else if (q.type==='num'){
+    const wrap = document.createElement('div'); wrap.className='num-row';
+    const input = document.createElement('input');
+    input.type='text'; input.inputMode='decimal'; input.className='num-input'; input.placeholder='?';
+    input.id='num-input-live';
+    const unit = document.createElement('span'); unit.className='unit-label'; unit.textContent=q.unit||'';
+    wrap.appendChild(input); if(q.unit) wrap.appendChild(unit);
+    area.appendChild(wrap);
+    const subRow = document.createElement('div'); subRow.className='submit-row';
+    const subBtn = document.createElement('button'); subBtn.className='btn btn-accent'; subBtn.textContent='Check answer';
+    subBtn.addEventListener('click', ()=> answerNum(input, q, subBtn));
+    input.addEventListener('keydown', (e)=>{ if(e.key==='Enter'){ e.preventDefault(); answerNum(input,q,subBtn); } });
+    subRow.appendChild(subBtn);
+    area.appendChild(subRow);
+    setTimeout(()=>input.focus(), 50);
+  }
+}
+
+function lockChoices(wrap){
+  wrap.querySelectorAll('button').forEach(b=> b.disabled = true);
+}
+function showFeedback(ok, explanation){
+  const fb = $('#q-feedback');
+  fb.className = 'feedback show ' + (ok?'ok':'bad');
+  fb.innerHTML = `<strong>${ok? (qAttempts<=1?'Correct!':'Correct — nice recovery.') : 'Not quite.'}</strong>${explanation}`;
+  $('#btn-next').hidden = false;
+  $('#btn-next').textContent = (qIndex===currentQuestions.length-1) ? 'See results →' : 'Next →';
+  $('#btn-next').onclick = advanceQuestion;
+}
+function awardAndRecord(correctNow){
+  qAttempts++;
+  if (correctNow){
+    const pts = qAttempts===1?10:(qAttempts===2?5:2);
+    levelPointsEarned += pts;
+    qResults[qIndex]='ok';
+    return true;
+  }
+  if (qAttempts>=2){
+    levelPointsEarned += 2;
+    qResults[qIndex]='bad';
+    return true;
+  }
+  return false;
+}
+function answerMC(idx,q,wrap){
+  const btns = wrap.querySelectorAll('button');
+  const correct = idx===q.correctIndex;
+  const done = awardAndRecord(correct);
+  btns[idx].classList.add(correct?'correct':'incorrect');
+  if (!done){
+    btns[idx].disabled = true;
+    return;
+  }
+  if(!correct) btns[q.correctIndex].classList.add('correct');
+  lockChoices(wrap);
+  renderDots();
+  showFeedback(correct, q.explanation);
+}
+function answerTF(val,q,wrap){
+  const btns = wrap.querySelectorAll('button');
+  const idx = val? 0:1;
+  const correct = val===q.answer;
+  const done = awardAndRecord(correct);
+  btns[idx].classList.add(correct?'correct':'incorrect');
+  if (!done){ btns[idx].disabled = true; return; }
+  if(!correct) btns[q.answer?0:1].classList.add('correct');
+  lockChoices(wrap);
+  renderDots();
+  showFeedback(correct, q.explanation);
+}
+function answerNum(input,q,subBtn){
+  const val = parseFloat(input.value);
+  if (Number.isNaN(val)){ input.focus(); return; }
+  const correct = Math.abs(val - q.answer) <= (q.tolerance||0.01)+1e-9;
+  const done = awardAndRecord(correct);
+  input.classList.add(correct?'correct':'incorrect');
+  if (!done){
+    input.classList.remove('correct','incorrect');
+    input.classList.add('incorrect');
+    setTimeout(()=>{ input.classList.remove('incorrect'); }, 500);
+    return;
+  }
+  input.disabled = true; subBtn.disabled = true;
+  if (!correct) input.value = fmt(q.answer);
+  renderDots();
+  showFeedback(correct, q.explanation);
+}
+function advanceQuestion(){
+  if (qIndex < currentQuestions.length-1){ qIndex++; renderQuestion(); }
+  else { finishLevel(); }
+}
+
+function finishLevel(){
+  const n = currentQuestions.length;
+  const maxPts = n*10;
+  const pct = levelPointsEarned/maxPts;
+  const stars = pct>=0.9?3:(pct>=0.55?2:1);
+  const prev = STATE.levels[currentLevelId] || {bestPoints:0, stars:0};
+  STATE.levels[currentLevelId] = {
+    completed:true,
+    stars: Math.max(stars, prev.stars||0),
+    bestPoints: Math.max(levelPointsEarned, prev.bestPoints||0)
+  };
+  saveState(STATE);
+  updateScoreChip();
+  renderComplete(stars, levelPointsEarned);
+}
+function renderComplete(stars, pts){
+  $('#complete-stars').innerHTML = [1,2,3].map(i=>starSvg(i<=stars,30)).join('');
+  $('#complete-title').textContent = stars===3?'Level Complete — Perfect!':'Level Complete!';
+  $('#complete-points').textContent = pts;
+  $('#complete-total').textContent = totalScore();
+  const isLast = currentLevelId===20;
+  $('#btn-complete-next').hidden = false;
+  $('#btn-complete-next').textContent = isLast ? 'See your certificate →' : 'Next level →';
+  showScreen('complete');
+}
+function openLevel(id){ openIntro(id); }
+
+function renderFinal(){
+  $('#final-rosette').innerHTML = rosetteSvg();
+  $('#final-score').textContent = totalScore();
+  const list = $('#final-list'); list.innerHTML='';
+  LEVELS.forEach(lvl=>{
+    const st = levelState(lvl.id);
+    const row = document.createElement('div');
+    row.innerHTML = `<span>${lvl.id}. ${lvl.title}</span><span class="mono">${st.stars||0}★ · ${st.bestPoints||0}pt</span>`;
+    list.appendChild(row);
+  });
+}
+
+if (document.readyState==='loading'){ document.addEventListener('DOMContentLoaded', init); } else { init(); }
+
+})();
+</script>
+
+</body>
+</html>
