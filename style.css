@@ -457,3 +457,9 @@ hr.news-rule[hidden] {
 	border-color: #336699;
 }
 a.chip-bibtex { cursor: pointer; }
+
+
+.team-jump {
+	margin: 0.55em 0 0;
+	font-size: 0.95rem;
+}
