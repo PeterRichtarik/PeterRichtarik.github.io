@@ -459,7 +459,7 @@ hr.news-rule[hidden] {
 a.chip-bibtex { cursor: pointer; }
 
 
-.team-jump {
-	margin: 1.1em 0 0;
+#content p.team-jump {
+	margin: 1.25em 0 0;
 	font-size: 0.95rem;
 }
