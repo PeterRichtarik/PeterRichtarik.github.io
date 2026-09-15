@@ -436,3 +436,24 @@ hr.news-rule[hidden] {
 #content.talks .paper-filters .year-jump { margin: 0 0 0.35em; }
 #content.talks .paper-filters .topic-jump { margin: 0; }
 #content.papers .paper-filters .topic-jump { margin: 0; }
+
+
+.paper-search {
+	margin: 0 0 0.65em;
+}
+.paper-search input {
+	font: inherit;
+	font-size: 0.95rem;
+	color: inherit;
+	width: 100%;
+	max-width: 28em;
+	padding: 4px 8px;
+	border: 1px solid #ccc;
+	border-radius: 0;
+	background: #fff;
+}
+.paper-search input:focus {
+	outline: none;
+	border-color: #336699;
+}
+a.chip-bibtex { cursor: pointer; }
