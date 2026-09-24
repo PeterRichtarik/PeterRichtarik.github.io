@@ -322,12 +322,17 @@
       if (chips.length) {
         chips[chips.length - 1].after(document.createTextNode(" "), a);
       } else {
+        // No other chips: give BibTeX its own line, like the chip row on other papers.
         var alg = p.querySelector(".algorithms");
         if (alg) {
-          alg.before(a);
-          alg.before(document.createTextNode(" "));
+          alg.before(a, document.createElement("br"));
         } else {
-          p.appendChild(a);
+          var brs = p.querySelectorAll(":scope > br");
+          if (brs.length >= 2) {
+            brs[brs.length - 2].after(a, document.createElement("br"));
+          } else {
+            p.appendChild(a);
+          }
         }
       }
     });
