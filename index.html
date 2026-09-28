@@ -60,6 +60,25 @@
 <h2>New Paper</h2>
 
 <span class="important">New paper out:</span>
+<a href="papers/BPM-sharper-theory.pdf">"A Sharper Theory of Ball-Proximal Optimization: Convergence and Radius Selection"</a> - joint work with Hanmin Li. Submitted to arXiv.
+<br><br>
+
+We study the exact Euclidean Ball-Proximal ("Broximal") Point Method (BPM) for proper, closed, convex functions, where each iteration minimizes the objective over a ball centered at the current point. We assume neither smoothness nor strong convexity. Some highlights:
+
+<ul>
+<li>Sharper bounds: with a constant radius, the objective gap decreases by a factor of exp(-2K<sup>2</sup>t<sup>2</sup>/D<sub>0</sub><sup>2</sup>) after K iterations, with matching guarantees on stationarity and on the symmetric Bregman distance to a minimizer.</li>
+<li>A complete convergence picture for arbitrary radius sequences: if the radii are not summable, BPM finds a minimizer in finitely many steps whenever one exists (and otherwise the function values converge to the infimum); if they are summable, the iterates converge to a possibly nonoptimal point.</li>
+<li>Bounded BPM trajectories are self-contracted and have finite length, giving a constant-radius termination bound linear in D<sub>0</sub>/t in fixed dimension, while a polyhedral example shows that the dimension-independent quadratic bound is asymptotically sharp.</li>
+<li>Seven equivalent formulations of a single BPM step, and a practical study of radius selection: the smallest geometric decay factor that still works, adaptive radii based on subgradients or objective gaps, epigraph reformulation, and relaxed updates.</li>
+</ul>
+
+<hr class="news-rule">
+
+<h3>September 28, 2026</h3>
+
+<h2>New Paper</h2>
+
+<span class="important">New paper out:</span>
 <a href="papers/BroxGD.pdf">"Broximal Gradient Descent: A Projection-Free Sister of Projected Gradient Descent"</a> - joint work with Kaja Gruntkowska and Hanmin Li. Submitted to arXiv.
 <br><br>
 
