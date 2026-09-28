@@ -55,6 +55,29 @@
 <p class="hire">The lab has open positions for interns, MS/PhD students, PhD students, postdocs, and research scientists. <a href="i_apply.html">Apply</a>.</p>
 <hr class="news-rule">
 
+<h3>September 28, 2026</h3>
+
+<h2>New Paper</h2>
+
+<span class="important">New paper out:</span>
+<a href="papers/BroxGD.pdf">"Broximal Gradient Descent: A Projection-Free Sister of Projected Gradient Descent"</a> - joint work with Kaja Gruntkowska and Hanmin Li. Submitted to arXiv.
+<br><br>
+
+This is a revised version of our paper <a href="https://arxiv.org/abs/2605.08850">arXiv:2605.08850</a>, which had a different title ("Local LMO: Constrained Gradient Optimization via a Local Linear Minimization Oracle"). We changed the name of the method from Local LMO to Broximal Gradient Descent (BroxGD) to differentiate it from the local LMO oracle itself. Some of the changes:
+
+<ul>
+<li>BroxGD is now derived as a forward–backward method in which the proximal backward step is replaced by the broximal operator of the Ball-Proximal ("Broximal") Point Method.</li>
+<li>New practical radius rules that do not need unknown quantities such as the optimal solution: fixed-horizon radii, predetermined geometric radii, and radius backtracking (with linear convergence in the smooth strongly convex case).</li>
+<li>New Polyak-radius results, including nonsmooth convex objectives with bounded subgradients.</li>
+<li>The gradient-difference result no longer needs strict convexity; convexity suffices.</li>
+<li>A reorganized summary table, grouping results by type of guarantee and marking which radii are practical.</li>
+<li>New experiments on correlation-matrix problems (orders 128, 256, and 512), where BroxGD reaches low accuracy faster than projected gradient baselines, plus a broader numerical study, including cases where projection is cheap.</li>
+<li>A new appendix on potential applications, such as PSD-constrained covariance and kernel learning, robust low-rank matrix learning over a nuclear-norm ball, and structured prediction over products of simplices.</li>
+<li>A detailed discussion of closely related prior work by Ferris and Zavriev (1996) and Garber and Hazan (2016).</li>
+</ul>
+
+<hr class="news-rule">
+
 <h3>September 24, 2026</h3>
 
 <h2>Papers accepted to NeurIPS 2026</h2>
