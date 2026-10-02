@@ -57,6 +57,19 @@
 
 <h3>October 1, 2026</h3>
 
+<h2>New Paper</h2>
+
+<span class="important">New paper out:</span>
+<a href="https://arxiv.org/abs/2610.01554">"QK-Wanda: Coupling Queries and Keys for Unstructured Pruning"</a> - joint work with <a href="https://ivan-ilin.netlify.app">Ivan Ilin</a>.
+<br>
+<br>
+
+Wanda prunes large language models by scoring the weights of each linear projection independently, even though queries and keys interact through dot products. QK-Wanda augments the Wanda scores of query weights with information from the keys, and vice versa, so that both projections share a pruning budget; the scores are closed-form and need no gradients or weight updates. Across 15 models from TinyLlama, Llama 2, Llama 3, and Qwen2.5 (0.5B to 72B parameters), QK-Wanda reduces QK reconstruction error relative to Wanda by 60% on average at 50% sparsity and by 45% at 80% sparsity. Downstream gains depend on the model: on Llama 2 70B at 80% sparsity, WikiText-2 and C4 perplexity drop by 20.3% and 13.5% and mean zero-shot accuracy rises by 5.94 percentage points, while Llama-3.1-70B has higher perplexity despite lower reconstruction error.
+
+<hr class="news-rule">
+
+<h3>October 1, 2026</h3>
+
 <h2>Academic Family Tree Posters</h2>
 
 A follow-up to my September 29 post on <a href="https://www.slovenskivedci.sk/rodokmen/">Rodokmeň slovenskej matematiky</a>: the site can now turn anyone's academic ancestry into a poster. On a person's page, click "Vytlačiť rodokmeň predkov" (print ancestor tree), choose how many generations to show and the paper size (A2 or A3), and you get a print-ready PDF of their academic family tree. Here is the poster for <a href="https://www.slovenskivedci.sk/rodokmen/#p114295">Pavol Brunovský</a>, going 14 generations back, with the line through Weierstrass to Leibniz highlighted.<br><br>
