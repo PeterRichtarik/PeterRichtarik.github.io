@@ -64,6 +64,19 @@ I have accepted the invitation to serve as a Senior Area Chair for <a href="http
 
 <hr class="news-rule">
 
+<h3>October 20, 2026</h3>
+
+<h2>New Paper</h2>
+
+<span class="important">New paper out:</span>
+<a href="https://arxiv.org/abs/2610.28286">"Local Work, Global Progress: A Convergence Theory of AI Agent Collaboration"</a> - joint work with <a href="https://ivan-ilin.netlify.app">Ivan Ilin</a>. Code: <a href="https://github.com/vectozavr/local-work-global-progress">GitHub</a>.
+<br>
+<br>
+
+Teams of large language model (LLM) agents are increasingly applied to complex tasks, but their collaboration protocols are mostly designed empirically, without convergence guarantees. We formalize collaborative problem solving as block optimization: each agent improves one part of a shared solution, guided by its local objective plus a correction for how its changes affect the other parts. A coordinator checks every proposal against the global objective and merges proposals that do not interfere with each other. We prove linear convergence up to an error floor that vanishes when the corrections are exact. Interfering proposals can also be merged once their combination has been checked; the rate then depends on how well the proposals actually combine, not on worst-case interactions. With GPT-OSS-120B agents on robot routing, a three-agent team finds collision-free plans in every run, better than those of a single agent that controls all robots. On a larger routing task, a six-agent team completes its search about twice as fast as the single agent (in median). Merging the best checked combination of proposals, rather than only proposals that do not interfere, cuts the team's search time by about 30%. With constants measured on the runs, our convergence bound holds in every round and follows the observed progress. We also test the theory on query planning in SQLite and on a synthetic task.
+
+<hr class="news-rule">
+
 <h3>October 17, 2026</h3>
 
 <h2>Off to Paris</h2>
@@ -71,6 +84,19 @@ I have accepted the invitation to serve as a Senior Area Chair for <a href="http
 I am at the airport, on my way to Paris, where I will deliver a 3hr tutorial at the <a href="https://school.flta-conference.org/index.php">4th Federated Machine Learning International Summer School</a> (October 19-26, 2026). (Yes, I know, October is not exactly summer anymore, but I do not control the seasons and stuff.) My tutorial, <a href="https://school.flta-conference.org/technical_sessions.php"><i>Introduction to Federated Learning: View from the Trenches</i></a>, will take place on Monday, October 19, in the afternoon session (Paris time), at the ESIEA Graduate School of Engineering in Ivry-sur-Seine. I am looking forward to it, and it is always nice to visit Paris!
 
 <br><br><div style="text-align: center;"><img loading="lazy" alt="The Eiffel Tower at night, seen from across the Seine" src="imgs/paris-2023.jpg" width="400" height="533" style="max-width: 100%; height: auto;"><br><i>The Eiffel Tower at night (a photo I took in Paris in 2023).</i></div><br>
+
+<hr class="news-rule">
+
+<h3>October 17, 2026</h3>
+
+<h2>New Paper</h2>
+
+<span class="important">New paper out:</span>
+<a href="https://arxiv.org/abs/2610.24736">"How Does Muon Work in Private Deep Learning? Scalable Differentially Private Training via Orthogonalization"</a> - joint work with <a href="https://sanyagaponov.github.io/">Alexander Gaponov</a>, <a href="https://grigory-malinovsky.github.io">Grigory Malinovsky</a>, and <a href="https://shulgin-egor.github.io">Egor Shulgin</a>.
+<br>
+<br>
+
+Training deep neural networks requires optimizers that balance computational efficiency with formal data privacy. While orthogonalized update rules, such as the recently introduced Muon optimizer, have shown strong empirical performance and scalability, their behavior under Differential Privacy (DP) is not yet understood. In this paper, we propose DP-Muon, a differentially private variant of the Muon optimizer. By analyzing Muon's orthogonalized updates through the lens of a Linear Minimization Oracle (LMO), we show that the leading effect of per-example clipping is a positive rescaling of the gradient, to which the LMO is blind, so that only a small directional residual controlled by the centered gradient variance enters the optimization error. This yields an <i>O</i>(<i>K</i><sup>-1/4</sup>) convergence rate, up to logarithmic factors, to a clipping-dependent neighborhood at a fixed noise scale and, with noise calibrated to a fixed (&epsilon;, &delta;) budget, the standard (&radic;<i>d</i>/(<i>n</i>&epsilon;))<sup>1/2</sup> privacy-utility bound of DP-SGD, without assuming bounded gradients. Furthermore, we investigate the hyperparameter landscape of DP-Muon and document how the optimal learning rate, momentum, and batch size change under privacy. Empirically, on image classification DP-Muon matches or improves on DP-SGD and DP-Adam, whereas on language modeling the best optimizer depends on the batch size, with DP-Muon best at small batches and DP-Adam best near the privacy-optimal batch size.
 
 <hr class="news-rule">
 
