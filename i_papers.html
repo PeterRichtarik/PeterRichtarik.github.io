@@ -79,9 +79,12 @@
   <a href="#topic=all" data-topic="" class="is-active">All</a>
   <a href="#topic=acceleration" data-topic="acceleration">Acceleration</a>
   <a href="#topic=adaptive" data-topic="adaptive">Adaptive</a>
+  <a href="#topic=agentic" data-topic="agentic">Agentic AI</a>
   <a href="#topic=async" data-topic="async">Asynchronous</a>
   <a href="#topic=broximal" data-topic="broximal">Broximal</a>
+  <a href="#topic=communication" data-topic="communication">Communication</a>
   <a href="#topic=compressed" data-topic="compressed">Compressed communication</a>
+  <a href="#topic=compression" data-topic="compression">Compression</a>
   <a href="#topic=coordinate-descent" data-topic="coordinate-descent">Coordinate descent</a>
   <a href="#topic=convex" data-topic="convex">Convex</a>
   <a href="#topic=decentralized" data-topic="decentralized">Decentralized</a>
@@ -99,6 +102,8 @@
   <a href="#topic=primal-dual" data-topic="primal-dual">Primal-dual</a>
   <a href="#topic=privacy" data-topic="privacy">Privacy</a>
   <a href="#topic=proximal" data-topic="proximal">Proximal</a>
+  <a href="#topic=pruning" data-topic="pruning">Pruning</a>
+  <a href="#topic=quantization" data-topic="quantization">Quantization</a>
   <a href="#topic=second" data-topic="second">Second-order</a>
   <a href="#topic=sketching" data-topic="sketching">Sketching</a>
   <a href="#topic=stochastic" data-topic="stochastic">Stochastic</a>
@@ -112,7 +117,7 @@
 <h2 id="y2026"> Prepared in 2026 </h2>
 
 
-<div class="paper" data-topics="local first">
+<div class="paper" data-topics="local first agentic">
 [329] Ivan Ilin and Peter Richtárik<br>
 <b>Local work, global progress: a convergence theory of AI agent collaboration</b><br>
 <a class="chip" href="https://arxiv.org/abs/2610.28286">arXiv</a> <a class="chip" href="https://github.com/vectozavr/local-work-global-progress">github</a> <br><br>
@@ -124,12 +129,12 @@
 [328] Alexander Gaponov, Grigory Malinovsky, Egor Shulgin, and Peter Richtárik<br>
 <b>How does Muon work in private deep learning? Scalable differentially private training via orthogonalization</b><br>
 <a href="https://opt-ml.org/">NeurIPS 2026 Workshop: Optimization for Machine Learning (OPT 2026)</a> <br>
-<a class="chip" href="https://arxiv.org/abs/2610.24736">arXiv</a> <br><br>
+<a class="chip" href="https://arxiv.org/abs/2610.24736">arXiv</a> <br><span class="algorithms">Algorithms: <code>DP-Muon</code></span><br><br>
 </div>
 
 
 
-<div class="paper" data-topics="llm">
+<div class="paper" data-topics="llm pruning compression">
 [327] Ivan Ilin and Peter Richtárik<br>
 <b>QK-Wanda: coupling queries and keys for unstructured pruning</b><br>
 <a class="chip" href="https://arxiv.org/abs/2610.01554">arXiv</a> <br><span class="algorithms">Algorithms: <code>QK-Wanda</code></span><br><br>
@@ -163,7 +168,7 @@ NeurIPS 2026 Workshop: Diffusion Language Models: Foundations, Efficiency, and R
 
 
 
-<div class="paper" data-topics="lora llm first">
+<div class="paper" data-topics="lora llm first pruning compression">
 [323] Ivan Ilin, Philip Zmushko, and Peter Richtárik<br>
 <b>Super-Tuning: from activation-aware pruning to sparse fine-tuning</b><br>
 <a class="chip" href="https://arxiv.org/abs/2607.09287">arXiv</a> <a class="chip" href="https://github.com/vectozavr/SuperTuning">github</a> <br><span class="algorithms">Algorithms: <code>Super</code>, <code>Supra</code></span><br><br>
@@ -213,7 +218,7 @@ NeurIPS 2026 Workshop: Diffusion Language Models: Foundations, Efficiency, and R
 
 
 
-<div class="paper" data-topics="async compressed first local stochastic nonconvex">
+<div class="paper" data-topics="async first local stochastic nonconvex compression communication">
 [317] Yassine Maziane, Ammar Mahran, Artavazd Maranjyan, and Peter Richtárik<br>
 <b>LOSCAR-SGD: local SGD with communication-computation overlap and delay-corrected sparse model averaging</b><br>
 Advances in Neural Information Processing Systems 39 (NeurIPS 2026) <br>
@@ -278,7 +283,7 @@ Advances in Neural Information Processing Systems 39 (NeurIPS 2026) <br>
 
 
 
-<div class="paper" data-topics="variance-reduction error-feedback muon compressed first momentum stochastic">
+<div class="paper" data-topics="variance-reduction error-feedback muon first momentum stochastic compression communication">
 [310] Xun Qian, Alexander Gaponov, Grigory Malinovsky, and Peter Richtárik<br>
 <b>Communication-efficient Gluon in federated learning</b><br>
 
@@ -303,7 +308,7 @@ Advances in Neural Information Processing Systems 39 (NeurIPS 2026) <br>
 
 
 
-<div class="paper" data-topics="privacy error-feedback federated first momentum compressed stochastic">
+<div class="paper" data-topics="privacy error-feedback federated first momentum stochastic compression communication">
 [307] Rustem Islamov, Grigory Malinovsky, Alexander Gaponov, Aurelien Lucchi, Peter Richtárik, and Eduard Gorbunov<br>
 <b>Byzantine-robust and differentially private federated optimization under weaker assumptions</b><br>
 <a href="https://proceedings.mlr.press/v337/islamov26a.html">42nd Conference on Uncertainty in Artificial Intelligence (UAI 2026)</a> <br>
@@ -313,7 +318,7 @@ Advances in Neural Information Processing Systems 39 (NeurIPS 2026) <br>
 
 
 
-<div class="paper" data-topics="acceleration primal-dual federated compressed local first stochastic convex">
+<div class="paper" data-topics="acceleration primal-dual federated local first stochastic convex compression communication">
 [306] Laurent Condat, Artavazd Maranjyan, and Peter Richtárik<br>
 <b>BiCoLoR: Communication-efficient optimization with bidirectional compression and local training</b><br>
 
@@ -384,7 +389,7 @@ Advances in Neural Information Processing Systems 39 (NeurIPS 2026) <br>
 
 <h2 id="y2025"> Prepared in 2025 </h2>
 
-<div class="paper" data-topics="privacy error-feedback federated compressed first stochastic">
+<div class="paper" data-topics="privacy error-feedback federated first stochastic compression communication">
 [298] Egor Shulgin, Grigory Malinovsky, Sarit Khirirat, and Peter Richtárik<br>
 <b>First provable guarantees for practical private FL: beyond restrictive assumptions</b><br>
 
@@ -416,7 +421,7 @@ Advances in Neural Information Processing Systems 39 (NeurIPS 2026) <br>
 </div>
 
 
-<div class="paper" data-topics="variance-reduction adaptive error-feedback compressed first momentum stochastic">
+<div class="paper" data-topics="variance-reduction adaptive error-feedback first momentum stochastic compression communication">
 [294] Abdurakhmon Sadiev, Yury Demidovich, Igor Sokolov, Grigory Malinovsky, Sarit Khirirat, and Peter Richtárik<br>
 <b>Improved convergence in parameter-agnostic error feedback through momentum</b><br>
 <a class="chip" href="https://arxiv.org/abs/2511.14501">arXiv</a> <br><span class="algorithms">Algorithms: <code>‖ EF21-SGDM ‖</code>, <code>‖ EF21-IGT ‖</code>, <code>‖ EF21-RHM ‖</code>, <code>‖ EF21-HM ‖</code>, <code>‖ EF21-MVR ‖</code></span><br><br>
@@ -456,7 +461,7 @@ Advances in Neural Information Processing Systems 39 (NeurIPS 2026) <br>
 </div>
 
 
-<div class="paper" data-topics="error-feedback federated muon compressed first momentum stochastic">
+<div class="paper" data-topics="error-feedback federated muon first momentum stochastic compression communication">
 [289] Kaja Gruntkowska, Alexander Gaponov, Zhirayr Tovmasyan, and Peter Richtárik<br>
 <b>Error feedback for Muon and friends</b><br>
 <a href="https://openreview.net/pdf?id=rex7s82Iav">14th International Conference on Learning Representations (ICLR 2026)</a> <br>
@@ -466,7 +471,7 @@ Advances in Neural Information Processing Systems 39 (NeurIPS 2026) <br>
 </div>
 
 
-<div class="paper" data-topics="federated first local stochastic nonconvex">
+<div class="paper" data-topics="federated first local stochastic nonconvex communication">
 [288] Adrien Fradin, Peter Richtárik, and Alexander Tyurin<br>
 <b>Local SGD and federated averaging through the lens of time complexity</b><br>
 
@@ -491,7 +496,7 @@ Advances in Neural Information Processing Systems 39 (NeurIPS 2026) <br>
 </div>
 
 
-<div class="paper" data-topics="variance-reduction sketching lora error-feedback llm nonconvex convex">
+<div class="paper" data-topics="variance-reduction sketching lora error-feedback llm nonconvex convex compression">
 [285] Igor Sokolov, Abdurakhmon Sadiev, Yury Demidovich, Fawaz S Al-Qahtani, and Peter Richtárik<br>
 <b>Bernoulli-LoRA: A theoretical framework for randomized low-rank adaptation</b><br>
 
@@ -515,7 +520,7 @@ Advances in Neural Information Processing Systems 39 (NeurIPS 2026) <br>
 </div>
 
 
-<div class="paper" data-topics="llm">
+<div class="paper" data-topics="llm pruning compression">
 [282] Ivan Ilin and Peter Richtárik<br>
 <b>Thanos: a block-wise pruning algorithm for efficient large language model compression</b><br>
 
@@ -538,7 +543,7 @@ Advances in Neural Information Processing Systems 39 (NeurIPS 2026) <br>
 </div>
 
 
-<div class="paper" data-topics="privacy error-feedback compressed first stochastic nonconvex">
+<div class="paper" data-topics="privacy error-feedback first stochastic nonconvex compression communication">
 [279] Egor Shulgin, Sarit Khirirat, and Peter Richtárik<br>
 <b>Smoothed normalization for efficient distributed private optimization</b><br>
 <a class="chip" href="https://arxiv.org/abs/2502.13482">arXiv</a>  <a class="chip" href="posters/Poster-Smoothed_Normalization.pdf">poster</a><br><span class="algorithms">Algorithms: <code>α-𝖭𝗈𝗋𝗆𝖤𝖢</code></span><br><br>
@@ -552,7 +557,7 @@ Advances in Neural Information Processing Systems 39 (NeurIPS 2026) <br>
 </div>
 
 
-<div class="paper" data-topics="privacy error-feedback compressed first momentum stochastic nonconvex">
+<div class="paper" data-topics="privacy error-feedback first momentum stochastic nonconvex compression communication">
 [277] Rustem Islamov, Samuel Horváth, Aurelien Lucchi, Peter Richtárik, and Eduard Gorbunov<br>
 <b>Double momentum and error feedback for clipping with fast rates and differential privacy</b><br>
 <a class="chip" href="https://arxiv.org/abs/2502.11682">arXiv</a> <br><span class="algorithms">Algorithms: <code>Clip21-SGD2M</code></span><br><br>
@@ -584,7 +589,7 @@ Advances in Neural Information Processing Systems 39 (NeurIPS 2026) <br>
 </div>
 
 
-<div class="paper" data-topics="llm">
+<div class="paper" data-topics="llm pruning compression">
 [273] Kai Yi and Peter Richtárik<br>
 <b>Symmetric pruning of large language models</b><br>
 
@@ -609,7 +614,7 @@ Advances in Neural Information Processing Systems 39 (NeurIPS 2026) <br>
 </div>
 
 
-<div class="paper" data-topics="variance-reduction adaptive error-feedback federated compressed first stochastic convex">
+<div class="paper" data-topics="variance-reduction adaptive error-feedback federated first stochastic convex compression communication">
 [270] Igor Sokolov and Peter Richtárik<br>
 <b>MARINA-P: Superior performance in non-smooth federated optimization with adaptive stepsizes</b><br>
 
@@ -617,7 +622,7 @@ Advances in Neural Information Processing Systems 39 (NeurIPS 2026) <br>
 </div>
 
 
-<div class="paper" data-topics="privacy sketching coordinate-descent first stochastic">
+<div class="paper" data-topics="privacy sketching coordinate-descent first stochastic compression">
 [269] Artavazd Maranjyan, Abdurakhmon Sadiev, and Peter Richtárik<br>
 <b>Differentially private random block coordinate descent</b><br>
 <a class="chip" href="https://arxiv.org/abs/2412.17054">arXiv</a> <br><span class="algorithms">Algorithms: <code>DP-SkGD</code>, <code>DP-SkGD-BS</code>, <code>DP-CD</code></span><br><br>
@@ -631,7 +636,7 @@ Advances in Neural Information Processing Systems 39 (NeurIPS 2026) <br>
 </div>
 
 
-<div class="paper" data-topics="federated local stochastic first nonconvex">
+<div class="paper" data-topics="federated local stochastic first nonconvex communication">
 [267] Yury Demidovich, Petr Ostroukhov, Grigory Malinovsky, Samuel Horváth, Martin Takáč, Peter Richtárik, and Eduard Gorbunov<br>
 <b>Methods with local steps and random reshuffling for generally smooth non-convex federated optimization</b><br>
 <a href="https://openreview.net/pdf?id=TrJ36UfD9P">13th International Conference on Learning Representations (ICLR 2025)</a>
@@ -641,7 +646,7 @@ Advances in Neural Information Processing Systems 39 (NeurIPS 2026) <br>
 </div>
 
 
-<div class="paper" data-topics="llm">
+<div class="paper" data-topics="llm quantization compression">
 [266] Vladimir Malinovskii, Andrei Panferov, Ivan Ilin, Han Guo, Peter Richtárik, and Dan Alistarh<br>
 <b>Pushing the limits of large language model quantization via the linearity theorem</b><br>
 <a href="https://aclanthology.org/2025.naacl-long.543/">The 2025 Annual Conference of the Nations of the Americas Chapter of the ACL (NAACL 2025)</a> <br>
@@ -650,7 +655,7 @@ Advances in Neural Information Processing Systems 39 (NeurIPS 2026) <br>
 </div>
 
 
-<div class="paper" data-topics="error-feedback federated compressed first momentum stochastic nonconvex">
+<div class="paper" data-topics="error-feedback federated first momentum stochastic nonconvex compression communication">
 [265] Sarit Khirirat, Abdurakhmon Sadiev, Artem Riabinin, Eduard Gorbunov, and Peter Richtárik<br>
 <b>Error feedback under $(L_0,L_1)$-smoothness: normalization and momentum </b><br>
 <a href="https://openreview.net/pdf?id=LmcTbBvgjP">Advances in Neural Information Processing Systems 38 (NeurIPS 2025)</a> <br>
@@ -659,7 +664,7 @@ Advances in Neural Information Processing Systems 39 (NeurIPS 2026) <br>
 </div>
 
 
-<div class="paper" data-topics="proximal adaptive federated first local convex">
+<div class="paper" data-topics="proximal adaptive federated first local convex communication">
 [264] Wojciech Anyszka, Kaja Gruntkowska, Alexander Tyurin, and Peter Richtárik<br>
 <b>Tighter performance theory of FedExProx</b><br>
 <a href="https://openreview.net/pdf?id=PHsFWKJhGv">14th International Conference on Learning Representations (ICLR 2026)</a> <br>
@@ -668,14 +673,14 @@ Advances in Neural Information Processing Systems 39 (NeurIPS 2026) <br>
 </div>
 
 
-<div class="paper" data-topics="compressed second">
+<div class="paper" data-topics="second compression communication">
 [263] Konstantin Burlachenko and Peter Richtárik<br>
 <b>Unlocking FedNL: Self-contained compute-optimized implementation</b><br>
 <a class="chip" href="https://arxiv.org/abs/2410.08760">arXiv</a> <br><span class="algorithms">Algorithms: <code>FedNL</code>, <code>FedNL-LS</code>, <code>FedNL-PP</code></span><br><br>
 </div>
 
 
-<div class="paper" data-topics="sketching lora llm nonconvex">
+<div class="paper" data-topics="sketching lora llm nonconvex compression">
 [262] Grigory Malinovsky, Umberto Michieli, Hasan Abed Al Kader Hammoud, Taha Ceritli, Hayder Elesedy, Mete Ozay, and Peter Richtárik<br>
 <b>Randomized asymmetric chain of LoRA: The first meaningful theoretical framework for low-rank adaptation</b><br>
 
@@ -694,7 +699,7 @@ to be presented at <a href="https://deepmath-conference.com/submissions">Confere
 </div>
 
 
-<div class="paper" data-topics="proximal federated first local convex">
+<div class="paper" data-topics="proximal federated first local convex communication">
 [260] Hanmin Li and Peter Richtárik<br>
 <b>On the convergence of FedProx with extrapolation and inexact prox</b><br>
 <a href="https://openreview.net/pdf?id=t2cipHuTRR">NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024)</a> <br>
@@ -712,7 +717,7 @@ to be presented at <a href="https://deepmath-conference.com/submissions">Confere
 </div>
 
 
-<div class="paper" data-topics="proximal federated first local stochastic">
+<div class="paper" data-topics="proximal federated first local stochastic communication">
 [258] Kai Yi, Timur Kharisov, Igor Sokolov, and Peter Richtárik<br>
 <b>Cohort squeeze: Beyond a single communication round per cohort in cross-device federated learning</b><br>
 <span class="important">Oral at the NeurIPS 2024 Federated Learning Workshop</span><br>  
@@ -721,7 +726,7 @@ to be presented at <a href="https://deepmath-conference.com/submissions">Confere
 </div>
 
 
-<div class="paper" data-topics="acceleration proximal federated first local">
+<div class="paper" data-topics="acceleration proximal federated first local pruning compression communication">
 [257] Georg Meinhardt, Kai Yi, Laurent Condat, and Peter Richtárik<br>
 <b>Sparse-ProxSkip: Accelerated sparse-to-sparse training in federated learning</b><br>
 
@@ -754,7 +759,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="decentralized acceleration async first stochastic">
+<div class="paper" data-topics="decentralized acceleration async first stochastic communication">
 [253] Alexander Tyurin and Peter Richtárik<br>
 <b>On the optimal time complexities in decentralized stochastic asynchronous optimization</b><br>
 <a href="https://proceedings.neurips.cc/paper_files/paper/2024/file/dd850be1e74582b68fa82078f3fc6d4d-Paper-Conference.pdf">Advances in Neural Information Processing Systems 37 (NeurIPS 2024)</a> <br>
@@ -770,7 +775,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="adaptive error-feedback llm first momentum stochastic">
+<div class="paper" data-topics="adaptive error-feedback llm first momentum stochastic compression">
 [251] Ionut-Vlad Modoranu, Mher Safaryan, Grigory Malinovsky, Eldar Kurtic, Thomas Robert, Peter Richtárik, and Dan Alistarh<br>
 <b>MicroAdam: Accurate adaptive optimization with low space overhead and provable convergence</b><br>
 <a href="https://proceedings.neurips.cc/paper_files/paper/2024/file/000f947dcaff8fbffcc3f53a1314f358-Paper-Conference.pdf">Advances in Neural Information Processing Systems 37 (NeurIPS 2024)</a> <br>
@@ -788,7 +793,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="coordinate-descent llm">
+<div class="paper" data-topics="coordinate-descent llm quantization compression">
 [249] Vladimir Malinovskii, Denis Mazur, Ivan Ilin, Denis Kuznedelev, Konstantin Burlachenko, Kai Yi, Dan Alistarh, and Peter Richtárik<br>
 <b>PV-Tuning: Beyond straight-through estimation for extreme LLM compression</b><br>
 <a href="https://proceedings.neurips.cc/paper_files/paper/2024/file/091166620a04a289c555f411d8899049-Paper-Conference.pdf">Advances in Neural Information Processing Systems 37 (NeurIPS 2024)</a> <br>
@@ -806,7 +811,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="proximal adaptive federated local first convex">
+<div class="paper" data-topics="proximal adaptive federated local first convex communication">
 [247] Hanmin Li, Kirill Acharya, and Peter Richtárik<br>
 <b>The power of extrapolation in federated learning</b><br>
 <a href="https://openreview.net/pdf?id=FuTfZK7PK3">Advances in Neural Information Processing Systems 37 (NeurIPS 2024)</a> <br>
@@ -815,7 +820,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="proximal federated compressed first local stochastic">
+<div class="paper" data-topics="proximal federated first local stochastic pruning quantization compression communication">
 [246] Kai Yi, Georg Meinhardt, Laurent Condat, and Peter Richtárik<br>
 <b>FedComLoc: Communication-efficient distributed training of sparse and quantized models</b><br>
 <a href="https://openreview.net/pdf?id=vYQPLytQsj">Transactions on Machine Learning Research (TMLR 2025)</a> <br>
@@ -833,7 +838,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="acceleration primal-dual federated compressed local first stochastic convex">
+<div class="paper" data-topics="acceleration primal-dual federated local first stochastic convex compression communication">
 [244] Laurent Condat, Artavazd Maranjyan, and Peter Richtárik<br>
 <b>LoCoDL: Communication-efficient distributed learning with local training and compression</b><br>
 <a href="https://openreview.net/pdf?id=PpYy0dR3Qw">13th International Conference on Learning Representations (ICLR 2025)</a>
@@ -845,7 +850,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="variance-reduction federated compressed first nonconvex">
+<div class="paper" data-topics="variance-reduction federated first nonconvex compression communication">
 [243] Kaja Gruntkowska, Alexander Tyurin, and Peter Richtárik<br>
 <b>Improving the worst-case bidirectional communication complexity for nonconvex distributed optimization under function similarity</b><br>
 <a href="https://proceedings.neurips.cc/paper_files/paper/2024/file/a1d20cc72a21ef971d7e49a90d8fa56f-Paper-Conference.pdf">Advances in Neural Information Processing Systems 37 (NeurIPS 2024)</a> <br>
@@ -864,7 +869,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="variance-reduction federated compressed stochastic first nonconvex">
+<div class="paper" data-topics="variance-reduction federated stochastic first nonconvex quantization compression communication">
 [241] Andrei Panferov, Yury Demidovich, Ahmad Rammal, and Peter Richtárik<br>
 <b>Correlated quantization for faster nonconvex distributed optimization</b><br>
 <a href="https://proceedings.mlr.press/v286/panferov25a.html">41st Conference on Uncertainty in Artificial Intelligence (UAI 2025)</a> <br>
@@ -875,7 +880,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
   <hr class="news-rule">
 <h2 id="y2023"> Prepared in 2023 </h2>
 
-<div class="paper" data-topics="privacy sketching federated">
+<div class="paper" data-topics="privacy sketching federated pruning compression">
 [240] Kai Yi, Nidham Gazagnadou, Peter Richtárik, and Lingjuan Lyu<br>
 <b>FedP3: Personalized and privacy-friendly federated network pruning under model heterogeneity</b><br>
 <a href="https://openreview.net/forum?id=hbHwZYqk9T">12th International Conference on Learning Representations (ICLR 2024)</a> <br>
@@ -884,7 +889,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="error-feedback federated first stochastic compressed">
+<div class="paper" data-topics="error-feedback federated first stochastic compression communication">
 [239] Peter Richtárik, Elnur Gasanov, Konstantin Burlachenko<br>
 <b>Error feedback reloaded: From quadratic to arithmetic mean of smoothness constants</b><br>
 <a href="https://openreview.net/forum?id=Ch7WqGcGmb">12th International Conference on Learning Representations (ICLR 2024)</a> <br>
@@ -893,7 +898,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="adaptive error-feedback federated compressed first">
+<div class="paper" data-topics="adaptive error-feedback federated first compression communication">
 [238] Jihao Xin, Ivan Ilin, Shunkang Zhang, Marco Canini, Peter Richtárik<br>          
 <b>Kimad: Adaptive gradient compression with bandwidth awareness</b><br>
 <a href="https://dl.acm.org/doi/abs/10.1145/3630048.3630184">Proceedings of the 4th International Workshop on Distributed Machine Learning, 25--48, 2023 (DistributedML 2023)</a> <br>
@@ -911,7 +916,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="variance-reduction sketching federated compressed first stochastic">
+<div class="paper" data-topics="variance-reduction sketching federated first stochastic compression communication">
 [236] Yury Demidovich, Grigory Malinovsky, Egor Shulgin, and Peter Richtárik<br>          
 <b>MAST: model-agnostic sparsified training</b><br>
 <a href="https://openreview.net/pdf?id=sPuLtU32av">13th International Conference on Learning Representations (ICLR 2025)</a>
@@ -921,7 +926,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="variance-reduction federated compressed first stochastic">
+<div class="paper" data-topics="variance-reduction federated first stochastic compression communication">
 [235] Grigory Malinovsky, Peter Richtárik, Samuel Horváth, and Eduard Gorbunov<br>          
 <b>Byzantine robustness and partial participation can be achieved simultaneously: just clip gradient differences</b><br>
 <a href="https://openreview.net/pdf?id=G8aS48B9bm">Advances in Neural Information Processing Systems 37 (NeurIPS 2024)</a> <br>
@@ -937,7 +942,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="variance-reduction error-feedback federated compressed first stochastic nonconvex">
+<div class="paper" data-topics="variance-reduction error-feedback federated first stochastic nonconvex compression communication">
 [233] Ahmad Rammal, Kaja Gruntkowska, Nikita Fedin, Eduard Gorbunov, and Peter Richtárik<br>          
 <b>Communication compression for Byzantine robust learning: New efficient algorithms and improved rates</b><br>
           <a href="https://proceedings.mlr.press/v238/rammal24a.html">26th International Conference on Artificial Intelligence and Statistics (AISTATS 2024)</a> <br>
@@ -946,7 +951,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="variance-reduction sketching federated compressed first stochastic nonconvex">
+<div class="paper" data-topics="variance-reduction sketching federated first stochastic nonconvex compression communication">
 [232] Hanmin Li, Avetik Karagulyan, and Peter Richtárik<br>          
 <b>MARINA meets matrix stepsizes: Variance reduced distributed non-convex optimization</b><br>
 
@@ -964,7 +969,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="sketching federated compressed">
+<div class="paper" data-topics="sketching federated compression communication">
 [230] Egor Shulgin and Peter Richtárik<br>          
 <b>Towards a better theoretical understanding of independent subnetwork training</b><br>
 <a href="https://openreview.net/pdf?id=XUc29ydmLX">41st International Conference on Machine Learning (ICML 2024)</a> <br>
@@ -974,7 +979,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="sketching coordinate-descent first stochastic nonconvex convex">
+<div class="paper" data-topics="sketching coordinate-descent first stochastic nonconvex convex compression">
 [229] Rafał Szlendak, Elnur Gasanov, and Peter Richtárik<br>
           <b>Understanding progressive training through the framework of randomized coordinate descent</b><br>     
           <a href="https://proceedings.mlr.press/v238/szlendak24a.html">26th International Conference on Artificial Intelligence and Statistics (AISTATS 2024)</a> <br>               
@@ -982,7 +987,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="acceleration proximal primal-dual federated compressed local momentum">
+<div class="paper" data-topics="acceleration proximal primal-dual federated local momentum compression communication">
 [228] Michał Grudzień, Grigory Malinovsky, and Peter Richtárik<br>
           <b>Improving accelerated federated learning with compression and importance sampling</b><br>
           <a href="https://fl-icml2023.github.io">Federated Learning and Analytics in Practice: Algorithms, Systems, Applications, and Opportunities (ICML 2023 Workshop) </a> <br>          
@@ -991,14 +996,14 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="privacy error-feedback compressed first nonconvex">
+<div class="paper" data-topics="privacy error-feedback first nonconvex compression communication">
 [227] Sarit Khirirat, Eduard Gorbunov, Samuel Horváth, Rustem Islamov, Fakhri Karray, and Peter Richtárik<br>
           <b>Clip21: Error feedback for gradient clipping</b><br>
           <a class="chip" href="https://arxiv.org/abs/2305.18929">arXiv</a> <br><span class="algorithms">Algorithms: <code>Clip21-Avg</code>, <code>Clip21-GD</code>, <code>DP-Clip21-GD</code>, <code>Press-Clip21-GD</code></span><br><br>
 </div>
 
 
-<div class="paper" data-topics="federated compressed first">
+<div class="paper" data-topics="federated first quantization compression communication">
 [226] Jihao Xin, Marco Canini, Peter Richtárik, and Samuel Horváth<br>
           <b>Quantize once, train fast: allreduce-compatible compression with provable guarantees</b><br>
           <a href="https://ebooks.iospress.nl/volumearticle/76054">28th European Conference on Artificial Intelligence (ECAI 2025)</a><br>
@@ -1015,7 +1020,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="error-feedback federated compressed first nonconvex">
+<div class="paper" data-topics="error-feedback federated first nonconvex compression communication">
 [224] Peter Richtárik, Elnur Gasanov and Konstantin Burlachenko<br>
           <b>Error feedback shines when features are rare</b><br>
           
@@ -1023,7 +1028,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="error-feedback federated compressed first momentum nonconvex">
+<div class="paper" data-topics="error-feedback federated first momentum nonconvex compression communication">
 [223] Ilyas Fatkhullin, Alexander Tyurin and Peter Richtárik<br>
           <b>Momentum provably improves error feedback!</b><br>
           <a href="https://openreview.net/forum?id=w6LO3kqy9B#all">Advances in Neural Information Processing Systems 36 (NeurIPS 2023)</a> <br>          
@@ -1033,7 +1038,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="acceleration federated first local stochastic">
+<div class="paper" data-topics="acceleration federated first local stochastic communication">
 [222] Kai Yi, Laurent Condat and Peter Richtárik<br>
           <b>Explicit personalization and local training: double communication acceleration in federated learning</b><br>
           <a href="https://openreview.net/pdf?id=qVUEuhlaEa">Transactions on Machine Learning Research (TMLR 2025)</a> <br>
@@ -1051,7 +1056,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="acceleration error-feedback federated compressed first momentum convex">
+<div class="paper" data-topics="acceleration error-feedback federated first momentum convex compression communication">
 [220] Alexander Tyurin and Peter Richtárik<br>
           <b>2Direction: Theoretically faster distributed training with bidirectional communication compression</b><br>
           <a href="https://openreview.net/forum?id=n18MhTsSGb">Advances in Neural Information Processing Systems 36 (NeurIPS 2023)</a> <br>          
@@ -1060,7 +1065,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="sketching federated compressed first nonconvex">
+<div class="paper" data-topics="sketching federated first nonconvex compression communication">
 [219] Hanmin Li, Avetik Karagulyan and Peter Richtárik<br>
           <b>Det-CGD: Compressed gradient descent with matrix stepsizes for non-convex optimization</b><br>
           <a href="https://openreview.net/pdf?id=ZEZ0CPmoSI">12th International Conference on Learning Representations (ICLR 2024)</a> <br>
@@ -1069,7 +1074,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="error-feedback federated compressed first stochastic">
+<div class="paper" data-topics="error-feedback federated first stochastic compression communication">
 [218] Avetik Karagulyan and Peter Richtárik<br>
           <b>ELF: Federated Langevin algorithms with primal, dual and bidirectional compression</b><br>
 <a href="https://proceedings.mlr.press/v286/karagulyan25a.html">41st Conference on Uncertainty in Artificial Intelligence (UAI 2025)</a> <br>          
@@ -1079,7 +1084,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="acceleration primal-dual federated local momentum first stochastic convex">
+<div class="paper" data-topics="acceleration primal-dual federated local momentum first stochastic convex communication">
 [217] Laurent Condat, Grigory Malinovsky and Peter Richtárik<br>
           <b>TAMUNA: Doubly accelerated distributed optimization under partial participation</b><br>
           
@@ -1087,7 +1092,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="federated first stochastic">
+<div class="paper" data-topics="federated first stochastic communication">
 [216] Grigory Malinovsky, Samuel Horváth, Konstantin Burlachenko and Peter Richtárik<br>
           <b>Federated learning with regularized client participation</b><br>
           <a href="https://fl-icml2023.github.io">Federated Learning and Analytics in Practice: Algorithms, Systems, Applications, and Opportunities (ICML 2023 Workshop) </a> <br>          
@@ -1104,7 +1109,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="acceleration variance-reduction proximal error-feedback coordinate-descent primal-dual federated compressed first momentum stochastic convex">
+<div class="paper" data-topics="acceleration variance-reduction proximal error-feedback coordinate-descent primal-dual federated first momentum stochastic convex compression communication">
 [214] Xun Qian, Hanze Dong, Tong Zhang and Peter Richtárik<br>
           <b>Catalyst acceleration of error compensated methods leads to better communication complexity</b><br>
           <a href="https://proceedings.mlr.press/v206/qian23a.html">25th International Conference on Artificial Intelligence and Statistics (AISTATS 2023)</a> <br>
@@ -1122,7 +1127,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 <hr class="news-rule">
 <h2 id="y2022"> Prepared in 2022 </h2>
 
-          <div class="paper" data-topics="acceleration proximal primal-dual federated local momentum first">
+          <div class="paper" data-topics="acceleration proximal primal-dual federated local momentum first communication">
 [212] Michał Grudzień, Grigory Malinovsky and Peter Richtárik<br>
           <b>Can 5th generation local training methods support client sampling? Yes!</b><br>
           <a href="https://proceedings.mlr.press/v206/grudzien23a.html">25th International Conference on Artificial Intelligence and Statistics (AISTATS 2023)</a> <br>
@@ -1131,7 +1136,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="adaptive error-feedback federated compressed first nonconvex convex">
+<div class="paper" data-topics="adaptive error-feedback federated first nonconvex convex compression communication">
 [211] Maksim Makarenko, Elnur Gasanov, Rustem Islamov, Abdurakhmon Sadiev and Peter Richtárik<br>
           <b>Adaptive compression for communication-efficient distributed training</b><br>
           <a href="https://openreview.net/pdf?id=Rb6VDOHebB">Transactions on Machine Learning Research (TMLR 2023) </a><br>          
@@ -1148,7 +1153,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="acceleration proximal federated first local convex">
+<div class="paper" data-topics="acceleration proximal federated first local convex communication">
 [209] Artavazd Maranjyan, Mher Safaryan and Peter Richtárik <br>
           <b>GradSkip: Communication-accelerated local gradient methods with better computational complexity</b><br>
           <a href="https://openreview.net/pdf?id=6R3fRqFfhn">Transactions on Machine Learning Research (TMLR 2025)</a> <br>
@@ -1157,7 +1162,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="acceleration proximal primal-dual federated compressed first local convex">
+<div class="paper" data-topics="acceleration proximal primal-dual federated first local convex compression communication">
 [208] Laurent Condat, Ivan Agarský and Peter Richtárik <br>
           <b>CompressedScaffnew: the first theoretical double acceleration of communication from local training and compression in distributed optimization</b><br>
           <a href="https://doi.org/10.1080/02331934.2026.2653842">Optimization, 2026</a> <br>
@@ -1173,7 +1178,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="error-feedback federated compressed first nonconvex convex">
+<div class="paper" data-topics="error-feedback federated first nonconvex convex compression communication">
 [206] Kaja Gruntkowska, Alexander Tyurin and Peter Richtárik<br>
           <b>EF21-P and friends: Improved theoretical communication complexity for distributed optimization with bidirectional compression</b><br>
           <a href="https://proceedings.mlr.press/v202/gruntkowska23a">40th International Conference on Machine Learning (ICML 2023)</a><br>
@@ -1190,7 +1195,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="federated compressed first local stochastic">
+<div class="paper" data-topics="federated first local stochastic compression communication">
 [204] El Houcine Bergou, Konstantin Burlachenko, Aritra Dutta and Peter Richtárik <br>
           <b>Personalized federated learning with communication compression</b><br>
           <a href="https://openreview.net/forum?id=dZugyhbNFY">Transactions on Machine Learning Research (TMLR 2023)</a> <br>
@@ -1216,7 +1221,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="acceleration variance-reduction proximal federated first local stochastic">
+<div class="paper" data-topics="acceleration variance-reduction proximal federated first local stochastic communication">
 [201] Grigory Malinovsky, Kai Yi and Peter Richtárik <br>
           <b>Variance reduced ProxSkip: algorithm, theory and application to federated learning</b><br>
           <a href="https://openreview.net/forum?id=edkno3SvKo">Advances in Neural Information Processing Systems 35 (NeurIPS 2022) </a><br>
@@ -1225,7 +1230,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="decentralized acceleration proximal primal-dual federated first local momentum convex">
+<div class="paper" data-topics="decentralized acceleration proximal primal-dual federated first local momentum convex communication">
 [200] Abdurakhmon Sadiev, Dmitry Kovalev and Peter Richtárik <br>
           <b>Communication acceleration of local gradient methods via an accelerated primal-dual algorithm with inexact prox</b><br>
           <a href="https://openreview.net/forum?id=W72rB0wwLVu">Advances in Neural Information Processing Systems 35 (NeurIPS 2022) </a><br>
@@ -1234,7 +1239,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="federated compressed first stochastic">
+<div class="paper" data-topics="federated first stochastic compression communication">
 [199] Egor Shulgin and Peter Richtárik <br>
           <b>Shifted compression framework: generalizations and improvements</b><br>
           <a href="https://proceedings.mlr.press/v180/shulgin22a.html">38th Conference on Uncertainty in Artificial Intelligence (UAI 2022) </a><br>
@@ -1250,7 +1255,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="federated compressed first stochastic">
+<div class="paper" data-topics="federated first stochastic compression communication">
 [197] Abdurakhmon Sadiev, Grigory Malinovsky, Eduard Gorbunov, Igor Sokolov, Ahmed Khaled, Konstantin Burlachenko and Peter Richtárik <br>
           <b>Don't compress gradients in random reshuffling: compress gradient differences</b><br>       
 <a href="https://proceedings.neurips.cc/paper_files/paper/2024/file/99c80ceb10cb674110f03b2def6a5b76-Paper-Conference.pdf">Advances in Neural Information Processing Systems 37 (NeurIPS 2024)</a> <br>          
@@ -1260,7 +1265,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="federated compressed second convex">
+<div class="paper" data-topics="federated second convex compression communication">
 [196] Rustem Islamov, Xun Qian, Slavomír Hanzely, Mher Safaryan and Peter Richtárik <br>
           <b>Distributed Newton-type methods with communication compression and Bernoulli aggregation</b><br>
 	  <a href="https://openreview.net/pdf?id=NekBTCKJ1H">Transactions on Machine Learning Research (TMLR 2023)</a> <br>         
@@ -1288,7 +1293,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="variance-reduction federated compressed first stochastic nonconvex">
+<div class="paper" data-topics="variance-reduction federated first stochastic nonconvex compression communication">
 [193] Lukang Sun, Adil Salim and Peter Richtárik<br>
           <b>Federated sampling with Langevin algorithm under isoperimetry</b><br>
 	  <a href="https://openreview.net/pdf?id=Sj7bFPeR6W">Transactions on Machine Learning Research (TMLR 2024)</a> <br>          
@@ -1297,7 +1302,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="variance-reduction federated compressed first stochastic nonconvex">
+<div class="paper" data-topics="variance-reduction federated first stochastic nonconvex compression communication">
 [192] Eduard Gorbunov, Samuel Horváth, Peter Richtárik and Gauthier Gidel<br>
           <b>Variance reduction is an antidote to Byzantines: better rates, weaker assumptions and communication compression as a cherry on the top</b><br>
           <a href="https://openreview.net/forum?id=pfuqQQCB34">11th International Conference on Learning Representations (ICLR 2023) </a><br>
@@ -1314,7 +1319,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="variance-reduction federated compressed first stochastic nonconvex">
+<div class="paper" data-topics="variance-reduction federated first stochastic nonconvex compression communication">
 [190] Alexander Tyurin and Peter Richtárik<br>
           <b>A computation and communication efficient method for distributed nonconvex problems in the partial participation setting</b><br>
           <a href="https://openreview.net/forum?id=loxinzXlCx">Advances in Neural Information Processing Systems 36 (NeurIPS 2023)</a> <br>          
@@ -1323,7 +1328,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="variance-reduction proximal error-feedback federated compressed first stochastic">
+<div class="paper" data-topics="variance-reduction proximal error-feedback federated first stochastic compression communication">
 [189] Laurent Condat, Kai Yi and Peter Richtárik<br>
           <b>EF-BV: A unified theory of error feedback and variance reduction mechanisms for biased and unbiased compression in distributed optimization</b><br>
           <a href="https://openreview.net/forum?id=PeJO709WUup">Advances in Neural Information Processing Systems 35 (NeurIPS 2022)</a> <br>
@@ -1332,7 +1337,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="variance-reduction federated compressed first local stochastic">
+<div class="paper" data-topics="variance-reduction federated first local stochastic compression communication">
 [188] Grigory Malinovsky and Peter Richtárik<br>
           <b>Federated random reshuffling with compression and variance reduction</b><br>
           
@@ -1340,7 +1345,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="variance-reduction federated local stochastic">
+<div class="paper" data-topics="variance-reduction federated local stochastic communication">
 [187] Samuel Horváth, Maziar Sanjabi, Lin Xiao, Peter Richtárik and Michael Rabbat<br>
           <b>FedShuffle: Recipes for better use of local work in federated learning</b><br>
           <a href="https://openreview.net/pdf?id=Lgs5pQ1v30">Transactions on Machine Learning Research (TMLR 2022)</a> <br>
@@ -1349,7 +1354,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="decentralized acceleration proximal primal-dual federated first local">
+<div class="paper" data-topics="decentralized acceleration proximal primal-dual federated first local communication">
 [186] Konstantin Mishchenko, Grigory Malinovsky, Sebastian Stich and Peter Richtárik<br>
           <b>ProxSkip: Yes! Local gradient steps provably lead to communication acceleration! Finally!</b><br>
           <a href="https://proceedings.mlr.press/v162/mishchenko22b.html">39th International Conference on Machine Learning (ICML 2022)</a><br>
@@ -1358,7 +1363,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="minimax decentralized proximal primal-dual stochastic">
+<div class="paper" data-topics="minimax decentralized proximal primal-dual stochastic communication">
 [185] Dmitry Kovalev, Aleksandr Beznosikov, Abdurakhmon Sadiev, Michael Persiianov, Peter Richtárik and Alexander Gasnikov<br>
           <b>Optimal algorithms for decentralized stochastic variational inequalities</b><br>
          <a href="https://openreview.net/forum?id=omI5hgwgrsa">Advances in Neural Information Processing Systems 35 (NeurIPS 2022) </a><br>
@@ -1366,7 +1371,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="variance-reduction federated compressed first stochastic nonconvex">
+<div class="paper" data-topics="variance-reduction federated first stochastic nonconvex compression communication">
 [184] Alexander Tyurin and Peter Richtárik<br>
           <b>DASHA: Distributed nonconvex optimization with communication compression and optimal oracle complexity</b><br>
           <a href="https://openreview.net/forum?id=VA1YpcNr7ul">10th International Conference on Learning Representations (ICLR 2023) </a><br>
@@ -1376,7 +1381,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="error-feedback federated compressed first nonconvex">
+<div class="paper" data-topics="error-feedback federated first nonconvex compression communication">
 [183] Peter Richtárik, Igor Sokolov, Ilyas Fatkhullin, Elnur Gasanov, Zhize Li and Eduard Gorbunov<br>
           <b>3PC: Three point compressors for communication-efficient distributed training and a better theory for lazy aggregation</b><br>
           <a href="https://proceedings.mlr.press/v162/richtarik22a.html">39th International Conference on Machine Learning (ICML 2022)</a><br>
@@ -1385,7 +1390,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="decentralized error-feedback federated compressed nonconvex">
+<div class="paper" data-topics="decentralized error-feedback federated nonconvex quantization compression communication">
 [182] Haoyu Zhao, Boyue Li, Zhize Li, Peter Richtárik and Yuejie Chi<br>
           <b>BEER: Fast $O (1/T)$ rate for decentralized nonconvex optimization with communication compression</b><br>
           <a href="https://openreview.net/forum?id=I47eFCKa1f3">Advances in Neural Information Processing Systems 35 (NeurIPS 2022) </a><br>
@@ -1394,7 +1399,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="federated local stochastic nonconvex convex">
+<div class="paper" data-topics="federated local stochastic nonconvex convex communication">
 [181] Grigory Malinovsky, Konstantin Mishchenko and Peter Richtárik<br>
           <b>Server-side stepsizes and sampling without replacement provably help in federated optimization</b><br>
           <a href="https://dl.acm.org/doi/10.1145/3630048.3630187">Proceedings of the 4th International Workshop on Distributed Machine Learning, 85--104, 2023 (DistributedML 2023) </a>
@@ -1413,7 +1418,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="variance-reduction federated compressed stochastic nonconvex convex">
+<div class="paper" data-topics="variance-reduction federated stochastic nonconvex convex compression communication">
 [179] Haoyu Zhao, Konstantin Burlachenko, Zhize Li and Peter Richtárik<br>
           <b>Faster rates for compressed federated learning with client-variance reduction</b><br>
           <a href="https://epubs.siam.org/doi/10.1137/23M1553820">SIAM Journal on Mathematics of Data Science 6 (1):154-175, 2024</a><br>          
@@ -1431,7 +1436,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="federated first">
+<div class="paper" data-topics="federated first communication">
 [177] Elnur Gasanov, Ahmed Khaled, Samuel Horváth and Peter Richtárik<br>
           <b>FLIX: A simple and communication-efficient alternative to local methods in federated learning</b><br>
           <a href="https://proceedings.mlr.press/v151/gasanov22a.html">24th International Conference on Artificial Intelligence and Statistics (AISTATS 2022) </a><br>
@@ -1440,7 +1445,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="federated compressed second">
+<div class="paper" data-topics="federated second compression communication">
 [176] Xun Qian, Rustem Islamov, Mher Safaryan and Peter Richtárik<br>
           <b>Basis matters: better communication-efficient second order methods for federated learning</b><br>
           <a href="https://proceedings.mlr.press/v151/qian22a.html">24th International Conference on Artificial Intelligence and Statistics (AISTATS 2022)</a> <br>
@@ -1449,7 +1454,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="minimax variance-reduction error-feedback primal-dual compressed">
+<div class="paper" data-topics="minimax variance-reduction error-feedback primal-dual compression communication">
 [175] Aleksandr Beznosikov, Peter Richtárik, Michael Diskin, Max Ryabinin and Alexander Gasnikov<br>
           <b>Distributed methods with compressed communication for solving variational inequalities, with theoretical guarantees</b><br>          
           <a href="https://openreview.net/forum?id=wClmeg9u7G">Advances in Neural Information Processing Systems 35 (NeurIPS 2022) </a> <br>
@@ -1457,7 +1462,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="variance-reduction federated compressed first stochastic nonconvex">
+<div class="paper" data-topics="variance-reduction federated first stochastic nonconvex compression communication">
 [174] Rafał Szlendak, Alexander Tyurin and Peter Richtárik<br>
           <b>Permutation compressors for provably faster distributed nonconvex optimization</b><br>
           <a href="https://openreview.net/pdf?id=GugZ5DzzAu">10th International Conference on Learning Representations (ICLR 2022)</a>  <br>
@@ -1466,7 +1471,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="variance-reduction proximal error-feedback federated compressed first momentum stochastic nonconvex">
+<div class="paper" data-topics="variance-reduction proximal error-feedback federated first momentum stochastic nonconvex compression communication">
 [173] Ilyas Fatkhullin, Igor Sokolov, Eduard Gorbunov, Zhize Li and Peter Richtárik<br>
           <b>EF21 with bells & whistles: practical algorithmic extensions of modern error feedback </b><br>
           <a href="https://www.jmlr.org/papers/v26/24-0059.html">Journal of Machine Learning Research 26(189):1−50, 2025</a> <br>
@@ -1475,7 +1480,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="variance-reduction proximal error-feedback coordinate-descent primal-dual federated compressed first stochastic convex">
+<div class="paper" data-topics="variance-reduction proximal error-feedback coordinate-descent primal-dual federated first stochastic convex compression communication">
 [172] Xun Qian, Hanze Dong, Peter Richtárik and Tong Zhang<br>
           <b>Error compensated loopless SVRG, Quartz, and SDCA for distributed optimization</b><br>
           
@@ -1491,7 +1496,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="variance-reduction federated local stochastic first nonconvex convex">
+<div class="paper" data-topics="variance-reduction federated local stochastic first nonconvex convex communication">
 [170] Haoyu Zhao, Zhize Li and Peter Richtárik<br>
           <b>FedPAGE: A fast local stochastic gradient method for communication-efficient federated learning</b><br>
           
@@ -1499,7 +1504,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="acceleration federated compressed first momentum convex">
+<div class="paper" data-topics="acceleration federated first momentum convex compression communication">
 [169] Zhize Li and Peter Richtárik<br>
           <b>CANITA: Faster rates for distributed convex optimization with communication compression</b><br>
           <a href="https://openreview.net/forum?id=eNB4WXnNczJ">Advances in Neural Information Processing Systems 34 (NeurIPS 2021)</a> <br>
@@ -1516,7 +1521,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="error-feedback federated compressed first nonconvex">
+<div class="paper" data-topics="error-feedback federated first nonconvex compression communication">
 [167] Peter Richtárik, Igor Sokolov and Ilyas Fatkhullin<br>
           <b>EF21: A new, simpler, theoretically better, and practically faster error feedback</b><br>
           <a href="https://openreview.net/forum?id=8ygF02Zm51q">Advances in Neural Information Processing Systems 34 (NeurIPS 2021)</a> <br>
@@ -1526,7 +1531,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="decentralized acceleration primal-dual first momentum convex">
+<div class="paper" data-topics="decentralized acceleration primal-dual first momentum convex communication">
 [166] Dmitry Kovalev, Elnur Gasanov, Peter Richtárik and Alexander Gasnikov<br>
           <b>Lower bounds and optimal algorithms for smooth and strongly convex decentralized optimization over time-varying networks</b><br>
           <a href="https://openreview.net/forum?id=L8-54wkift">Advances in Neural Information Processing Systems 34 (NeurIPS 2021) </a><br>
@@ -1534,7 +1539,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="federated compressed first">
+<div class="paper" data-topics="federated first quantization compression communication">
 [165] Bokun Wang, Mher Safaryan and Peter Richtárik<br>
           <b>Theoretically better and numerically faster distributed optimization with smoothness-aware quantization techniques</b><br>
           <a href="https://openreview.net/forum?id=BejkSpqao_N">Advances in Neural Information Processing Systems 35 (NeurIPS 2022)</a> <br>
@@ -1560,7 +1565,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="federated compressed second">
+<div class="paper" data-topics="federated second compression communication">
 [162] Mher Safaryan, Rustem Islamov, Xun Qian and Peter Richtárik<br>
           <b>FedNL: Making Newton-type methods applicable to federated learning</b><br>
           <a href="https://proceedings.mlr.press/v162/safaryan22a.html">39th International Conference on Machine Learning (ICML 2022)</a><br>
@@ -1601,7 +1606,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="decentralized acceleration primal-dual momentum first convex">
+<div class="paper" data-topics="decentralized acceleration primal-dual momentum first convex communication">
 [157] Dmitry Kovalev, Egor Shulgin, Peter Richtárik, Alexander Rogozin and Alexander Gasnikov<br>
           <b>ADOM: Accelerated decentralized optimization method for time-varying networks</b><br>
           <a href="http://proceedings.mlr.press/v139/kovalev21a.html">38th International Conference on Machine Learning (ICML 2021)</a> <br>
@@ -1610,7 +1615,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="adaptive federated compressed first stochastic nonconvex convex">
+<div class="paper" data-topics="adaptive federated first stochastic nonconvex convex quantization compression communication">
 [156] Konstantin Mishchenko, Bokun Wang, Dmitry Kovalev and Peter Richtárik<br>
           <b>IntSGD: Floatless compression of stochastic gradients</b><br>
           <a href="https://openreview.net/forum?id=pFyXqxChZc">10th International Conference on Learning Representations (ICLR 2022) </a> <br>
@@ -1620,7 +1625,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="variance-reduction federated compressed first nonconvex">
+<div class="paper" data-topics="variance-reduction federated first nonconvex compression communication">
 [155] Eduard Gorbunov, Konstantin Burlachenko, Zhize Li and Peter Richtárik<br>
           <b>MARINA: faster non-convex distributed learning with compression </b><br>
           <a href="http://proceedings.mlr.press/v139/gorbunov21a.html">38th International Conference on Machine Learning (ICML 2021) </a> <br>
@@ -1630,7 +1635,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="acceleration sketching proximal federated compressed first">
+<div class="paper" data-topics="acceleration sketching proximal federated first compression communication">
 [154] Mher Safaryan, Filip Hanzely and Peter Richtárik<br>
           <b>Smoothness matrices beat smoothness constants: better communication compression techniques for distributed optimization</b><br>
           <a href="https://proceedings.neurips.cc/paper/2021/hash/d79c6256b9bdac53a55801a066b70da3-Abstract.html">Advances in Neural Information Processing Systems 34 (NeurIPS 2021)</a> <br>
@@ -1641,7 +1646,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="federated compressed second">
+<div class="paper" data-topics="federated second compression communication">
 [153] Rustem Islamov, Xun Qian and Peter Richtárik<br>
           <b>Distributed second order methods with fast rates and compressed communication</b><br>
           <a href="http://proceedings.mlr.press/v139/islamov21a.html">38th International Conference on Machine Learning (ICML 2021)</a> <br>
@@ -1651,7 +1656,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="proximal federated first local stochastic convex">
+<div class="paper" data-topics="proximal federated first local stochastic convex communication">
 [152] Konstantin Mishchenko, Ahmed Khaled and Peter Richtárik<br>
           <b>Proximal and federated random reshuffling</b><br>
           <a href="https://proceedings.mlr.press/v162/mishchenko22a.html">39th International Conference on Machine Learning (ICML 2022)</a><br>
@@ -1671,7 +1676,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="variance-reduction proximal error-feedback coordinate-descent primal-dual federated compressed first stochastic convex">
+<div class="paper" data-topics="variance-reduction proximal error-feedback coordinate-descent primal-dual federated first stochastic convex compression communication">
 [150] Xun Qian, Hanze Dong, Peter Richtárik and Tong Zhang<br>
           <b>Error compensated loopless SVRG for distributed optimization</b><br>
           <a href="https://opt-ml.org/papers/2020/paper_61.pdf">OPT2020: 12th Annual Workshop on Optimization for Machine Learning (NeurIPS 2020 Workshop) </a> <br>
@@ -1680,7 +1685,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="proximal error-feedback primal-dual compressed first stochastic">
+<div class="paper" data-topics="proximal error-feedback primal-dual first stochastic compression communication">
 [149] Xun Qian, Hanze Dong, Peter Richtárik and Tong Zhang<br>
           <b>Error compensated proximal SGD and RDA</b><br>
           <a href="https://opt-ml.org/papers/2020/paper_59.pdf">OPT2020: 12th Annual Workshop on Optimization for Machine Learning (NeurIPS 2020 Workshop)</a> <br>
@@ -1688,7 +1693,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="variance-reduction federated first local stochastic convex">
+<div class="paper" data-topics="variance-reduction federated first local stochastic convex communication">
 [148] Eduard Gorbunov, Filip Hanzely, and Peter Richtárik<br>
           <b>Local SGD: unified theory and new efficient methods</b><br>
           <a href="http://proceedings.mlr.press/v130/gorbunov21a.html">The 24th International Conference on Artificial Intelligence and Statistics (AISTATS 2021) </a><br>
@@ -1697,7 +1702,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="decentralized variance-reduction primal-dual federated compressed first convex">
+<div class="paper" data-topics="decentralized variance-reduction primal-dual federated first convex quantization compression communication">
 [147] Dmitry Kovalev, Anastasia Koloskova, Martin Jaggi, Peter Richtárik, and Sebastian U. Stich<br>
           <b>A linearly convergent algorithm for decentralized optimization: sending less bits for free!</b><br>
           <a href="http://proceedings.mlr.press/v130/kovalev21a.html">The 24th International Conference on Artificial Intelligence and Statistics (AISTATS 2021)</a> <br>
@@ -1706,7 +1711,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="federated stochastic">
+<div class="paper" data-topics="federated stochastic communication">
 [146] Wenlin Chen, Samuel Horváth, and Peter Richtárik<br>
           <b>Optimal client sampling for federated learning</b><br>
           <a href="https://openreview.net/pdf?id=8GvRCWKHIL">Transactions on Machine Learning Research (TMLR 2022)</a> <br>
@@ -1716,7 +1721,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="variance-reduction error-feedback federated compressed first stochastic convex">
+<div class="paper" data-topics="variance-reduction error-feedback federated first stochastic convex quantization compression communication">
 [145] Eduard Gorbunov, Dmitry Kovalev, Dmitry Makarenko, and Peter Richtárik<br>
           <b>Linearly converging error compensated SGD</b><br>
           <a href="https://papers.nips.cc/paper/2020/hash/ef9280fbc5317f17d480e4d4f61b3751-Abstract.html">Advances in Neural Information Processing Systems 33 (NeurIPS 2020)</a> <br>
@@ -1725,7 +1730,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="federated compressed first">
+<div class="paper" data-topics="federated first compression communication">
 [144] Alyazeed Albasyoni, Mher Safaryan, Laurent Condat, and Peter Richtárik<br>
           <b>Optimal gradient compression for distributed and federated learning</b><br>
           <a href="http://icfl.cc/wp-content/uploads/2020/12/SpicyFL_2020_paper_31.pdf">SpicyFL 2020: NeurIPS Workshop on Scalability, Privacy, and Security in Federated Learning</a> <br>
@@ -1734,7 +1739,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="acceleration variance-reduction proximal federated first local momentum stochastic">
+<div class="paper" data-topics="acceleration variance-reduction proximal federated first local momentum stochastic communication">
 [143] Filip Hanzely, Slavomír Hanzely, Samuel Horváth, and Peter Richtárik<br>
           <b>Lower bounds and optimal algorithms for personalized federated learning</b><br>
           <a href="https://papers.nips.cc/paper/2020/hash/187acf7982f3c169b3075132380986e4-Abstract.html">Advances in Neural Information Processing Systems 33 (NeurIPS 2020)</a> <br>
@@ -1761,7 +1766,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="acceleration variance-reduction error-feedback federated compressed first momentum stochastic">
+<div class="paper" data-topics="acceleration variance-reduction error-feedback federated first momentum stochastic compression communication">
 [140] Xun Qian, Peter Richtárik, and Tong Zhang<br>
           <b>Error compensated distributed SGD can be accelerated</b><br>
           <a href="https://proceedings.neurips.cc/paper/2021/hash/ff1ced3097ccf17c1e67506cdad9ac95-Abstract.html">Advances in Neural Information Processing Systems 34 (NeurIPS 2021)</a> <br>
@@ -1789,7 +1794,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="decentralized acceleration proximal primal-dual momentum convex">
+<div class="paper" data-topics="decentralized acceleration proximal primal-dual momentum convex communication">
 [137] Dmitry Kovalev, Adil Salim, and Peter Richtárik <br>
           <b>Optimal and practical algorithms for smooth and strongly convex decentralized optimization</b><br>
           <a href="https://papers.nips.cc/paper/2020/hash/d530d454337fb09964237fecb4bea6ce-Abstract.html">Advances in Neural Information Processing Systems 33 (NeurIPS 2020) </a><br>
@@ -1797,7 +1802,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="variance-reduction sketching proximal coordinate-descent compressed first stochastic convex">
+<div class="paper" data-topics="variance-reduction sketching proximal coordinate-descent first stochastic convex compression communication">
 [136] Ahmed Khaled, Othmane Sebbouh, Nicolas Loizou, Robert M. Gower, and Peter Richtárik <br>
           <b>Unified analysis of stochastic gradient methods for composite convex and smooth optimization</b><br>
           <a href="https://link.springer.com/article/10.1007/s10957-023-02297-y">Journal of Optimization Theory and Applications 199:499-540, 2023</a><br>
@@ -1805,7 +1810,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="error-feedback federated compressed first stochastic">
+<div class="paper" data-topics="error-feedback federated first stochastic compression communication">
 [135] Samuel Horváth and Peter Richtárik <br>
           <b>A better alternative to error feedback for communication-efficient distributed learning</b><br>
           <a href="https://openreview.net/forum?id=vYVI1CHPaQg">9th International Conference on Learning Representations (ICLR 2021)</a> <br>
@@ -1824,7 +1829,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="variance-reduction federated compressed first stochastic nonconvex">
+<div class="paper" data-topics="variance-reduction federated first stochastic nonconvex compression communication">
 [133] Zhize Li and Peter Richtárik <br>
           <b>A unified analysis of stochastic gradient methods for nonconvex federated optimization</b> <br>
           <a href="http://icfl.cc/wp-content/uploads/2020/12/SpicyFL_2020_paper_4.pdf">SpicyFL 2020: NeurIPS Workshop on Scalability, Privacy, and Security in Federated Learning</a> <br>
@@ -1858,7 +1863,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="linear-algebra sketching async first stochastic">
+<div class="paper" data-topics="linear-algebra sketching async first stochastic compression">
 [129] Atal Narayan Sahu, Aritra Dutta, Aashutosh Tiwari, and Peter Richtárik <br>
           <b>On the convergence analysis of asynchronous SGD for solving consistent linear systems</b><br>
 
@@ -1867,7 +1872,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="federated first local stochastic convex">
+<div class="paper" data-topics="federated first local stochastic convex communication">
 [128] Grigory Malinovsky, Dmitry Kovalev, Elnur Gasanov, Laurent Condat, and Peter Richtárik <br>
           <b>From local SGD to local fixed point methods for federated learning</b><br>
           <a href="http://proceedings.mlr.press/v119/malinovskiy20a.html">37th International Conference on Machine Learning (ICML 2020)</a> <br>
@@ -1876,7 +1881,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="error-feedback federated compressed first stochastic convex">
+<div class="paper" data-topics="error-feedback federated first stochastic convex compression communication">
 [127] Aleksandr Beznosikov, Samuel Horváth, Peter Richtárik and Mher Safaryan<br>
           <b>On biased compression for distributed learning</b><br>
           <a href="http://jmlr.org/papers/v24/21-1548.html">Journal of Machine Learning Research 24(276):1−50, 2023</a> <br>
@@ -1886,7 +1891,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="acceleration federated compressed first momentum convex">
+<div class="paper" data-topics="acceleration federated first momentum convex compression communication">
 [126] Zhize Li, Dmitry Kovalev, Xun Qian and Peter Richtárik<br>
           <b>Acceleration for compressed gradient descent in distributed and federated optimization</b><br>
           <a href="http://proceedings.mlr.press/v119/li20g.html">37th International Conference on Machine Learning (ICML 2020)</a> <br>
@@ -1895,14 +1900,14 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="sketching second">
+<div class="paper" data-topics="sketching second compression">
 [125] Dmitry Kovalev, Robert M. Gower, Peter Richtárik and Alexander Rogozin<br>
           <b>Fast linear convergence of randomized BFGS</b><br>
           <a class="chip" href="https://arxiv.org/abs/2002.11337">arXiv</a> <br><span class="algorithms">Algorithms: <code>RBFGS</code></span><br><br>
 </div>
 
 
-<div class="paper" data-topics="sketching coordinate-descent second stochastic convex">
+<div class="paper" data-topics="sketching coordinate-descent second stochastic convex compression">
 [124] Filip Hanzely, Nikita Doikov, Peter Richtárik and Yurii Nesterov<br>
           <b>Stochastic subspace cubic Newton method</b><br>
           <a href="http://proceedings.mlr.press/v119/hanzely20a.html">37th International Conference on Machine Learning (ICML 2020)</a> <br>
@@ -1910,7 +1915,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="federated compressed">
+<div class="paper" data-topics="federated compression communication">
 [123] Mher Safaryan, Egor Shulgin and Peter Richtárik<br>
           <b>Uncertainty principle for communication compression in distributed and federated learning and the search for an optimal compressor</b><br>
           <a href="https://academic.oup.com/imaiai/advance-article/doi/10.1093/imaiai/iaab006/6220344">Information and Inference: A Journal of the IMA, 1--24, 2021</a> <br>
@@ -1919,7 +1924,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="variance-reduction federated local stochastic">
+<div class="paper" data-topics="variance-reduction federated local stochastic communication">
 [122] Filip Hanzely and Peter Richtárik<br>
           <b>Federated learning of a mixture of global and local models</b><br>
           <a href="http://icfl.cc/wp-content/uploads/2020/12/SpicyFL_2020_paper_75.pdf">SpicyFL 2020: NeurIPS Workshop on Scalability, Privacy, and Security in Federated Learning</a> <br>
@@ -1937,7 +1942,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="acceleration variance-reduction sketching proximal coordinate-descent first momentum stochastic">
+<div class="paper" data-topics="acceleration variance-reduction sketching proximal coordinate-descent first momentum stochastic compression">
 [120] Filip Hanzely, Dmitry Kovalev and Peter Richtárik<br>
           <b>Variance reduced coordinate descent with acceleration: new method with a surprising application to finite-sum problems</b><br>
           <a href="http://proceedings.mlr.press/v119/hanzely20b.html">37th International Conference on Machine Learning (ICML 2020)</a> <br>
@@ -1954,7 +1959,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 <hr class="news-rule">
 <h2 id="y2019"> Prepared in 2019 </h2>
 
-          <div class="paper" data-topics="federated first local stochastic">
+          <div class="paper" data-topics="federated first local stochastic communication">
 [118] Ahmed Khaled, Konstantin Mishchenko and Peter Richtárik<br>
           <b>Tighter theory for local SGD on identical and heterogeneous data</b><br>
           <a href="http://proceedings.mlr.press/v108/bayoumi20a.html">The 23rd International Conference on Artificial Intelligence and Statistics (AISTATS 2020)</a> <br>
@@ -1963,7 +1968,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="variance-reduction federated compressed first">
+<div class="paper" data-topics="variance-reduction federated first compression communication">
 [117] Sélim Chraibi, Ahmed Khaled, Dmitry Kovalev, Adil Salim,
           Peter Richtárik and Martin Takáč<br>
           <b>Distributed fixed point methods with compressed iterates</b><br>
@@ -1972,7 +1977,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="compressed stochastic">
+<div class="paper" data-topics="stochastic quantization compression communication">
 [116] Samuel Horváth, Chen-Yu Ho, Ľudovít Horváth, Atal Narayan Sahu, Marco Canini and Peter Richtárik<br>
           <b>IntML: Natural compression for distributed deep learning</b><br>
           <a href="http://learningsys.org/sosp19/index.html">Workshop on AI Systems at Symposium on Operating Systems Principles 2019 (SOSP'19)</a><br>
@@ -1988,7 +1993,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="federated first local stochastic">
+<div class="paper" data-topics="federated first local stochastic communication">
 [114] Ahmed Khaled, Konstantin Mishchenko and Peter Richtárik<br>
           <b>Better communication complexity for local SGD</b><br>
           <a href="http://federated-learning.org/fl-neurips-2019/">NeurIPS 2019 Workshop on Federated Learning for Data Privacy and Confidentiality</a><br>
@@ -1997,7 +2002,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="federated compressed first">
+<div class="paper" data-topics="federated first compression communication">
 [113] Ahmed Khaled and Peter Richtárik<br>
           <b>Gradient descent with compressed iterates</b><br>
           <a href="http://federated-learning.org/fl-neurips-2019/">NeurIPS 2019 Workshop on Federated Learning for Data Privacy and Confidentiality</a><br>
@@ -2006,7 +2011,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="federated first local convex">
+<div class="paper" data-topics="federated first local convex communication">
 [112] Ahmed Khaled, Konstantin Mishchenko and Peter Richtárik<br>
           <b>First analysis of local GD on heterogeneous data</b><br>
           <a href="http://federated-learning.org/fl-neurips-2019/">NeurIPS 2019 Workshop on Federated Learning for Data Privacy and Confidentiality</a><br>
@@ -2048,7 +2053,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="compressed first stochastic nonconvex">
+<div class="paper" data-topics="first stochastic nonconvex quantization compression communication">
 [107] Mher Safaryan and Peter Richtárik<br>
           <b>Stochastic Sign Descent Methods: New Algorithms and Better Theory</b><br>
           <a href="http://proceedings.mlr.press/v139/safaryan21a.html">38th International Conference on Machine Learning (ICML 2021)</a><br>
@@ -2090,7 +2095,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="variance-reduction sketching proximal coordinate-descent first stochastic convex">
+<div class="paper" data-topics="variance-reduction sketching proximal coordinate-descent first stochastic convex compression">
 [102] Filip Hanzely and Peter Richtárik<br>
           <b>One method to rule them all: variance reduction for data, parameters and many new methods</b><b><br>
           </b> <a class="chip" href="https://arxiv.org/abs/1905.11266">arXiv</a> <a class="chip" href="posters/Poster-GJS.pdf">poster</a>
@@ -2098,7 +2103,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="variance-reduction sketching proximal coordinate-descent compressed first stochastic">
+<div class="paper" data-topics="variance-reduction sketching proximal coordinate-descent first stochastic compression communication">
 [101] Eduard Gorbunov, Filip Hanzely and Peter Richtárik<br>
           <b>A unified theory of SGD: variance reduction, sampling, quantization and coordinate descent</b><br>
           <a href="http://proceedings.mlr.press/v108/gorbunov20a">The 23rd International Conference on Artificial Intelligence and Statistics (AISTATS 2020)</a><br>
@@ -2106,7 +2111,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="federated compressed stochastic">
+<div class="paper" data-topics="federated stochastic quantization compression communication">
 [100] Samuel Horváth, Chen-Yu Ho, Ľudovít Horváth, Atal
           Narayan Sahu, Marco Canini and Peter Richtárik<br>
           <b>Natural compression for distributed deep learning</b><br>
@@ -2116,7 +2121,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="sketching second">
+<div class="paper" data-topics="sketching second compression">
 [99] Robert M. Gower, Dmitry Kovalev, Felix Lieder and Peter
           Richtárik<br>
           <b>RSN: Randomized Subspace Newton</b><br>
@@ -2135,7 +2140,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="linear-algebra decentralized acceleration sketching primal-dual momentum stochastic">
+<div class="paper" data-topics="linear-algebra decentralized acceleration sketching primal-dual momentum stochastic compression communication">
 [97] Nicolas Loizou and Peter Richtárik<br>
           <b>Revisiting randomized gossip algorithms: general framework, convergence rates and novel block and accelerated protocols</b><br>
           <a href="https://ieeexplore.ieee.org/document/9539193">IEEE Transactions on Information Theory 67(12):8300--8324, 2021 </a><br>
@@ -2143,7 +2148,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="linear-algebra sketching primal-dual first stochastic convex">
+<div class="paper" data-topics="linear-algebra sketching primal-dual first stochastic convex compression">
 [96] Nicolas Loizou and Peter Richtárik<br>
           <b>Convergence analysis of inexact randomized iterative methods</b><br>
           <a href="https://epubs.siam.org/doi/abs/10.1137/19M125248X">SIAM Journal on Scientific Computing 42(6), A3979–A4016, 2020</a> <br>
@@ -2161,7 +2166,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="variance-reduction proximal federated compressed first stochastic nonconvex convex">
+<div class="paper" data-topics="variance-reduction proximal federated first stochastic nonconvex convex quantization compression communication">
 [94] Samuel Horváth, Dmitry Kovalev, Konstantin Mishchenko, Peter Richtárik and Sebastian Stich<br>
           <b>Stochastic distributed learning with gradient quantization and double variance reduction</b><br>
           <a href="https://www.tandfonline.com/doi/full/10.1080/10556788.2022.2117355">Optimization Methods and Software 38(1):91-106, 2023</a> <br>
@@ -2187,7 +2192,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="variance-reduction sketching proximal coordinate-descent federated first stochastic">
+<div class="paper" data-topics="variance-reduction sketching proximal coordinate-descent federated first stochastic compression communication">
 [91] Konstantin Mishchenko, Filip Hanzely and Peter Richtárik<br>
           <b>99% of distributed optimization is a waste of time: the issue and how to fix it</b><br>
           <a href="https://www.auai.org/~w-auai/uai2020/proceedings/404_main_paper.pdf">36th Conference on Uncertainty in Artificial Intelligence (UAI 2020)</a> <br>
@@ -2196,7 +2201,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="proximal federated compressed first stochastic nonconvex convex">
+<div class="paper" data-topics="proximal federated first stochastic nonconvex convex quantization compression communication">
 [90] Konstantin Mishchenko, Eduard Gorbunov, Martin Takáč and Peter Richtárik<br>
           <b>Distributed learning with compressed gradient differences</b><br>
           <a href="https://www.tandfonline.com/doi/abs/10.1080/10556788.2024.2358790">Optimization Methods and Software 40(5):1181--1196, 2025</a> <br>
@@ -2238,7 +2243,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="linear-algebra privacy decentralized primal-dual stochastic">
+<div class="paper" data-topics="linear-algebra privacy decentralized primal-dual stochastic communication">
 [85] Filip Hanzely, Jakub Konečný, Nicolas Loizou, Peter Richtárik and Dmitry Grishchenko<br>
           <b>A privacy preserving randomized gossip algorithm via controlled noise insertion</b> <br>
           <a href="https://ppml-workshop.github.io/ppml/papers/57.pdf">NeurIPS Privacy Preserving Machine Learning Workshop, 2018</a><br>
@@ -2253,7 +2258,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="linear-algebra decentralized acceleration momentum stochastic">
+<div class="paper" data-topics="linear-algebra decentralized acceleration momentum stochastic communication">
 [83] Nicolas Loizou, Michael G. Rabbat and Peter Richtárik<br>
           <b>Provably accelerated randomized gossip algorithms</b> <br>
           <a href="https://ieeexplore.ieee.org/document/8683847">2019 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP 2019)</a><br>
@@ -2283,7 +2288,7 @@ NeurIPS 2024 Workshop: Optimization for Machine Learning (OPT 2024) <br>
 </div>
 
 
-<div class="paper" data-topics="acceleration variance-reduction sketching proximal coordinate-descent first stochastic convex">
+<div class="paper" data-topics="acceleration variance-reduction sketching proximal coordinate-descent first stochastic convex compression">
 [80] Filip Hanzely, Konstantin Mishchenko and Peter Richtárik<br>
           <b>SEGA: Variance reduction via gradient sketching</b> <br>
           <a
@@ -2309,7 +2314,7 @@ href="https://papers.nips.cc/paper/7478-sega-variance-reduction-via-gradient-ske
 </div>
 
 
-<div class="paper" data-topics="linear-algebra decentralized sketching momentum stochastic">
+<div class="paper" data-topics="linear-algebra decentralized sketching momentum stochastic compression communication">
 [77] Nicolas Loizou and Peter Richtárik <br>
           <b>Accelerated gossip via stochastic heavy ball method</b><br>
           <a href="https://proceedings.allerton.csl.illinois.edu/media/files/0190.pdf#search=%22Richtarik%22">56th Annual Allerton Conference on Communication, Control, and Computing, 927-934, 2018</a><br>
@@ -2332,7 +2337,7 @@ href="https://papers.nips.cc/paper/7478-sega-variance-reduction-via-gradient-ske
 </div>
 
 
-<div class="paper" data-topics="variance-reduction sketching primal-dual first stochastic convex">
+<div class="paper" data-topics="variance-reduction sketching primal-dual first stochastic convex compression">
 [74] Robert M. Gower, Peter Richtárik and Francis Bach <br>
           <b>Stochastic quasi-gradient methods: variance reduction via Jacobian sketching </b><br>
           <a href="https://link.springer.com/article/10.1007/s10107-020-01506-0"> Mathematical Programming 188:135–192, 2021 </a> <br>
@@ -2364,7 +2369,7 @@ href="https://papers.nips.cc/paper/7478-sega-variance-reduction-via-gradient-ske
 </div>
 
 
-<div class="paper" data-topics="linear-algebra acceleration sketching momentum second stochastic">
+<div class="paper" data-topics="linear-algebra acceleration sketching momentum second stochastic compression">
 [70] Robert M. Gower, Filip Hanzely, Peter Richtárik and Sebastian Stich <b><br>
             Accelerated stochastic matrix inversion: general theory and speeding up BFGS rules for faster second-order optimization</b><br>
           <a href="https://papers.nips.cc/paper/7434-accelerated-stochastic-matrix-inversion-general-theory-and-speeding-up-bfgs-rules-for-faster-second-order-optimization">Advances in Neural Information Processing Systems 31:1619-1629, 2018</a><br>
@@ -2397,7 +2402,7 @@ href="https://papers.nips.cc/paper/7478-sega-variance-reduction-via-gradient-ske
 </div>
 
 
-<div class="paper" data-topics="linear-algebra sketching first stochastic convex">
+<div class="paper" data-topics="linear-algebra sketching first stochastic convex compression">
 [66] Ion Necoara, Andrei Patrascu and Peter Richtárik <br>
           <b>Randomized projection methods for convex feasibility
             problems: conditioning and convergence rates</b><br>
@@ -2408,7 +2413,7 @@ href="https://papers.nips.cc/paper/7478-sega-variance-reduction-via-gradient-ske
           <hr class="news-rule">
 <h2 id="y2017"> Prepared in 2017</h2>
 
-          <div class="paper" data-topics="linear-algebra decentralized sketching proximal primal-dual first momentum second stochastic">
+          <div class="paper" data-topics="linear-algebra decentralized sketching proximal primal-dual first momentum second stochastic compression">
 [65] Nicolas Loizou and Peter Richtárik<br>
           <b>Momentum and stochastic momentum for stochastic gradient, Newton, proximal point and subspace descent methods</b><br>
             <a href="http://link.springer.com/article/10.1007/s10589-020-00220-z">Computational Optimization and Applications 77(3):653-710, 2020</a> <br>
@@ -2468,7 +2473,7 @@ href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/10394/10
 </div>
 
 
-<div class="paper" data-topics="linear-algebra privacy decentralized primal-dual stochastic">
+<div class="paper" data-topics="linear-algebra privacy decentralized primal-dual stochastic communication">
 [58] Filip Hanzely, Jakub Konečný, Nicolas Loizou, Peter
           Richtárik and Dmitry Grishchenko<br>
           <b>Privacy preserving randomized gossip algorithms</b><br>
@@ -2486,7 +2491,7 @@ href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/10394/10
 </div>
 
 
-<div class="paper" data-topics="linear-algebra acceleration sketching first stochastic">
+<div class="paper" data-topics="linear-algebra acceleration sketching first stochastic compression">
 [56] Peter Richtárik and Martin Takáč<br>
           <b>Stochastic reformulations of linear systems: algorithms and convergence theory</b><br>
           <a href="https://epubs.siam.org/doi/abs/10.1137/18M1179249">SIAM Journal on Matrix Analysis and Applications 41(2):487–524, 2020</a><br>
@@ -2504,14 +2509,14 @@ href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/10394/10
 <h2 id="y2016"> Prepared in 2016</h2>
 
 
-<div class="paper" data-topics="linear-algebra sketching primal-dual first stochastic">
+<div class="paper" data-topics="linear-algebra sketching primal-dual first stochastic compression">
 [54] Robert M. Gower and Peter Richtárik<br>
 <b>Linearly convergent randomized iterative methods for computing the pseudoinverse</b><br>
 <a class="chip" href="https://arxiv.org/abs/1612.06255">arXiv</a><br><span class="algorithms">Algorithms: <code>SATAX</code>, <code>SAXAS</code></span><br><br>
 </div>
 
 
-<div class="paper" data-topics="federated compressed">
+<div class="paper" data-topics="federated compression communication">
 [53] Jakub Konečný and Peter Richtárik<br>
 <b>Randomized distributed mean estimation: accuracy vs communication<br>
 </b><a href="https://www.frontiersin.org/articles/10.3389/fams.2018.00062/abstract">Frontiers in Applied Mathematics and Statistics 2018</a><br>
@@ -2520,7 +2525,7 @@ href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/10394/10
 </div>
 
 
-<div class="paper" data-topics="sketching federated compressed local first stochastic">
+<div class="paper" data-topics="sketching federated local first stochastic quantization compression communication">
 [52] Jakub Konečný, H. Brendan McMahan, Felix Yu, Peter Richtárik, Ananda Theertha Suresh and Dave Bacon<br>
 <b>Federated learning: strategies for improving communication efficiency</b><br>
 <a href="https://nips.cc/Conferences/2016/Schedule?showEvent=6250">NIPS Private Multi-Party Machine Learning Workshop, 2016</a><br>
@@ -2528,7 +2533,7 @@ href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/10394/10
 </div>
 
 
-<div class="paper" data-topics="variance-reduction primal-dual federated local first stochastic">
+<div class="paper" data-topics="variance-reduction primal-dual federated local first stochastic communication">
 [51] Jakub Konečný, H. Brendan McMahan, Daniel Ramage and
 Peter Richtárik<br>
 <b>Federated optimization: distributed machine learning for
@@ -2537,7 +2542,7 @@ on-device intelligence</b><br>
 </div>
 
 
-<div class="paper" data-topics="linear-algebra decentralized sketching primal-dual stochastic">
+<div class="paper" data-topics="linear-algebra decentralized sketching primal-dual stochastic compression communication">
 [50] Nicolas Loizou and Peter Richtárik <br>
 <b>A new perspective on randomized gossip algorithms</b><br>
 <a href="http://ieeexplore.ieee.org/document/7905880/">IEEE Global Conference on Signal and Information Processing (GlobalSIP), 440-444, 2016</a><br>
@@ -2545,7 +2550,7 @@ on-device intelligence</b><br>
 </div>
 
 
-<div class="paper" data-topics="acceleration first local momentum stochastic">
+<div class="paper" data-topics="acceleration first local momentum stochastic communication">
 [49] Sashank J. Reddi, Jakub Konečný, Peter Richtárik, Barnabás Póczos, Alex Smola<br>
 <b>AIDE: fast and communication efficient distributed optimization</b><br>
 <a class="chip" href="https://arxiv.org/abs/1608.06879">arXiv</a> <a class="chip" href="posters/Poster-AIDE.pdf">poster</a><br><span class="algorithms">Algorithms: <code>Inexact DANE</code>, <code>AIDE</code></span><br><br>
@@ -2569,7 +2574,7 @@ on-device intelligence</b><br>
 </div>
 
 
-<div class="paper" data-topics="variance-reduction sketching second stochastic">
+<div class="paper" data-topics="variance-reduction sketching second stochastic compression">
 [46] Robert M. Gower, Donald Goldfarb and Peter Richtárik<br>
 <b>Stochastic block BFGS: squeezing more curvature out of data</b><br>
 <a href="http://proceedings.mlr.press/v48/gower16.html">Proceedings   of the 33rd International Conference on Machine Learning,
@@ -2587,7 +2592,7 @@ Machine Learning Research 19(27):1-21, 2018</a><br>
 </div>
 
 
-<div class="paper" data-topics="linear-algebra sketching adaptive primal-dual second">
+<div class="paper" data-topics="linear-algebra sketching adaptive primal-dual second compression">
 [44] Robert M. Gower and Peter Richtárik<br>
 <b>Randomized quasi-Newton updates are linearly convergent
 matrix inversion algorithms</b><br>
@@ -2612,7 +2617,7 @@ href="http://epubs.siam.org/action/showMostReadArticles?journalCode=sjmael&amp;"
 </div>
 
 
-<div class="paper" data-topics="linear-algebra decentralized sketching primal-dual first stochastic">
+<div class="paper" data-topics="linear-algebra decentralized sketching primal-dual first stochastic compression">
 <p>[42] Robert M. Gower and Peter Richtárik<br>
 <b>Stochastic dual ascent for solving linear systems</b><br>
 <a class="chip" href="http://arxiv.org/abs/1512.06890">arXiv</a> <a class="chip" href="https://www.youtube.com/watch?v=RbkhWrTbrKs">video</a>
@@ -2620,7 +2625,7 @@ href="http://epubs.siam.org/action/showMostReadArticles?journalCode=sjmael&amp;"
 </div>
 
 
-<div class="paper" data-topics="coordinate-descent primal-dual local first stochastic">
+<div class="paper" data-topics="coordinate-descent primal-dual local first stochastic communication">
 <p>[41] Chenxin Ma, Jakub Konečný, Martin Jaggi, Virginia
 Smith, Michael I Jordan, P. Richtárik and Martin Takáč <br>
 <b>Distributed optimization with arbitrary local solvers</b><br>
@@ -2640,7 +2645,7 @@ To appear in: Journal of Machine Learning Research<br>
 </div>
 
 
-<div class="paper" data-topics="linear-algebra sketching first stochastic">
+<div class="paper" data-topics="linear-algebra sketching first stochastic compression">
 <p>[39] Robert M. Gower and Peter Richtárik<br>
 <b>Randomized iterative methods for linear systems</b><br>
 <a
@@ -2703,7 +2708,7 @@ Implemented in Tensor Flow<br>
 </div>
 
 
-<div class="paper" data-topics="coordinate-descent primal-dual first local stochastic convex">
+<div class="paper" data-topics="coordinate-descent primal-dual first local stochastic convex communication">
 <p>[34] Chenxin Ma, Virginia Smith, Martin Jaggi, Michael I.
 Jordan, Peter Richtárik and Martin Takáč<br>
 <b>Adding vs. averaging in distributed primal-dual
