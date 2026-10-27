@@ -66,6 +66,19 @@ My PhD student <a href="https://ivan-ilin.netlify.app">Ivan Ilin</a> made a <a h
 
 <hr class="news-rule">
 
+<h3>October 26, 2026</h3>
+
+<h2>New Paper</h2>
+
+<span class="important">New paper out:</span>
+<a href="https://arxiv.org/abs/2610.35663">"SCAFFOLD under Hessian Similarity: Sharp Convergence Rates"</a> - joint work with <a href="https://scholar.google.com/citations?user=jZeww6kAAAAJ&hl=en">Zhirayr Tovmasyan</a>, <a href="https://sites.google.com/view/slavomirhanzely">Slavomír Hanzely</a>, <a href="https://shulgin-egor.github.io">Egor Shulgin</a>, and <a href="https://www.sstich.ch">Sebastian U. Stich</a>.
+<br>
+<br>
+
+One of the main challenges of federated learning is heterogeneous data split among the clients, leading to biased local updates called client drift. The SCAFFOLD algorithm (Karimireddy et al., 2020) corrects client drift with control variates, but its relation to the similarity of client data is not yet fully understood: the original similarity-based guarantees cover only quadratics with a stronger second-order similarity assumption, and a follow-up weakly convex analysis (Luo et al., 2025) obtains a &radic;(<i>L</i>&delta;) dependence for <i>L</i>-smooth losses with averaged Hessian similarity &delta;. We analyze SCAFFOLD with minibatch-based control variates and establish linear dependence on Hessian similarity beyond quadratics, for both convex and nonconvex objectives. In particular, for convex objectives with exact gradients, <i>R</i> SCAFFOLD rounds with <i>K</i> local steps lead to an objective gap of order (<i>L</i>/<i>K</i> + &delta;)<i>D</i><sub>0</sub><sup>2</sup>/<i>R</i>, where <i>D</i><sub>0</sub> is the initial distance to a minimizer. When <i>K</i> = &Theta;(<i>L</i>/&delta;), it improves the minibatch SGD rate by a factor &Theta;(<i>L</i>/&delta;). For nonconvex objectives, we prove an analogous stationarity guarantee under uniform Hessian similarity for a client-selection variant. In both settings, we extend these guarantees to stochastic gradients and prove matching lower bounds for the analyzed methods with constant local stepsizes. We also show that, under partial participation, even identical clients need not obtain the full communication benefit of additional local steps.
+
+<hr class="news-rule">
+
 <h3>October 23, 2026</h3>
 
 <h2>Paper accepted to IEEE TPAMI</h2>
