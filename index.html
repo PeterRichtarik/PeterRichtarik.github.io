@@ -56,6 +56,19 @@
 <p class="hire">The lab has open positions for interns, MS/PhD students, PhD students, postdocs, and research scientists. <a href="i_apply.html">Apply</a>.</p>
 <hr class="news-rule">
 
+<h3>October 28, 2026</h3>
+
+<h2>New Paper</h2>
+
+<span class="important">New paper out:</span>
+<a href="https://arxiv.org/abs/2610.38773">"Rennala NSGD: Asynchronous Stochastic Optimization Beyond Euclidean Geometry"</a> - joint work with <a href="https://www.igor-sokolov.com">Igor Sokolov</a> and <a href="https://k3nfalt.github.io">Alexander Tyurin</a>. The paper was accepted to NeurIPS 2026.
+<br>
+<br>
+
+The empirical success of matrix-aware optimizers, such as Muon (Jordan et al., 2024) and Shampoo (arXiv:1802.09568), highlights the potential of non-Euclidean geometry for deep learning, including large language model (LLM) training. Despite this progress, the theoretical understanding of stochastic optimization in general normed spaces remains limited, particularly in distributed settings. We analyze minibatch stochastic gradient descent (SGD) for smooth nonconvex optimization with respect to an arbitrary norm on a finite-dimensional space. Using the framework of <i>&kappa;</i>-regular normed spaces (arXiv:0809.0813), we derive high-probability oracle complexity bounds under a light-tail condition stated directly in the dual norm induced by the update norm. The bounds make the dependence on geometry explicit through the regularity constant <i>&kappa;</i> of the dual space. In the Euclidean case, our bound recovers the standard minibatch SGD rate up to logarithmic factors. For some non-Euclidean geometries and noise models, it is sharper than bounds obtained by converting a Euclidean noise assumption, reducing a linear dimension dependence to a logarithmic one. Building on this framework, we introduce Rennala NSGD, a semi-asynchronous distributed algorithm, and establish wall-clock time complexity guarantees under fixed, heterogeneous worker computation times. In the Euclidean case (<i>&kappa;</i> = 1), our bound matches the parameter dependence of classical Rennala SGD up to logarithmic factors.
+
+<hr class="news-rule">
+
 <h3>October 27, 2026</h3>
 
 <h2>Video: Why Teams of AI Agents Get Stuck (and How to Fix It)</h2>
@@ -309,7 +322,7 @@ The papers
 
 <ul>
 <li>Yassine Maziane, Ammar Mahran, Artavazd Maranjyan, and Peter Richtárik. <a href="https://arxiv.org/abs/2605.20866">LOSCAR-SGD: Local SGD with Communication-Computation Overlap and Delay-Corrected Sparse Model Averaging</a>, arXiv:2605.20866, 2026,</li>
-<li>Igor Sokolov, Alexander Tyurin, and Peter Richtárik. Rennala-NSGD: Asynchronous Stochastic Optimization Beyond Euclidean Geometry, 2026,</li>
+<li>Igor Sokolov, Alexander Tyurin, and Peter Richtárik. <a href="https://arxiv.org/abs/2610.38773">Rennala NSGD: Asynchronous Stochastic Optimization Beyond Euclidean Geometry</a>, arXiv:2610.38773, 2026,</li>
 <li>Ammar Mahran, Artavazd Maranjyan, and Peter Richtárik. <a href="https://arxiv.org/abs/2605.13434">Rescaled Asynchronous SGD: Optimal Distributed Optimization under Data and System Heterogeneity</a>, arXiv:2605.13434, 2026,</li>
 <li>Egor Shulgin, Jörg K.H. Franke, Dimitri von Rütte, Tianyue H. Zhang, Niccolò Ajroldi, Korbinian Pöppel, Bernhard Schölkopf, Aaron Klein, Peter Richtárik, and Antonio Orvieto. Deriving Hyperparameter Scaling Laws via Modern Optimization Theory, 2026,</li>
 </ul>
