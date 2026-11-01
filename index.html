@@ -111,6 +111,19 @@ was accepted to <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumbe
 <h2>New Paper</h2>
 
 <span class="important">New paper out:</span>
+<a href="https://arxiv.org/abs/2610.30280">"A Quadratic Lens on Muon's Polar Update: Benefits, Pitfalls, and the Role of Newton-Schulz"</a> - joint work with <a href="https://shulgin-egor.github.io">Egor Shulgin</a>, <a href="https://sam-laing.github.io/">Sam Laing</a> and <a href="http://orvi.altervista.org/">Antonio Orvieto</a>. A shorter version of the paper was presented at the <a href="https://sites.google.com/view/hidimlearning/home">HiLD 2026: 4th Workshop on High-dimensional Learning Dynamics</a> at ICML 2026.
+<br>
+<br>
+
+Muon updates matrix-valued parameters along approximately orthogonalized directions and often trains large language models faster than AdamW, yet it remains unclear when and why orthogonalization helps. We study PolarGD, the orthogonalized update at the core of Muon, on matrix quadratics, where optimizers can be analyzed in closed form, and compare update directions under line search to remove the effect of learning-rate tuning. Orthogonalization pays off when the gradient is far from low rank and its largest singular directions see high curvature. PolarGD reaches the minimizer in one step whenever the rows of the error are orthogonal with equal norms, for any Hessian, whereas gradient descent needs all Hessian eigenvalues to be equal; and unlike sign descent, PolarGD is unaffected by rotations of the problem. Over many steps, PolarGD acts as gradient descent preconditioned by the current iterate, so its speed is governed by the conditioning of the iterate rather than of the Hessian. This explains fast regimes as well as a slow one, caused by tiny singular values of the iterate, in which PolarGD is much slower than gradient descent. Finally, the few Newton-Schulz iterations used in Muon treat these tiny singular values as gradient descent does, so fewer iterations can converge faster than exact orthogonalization; in a transformer trained with Muon, about a quarter of the singular values of the attention matrices fall in this regime.
+
+<hr class="news-rule">
+
+<h3>October 21, 2026</h3>
+
+<h2>New Paper</h2>
+
+<span class="important">New paper out:</span>
 <a href="https://arxiv.org/abs/2610.30074">"Parallel AI Agent Collaboration as Graph-Structured Distributed Block Optimization"</a> - joint work with <a href="https://hanminlli.github.io">Hanmin Li</a> and <a href="https://abcdemi.github.io/">Yury Demidovich</a>.
 <br>
 <br>
@@ -574,7 +587,7 @@ July 10, <a href="https://sites.google.com/view/hidimlearning/home">HiLD 2026: 4
  </li>
  
   <li>Egor Shulgin, Sam Laing, Antonio Orvieto, Peter Richtárik<br>
-<a href="https://openreview.net/pdf?id=TVTwgZp0qe">A Quadratic Lens on Muon: Orthogonalization, Invariance, and Implicit Preconditioning</a><br>
+<a href="https://openreview.net/pdf?id=TVTwgZp0qe">A Quadratic Lens on Muon: Orthogonalization, Invariance, and Implicit Preconditioning</a> [<a href="https://arxiv.org/abs/2610.30280">arXiv</a>]<br>
 July 10, <a href="https://sites.google.com/view/hidimlearning/home">HiLD 2026: 4th Workshop on High-dimensional Learning Dynamics</a> 
  </li>    
 </ul>   
