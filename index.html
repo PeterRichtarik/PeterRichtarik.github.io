@@ -56,6 +56,19 @@
 <p class="hire">The lab has open positions for interns, MS/PhD students, PhD students, postdocs, and research scientists. <a href="i_apply.html">Apply</a>.</p>
 <hr class="news-rule">
 
+<h3>November 8, 2026</h3>
+
+<h2>New Paper</h2>
+
+<span class="important">New paper out:</span>
+<a href="https://arxiv.org/abs/2611.11354">"An Adaptive Short-Step Variant of BroxGD with Linear Convergence under Quadratic Growth"</a> - joint work with Jan Niklas Kolzenburg.
+<br>
+<br>
+
+Broximal Gradient Descent (BroxGD), recently analyzed by Richtárik et al. (arXiv:2605.08850v1), is a projection-free sister method to Projected Gradient Descent (ProjGD) for solving min<sub><i>x</i>&isin;𝒳</sub> <i>f</i>(<i>x</i>), where <i>f</i>: &#8477;<sup><i>d</i></sup> &rarr; &#8477; and 𝒳 &sube; &#8477;<sup><i>d</i></sup> is nonempty, closed and convex. The method performs local linear minimization over the feasible set intersected with a Euclidean ball and carefully prescribed radius. Like ProjGD, BroxGD enjoys linear convergence in the smooth strongly convex setting, with the same condition-number dependence. However, the known radius rule leading to linear convergence requires unavailable information and is therefore impractical. We develop an adaptive short-step variant of BroxGD which converges linearly for smooth convex functions under quadratic growth (generalizing strong convexity), without requiring unavailable information. We use <i>z<sub>k</sub></i> &isin; arg min<sub><i>z</i> &isin; 𝒳 &cap; &#120121;(<i>x<sub>k</sub></i>, <i>t<sub>k</sub></i>)</sub> &lang;&nabla;<i>f</i>(<i>x<sub>k</sub></i>), <i>z</i>&rang;, <i>x</i><sub><i>k</i>+1</sub> = Proj<sub><i>S<sub>k</sub></i></sub>(<i>x<sub>k</sub></i> - &nabla;<i>f</i>(<i>x<sub>k</sub></i>)/<i>L</i>), where <i>L</i> is the smoothness constant of <i>f</i>, &#120121;(<i>x</i>, <i>t</i>) is the Euclidean ball centered at <i>x</i> of radius <i>t</i>, and <i>S<sub>k</sub></i> is the line segment connecting <i>x<sub>k</sub></i> and <i>z<sub>k</sub></i>. The radius is updated by <i>t</i><sub><i>k</i>+1</sub> = max{&parallel;<i>x</i><sub><i>k</i>+1</sub> - <i>x<sub>k</sub></i>&parallel;, <i>t<sub>k</sub></i>/2}. Projection onto <i>S<sub>k</sub></i> requires only scalar clipping. Assuming an exact local linear minimization oracle, each update uses one oracle call. For any positive initial radius, we bound all oracle calls to reach objective error at most <i>&epsilon;</i> and obtain <i>O</i>((<i>L</i>/&alpha;) log(1/<i>&epsilon;</i>)) for fixed initialization, where &alpha; = min{&alpha;<sub>0</sub>, <i>L</i>} and &alpha;<sub>0</sub> &gt; 0 is the quadratic-growth constant.
+
+<hr class="news-rule">
+
 <h3>November 7, 2026</h3>
 
 <h2>Opening plenary at ICOMP 2026</h2>
