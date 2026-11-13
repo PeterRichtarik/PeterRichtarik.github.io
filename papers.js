@@ -1,5 +1,5 @@
 (function () {
-  var TOPIC_IDS = {federated:1, async:1, muon:1, llm:1, broximal:1, first:1, second:1, zero:1, stochastic:1, local:1, momentum:1, compressed:1, convex:1, nonconvex:1, "primal-dual":1, "coordinate-descent":1, "error-feedback":1, lora:1, agentic:1, pruning:1, quantization:1, compression:1, communication:1, adaptive:1, proximal:1, sketching:1, "variance-reduction":1, acceleration:1, decentralized:1, privacy:1, "linear-algebra":1, minimax:1};
+  var TOPIC_IDS = {federated:1, async:1, muon:1, llm:1, broximal:1, byzantine:1, first:1, second:1, zero:1, stochastic:1, local:1, momentum:1, compressed:1, convex:1, nonconvex:1, "primal-dual":1, "coordinate-descent":1, "error-feedback":1, lora:1, agentic:1, pruning:1, quantization:1, compression:1, communication:1, adaptive:1, proximal:1, sketching:1, "variance-reduction":1, acceleration:1, decentralized:1, privacy:1, "linear-algebra":1, minimax:1};
   var currentTopics = [];
   var currentYear = "";
   var currentQuery = "";
